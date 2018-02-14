@@ -15,6 +15,11 @@ MonoBehaviour:
   inventoryUpdatedEvent: {fileID: 11400000, guid: a891487f73164ec4988d77848c11029d,
     type: 2}
   items:
-  - {fileID: 11400000, guid: 78ccdb9e420f25b45a70398f834f2b6a, type: 2}
-  - {fileID: 11400000, guid: acea752d67bb9474782e99f627fc5426, type: 2}
-  - {fileID: 11400000, guid: f8ec7d4079a9be64585513592ddbe6f4, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Head: {fileID: 0}
+  Face: {fileID: 0}
+  Chest: {fileID: 11400000, guid: 716927ed4bce6224e8ec420333897578, type: 2}
+  Legs: {fileID: 11400000, guid: 8b7805db6428c8d4c82b265e1deeda71, type: 2}
+  Feet: {fileID: 0}

@@ -11,6 +11,12 @@ public class Inventory : ScriptableObject {
 	[Space]	
 	public List<InventoryItem> items = new List<InventoryItem>();
 
+	public InventoryItemHead Head;
+    public InventoryItemFace Face;
+    public InventoryItemChest Chest;
+    public InventoryItemLegs Legs;
+    public InventoryItemFeet Feet;
+
 	public void AddItem(InventoryItem item){
 		if(items.Count < size){
 			items.Add(item);
