@@ -5,20 +5,20 @@ using UnityEngine;
 public class Equipper:MonoBehaviour {
 
     public Inventory inventory; 
-    public StringReference playerSuffix;    
-    public ColorVariable playerColor;
 
-    [Header("Inventory Slots")]
+    [Header("Slot positions")]
     public Transform[] slots;
 
     List <GameObject> currentlyEquipped = new List < GameObject > (); 
 
+    public bool refresh;
+
     void OnEnable() {
-        Refresh(); 
+        Refresh();
     }
 
     public void Refresh() {
-        Equip(); 
+        Equip();
     }
 
     void Equip() {
@@ -33,39 +33,28 @@ public class Equipper:MonoBehaviour {
             if(inventory.items.Count > i){
                 GameObject go = Instantiate(inventory.items[i].prefab);
                 currentlyEquipped.Add(go);
-                Transform slot = slots[i];
-                InputMapper input = go.GetComponent<InputMapper>();
-                
 
-                if(i == 0){
-                    DrawLine line = go.GetComponent <DrawLine>();
+                Transform slot = transform;
 
-                    if (line) {
-                        line.color = playerColor;
-                    }
-                    
-                    if(input && playerSuffix != null){
-                        input.SetSuffix(playerSuffix.Value);
-                    }
-                } else {
-                    if(input){
-                        input.enabled = false;
-                    }
+                if(slots.Length > 0 && slots[i] != null){
+                    slot = slots[i];
                 }
 
-                go.transform.SetParent(slot); 
-                go.transform.position = slot.position; 
-                go.transform.rotation = slot.rotation; 
+                if(slots.Length > 0){
+                    go.transform.SetParent(slot);
+                    go.transform.position = slot.position;
+                    go.transform.rotation = slot.rotation; 
+                }
+                
             }
             
         }
     }
 
-    public void UseEquipment() {
-        TriggerInteract trigger = currentlyEquipped[0].GetComponent <TriggerInteract>(); 
-
-        if (trigger) {
-            trigger.Interact(); 
+    void Update(){
+        if(refresh){
+            Refresh();
+            refresh = false;
         }
     }
 }
