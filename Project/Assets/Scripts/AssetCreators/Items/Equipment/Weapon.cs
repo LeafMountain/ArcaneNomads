@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName="Equipment/Weapon")]
-public class Weapon : Equipment {
+public abstract class Weapon : Equipment {
+
+	public int damage;
 
 }

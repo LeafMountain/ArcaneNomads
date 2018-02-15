@@ -18,5 +18,5 @@ MonoBehaviour:
   chest: {fileID: 11400000, guid: 716927ed4bce6224e8ec420333897578, type: 2}
   legs: {fileID: 11400000, guid: 8b7805db6428c8d4c82b265e1deeda71, type: 2}
   feet: {fileID: 11400000, guid: 3184f17bece64ea459f064971095bc89, type: 2}
-  rightHand: {fileID: 11400000, guid: eca7eed4cfcbb4843a411d8e7f5721e9, type: 2}
-  leftHand: {fileID: 11400000, guid: eca7eed4cfcbb4843a411d8e7f5721e9, type: 2}
+  rightHand: {fileID: 11400000, guid: 235fcb2dae0323143b9cf446d6352cd0, type: 2}
+  leftHand: {fileID: 0}
