@@ -6,16 +6,16 @@ public class InventoryModify : MonoBehaviour {
 
 	public Inventory inventory;
 
-	public void Add(InventoryItem item){
-		//Check if inventory is full
-		inventory.AddItem(item);
-	}
+	// public void Add(Equipment item){
+	// 	//Check if inventory is full
+	// 	inventory.AddItem(item);
+	// }
 
-	public void Remove(InventoryItem item){
-		inventory.RemoveItem(item);
-	}
+	// public void Remove(Equipment item){
+	// 	inventory.RemoveItem(item);
+	// }
 
-	public InventoryItem Drop(InventoryItem item){
+	public Equipment Drop(Equipment item){
 		return item;
 	}
 }
