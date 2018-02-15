@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Editor/Scenes/EquipmentTest.unity
+- path: Assets/Editor/Scenes/Axel/PrefabFactory.unity
   isLoaded: 1
   isActive: 1
