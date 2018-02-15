@@ -7,9 +7,9 @@ public class SwapWeapon : MonoBehaviour {
 	public Inventory inventory;
 	public GameEvent gameEvent;
 
-	public void SwitchWeapon(){
-		InventoryItem item = inventory.items[0];
+	// public void SwitchWeapon(){
+	// 	Equipment item = inventory.items[0];
 
-		inventory.MoveToBack(item);
-	}
+	// 	inventory.MoveToBack(item);
+	// }
 }

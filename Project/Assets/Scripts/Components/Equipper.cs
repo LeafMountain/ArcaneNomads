@@ -6,17 +6,27 @@ public class Equipper:MonoBehaviour {
 
     public Inventory inventory;
 
-    // [Header("Slot positions")]
-    // public Transform[] slots;
+    List <GameObject> currentlyEquipped = new List <GameObject>();
 
-    // //Not used currently
-    // public Transform Head;
-    // public Transform Face;
-    // public Transform Chest;
-    // public Transform Legs;
-    // public Transform Feet;
+    public Transform headSlot;
+    public Transform faceSlot;
+    public Transform chestSlot;
+    public Transform legsSlot;
+    public Transform feetSlot;
+    public Transform rightHandSlot;
+    public Transform leftHandSlot;
 
-    List <GameObject> currentlyEquipped = new List < GameObject > ();
+    [Space]
+    public Transform headBone;
+    public Transform faceBone;
+    public Transform chestBone;
+    public Transform legsBone;
+    public Transform feetBone;
+
+
+    [Header("Positions")]
+    public Transform rightHandPosition;
+    public Transform leftHandPosition;
 
     public bool refresh;
 
@@ -29,17 +39,15 @@ public class Equipper:MonoBehaviour {
     }
 
     void Equip() {
-        foreach (GameObject go in currentlyEquipped) {
-            Destroy(go); 
-        }
 
-        currentlyEquipped.Clear(); 
+        EquipItem(inventory.head, transform, ref headSlot, headBone);
+        EquipItem(inventory.face, transform, ref faceSlot, faceBone);
+        EquipItem(inventory.chest, transform, ref chestSlot, chestBone);
+        EquipItem(inventory.legs, transform, ref legsSlot, legsBone);
+        EquipItem(inventory.feet, transform, ref feetSlot, feetBone);
 
-        EquipItem(inventory.Head, transform);
-        EquipItem(inventory.Face, transform);
-        EquipItem(inventory.Chest, transform);
-        EquipItem(inventory.Legs, transform);
-        EquipItem(inventory.Feet, transform);
+        EquipItem(inventory.rightHand, rightHandPosition, ref rightHandSlot);
+        EquipItem(inventory.leftHand, leftHandPosition, ref leftHandSlot);
     }
 
     void Update(){
@@ -49,10 +57,26 @@ public class Equipper:MonoBehaviour {
         }
     }
 
-    void EquipItem(InventoryItem item, Transform parent){
+    void EquipItem(Equipment item, Transform parent, ref Transform oldItem, Transform bone = null){
         if(item != null){
-            GameObject newItem = Instantiate(item.prefab, parent, false);
-            currentlyEquipped.Add(newItem);
+
+            GameObject newItem;
+            
+            if(oldItem != null){
+                Destroy(oldItem);
+            }
+
+            newItem = Instantiate(item.prefab, parent.position, parent.rotation, parent);
+
+            if(bone != null){
+                SkinnedMeshRenderer meshRenderer = newItem.GetComponent<SkinnedMeshRenderer>();
+
+                if(meshRenderer){
+                    meshRenderer.rootBone = bone;
+                }
+            }
+
+            oldItem = newItem.transform;
         }
     }
 }
