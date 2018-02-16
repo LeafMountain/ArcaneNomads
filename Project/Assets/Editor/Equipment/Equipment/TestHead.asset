@@ -14,4 +14,4 @@ MonoBehaviour:
   title: HejEHej
   icon: {fileID: 0}
   weight: 0
-  prefab: {fileID: 1595473099245652, guid: 3337749558ad4254cbb7bcfb179e2693, type: 2}
+  prefab: {fileID: 100002, guid: 9b5ba9c6e190bf844803d1ffc98d1ee6, type: 3}

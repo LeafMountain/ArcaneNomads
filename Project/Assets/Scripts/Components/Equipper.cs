@@ -5,32 +5,35 @@ using UnityEngine;
 public class Equipper:MonoBehaviour {
 
     public Inventory inventory;
+    public Transform parent;
 
     List <GameObject> currentlyEquipped = new List <GameObject>();
 
-    public Transform headSlot;
-    public Transform faceSlot;
-    public Transform chestSlot;
-    public Transform legsSlot;
-    public Transform feetSlot;
-    public Transform rightHandSlot;
-    public Transform leftHandSlot;
+    Transform headSlot;
+    Transform faceSlot;
+    Transform chestSlot;
+    Transform legsSlot;
+    Transform feetSlot;
+    Transform rightHandSlot;
+    Transform leftHandSlot;
 
     [Space]
-    public Transform headBone;
-    public Transform faceBone;
-    public Transform chestBone;
-    public Transform legsBone;
-    public Transform feetBone;
-
+    SkinnedMeshRenderer meshRenderer;
+    Transform rootBone;
+    Transform[] bones;
 
     [Header("Positions")]
     public Transform rightHandPosition;
     public Transform leftHandPosition;
 
-    public bool refresh;
+
+    public bool refresh = false;
 
     void OnEnable() {
+        meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        rootBone = meshRenderer.rootBone;
+        bones = meshRenderer.bones;
+        
         Refresh();
     }
 
@@ -39,15 +42,13 @@ public class Equipper:MonoBehaviour {
     }
 
     void Equip() {
+        EquipItem(inventory.head, parent, ref headSlot, rootBone);
+        EquipItem(inventory.face, parent, ref faceSlot, rootBone);
+        EquipItem(inventory.chest, parent, ref chestSlot, rootBone);
+        EquipItem(inventory.legs, parent, ref legsSlot, rootBone);
 
-        EquipItem(inventory.head, transform, ref headSlot, headBone);
-        EquipItem(inventory.face, transform, ref faceSlot, faceBone);
-        EquipItem(inventory.chest, transform, ref chestSlot, chestBone);
-        EquipItem(inventory.legs, transform, ref legsSlot, legsBone);
-        EquipItem(inventory.feet, transform, ref feetSlot, feetBone);
-
-        EquipItem(inventory.rightHand, rightHandPosition, ref rightHandSlot);
-        EquipItem(inventory.leftHand, leftHandPosition, ref leftHandSlot);
+        // EquipItem(inventory.rightHand, rightHandPosition, ref rightHandSlot);
+        // EquipItem(inventory.leftHand, leftHandPosition, ref leftHandSlot);
     }
 
     void Update(){
@@ -69,14 +70,33 @@ public class Equipper:MonoBehaviour {
             newItem = Instantiate(item.prefab, parent.position, parent.rotation, parent);
 
             if(bone != null){
-                SkinnedMeshRenderer meshRenderer = newItem.GetComponent<SkinnedMeshRenderer>();
+                SkinnedMeshRenderer[] meshRenderer = newItem.GetComponentsInChildren<SkinnedMeshRenderer>();
 
-                if(meshRenderer){
-                    meshRenderer.rootBone = bone;
+                if(meshRenderer != null){
+                    foreach(SkinnedMeshRenderer mr in meshRenderer){
+                        Transform[] bones = new Transform[mr.bones.Length];
+
+                        for (int i = 0; i < bones.Length; i++){
+                            bones[i] = FindBone(mr.bones[i].name);
+                        }
+
+                        mr.bones = bones;
+                        mr.rootBone = bone;
+                    }
                 }
             }
 
             oldItem = newItem.transform;
         }
+    }
+
+    Transform FindBone(string name){
+        foreach (var item in GetComponentInChildren<SkinnedMeshRenderer>().bones){
+            if(item.name == name){
+                return item;
+            }
+        }
+
+        return null;
     }
 }

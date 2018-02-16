@@ -14,4 +14,4 @@ MonoBehaviour:
   title: 
   icon: {fileID: 0}
   weight: 0
-  prefab: {fileID: 1884812717302464, guid: 6a467297043693945b6711700d597809, type: 2}
+  prefab: {fileID: 100026, guid: 8f8c8a06c81bcae4eb60f9b5f8dfd5c7, type: 3}
