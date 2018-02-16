@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Editor/Equipment/EquipmentTest.unity
+- path: Assets/Editor/Scenes/Patrik.unity
   isLoaded: 1
   isActive: 1
