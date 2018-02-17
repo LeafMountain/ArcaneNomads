@@ -2,12 +2,10 @@
 using System.Collections.Generic; 
 using UnityEngine; 
 
-public class Equipper:MonoBehaviour {
+public class Equipper : MonoBehaviour {
 
     public Inventory inventory;
     public Transform parent;
-
-    List <GameObject> currentlyEquipped = new List <GameObject>();
 
     Transform headSlot;
     Transform faceSlot;
@@ -31,8 +29,11 @@ public class Equipper:MonoBehaviour {
 
     void OnEnable() {
         meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
-        rootBone = meshRenderer.rootBone;
-        bones = meshRenderer.bones;
+
+        if(meshRenderer){
+            rootBone = meshRenderer.rootBone;
+            bones = meshRenderer.bones;
+        }
         
         Refresh();
     }
@@ -42,13 +43,13 @@ public class Equipper:MonoBehaviour {
     }
 
     void Equip() {
-        EquipItem(inventory.head, parent, ref headSlot, rootBone);
-        EquipItem(inventory.face, parent, ref faceSlot, rootBone);
-        EquipItem(inventory.chest, parent, ref chestSlot, rootBone);
-        EquipItem(inventory.legs, parent, ref legsSlot, rootBone);
+        EquipItem(inventory.head, ref headSlot, parent);
+        EquipItem(inventory.face, ref faceSlot, parent);
+        EquipItem(inventory.chest, ref chestSlot, parent);
+        EquipItem(inventory.legs, ref legsSlot, parent);
 
-        // EquipItem(inventory.rightHand, rightHandPosition, ref rightHandSlot);
-        // EquipItem(inventory.leftHand, leftHandPosition, ref leftHandSlot);
+        EquipItem(inventory.rightHand, ref rightHandSlot, rightHandPosition);
+        EquipItem(inventory.leftHand, ref leftHandSlot, leftHandPosition);
     }
 
     void Update(){
@@ -58,42 +59,50 @@ public class Equipper:MonoBehaviour {
         }
     }
 
-    void EquipItem(Equipment item, Transform parent, ref Transform oldItem, Transform bone = null){
-        if(item != null){
+    void EquipItem(Equipment item,  ref Transform oldItem){
+        EquipItem(item, ref oldItem, transform);
+    }
 
-            GameObject newItem;
-            
-            if(oldItem != null){
-                Destroy(oldItem);
-            }
+    void EquipItem(Equipment item,  ref Transform oldItem, Transform parent){
+        if(item == null){
+            return;
+        }
 
-            newItem = Instantiate(item.prefab, parent.position, parent.rotation, parent);
+        //Destroy old item
+        if(oldItem != null){
+            Destroy(oldItem);
+        }
 
-            if(bone != null){
-                SkinnedMeshRenderer[] meshRenderer = newItem.GetComponentsInChildren<SkinnedMeshRenderer>();
+        GameObject newItem = Instantiate(item.prefab, parent.position, parent.rotation, parent);
 
-                if(meshRenderer != null){
-                    foreach(SkinnedMeshRenderer mr in meshRenderer){
-                        Transform[] bones = new Transform[mr.bones.Length];
+        if(rootBone != null){
+            SkinnedMeshRenderer[] meshRenderers = newItem.GetComponentsInChildren<SkinnedMeshRenderer>();
 
-                        for (int i = 0; i < bones.Length; i++){
-                            bones[i] = FindBone(mr.bones[i].name);
-                        }
-
-                        mr.bones = bones;
-                        mr.rootBone = bone;
-                    }
+            if(meshRenderers != null){
+                foreach(SkinnedMeshRenderer mr in meshRenderers){
+                    mr.bones = GetNewBoneStructure(mr);
+                    mr.rootBone = rootBone;
                 }
             }
-
-            oldItem = newItem.transform;
         }
+
+        oldItem = newItem.transform;
+    }
+
+    Transform[] GetNewBoneStructure(SkinnedMeshRenderer mr){
+        Transform[] bones = new Transform[mr.bones.Length];
+
+        for (int i = 0; i < bones.Length; i++){
+            bones[i] = FindBone(mr.bones[i].name);
+        }
+
+        return bones;
     }
 
     Transform FindBone(string name){
-        foreach (var item in GetComponentInChildren<SkinnedMeshRenderer>().bones){
-            if(item.name == name){
-                return item;
+        foreach (Transform bone in bones){
+            if(bone.name == name){
+                return bone;
             }
         }
 
