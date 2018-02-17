@@ -12,7 +12,6 @@ public class Inventory : ScriptableObject {
     public EquipmentFace face;
     public EquipmentChest chest;
     public EquipmentLegs legs;
-    public EquipmentFeet feet;
 
 	[Header("Weapons")]
 	public Equipment rightHand;

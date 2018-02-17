@@ -2,35 +2,39 @@
 using System.Collections.Generic; 
 using UnityEngine; 
 
-public class Equipper:MonoBehaviour {
+public class Equipper : MonoBehaviour {
 
     public Inventory inventory;
+    public Transform parent;
 
-    List <GameObject> currentlyEquipped = new List <GameObject>();
-
-    public Transform headSlot;
-    public Transform faceSlot;
-    public Transform chestSlot;
-    public Transform legsSlot;
-    public Transform feetSlot;
-    public Transform rightHandSlot;
-    public Transform leftHandSlot;
+    Transform headSlot;
+    Transform faceSlot;
+    Transform chestSlot;
+    Transform legsSlot;
+    Transform feetSlot;
+    Transform rightHandSlot;
+    Transform leftHandSlot;
 
     [Space]
-    public Transform headBone;
-    public Transform faceBone;
-    public Transform chestBone;
-    public Transform legsBone;
-    public Transform feetBone;
-
+    SkinnedMeshRenderer meshRenderer;
+    Transform rootBone;
+    Transform[] bones;
 
     [Header("Positions")]
     public Transform rightHandPosition;
     public Transform leftHandPosition;
 
-    public bool refresh;
+
+    public bool refresh = false;
 
     void OnEnable() {
+        meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+
+        if(meshRenderer){
+            rootBone = meshRenderer.rootBone;
+            bones = meshRenderer.bones;
+        }
+        
         Refresh();
     }
 
@@ -39,15 +43,13 @@ public class Equipper:MonoBehaviour {
     }
 
     void Equip() {
+        EquipItem(inventory.head, ref headSlot, parent);
+        EquipItem(inventory.face, ref faceSlot, parent);
+        EquipItem(inventory.chest, ref chestSlot, parent);
+        EquipItem(inventory.legs, ref legsSlot, parent);
 
-        EquipItem(inventory.head, transform, ref headSlot, headBone);
-        EquipItem(inventory.face, transform, ref faceSlot, faceBone);
-        EquipItem(inventory.chest, transform, ref chestSlot, chestBone);
-        EquipItem(inventory.legs, transform, ref legsSlot, legsBone);
-        EquipItem(inventory.feet, transform, ref feetSlot, feetBone);
-
-        EquipItem(inventory.rightHand, rightHandPosition, ref rightHandSlot);
-        EquipItem(inventory.leftHand, leftHandPosition, ref leftHandSlot);
+        EquipItem(inventory.rightHand, ref rightHandSlot, rightHandPosition);
+        EquipItem(inventory.leftHand, ref leftHandSlot, leftHandPosition);
     }
 
     void Update(){
@@ -57,26 +59,53 @@ public class Equipper:MonoBehaviour {
         }
     }
 
-    void EquipItem(Equipment item, Transform parent, ref Transform oldItem, Transform bone = null){
-        if(item != null){
+    void EquipItem(Equipment item,  ref Transform oldItem){
+        EquipItem(item, ref oldItem, transform);
+    }
 
-            GameObject newItem;
-            
-            if(oldItem != null){
-                Destroy(oldItem);
-            }
+    void EquipItem(Equipment item,  ref Transform oldItem, Transform parent){
+        if(item == null){
+            return;
+        }
 
-            newItem = Instantiate(item.prefab, parent.position, parent.rotation, parent);
+        //Destroy old item
+        if(oldItem != null){
+            Destroy(oldItem);
+        }
 
-            if(bone != null){
-                SkinnedMeshRenderer meshRenderer = newItem.GetComponent<SkinnedMeshRenderer>();
+        GameObject newItem = Instantiate(item.prefab, parent.position, parent.rotation, parent);
 
-                if(meshRenderer){
-                    meshRenderer.rootBone = bone;
+        if(rootBone != null){
+            SkinnedMeshRenderer[] meshRenderers = newItem.GetComponentsInChildren<SkinnedMeshRenderer>();
+
+            if(meshRenderers != null){
+                foreach(SkinnedMeshRenderer mr in meshRenderers){
+                    mr.bones = GetNewBoneStructure(mr);
+                    mr.rootBone = rootBone;
                 }
             }
-
-            oldItem = newItem.transform;
         }
+
+        oldItem = newItem.transform;
+    }
+
+    Transform[] GetNewBoneStructure(SkinnedMeshRenderer mr){
+        Transform[] bones = new Transform[mr.bones.Length];
+
+        for (int i = 0; i < bones.Length; i++){
+            bones[i] = FindBone(mr.bones[i].name);
+        }
+
+        return bones;
+    }
+
+    Transform FindBone(string name){
+        foreach (Transform bone in bones){
+            if(bone.name == name){
+                return bone;
+            }
+        }
+
+        return null;
     }
 }
