@@ -1,8 +1,1 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Editor/Equipment Test/EquipmentTest.unity
-=======
-- path: Assets/Editor/Scenes/Patrik.unity
->>>>>>> dev
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []
