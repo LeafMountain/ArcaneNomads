@@ -7,6 +7,8 @@ using UnityEngine.AI;
 public class AIController : MonoBehaviour {
 
 	IAIState currentState;
+
+	[HideInInspector]
 	public NavMeshAgent agent;
 
 	void Start(){

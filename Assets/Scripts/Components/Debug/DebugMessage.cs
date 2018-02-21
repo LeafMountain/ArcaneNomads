@@ -9,4 +9,12 @@ public class DebugMessage : MonoBehaviour {
 	public void PrintMessage(){
 		Debug.Log(message);
 	}
+
+	public void PrintMessage(GameObject go){
+		if(go == null){
+			return;
+		}
+		
+		Debug.Log(go.name);
+	}
 }

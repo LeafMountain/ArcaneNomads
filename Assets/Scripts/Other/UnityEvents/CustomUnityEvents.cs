@@ -6,6 +6,9 @@ using UnityEngine.Events;
 public class UnityGameObjectEvent : UnityEvent<GameObject> { }
 
 [Serializable]
+public class UnityGameObjectsEvent : UnityEvent<GameObject[]> { }
+
+[Serializable]
 public class UnityVector2Event : UnityEvent<Vector2> { }
 
 [Serializable]
