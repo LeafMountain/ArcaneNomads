@@ -9,37 +9,61 @@ public class NoiseEmitter : MonoBehaviour {
     void Update(){
         if(debug){
             debug = false;            
-            SendNoise();
+            SendNoise(10);
         }
     }
 
-    public void SendNoise(){
-        Spherecast();
+    public void SendNoise(float radius){
+        foreach (NoiseDetector detector in ExtractDetectors(CheckIfBlocked(ProximityCheck(radius)))) {
+            detector.AddNoice(100);
+        }
     }
 
-    void Spherecast(){
-        float radius = 10;
+    List<NoiseDetector> ExtractDetectors(List<GameObject> targets){
+        List<NoiseDetector> detectors = new List<NoiseDetector>();        
 
-		RaycastHit[] hits = new RaycastHit[5];
+        for (int i = 0; i < targets.Count; i++)
+        {
+            NoiseDetector detector = targets[i].GetComponent<NoiseDetector>();
 
-		Physics.SphereCastNonAlloc(transform.position, radius, transform.forward, hits, 0);
+            if(detector){
+                detectors.Add(detector);
+            }
+        }
 
+        return detectors;
+    }
 
+    List<GameObject> CheckIfBlocked(List<GameObject> targets){
+        RaycastHit hit2;
 
-        foreach (RaycastHit hit in hits) {
-            if(hit.collider){
-                RaycastHit hit2;
-                Physics.Raycast(transform.position, hit.transform.position - transform.position, out hit2, Mathf.Infinity);
-                if(hit2.transform == hit.transform){
-                    NoiseDetector nd = hit.collider.GetComponent<NoiseDetector>();
+        for (int i = 0; i < targets.Count; i++)
+        {
+            Physics.Raycast(transform.position, targets[i].transform.position - transform.position, out hit2, Mathf.Infinity);
 
-                    if(nd){
-                        nd.AddNoice();
-                    }
-                }
+            if(hit2.transform != targets[i].transform){
+                targets.Remove(targets[i]);
             }
         }
         
+        return targets;
+    }
+
+    List<GameObject> ProximityCheck(float radius){
+        int amountOfTargets = 10;
+		RaycastHit[] hits = new RaycastHit[amountOfTargets];
+        List<GameObject> targets = new List<GameObject>();
+
+		Physics.SphereCastNonAlloc(transform.position, radius, transform.forward, hits, 0);
+
+        for (int i = 0; i < amountOfTargets; i++)
+        {
+            if(hits[i].collider){
+                targets.Add(hits[i].transform.gameObject);
+            }
+        }
+
+        return targets;        
 	}
 	
 }
