@@ -6,6 +6,8 @@ public class NoiseEmitter : MonoBehaviour {
 
     public bool debug = false;
 
+    float lastRadius;
+
     void Update(){
         if(debug){
             debug = false;            
@@ -14,8 +16,10 @@ public class NoiseEmitter : MonoBehaviour {
     }
 
     public void SendNoise(float radius){
+        lastRadius = radius;
+
         foreach (NoiseDetector detector in ExtractDetectors(CheckIfBlocked(ProximityCheck(radius)))) {
-            detector.AddNoice(100);
+            detector.AddNoice(transform.position);
         }
     }
 
@@ -65,5 +69,10 @@ public class NoiseEmitter : MonoBehaviour {
 
         return targets;        
 	}
+
+    void OnDrawGizmos(){
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, lastRadius);
+    }
 	
 }

@@ -5,13 +5,10 @@ using UnityEngine.Events;
 
 public class NoiseDetector : MonoBehaviour {
 
-    public float sensitivity;
-
 	public UnityEvent OnHear;
 
-    public void AddNoice(float intensity){
-        if(intensity > sensitivity){
-            OnHear.Invoke();
-        }
+    public void AddNoice(Vector3 position){
+        Debug.DrawLine(transform.position, position, Color.blue, .5f);
+        OnHear.Invoke();
     }
 }
