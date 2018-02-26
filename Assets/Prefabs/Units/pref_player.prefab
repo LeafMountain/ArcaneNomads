@@ -293,7 +293,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146904742983320}
-  m_Mesh: {fileID: 4300000, guid: 00270915198285c478669625dd9dff4d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 9a3e479cde577164e9d172353ab810ba, type: 3}
 --- !u!54 &54294898084145670
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -702,10 +702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451c2305972600442b567205ed6bf9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSuffix:
-    useConstant: 0
-    constantValue: 
-    variable: {fileID: 11400000, guid: 912479ada69b1c641b23c3f30481340c, type: 2}
 --- !u!114 &114401583087440392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -741,10 +737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf6801565b91df4dabfd903b4012cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  suffix:
-    useConstant: 1
-    constantValue: 
-    variable: {fileID: 0}
   axes:
   - prefix: Left
     horizontalName: Horizontal
@@ -823,10 +815,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451c2305972600442b567205ed6bf9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSuffix:
-    useConstant: 0
-    constantValue: 
-    variable: {fileID: 11400000, guid: 912479ada69b1c641b23c3f30481340c, type: 2}
 --- !u!114 &114580442147808546
 MonoBehaviour:
   m_ObjectHideFlags: 1
