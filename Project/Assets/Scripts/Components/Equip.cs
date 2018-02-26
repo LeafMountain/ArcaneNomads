@@ -10,11 +10,11 @@ public class Equip : MonoBehaviour {
 	
 	GameObject currentEquipment;
 
-	public void GetEquipment(){
-		GameObject go = (inventory.items.Count >= index) ? inventory.items[index].prefab : null;
+	// public void GetEquipment(){
+	// 	GameObject go = (inventory.items.Count >= index) ? inventory.items[index].prefab : null;
 
-		if(go){
-			OnEquip.Invoke(go);
-		}
-	}
+	// 	if(go){
+	// 		OnEquip.Invoke(go);
+	// 	}
+	// }
 }
