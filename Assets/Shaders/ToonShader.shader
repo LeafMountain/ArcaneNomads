@@ -22,6 +22,7 @@ Shader "Custom/ToonShader" {
 
 		struct v2f {
 			float4 pos : SV_POSITION;
+			UNITY_FOG_COORDS(0)
 			fixed4 color : COLOR;
 		};
 
@@ -41,7 +42,7 @@ Shader "Custom/ToonShader" {
 			o.pos.xy += offset * _OutlineWidth;
 
 			o.pos.z += _OutlineZ;
-        UNITY_TRANSFER_FOG(o, o.pos);
+        	UNITY_TRANSFER_FOG(o, o.pos);
 		
 			return o;
 		}
