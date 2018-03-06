@@ -23,7 +23,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexSide:
-        m_Texture: {fileID: 2800000, guid: 50814202316e8084eb22ef55930a2d06, type: 3}
+        m_Texture: {fileID: 2800000, guid: 96b94241336559e4f8fda98b3c384f6a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
@@ -39,8 +39,8 @@ Material:
     - _NoiseScale: 1
     - _RimPower: 20
     - _Scale: 0.07
-    - _SideScale: -0.09
-    - _TopSpread: 0.47
+    - _SideScale: 0.04
+    - _TopSpread: 0.3
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
