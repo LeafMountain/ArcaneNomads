@@ -5,15 +5,30 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Inventory : ScriptableObject {
 
-	public GameEvent inventoryUpdatedEvent;
+	public List<Item> items = new List<Item>();
 
-	[Header("Equipment")]
-	public EquipmentHead head;
-    public EquipmentFace face;
-    public EquipmentChest chest;
-    public EquipmentLegs legs;
+	public void Add(Item item){
+		items.Add(item);
+	}
 
-	[Header("Weapons")]
-	public Equipment rightHand;
-	public Equipment leftHand;
+	public Item Remove(Item item) {
+		Item removedItem = null;
+
+		if(items.Contains(item)){
+			removedItem = RemoveAt(items.IndexOf(item));
+		}
+
+		return removedItem;
+	}
+
+	public Item RemoveAt(int index){
+		Item removedItem = null;
+
+		if(items.Count <= index){
+			removedItem = items[index];
+			items.RemoveAt(index);
+		}
+
+		return removedItem;
+	}
 }
