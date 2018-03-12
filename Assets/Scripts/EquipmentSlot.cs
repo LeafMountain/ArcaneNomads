@@ -126,7 +126,6 @@ public class EquipmentSlot : MonoBehaviour {
 			}
 		}
 
-		// AddItem(testItem, new Vector2Int(1, 1));
 		AddItem(testItem1, new Vector2Int(0, 2));
 
 		Item testItemitem = Item.CreateInstance<EquipmentHead>();

@@ -9,8 +9,9 @@ public class InventoryEditor : Editor {
 	public override void OnInspectorGUI(){
 		Inventory inventory = (Inventory)target;
 
-		string[] test = new string[10];
-		GUILayout.SelectionGrid(0, test, 10);
+		Texture[] icons = new Texture[inventory.size.x * inventory.size.y];
+
+		GUILayout.SelectionGrid(0, icons, inventory.size.x);
 
 		DrawDefaultInspector();
 	}
