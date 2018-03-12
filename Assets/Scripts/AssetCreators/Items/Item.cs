@@ -7,6 +7,6 @@ public abstract class Item : ScriptableObject {
 	public string title;
 	public Sprite icon;
 	public GameObject prefab;
-	public Vector2 size = new Vector2(1,1);
+	public Vector2Int size = new Vector2Int(1,1);
 	
 }
