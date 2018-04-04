@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwapWeapon : MonoBehaviour {
 
-	public Inventory inventory;
+	public GridArray inventory;
 	public GameEvent gameEvent;
 
 	// public void SwitchWeapon(){

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 053b56e255f2c1b41a8c275fd8ddf274, type: 3}
-  m_Name: TestFace
+  m_Name: TestItem
   m_EditorClassIdentifier: 
-  title: TestFace
+  title: TestItem
   icon: {fileID: 0}
-  prefab: {fileID: 100002, guid: 4edbe6ad5f2a5c145a3b3b0c38979f5e, type: 3}
-  size: {x: 1, y: 1}
+  prefab: {fileID: 1074025807541854, guid: 5afa2398ec0bebd4b8dce7159da74f2e, type: 2}
+  size: {x: 2, y: 2}
   weight: 0

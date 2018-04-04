@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Equipper : MonoBehaviour {
 
-    public Inventory inventory;
+    public InventoryEquipped inventory;
     public Transform parent;
 
     Transform headSlot;
