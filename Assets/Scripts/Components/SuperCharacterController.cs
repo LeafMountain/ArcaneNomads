@@ -12,8 +12,7 @@ public class SuperCharacterController : MonoBehaviour {
 	public RelativeDirection relativeTo;
 	public RotationMode rotationMode;
 
-	[Range(0.01f, 1f)]
-	public float normalSpeed = .25f;
+	public float normalSpeed = 1f;
 	public float speedMultiplier = .5f;
 	public float smoothAmount;
 	

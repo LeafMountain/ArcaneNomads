@@ -16,10 +16,10 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 238114457a649084a88447742bb6e9ef, type: 2}
+    second: {fileID: 2100000, guid: 8a4950059b14ec7479cfc3b2fa4fcddd, type: 2}
   materials:
     importMaterials: 0
-    materialName: 0
+    materialName: 1
     materialSearch: 1
     materialLocation: 0
   animations:
@@ -71,7 +71,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
