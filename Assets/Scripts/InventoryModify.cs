@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryModify : MonoBehaviour {
 
-	public Inventory inventory;
+	public GridArray inventory;
 
 	// public void Add(Equipment item){
 	// 	//Check if inventory is full

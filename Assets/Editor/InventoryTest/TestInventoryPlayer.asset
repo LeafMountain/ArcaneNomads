@@ -11,14 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af427a3ac82fabb4ebf6e0be503e6e94, type: 3}
   m_Name: TestInventoryPlayer
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  size: {x: 5, y: 5}

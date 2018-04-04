@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Inventory))]
+[CustomEditor(typeof(GridArray))]
 public class InventoryEditor : Editor {
 
-	public override void OnInspectorGUI(){
-		Inventory inventory = (Inventory)target;
+	// public override void OnInspectorGUI(){
+	// 	GridArray inventory = (GridArray)target;
 
-		Texture[] icons = new Texture[inventory.size.x * inventory.size.y];
+	// 	Texture[] icons = new Texture[inventory.size.x * inventory.size.y];
 
-		GUILayout.SelectionGrid(0, icons, inventory.size.x);
+	// 	GUILayout.SelectionGrid(0, icons, inventory.size.x);
 
-		DrawDefaultInspector();
-	}
+	// 	DrawDefaultInspector();
+	// }
 	
 }
