@@ -8,7 +8,7 @@ public class ReplaceGameObjectTool : EditorWindow {
 	GameObject replacer;
 	bool useSelectionScale = true;
 
-	[MenuItem("Window/Replace")]
+	[MenuItem("TreeBranch/Replace")]
 	public static void ShowWindow(){
 		EditorWindow.GetWindow<ReplaceGameObjectTool>("Replace");
 	}
