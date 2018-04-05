@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 137205149735588000}
   - component: {fileID: 114690416173735840}
   - component: {fileID: 114820191576591024}
+  - component: {fileID: 114584295417780322}
   m_Layer: 0
   m_Name: pref_player
   m_TagString: Untagged
@@ -242,7 +243,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
@@ -565,10 +566,21 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - buttonName: Fire1
+  - buttonName: Interact
     OnButtonDown:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 114584295417780322}
+          m_MethodName: Interact
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     OnButtonStay:
@@ -592,6 +604,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451c2305972600442b567205ed6bf9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114584295417780322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146904742983320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6260d9a0767a24ba83278b8378c8b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionLength: 2
 --- !u!114 &114690416173735840
 MonoBehaviour:
   m_ObjectHideFlags: 1
