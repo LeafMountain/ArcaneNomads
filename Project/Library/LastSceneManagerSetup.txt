@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 sceneSetups:
 <<<<<<< HEAD
 - path: Assets/Editor/Scenes/Axel/PrefabFactory.unity
@@ -6,3 +7,6 @@ sceneSetups:
 >>>>>>> dev
   isLoaded: 1
   isActive: 1
+=======
+sceneSetups: []
+>>>>>>> dev
