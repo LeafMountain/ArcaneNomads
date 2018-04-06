@@ -10,7 +10,7 @@ public class Damager : MonoBehaviour {
     public void Damage (GameObject go)
     {
         if(go.GetComponent<Health>()){
-            go.GetComponent<Health>().ModifyHealth(damage);
+            go.GetComponent<Health>().ModifyValue(damage);
         }
     }
 }
