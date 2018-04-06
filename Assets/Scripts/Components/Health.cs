@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour {
 
-    public FloatVariable currentHealth;
-    public FloatReference maxHealth;
+    public IntVariable currentHealth;
+    public IntReference maxHealth;
     public bool resetOnPlay = true;
 
     public UnityEvent OnDamaged;
@@ -15,13 +15,13 @@ public class Health : MonoBehaviour {
     void Start(){
         if(!currentHealth){
             // currentHealth = new FloatVariable();
-            currentHealth = ScriptableObject.CreateInstance<FloatVariable>();
+            currentHealth = ScriptableObject.CreateInstance<IntVariable>();
             currentHealth.name = gameObject.name + " HP";
         }
         currentHealth.SetValue(maxHealth.Value);
     }
 
-    public void ModifyHealth(float amount) {
+    public void ModifyHealth(int amount) {
 
         currentHealth.ApplyChange(amount);
 
