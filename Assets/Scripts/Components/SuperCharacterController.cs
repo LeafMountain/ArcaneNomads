@@ -44,9 +44,13 @@ public class SuperCharacterController : MonoBehaviour {
 
 	void Update(){
 		Vector3 newDir = lookDirection;
-		newDir = Vector3.SmoothDamp(transform.rotation.eulerAngles, lookDirection, ref lookVelocity, lookSmooth);
+		// newDir = Vector3.SmoothDamp(transform.rotation.eulerAngles, lookDirection, ref lookVelocity, lookSmooth);
 
-		transform.LookAt(newDir);
+		if(newDir != Vector3.zero){
+			transform.LookAt(transform.position + newDir);
+		}
+
+		// RotateToMoveDirection();
 	}
 
 	void FixedUpdate(){
@@ -78,6 +82,10 @@ public class SuperCharacterController : MonoBehaviour {
 		this.moveDirection = moveDirection;
 	}
 
+	public void SetSpeed(float value){
+		normalSpeed = value;
+	}
+
 #endregion
 
 #region Rotation
@@ -105,7 +113,7 @@ public class SuperCharacterController : MonoBehaviour {
 				break;
 		}
 
-		lookDirection += transform.position;
+		// lookDirection += transform.position;
 	}
 
 	public void SetRotation(float pitch, float yaw, float roll){
@@ -116,6 +124,12 @@ public class SuperCharacterController : MonoBehaviour {
 		Quaternion newRotation = rotation;
 		transform.rotation = newRotation;
 	}
+
+	// void RotateToMoveDirection(){
+	// 	Vector3 cameraForward = ConvertToCameraForward(moveDirection);
+	// 	Vector2 direction = new Vector2(-cameraForward.z, cameraForward.x);
+	// 	Rotate(direction);
+	// }
 
 #endregion
 
