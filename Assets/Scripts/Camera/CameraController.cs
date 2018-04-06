@@ -167,8 +167,8 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos(){
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(targetsBounds.center, .5f);
-    }
+    // void OnDrawGizmos(){
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawSphere(targetsBounds.center, .5f);
+    // }
 }
