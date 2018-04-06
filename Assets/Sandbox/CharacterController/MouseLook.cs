@@ -28,12 +28,12 @@ public class MouseLook : MonoBehaviour {
 	}
 
 	Vector2 DirectionToGameObject(){
-		Vector3 dir = Hit.point - transform.position + Camera.main.transform.forward;
-		dir.Normalize();
+		Vector3 angleBetweenMouseAndObject = Hit.point - transform.position;
+		angleBetweenMouseAndObject.Normalize();
 
-		Debug.Log(dir + " " + Camera.main.transform.forward);
+		angleBetweenMouseAndObject = Camera.main.transform.InverseTransformDirection(angleBetweenMouseAndObject);
 
-		Vector2 dir2D = new Vector2(dir.x, dir.z);
+		Vector2 dir2D = new Vector2(angleBetweenMouseAndObject.x, angleBetweenMouseAndObject.z);
 		
 		return dir2D;
 	}
@@ -42,16 +42,5 @@ public class MouseLook : MonoBehaviour {
 		if(Moving){
 			OnMouseLook.Invoke(DirectionToGameObject());
 		}
-	}
-
-	void OnDrawGizmos(){
-		Gizmos.DrawSphere(Hit.point, 0.3f);
-
-		Gizmos.color = Color.green;
-		Gizmos.DrawLine(transform.position, transform.position + new Vector3(DirectionToGameObject().x, 0, DirectionToGameObject().y));
-
-		Gizmos.color = Color.blue;
-		Gizmos.DrawRay(transform.position, new Vector3(DirectionToGameObject().x, 0, DirectionToGameObject().y) - Camera.main.transform.forward);
-		
 	}
 }
