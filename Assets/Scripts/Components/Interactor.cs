@@ -65,7 +65,10 @@ public class Interactor : MonoBehaviour {
 
 		if(visionTarget){
 			interactable = visionTarget.GetComponent<Interactable>();
-			interactable.Interact();
+
+			if(interactable){
+				interactable.Interact();
+			}
 		}
 	}
 
