@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Editor/Scenes/Axel/PrefabFactory.unity
+=======
+- path: Assets/Editor/Scenes/Patrik.unity
+>>>>>>> dev
+  isLoaded: 1
+  isActive: 1
+=======
+sceneSetups: []
+>>>>>>> dev
