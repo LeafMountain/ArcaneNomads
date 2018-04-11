@@ -14,18 +14,26 @@ public class SpawnerSystem : ComponentSystem<SpawnerComponent> {
 				if(components[i].spawnInterval == 0){
 					for (int y = 0; y < components[i].amount; y++)
 					{
-						Instantiate(components[i].prefab, components[i].transform.position, Quaternion.identity, components[i].transform);
+						Spawn(components[i]);
 					}
-					components[i].numberSpawned = components[i].amount;
-					components[i].timeSinceLastSpawn = 0;
 				}
 				else if(components[i].timeSinceLastSpawn > components[i].spawnInterval){
-					Instantiate(components[i].prefab, components[i].transform.position, Quaternion.identity, components[i].transform);
-
-					components[i].numberSpawned++;
-					components[i].timeSinceLastSpawn = 0;
+					Spawn(components[i]);
 				}
 			}
 		}
+	}
+
+	void Spawn(SpawnerComponent component){
+		Vector2 spawnArea = component.spawnArea;
+
+		float spawnX = Random.Range(-(spawnArea.x / 2), spawnArea.x / 2);
+		float spawnY = Random.Range(-(spawnArea.y / 2), spawnArea.y / 2);
+
+		Vector3 spawnPosition = new Vector3(spawnX, 0, spawnY);
+		
+		Instantiate(component.prefab, component.transform.position + spawnPosition, Quaternion.Euler(new Vector3(0, Random.Range(0, 359), 0)), component.transform);
+		component.numberSpawned++;
+		component.timeSinceLastSpawn = 0;
 	}
 }
