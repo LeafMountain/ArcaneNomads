@@ -193,6 +193,12 @@ MonoBehaviour:
   maxSpeed: 10
   maxForce: 5
   stoppingDistance: 2
+  personalSpace: 1.14
+  neighborDistance: 10
+  numberOfNeighbors: 3
+  flock: 1
+  wander: 0
+  align: 0
   desiredPosition: {fileID: 0}
 --- !u!136 &136743022681906516
 CapsuleCollider:
