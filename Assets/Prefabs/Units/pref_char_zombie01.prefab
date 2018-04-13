@@ -119,7 +119,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5f31e1b5de0b1524da2ea42cefad21f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -190,16 +190,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b1d08cd86ebad44b0eaee4c4f4ebd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody: {fileID: 54370068870083020}
   maxSpeed: 10
   maxForce: 5
   stoppingDistance: 2
-  personalSpace: 1.14
-  neighborDistance: 10
-  numberOfNeighbors: 3
-  flock: 1
-  wander: 0
-  align: 0
-  desiredPosition: {fileID: 0}
+  personalSpace: 1.24
+  neighborDistance: 4
+  numberOfNeighbors: 24
+  flock: 0
+  wander: 1
+  align: 1
+  avoid: 0
 --- !u!136 &136743022681906516
 CapsuleCollider:
   m_ObjectHideFlags: 1
