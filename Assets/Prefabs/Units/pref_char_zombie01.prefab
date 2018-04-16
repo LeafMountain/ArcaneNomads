@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4326243582310156}
   - component: {fileID: 95186491597627804}
   - component: {fileID: 136743022681906516}
-  - component: {fileID: 195249356528954512}
   - component: {fileID: 114183278803448452}
   - component: {fileID: 54370068870083020}
   - component: {fileID: 33481421120246808}
@@ -119,7 +118,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 5f31e1b5de0b1524da2ea42cefad21f2, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -191,8 +190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 54370068870083020}
-  maxSpeed: 10
-  maxForce: 5
+  maxSpeed: 20
+  maxForce: 10
   stoppingDistance: 2
   personalSpace: 1.24
   neighborDistance: 4
@@ -214,24 +213,3 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.93, z: 0}
---- !u!195 &195249356528954512
-NavMeshAgent:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1095638358044972}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.30309278
-  m_Speed: 1.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.8
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4

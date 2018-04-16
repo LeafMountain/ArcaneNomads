@@ -1,7 +1,6 @@
 ﻿using System.Collections; 
 using System.Collections.Generic; 
 using UnityEngine; 
-using UnityEngine.AI; 
 
 public class EnemySystem:ComponentSystem < EnemyComponent >  {
 
@@ -20,8 +19,8 @@ public class EnemySystem:ComponentSystem < EnemyComponent >  {
 			}
 		}
 		
-		for (int i = 0; i < components.Length; i++) {
-			DoBehaviour(components[i]); 
+		for (int i = 0; i < components.Length; i ++) {
+			DoBehaviour(components[i]);
 		}
 	}
 
@@ -42,10 +41,10 @@ public class EnemySystem:ComponentSystem < EnemyComponent >  {
 	}
 
 	void DoBehaviour(EnemyComponent enemy) {
-		EnemyComponent[] neighbors = GetNeighbors(enemy);
+		EnemyComponent[] neighbors = GetEnemiesWithinRadius(enemy.transform.position, enemy.neighborDistance);
 		
 		if (enemy.flock) {
-			Flock(enemy); 
+			Flock(enemy, neighbors); 
 		}
 
 		if (enemy.wander) {
@@ -83,10 +82,6 @@ public class EnemySystem:ComponentSystem < EnemyComponent >  {
 	}
 
 	void Avoid(EnemyComponent enemy, EnemyComponent[] neighbors) {
-		if(enemy.personalSpace == 0){
-			return;
-		}
-
 		for (int i = 0; i < neighbors.Length; i++){
 			Vector3 angleTowardsNeighbor = neighbors[i].transform.position - enemy.transform.position;
 
@@ -116,7 +111,8 @@ public class EnemySystem:ComponentSystem < EnemyComponent >  {
 		}
 	}
 
-	void Align(EnemyComponent enemy, EnemyComponent[] neighbors) {
+
+	void Align(EnemyComponent enemy, EnemyComponent[] neighbors) {		
 		if (Random.Range(0, 100) < 1 || neighbors.Length < 3) {
 			return; 
 		}
@@ -127,34 +123,18 @@ public class EnemySystem:ComponentSystem < EnemyComponent >  {
 			directions[i] = GetVelocity(neighbors[i]); 
 		}
 
-		Vector3 averageDirection = GetAveragePosition(enemy, directions); 
+		Vector3 averageDirection = GetAverageVector(enemy, directions); 
 
 		if (averageDirection != Vector3.zero) {
 			Seek(enemy, enemy.transform.position + averageDirection); 
 		}
 	}
 
-	void Flock(EnemyComponent enemy) {
-		EnemyComponent[] enemies = GetNeighbors(enemy); 
-		// Vector3[] positionsOfNeightbors = ExtractPositions(enemies);
-		Vector3 averagePosition = GetAveragePosition(enemy, enemies); 
+	void Flock(EnemyComponent enemy, EnemyComponent[] neighbors) {
+		Vector3 averagePosition = GetAveragePosition(enemy, neighbors); 
 		float distanceToTarget = (averagePosition - enemy.transform.position).magnitude; 
 
 		Seek(enemy, averagePosition); 
-	}
-
-	void Arrive() {		
-		// Slow down when getting within stopping distance
-		// if(distanceToTarget < stoppingDistance){
-		// 	float m = Mathf.Lerp(0, maxSpeed, distanceToTarget / stoppingDistance);
-		// 	desired = desired.normalized;
-		// 	desired *= m;
-		// } 
-		// // Use max speed to get to the desired position
-		// else {
-			// desired = desired.normalized;
-			// desired *= enemy.maxSpeed;
-		// }
 	}
 
 	void Seek(EnemyComponent enemy, Vector3 target) {
@@ -169,34 +149,34 @@ public class EnemySystem:ComponentSystem < EnemyComponent >  {
 
 		// Find the force to apply 
 		steer = desired - GetVelocity(enemy); 
-		steer = steer.normalized * enemy.maxForce; 
+		steer = steer.normalized * enemy.maxForce;
 
 		// Add force to physics system
 		enemy.rigidbody.AddForce(steer, ForceMode.Acceleration);
-
-		// Debug.DrawRay(enemy.transform.position, steer, Color.red);
 	}
 
 	void RotateGameObject(EnemyComponent enemy) {
 		enemy.transform.LookAt(GetVelocity(enemy)); 
 	}
 
-	// RaycastHit See(EnemyComponent enemy){
-	// 	Ray vision = new Ray(enemy.transform.position, GetVelocity(enemy));
-	// 	RaycastHit hit;
+	EnemyComponent[] GetEnemiesWithinRadius(Vector3 position, float radius) {
+		return GetEnemiesWithinRadius(position, radius, components); 
+	}
 
-	// 	Physics.Raycast(vision, out hit, enemy.maxSpeed);
+	EnemyComponent[] GetEnemiesWithinRadius(Vector3 position, float radius, EnemyComponent[] array) {
+		List <EnemyComponent> neighbors = new List <EnemyComponent> (); 
 
-	// 	return hit;
-	// }
-
-	EnemyComponent[] GetNeighbors(EnemyComponent enemy) {
-		List < EnemyComponent > neighbors = new List < EnemyComponent > (); 
-
-		for (int y = 0; y < components.Length; y++) {
-			if (Vector3.Distance(components[y].transform.position, enemy.transform.position) < enemy.neighborDistance && components[y] != enemy) {
-				neighbors.Add(components[y]); 
+		float radiusSqrt = Mathf.Sqrt(radius);
+		
+		for (int y = 0; y < array.Length; y++)
+		{
+			float sqrtMagnitude = Vector3.SqrMagnitude(array[y].transform.position - position);
+			
+			if (sqrtMagnitude < radiusSqrt) 
+			{
+				neighbors.Add(array[y]); 
 			}
+				
 		}
 
 		return neighbors.ToArray(); 
@@ -204,7 +184,6 @@ public class EnemySystem:ComponentSystem < EnemyComponent >  {
 
 	Vector3 GetAveragePosition(EnemyComponent enemy, EnemyComponent[] positions) {
 		Vector3 sum = Vector3.zero; 
-		enemy.numberOfNeighbors = positions.Length; 
 
 		// Get the sum of all the positions
 		for (int i = 0; i < positions.Length; i++) {
@@ -214,9 +193,8 @@ public class EnemySystem:ComponentSystem < EnemyComponent >  {
 		return sum / positions.Length; 
 	}
 
-	Vector3 GetAveragePosition(EnemyComponent enemy, Vector3[] positions) {
+	Vector3 GetAverageVector(EnemyComponent enemy, Vector3[] positions) {
 		Vector3 sum = Vector3.zero; 
-		enemy.numberOfNeighbors = positions.Length; 
 
 		// Get the sum of all the positions
 		for (int i = 0; i < positions.Length; i++) {
