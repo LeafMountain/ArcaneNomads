@@ -26,11 +26,15 @@ public class EnemyComponent : MonoBehaviour {
 	Vector3 futurePosition;
 
 	void OnDrawGizmosSelected(){
-		Gizmos.color = Color.green;
-		Gizmos.DrawWireSphere(transform.position, neighborDistance);
+		if(flock || align){
+			Gizmos.color = Color.green;
+			Gizmos.DrawWireSphere(transform.position, neighborDistance);
+		}
 
-		Color personalColor = new Color(1, 0, 0, .6f);
-		Gizmos.color = personalColor;
-		Gizmos.DrawSphere(transform.position, personalSpace);
+		if(avoid){
+			Color personalColor = new Color(1, 0, 0, 1);
+			Gizmos.color = personalColor;
+			Gizmos.DrawWireSphere(transform.position, personalSpace);
+		}
 	}
 }

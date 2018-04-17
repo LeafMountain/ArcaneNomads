@@ -55,51 +55,61 @@ public class EnemySystem : MonoBehaviour  {
 	}
 
 	void DoBehaviour(EnemyComponent enemy) {
+		Vector3 force = Vector3.zero;
 		int[] neighbors = GetEnemiesWithinRadius(enemy.transform.position, enemy.neighborDistance);
 		
 		if (enemy.flock) {
-			Flock(enemy, neighbors); 
+			force += Flock(enemy, neighbors); 
 		}
 
 		if (enemy.wander) {
-			Wander(enemy); 
+			force += Wander(enemy); 
 		}
 
 		if (enemy.align) {
-			Align(enemy, neighbors); 
+			force += Align(enemy, neighbors); 
 		}
 
 		if(enemy.avoid){
-			Avoid(enemy, neighbors);
+			force += Avoid(enemy, neighbors);
 		}
 
-		KeepWithinArea(enemy);
+		force += KeepWithinArea(enemy);
+
+		Seek(enemy, force + enemy.transform.position);
+
 		RotateGameObject(enemy);
 	}
 
-	void Wander(EnemyComponent enemy) {
-		if (Random.Range(0, 100) < 50) {
-			return; 
-		}
+	Vector3 Wander(EnemyComponent enemy) {
+		Vector3 force = Vector3.zero;
+		// if (Random.Range(0, 100) < 50) {
+		// 	return; 
+		// }
 
 		Vector3 direction = Vector3.zero; 
-		float angleOffset = 15; 
+		float angleOffset = 45; 
 		Vector3 offset = Quaternion.Euler(0, Random.Range( - angleOffset, angleOffset), 0) * GetVelocity(enemy); 
 
 		if (GetVelocity(enemy) == Vector3.zero) {
-			enemy.rigidbody.AddForce(new Vector3(Random.Range(-1f, 1), 0, Random.Range(-1f, 1))); 
+			force += RandomVector();
+			// enemy.rigidbody.AddForce(new Vector3(Random.Range(-1f, 1), 0, Random.Range(-1f, 1))); 
 		}
 
-		direction = enemy.transform.position + GetVelocity(enemy) + offset; 
+		direction += GetVelocity(enemy) + offset; 
 
-		Seek(enemy, direction); 
+		return direction;
 	}
 
-	void Avoid(EnemyComponent enemy, int[] neighbors) {
+	Vector3 Avoid(EnemyComponent enemy, int[] neighbors) {
+		Vector3 force = Vector3.zero;
+		int[] neigh = GetEnemiesWithinRadius(enemy.transform.position, enemy.personalSpace);
+
 		float personalSpaceSqrt = Mathf.Sqrt(enemy.personalSpace);
 
-		for (int i = 0; i < neighbors.Length; i++){
-			int enemyIndex = neighbors[i];
+
+		for (int i = 0; i < neigh.Length; i++){
+			int enemyIndex = neigh[i];
 
 			if(enemies[enemyIndex] == enemy){
 				continue;
@@ -108,36 +118,44 @@ public class EnemySystem : MonoBehaviour  {
 			Vector3 angleTowardsNeighbor = enemyPositions[enemyIndex].position - enemy.transform.position;
 
 			if(Vector3.SqrMagnitude(angleTowardsNeighbor) < personalSpaceSqrt){
-				Seek(enemy, enemy.transform.position - angleTowardsNeighbor);
+				force -= angleTowardsNeighbor;
 			}
 		}
 
+		return force;
+
 	}
 
-	void KeepWithinArea(EnemyComponent enemy) {
+	Vector3 KeepWithinArea(EnemyComponent enemy) {
+		Vector3 force = Vector3.zero;
+
 		// Outside West side
 		if (enemy.transform.position.x < transform.position.x +  - area.x / 2) {
-			Seek(enemy, Vector3.right); 
+			force += Vector3.right; 
 		}
 		// Outside East side
 		else if (enemy.transform.position.x > transform.position.x + area.x / 2) {
-			Seek(enemy, Vector3.left); 
+			force += Vector3.left; 
 		}
 		// Outside South side
 		if (enemy.transform.position.z < transform.position.z +  - area.z / 2) {
-			Seek(enemy, Vector3.forward); 
+			force += Vector3.forward; 
 		}
 		// Outside North side
 		else if (enemy.transform.position.z > transform.position.z + area.z / 2) {
-			Seek(enemy, Vector3.back); 
+			force += Vector3.back; 
 		}
+
+		return force;
 	}
 
 
-	void Align(EnemyComponent enemy, int[] neighbors) {		
+	Vector3 Align(EnemyComponent enemy, int[] neighbors) {
 		if (Random.Range(0, 100) < 1 || neighbors.Length < 3) {
-			return; 
+			return Vector3.zero; 
 		}
+
+		Vector3 force = Vector3.zero;
 
 		Vector3[] directions = new Vector3[neighbors.Length]; 
 
@@ -148,17 +166,22 @@ public class EnemySystem : MonoBehaviour  {
 		Vector3 averageDirection = GetAverageVector(enemy, directions); 
 
 		if (averageDirection != Vector3.zero) {
-			Seek(enemy, enemy.transform.position + averageDirection); 
+			force = averageDirection;
 		}
+
+		return force;
 	}
 
-	void Flock(EnemyComponent enemy, int[] neighbors) {
+	Vector3 Flock(EnemyComponent enemy, int[] neighbors) {
 		Vector3 averagePosition = GetAveragePosition(enemy, neighbors); 
 		float distanceToTarget = (averagePosition - enemy.transform.position).magnitude;
+		Vector3 force = Vector3.zero;
 
 		if(distanceToTarget > enemy.personalSpace){
-			Seek(enemy, averagePosition); 
+			force = averagePosition;
 		}
+
+		return force;
 	}
 
 	void Seek(EnemyComponent enemy, Vector3 target) {
@@ -180,7 +203,7 @@ public class EnemySystem : MonoBehaviour  {
 	}
 
 	void RotateGameObject(EnemyComponent enemy) {
-		enemy.transform.LookAt(GetVelocity(enemy)); 
+		enemy.transform.LookAt(GetVelocity(enemy) + enemy.transform.position);
 	}
 
 	int[] GetEnemiesWithinRadius(Vector3 position, float radius) {
