@@ -2,25 +2,40 @@
 using System.Collections.Generic; 
 using UnityEngine; 
 
-public class EnemySystem:ComponentSystem < EnemyComponent >  {
+public class EnemySystem : MonoBehaviour  {
 
 	public bool updateList = true; 
 	public Vector3 area; 
 
-	protected override void OnUpdate() {
+	public EnemyComponent[] enemies;
+	public Transform[] enemyPositions;
+
+	// struct Data {
+	// 	public EnemyComponent[] enemies;
+	// 	public Transform[] enemyPositions;
+	// }
+
+
+	void Update() {
 		if (updateList) {
 			updateList = false; 
-			UpdateComponentsList(); 
 
-			for (int i = 0; i < components.Length; i++) {
-				if ( ! components[i].rigidbody) {
-					Setup(components[i]); 
-				}
-			}
+			CollectData();
 		}
 		
-		for (int i = 0; i < components.Length; i ++) {
-			DoBehaviour(components[i]);
+		for (int i = 0; i < enemies.Length; i ++) {
+			DoBehaviour(enemies[i]);
+		}
+	}
+
+	void CollectData(){
+		enemies = GameObject.FindObjectsOfType<EnemyComponent>();
+		enemyPositions = new Transform[enemies.Length];
+
+		for (int i = 0; i < enemies.Length; i++)
+		{
+			Setup(enemies[i]);
+			enemyPositions[i] = enemies[i].transform;
 		}
 	}
 
@@ -37,7 +52,6 @@ public class EnemySystem:ComponentSystem < EnemyComponent >  {
 	void Setup(EnemyComponent enemy) {
 		enemy.rigidbody = enemy.GetComponent < Rigidbody > (); 
 		enemy.rigidbody.AddForce(RandomVector(), ForceMode.VelocityChange); 
-		// enemy.neighbors = new Collider[enemy.numberOfNeighbors];
 	}
 
 	void DoBehaviour(EnemyComponent enemy) {
@@ -160,7 +174,7 @@ public class EnemySystem:ComponentSystem < EnemyComponent >  {
 	}
 
 	EnemyComponent[] GetEnemiesWithinRadius(Vector3 position, float radius) {
-		return GetEnemiesWithinRadius(position, radius, components); 
+		return GetEnemiesWithinRadius(position, radius, enemies); 
 	}
 
 	EnemyComponent[] GetEnemiesWithinRadius(Vector3 position, float radius, EnemyComponent[] array) {
@@ -170,7 +184,7 @@ public class EnemySystem:ComponentSystem < EnemyComponent >  {
 		
 		for (int y = 0; y < array.Length; y++)
 		{
-			float sqrtMagnitude = Vector3.SqrMagnitude(array[y].transform.position - position);
+			float sqrtMagnitude = Vector3.SqrMagnitude(enemyPositions[y].position - position);
 			
 			if (sqrtMagnitude < radiusSqrt) 
 			{
