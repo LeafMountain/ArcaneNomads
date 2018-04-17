@@ -190,16 +190,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 54370068870083020}
-  maxSpeed: 20
-  maxForce: 10
+  maxSpeed: 3
+  maxForce: 1
   stoppingDistance: 2
-  personalSpace: 1.24
-  neighborDistance: 4
-  numberOfNeighbors: 24
-  flock: 0
+  personalSpace: 2
+  neighborDistance: 6
+  flock: 1
   wander: 1
   align: 1
-  avoid: 0
+  avoid: 1
 --- !u!136 &136743022681906516
 CapsuleCollider:
   m_ObjectHideFlags: 1

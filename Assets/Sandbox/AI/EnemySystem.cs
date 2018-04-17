@@ -55,7 +55,7 @@ public class EnemySystem : MonoBehaviour  {
 	}
 
 	void DoBehaviour(EnemyComponent enemy) {
-		EnemyComponent[] neighbors = GetEnemiesWithinRadius(enemy.transform.position, enemy.neighborDistance);
+		int[] neighbors = GetEnemiesWithinRadius(enemy.transform.position, enemy.neighborDistance);
 		
 		if (enemy.flock) {
 			Flock(enemy, neighbors); 
@@ -95,12 +95,20 @@ public class EnemySystem : MonoBehaviour  {
 		Seek(enemy, direction); 
 	}
 
-	void Avoid(EnemyComponent enemy, EnemyComponent[] neighbors) {
-		for (int i = 0; i < neighbors.Length; i++){
-			Vector3 angleTowardsNeighbor = neighbors[i].transform.position - enemy.transform.position;
+	void Avoid(EnemyComponent enemy, int[] neighbors) {
+		float personalSpaceSqrt = Mathf.Sqrt(enemy.personalSpace);
 
-			if(angleTowardsNeighbor.magnitude < enemy.personalSpace){
-				Seek(enemy, transform.position - angleTowardsNeighbor);
+		for (int i = 0; i < neighbors.Length; i++){
+			int enemyIndex = neighbors[i];
+
+			if(enemies[enemyIndex] == enemy){
+				continue;
+			}
+
+			Vector3 angleTowardsNeighbor = enemyPositions[enemyIndex].position - enemy.transform.position;
+
+			if(Vector3.SqrMagnitude(angleTowardsNeighbor) < personalSpaceSqrt){
+				Seek(enemy, enemy.transform.position - angleTowardsNeighbor);
 			}
 		}
 
@@ -126,7 +134,7 @@ public class EnemySystem : MonoBehaviour  {
 	}
 
 
-	void Align(EnemyComponent enemy, EnemyComponent[] neighbors) {		
+	void Align(EnemyComponent enemy, int[] neighbors) {		
 		if (Random.Range(0, 100) < 1 || neighbors.Length < 3) {
 			return; 
 		}
@@ -134,7 +142,7 @@ public class EnemySystem : MonoBehaviour  {
 		Vector3[] directions = new Vector3[neighbors.Length]; 
 
 		for (int i = 0; i < neighbors.Length; i++) {
-			directions[i] = GetVelocity(neighbors[i]); 
+			directions[i] = GetVelocity(enemies[neighbors[i]]); 
 		}
 
 		Vector3 averageDirection = GetAverageVector(enemy, directions); 
@@ -144,11 +152,13 @@ public class EnemySystem : MonoBehaviour  {
 		}
 	}
 
-	void Flock(EnemyComponent enemy, EnemyComponent[] neighbors) {
+	void Flock(EnemyComponent enemy, int[] neighbors) {
 		Vector3 averagePosition = GetAveragePosition(enemy, neighbors); 
-		float distanceToTarget = (averagePosition - enemy.transform.position).magnitude; 
+		float distanceToTarget = (averagePosition - enemy.transform.position).magnitude;
 
-		Seek(enemy, averagePosition); 
+		if(distanceToTarget > enemy.personalSpace){
+			Seek(enemy, averagePosition); 
+		}
 	}
 
 	void Seek(EnemyComponent enemy, Vector3 target) {
@@ -166,19 +176,19 @@ public class EnemySystem : MonoBehaviour  {
 		steer = steer.normalized * enemy.maxForce;
 
 		// Add force to physics system
-		enemy.rigidbody.AddForce(steer, ForceMode.Acceleration);
+		enemy.rigidbody.AddForce(steer);
 	}
 
 	void RotateGameObject(EnemyComponent enemy) {
 		enemy.transform.LookAt(GetVelocity(enemy)); 
 	}
 
-	EnemyComponent[] GetEnemiesWithinRadius(Vector3 position, float radius) {
+	int[] GetEnemiesWithinRadius(Vector3 position, float radius) {
 		return GetEnemiesWithinRadius(position, radius, enemies); 
 	}
 
-	EnemyComponent[] GetEnemiesWithinRadius(Vector3 position, float radius, EnemyComponent[] array) {
-		List <EnemyComponent> neighbors = new List <EnemyComponent> (); 
+	int[] GetEnemiesWithinRadius(Vector3 position, float radius, EnemyComponent[] array) {
+		List <int> neighbors = new List <int> (); 
 
 		float radiusSqrt = Mathf.Sqrt(radius);
 		
@@ -188,20 +198,19 @@ public class EnemySystem : MonoBehaviour  {
 			
 			if (sqrtMagnitude < radiusSqrt) 
 			{
-				neighbors.Add(array[y]); 
-			}
-				
+				neighbors.Add(y);
+			}	
 		}
 
 		return neighbors.ToArray(); 
 	}
 
-	Vector3 GetAveragePosition(EnemyComponent enemy, EnemyComponent[] positions) {
+	Vector3 GetAveragePosition(EnemyComponent enemy, int[] positions) {
 		Vector3 sum = Vector3.zero; 
 
 		// Get the sum of all the positions
 		for (int i = 0; i < positions.Length; i++) {
-			sum += positions[i].transform.position; 
+			sum += enemyPositions[positions[i]].position; 
 		}
 
 		return sum / positions.Length; 
