@@ -5,9 +5,6 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class EnemyComponent : MonoBehaviour {
-
-	public Rigidbody rigidbody;
-	// public EnemyComponent[] neighbors;
 	
 	// The maximum speed
 	public float maxSpeed;
