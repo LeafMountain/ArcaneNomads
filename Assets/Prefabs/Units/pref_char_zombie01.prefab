@@ -151,7 +151,7 @@ MonoBehaviour:
   stoppingDistance: 2
   personalSpace: 3
   neighborDistance: 6
-  flock: 1
+  flock: 0
   wander: 1
   align: 1
   avoid: 1

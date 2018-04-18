@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySystem : MonoBehaviour {
 
@@ -26,6 +27,8 @@ public class EnemySystem : MonoBehaviour {
 		}
 	}
 
+	Queue<UnityAction> actionQueue = new Queue<UnityAction>();
+
 	void Update () {
 		if (updateList) {
 			updateList = false;
@@ -33,13 +36,36 @@ public class EnemySystem : MonoBehaviour {
 			CollectData ();
 		}
 
-		UpdateData(enemies[0]);	
-		Thread testThread = new Thread (TestTest);
-		testThread.Start();
+		Threading();
 
-		for (int i = 1; i < enemies.Length; i++) {
+		for (int i = 0; i < actionQueue.Count; i++)
+		{
+			UnityAction currentAction = actionQueue.Peek();
+			actionQueue.Dequeue();
+
+			if(currentAction != null){
+				currentAction.Invoke();
+			}
+		}
+	}
+
+	Thread firstThread;
+	Thread secondThread;
+
+	void Threading(){
+		for (int i = 0; i < enemies.Length; i++)
+		{
 			UpdateData(enemies[i]);
-			Seek(enemies[i], GetWalkDirection (enemies[i]) + enemies[i].position);
+		}
+
+		if(firstThread == null || !firstThread.IsAlive){
+			firstThread = new Thread (FirstHalf);
+			firstThread.Start();
+		}
+		
+		if(secondThread == null || !secondThread.IsAlive){
+			secondThread = new Thread (SecondHalf);		
+			secondThread.Start();
 		}
 	}
 
@@ -48,8 +74,18 @@ public class EnemySystem : MonoBehaviour {
 		enemy.velocity = enemy.rigidbody.velocity;
 	}
 
-	void TestTest () {
-		GetWalkDirection (enemies[0]);
+	void FirstHalf () {
+		for (int i = 0; i < enemies.Length / 2; i++)
+		{
+			GetWalkDirection (enemies[i]);
+		}	
+	}
+
+	void SecondHalf () {
+		for (int i = enemies.Length / 2; i < enemies.Length; i++)
+		{
+			GetWalkDirection (enemies[i]);
+		}	
 	}
 
 	void CollectData () {
@@ -57,6 +93,7 @@ public class EnemySystem : MonoBehaviour {
 		this.enemies = new Enemy[enemies.Length];
 
 		for (int i = 0; i < enemies.Length; i++) {
+			enemies[i].transform.name = "Enemy nr." + i;
 			this.enemies[i] = new Enemy (enemies[i], enemies[i].transform, enemies[i].GetComponent<Rigidbody> (), enemies[i].transform.position, Vector3.zero);
 		}
 	}
@@ -66,7 +103,7 @@ public class EnemySystem : MonoBehaviour {
 		return futurePosition;
 	}
 
-	Vector3 GetWalkDirection (Enemy enemy) {
+	void GetWalkDirection (Enemy enemy) {
 		Vector3 force = Vector3.zero;
 		int[] neighbors = GetEnemiesWithinRadius (enemy.position, enemy.data.neighborDistance);
 
@@ -86,7 +123,13 @@ public class EnemySystem : MonoBehaviour {
 			force += Avoid (enemy, neighbors);
 		}
 
-		return force;
+		UnityAction DoStuff = () => {
+			Seek(enemy, force - enemy.position);
+		};
+
+		actionQueue.Enqueue(DoStuff);
+
+		// return force;
 		// force += KeepWithinArea (enemy);
 
 		// Seek (enemy, force + enemy.position);
@@ -166,7 +209,7 @@ public class EnemySystem : MonoBehaviour {
 		Vector3[] directions = new Vector3[neighbors.Length];
 
 		for (int i = 0; i < neighbors.Length; i++) {
-			directions[i] = enemies[neighbors[i]].rigidbody.velocity;
+			directions[i] = enemies[neighbors[i]].velocity;
 		}
 
 		Vector3 averageDirection = GetAverageVector (enemy, directions);
