@@ -294,8 +294,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateList: 1
   area: {x: 100, y: 0, z: 100}
-  enemies: []
-  enemyPositions: []
 --- !u!4 &426366927 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4860050380687398, guid: e85f40f4bcd1de14da13291393ee7c2f,
@@ -371,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1195686378583526, guid: e85f40f4bcd1de14da13291393ee7c2f, type: 2}
-  amount: 300
+  amount: 500
   spawnInterval: 0
   spawnArea: {x: 100, y: 100}
   numberSpawned: 0
@@ -814,10 +812,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2da680b0e2c2ca49b5883a181ae0cdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heading: {x: -1.9999429, y: 0, z: -0.015123321}
-  velocity: {x: 0.5, y: 0, z: 0}
-  length: 2
-  offsetAngle: 14.68
 --- !u!65 &1193580957
 BoxCollider:
   m_ObjectHideFlags: 0
