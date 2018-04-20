@@ -9,6 +9,8 @@ public class EnemySystem : MonoBehaviour {
 	public bool updateList = true;
 	public Vector3 area;
 
+	Vector3 center;
+
 	Enemy[] enemies;
 	System.Random random = new System.Random();
 	ThreadingSystem threading;
@@ -30,6 +32,7 @@ public class EnemySystem : MonoBehaviour {
 	}
 
 	void Start(){
+		center = center;
 		threading = ThreadingSystem.Instance;
 	}
 
@@ -48,24 +51,21 @@ public class EnemySystem : MonoBehaviour {
 	void UpdateEnemies(){
 		for (int i = 0; i < enemies.Length; i++)
 		{
-			UpdateData(enemies[i]);
+			UpdateData(ref enemies[i]);
 		}
 
 		if(useThreading){
-			threading.AddToThreadQueue(0, First);
-			threading.AddToThreadQueue(1, Second);
-			threading.AddToThreadQueue(2, Third);
-			threading.AddToThreadQueue(3, Fourth);
+			threading.AddToThreadQueue(0, () => { GetEnemies(0, enemies.Length / 4); } );
+			threading.AddToThreadQueue(1, () => { GetEnemies(enemies.Length / 4, enemies.Length / 2); } );
+			threading.AddToThreadQueue(2, () => { GetEnemies(enemies.Length / 2, enemies.Length / 4 * 3); } );
+			threading.AddToThreadQueue(3, () => { GetEnemies(enemies.Length / 4 * 3, enemies.Length); } );
 		} else {
-			First();
-			Second();
-			Third();
-			Fourth();
+			GetEnemies(0, enemies.Length);
 		}
 		
 	}
 
-	void UpdateData(Enemy enemy) {
+	void UpdateData(ref Enemy enemy) {
 		enemy.position = enemy.transform.position;
 		enemy.velocity = enemy.rigidbody.velocity;
 	}
@@ -75,22 +75,6 @@ public class EnemySystem : MonoBehaviour {
 		{
 			GetWalkDirection (enemies[i]);
 		}
-	}
-
-	void First(){
-		GetEnemies(0, enemies.Length / 4);
-	}
-
-	void Second(){
-		GetEnemies(enemies.Length / 4, enemies.Length / 2);
-	}
-
-	void Third(){
-		GetEnemies(enemies.Length / 2, enemies.Length / 4 * 3);
-	}
-
-	void Fourth(){
-		GetEnemies(enemies.Length / 4 * 3, enemies.Length);
 	}
 
 	void CollectData () {
@@ -127,8 +111,11 @@ public class EnemySystem : MonoBehaviour {
 			force += Avoid (enemy, neighbors);
 		}
 
+		force += KeepWithinArea(enemy);
+
 		UnityAction DoStuff = () => {
 			Seek(enemy, force + enemy.position);
+			RotateGameObject(enemy);
 		};
 
 		threading.Schedule(DoStuff);
@@ -176,19 +163,19 @@ public class EnemySystem : MonoBehaviour {
 		Vector3 force = Vector3.zero;
 
 		// Outside West side
-		if (enemy.position.x < transform.position.x + -area.x / 2) {
+		if (enemy.position.x < center.x + -area.x / 2) {
 			force += Vector3.right;
 		}
 		// Outside East side
-		else if (enemy.position.x > transform.position.x + area.x / 2) {
+		else if (enemy.position.x > center.x + area.x / 2) {
 			force += Vector3.left;
 		}
 		// Outside South side
-		if (enemy.position.z < transform.position.z + -area.z / 2) {
+		if (enemy.position.z < center.z + -area.z / 2) {
 			force += Vector3.forward;
 		}
 		// Outside North side
-		else if (enemy.position.z > transform.position.z + area.z / 2) {
+		else if (enemy.position.z > center.z + area.z / 2) {
 			force += Vector3.back;
 		}
 
@@ -208,16 +195,11 @@ public class EnemySystem : MonoBehaviour {
 			directions[i] = enemies[neighbors[i]].velocity;
 		}
 
-		Debug.Log(directions[1]);
-
 		Vector3 averageDirection = GetAverageVector (enemy, directions);
-
 
 		if (averageDirection != Vector3.zero) {
 			force = averageDirection;
 		}
-
-		Debug.Log(force);		
 
 		return force;
 	}
@@ -294,7 +276,6 @@ public class EnemySystem : MonoBehaviour {
 		for (int i = 0; i < positions.Length; i++) {
 			sum += positions[i];
 		}
-
 		return sum / positions.Length;
 	}
 
@@ -309,6 +290,6 @@ public class EnemySystem : MonoBehaviour {
 	}
 
 	void OnDrawGizmos () {
-		Gizmos.DrawWireCube (transform.position, area);
+		Gizmos.DrawWireCube (center, area);
 	}
 }

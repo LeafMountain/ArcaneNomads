@@ -295,6 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateList: 1
   area: {x: 100, y: 0, z: 100}
+  useThreading: 0
 --- !u!4 &426366927 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4860050380687398, guid: e85f40f4bcd1de14da13291393ee7c2f,
@@ -370,7 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1195686378583526, guid: e85f40f4bcd1de14da13291393ee7c2f, type: 2}
-  amount: 100
+  amount: 300
   spawnInterval: 0
   spawnArea: {x: 100, y: 100}
   numberSpawned: 0
@@ -953,7 +954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20a4a189f5f4fe4e8889d518f05e225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfThreads: 4
 --- !u!1 &1841151231
 GameObject:
   m_ObjectHideFlags: 0
