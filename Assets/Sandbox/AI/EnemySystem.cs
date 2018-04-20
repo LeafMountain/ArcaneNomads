@@ -10,6 +10,8 @@ public class EnemySystem : MonoBehaviour {
 	public Vector3 area;
 
 	Enemy[] enemies;
+	System.Random random = new System.Random();
+	ThreadingSystem threading;
 
 	public struct Enemy {
 		public EnemyComponent data;
@@ -27,7 +29,9 @@ public class EnemySystem : MonoBehaviour {
 		}
 	}
 
-	Queue<UnityAction> actionQueue = new Queue<UnityAction>();
+	void Start(){
+		threading = ThreadingSystem.Instance;
+	}
 
 	void Update () {
 		if (updateList) {
@@ -36,37 +40,29 @@ public class EnemySystem : MonoBehaviour {
 			CollectData ();
 		}
 
-		Threading();
-
-		for (int i = 0; i < actionQueue.Count; i++)
-		{
-			UnityAction currentAction = actionQueue.Peek();
-			actionQueue.Dequeue();
-
-			if(currentAction != null){
-				currentAction.Invoke();
-			}
-		}
+		UpdateEnemies();
 	}
 
-	Thread firstThread;
-	Thread secondThread;
+	public bool useThreading;
 
-	void Threading(){
+	void UpdateEnemies(){
 		for (int i = 0; i < enemies.Length; i++)
 		{
 			UpdateData(enemies[i]);
 		}
 
-		if(firstThread == null || !firstThread.IsAlive){
-			firstThread = new Thread (FirstHalf);
-			firstThread.Start();
+		if(useThreading){
+			threading.AddToThreadQueue(0, First);
+			threading.AddToThreadQueue(1, Second);
+			threading.AddToThreadQueue(2, Third);
+			threading.AddToThreadQueue(3, Fourth);
+		} else {
+			First();
+			Second();
+			Third();
+			Fourth();
 		}
 		
-		if(secondThread == null || !secondThread.IsAlive){
-			secondThread = new Thread (SecondHalf);		
-			secondThread.Start();
-		}
 	}
 
 	void UpdateData(Enemy enemy) {
@@ -74,18 +70,27 @@ public class EnemySystem : MonoBehaviour {
 		enemy.velocity = enemy.rigidbody.velocity;
 	}
 
-	void FirstHalf () {
-		for (int i = 0; i < enemies.Length / 2; i++)
+	void GetEnemies(int start, int end){
+		for (int i = start; i < end; i++)
 		{
 			GetWalkDirection (enemies[i]);
-		}	
+		}
 	}
 
-	void SecondHalf () {
-		for (int i = enemies.Length / 2; i < enemies.Length; i++)
-		{
-			GetWalkDirection (enemies[i]);
-		}	
+	void First(){
+		GetEnemies(0, enemies.Length / 4);
+	}
+
+	void Second(){
+		GetEnemies(enemies.Length / 4, enemies.Length / 2);
+	}
+
+	void Third(){
+		GetEnemies(enemies.Length / 2, enemies.Length / 4 * 3);
+	}
+
+	void Fourth(){
+		GetEnemies(enemies.Length / 4 * 3, enemies.Length);
 	}
 
 	void CollectData () {
@@ -99,8 +104,7 @@ public class EnemySystem : MonoBehaviour {
 	}
 
 	public Vector3 GetFuturePosition (Enemy enemy) {
-		Vector3 futurePosition = enemy.position + enemy.velocity;
-		return futurePosition;
+		return enemy.position + enemy.velocity;
 	}
 
 	void GetWalkDirection (Enemy enemy) {
@@ -124,33 +128,25 @@ public class EnemySystem : MonoBehaviour {
 		}
 
 		UnityAction DoStuff = () => {
-			Seek(enemy, force - enemy.position);
+			Seek(enemy, force + enemy.position);
 		};
 
-		actionQueue.Enqueue(DoStuff);
-
-		// return force;
-		// force += KeepWithinArea (enemy);
-
-		// Seek (enemy, force + enemy.position);
-
-		// RotateGameObject (enemy);
+		threading.Schedule(DoStuff);
 	}
 
 	Vector3 Wander (Enemy enemy) {
 		Vector3 force = Vector3.zero;
 
-		Vector3 direction = Vector3.zero;
-		float angleOffset = 45;
-		Vector3 offset = Quaternion.Euler (0, angleOffset, 0) * enemy.velocity;
-
 		if (enemy.velocity == Vector3.zero) {
 			force += RandomVector ();
+		} else {
+			float angleOffset = 45;
+			Vector3 offset = Quaternion.Euler (0, RandomInt * angleOffset, 0) * enemy.velocity;
+
+			force = enemy.velocity + offset;
 		}
 
-		direction += enemy.velocity + offset;
-
-		return direction;
+		return force;
 	}
 
 	Vector3 Avoid (Enemy enemy, int[] neighbors) {
@@ -212,11 +208,16 @@ public class EnemySystem : MonoBehaviour {
 			directions[i] = enemies[neighbors[i]].velocity;
 		}
 
+		Debug.Log(directions[1]);
+
 		Vector3 averageDirection = GetAverageVector (enemy, directions);
+
 
 		if (averageDirection != Vector3.zero) {
 			force = averageDirection;
 		}
+
+		Debug.Log(force);		
 
 		return force;
 	}
@@ -297,9 +298,14 @@ public class EnemySystem : MonoBehaviour {
 		return sum / positions.Length;
 	}
 
+	float RandomInt {
+		get {
+			return (float)random.Next(-100, 100) / 100f;
+		}
+	}
+
 	Vector3 RandomVector () {
-		// return new Vector3 (Random.Range (-1f, 1f), 0, Random.Range (-1f, 1f));
-		return new Vector3(1, 1);
+		return new Vector3(RandomInt, 0, RandomInt);
 	}
 
 	void OnDrawGizmos () {

@@ -33,5 +33,7 @@ public class EnemyComponent : MonoBehaviour {
 			Gizmos.color = personalColor;
 			Gizmos.DrawWireSphere(transform.position, personalSpace);
 		}
+
+		Gizmos.color = Color.blue;
 	}
 }
