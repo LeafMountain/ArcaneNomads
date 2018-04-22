@@ -9,13 +9,14 @@ Shader "TreeBranch/ToonShader" {
 
 		// Emission
 		_EmissionMap("Emission Map", 2D) = "black" {}
-		_Emission("Emission Color", Color) = (0, 0, 0, 0)
+		_Emission("Emission Color", Color) = (1, 1, 1, 1)
 
 		// Infection
 		_NoiseMap("Noise", 2D) = "white" {}
 		_InfectionTex("Infection Texture", 2D) = "white" {}
-		_InfectionNormal("Infection Normal", 2D) = "white" {}		
-		_InfectionAmount("Infection Amount", Range(0, 1)) = 0
+		_InfectionColor("Infection Color", Color) = (1, 1, 1, 1)
+		// _InfectionNormal("Infection Normal", 2D) = "white" {}		
+		_InfectionAmount("Infection Amount", Range(0, .5)) = 0
 
 		// Outline
 		_OutlineColor("Outline Color", Color) = (0, 0, 0, 0)
@@ -113,6 +114,7 @@ Shader "TreeBranch/ToonShader" {
 		sampler2D _NoiseMap;
 		sampler2D _InfectionNormal;
 		float _InfectionAmount;
+		fixed4 _InfectionColor;
 
 		sampler2D _EmissionMap;
 		fixed4 _Emission;
@@ -120,18 +122,19 @@ Shader "TreeBranch/ToonShader" {
 		struct Input {
 			float2 uv_MainTex;
 			float2 uv_NoiseMap;
+			float2 uv_InfectionTex;
 		};
 
 		void avert( inout appdata_full v) {
 			fixed4 noise = tex2Dlod (_NoiseMap, float4(v.texcoord.xy,0,0));
 
-			v.vertex.xyz += lerp(0, -((v.normal * noise) * 0.03), step(noise, _InfectionAmount));
+			v.vertex.xyz += lerp(0, -((v.normal * noise) * 0.1), step(noise, _InfectionAmount));
 		}
 
 		void surf(Input IN, inout SurfaceOutput o) {
 
 			fixed4 color = tex2D(_MainTex, IN.uv_MainTex) * _Color;
-			fixed4 infectionColor = tex2D(_InfectionTex, IN.uv_MainTex);
+			fixed4 infectionColor = tex2D(_InfectionTex, IN.uv_InfectionTex) * _InfectionColor;
 			fixed4 noise = tex2D(_NoiseMap, IN.uv_NoiseMap);
 			fixed4 emission = tex2D(_EmissionMap, IN.uv_MainTex) * _Emission;			
 
@@ -141,7 +144,7 @@ Shader "TreeBranch/ToonShader" {
 			o.Alpha = color.a;
 
 			o.Emission = lerp(0, emission.rgb, step(noise.rgb, _InfectionAmount));
-			o.Normal = tex2D(_InfectionNormal, IN.uv_MainTex);
+			// o.Normal = tex2D(_InfectionNormal, IN.uv_MainTex);
 		}
 		ENDCG
 	}
