@@ -21,7 +21,24 @@ public class SuperCharacterController : MonoBehaviour {
 	Rigidbody rb;
 
 	// Vector3 velocity;
-	public float Velocity { get{ return rb.velocity.magnitude; } }
+	public Vector3 Velocity { 
+		get{
+			// Vector3 currentPosition = transform.position;
+			// Vector3 velocity = lastPosition - currentPosition;
+			// velocity = velocity.normalized;
+			// lastPosition = currentPosition;
+			Vector3 velocity = ConvertToCameraForward(rb.velocity);
+			Vector3 forward = transform.forward;
+			Vector3 velocityRelativeToForward = new Vector3(forward.x * velocity.x, 0, forward.z * velocity.z);
+
+			Debug.DrawRay(transform.position + Vector3.up, velocityRelativeToForward * 4, Color.red);
+
+
+			return velocityRelativeToForward;
+		} 
+	}
+
+	Vector3 lastPosition = Vector3.zero;
 
 	Vector3 currentVelocity;
 	Vector3 velocity;
@@ -57,7 +74,9 @@ public class SuperCharacterController : MonoBehaviour {
 		Vector3 newPos = transform.position;
 		newPos = Vector3.SmoothDamp(transform.position, transform.position + moveDirection * Speed, ref currentVelocity, smoothAmount);
 		
-		rb.MovePosition(newPos);
+		// rb.MovePosition(newPos);
+		// rb.AddForce(moveDirection * Speed, ForceMode.VelocityChange);
+		rb.velocity = moveDirection * Speed;
 	}
 
 #region Move
