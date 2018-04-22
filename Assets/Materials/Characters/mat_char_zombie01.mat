@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: mat_char_zombie01
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: f5509a00ebefb884890eb501943afeb0, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
@@ -38,6 +38,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: 351db16c2e0e9bb48b5f2ac97ab9737a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _InfectionNormal:
+        m_Texture: {fileID: 2800000, guid: 9faaf4797c6ea33418eb28931563f213, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _InfectionTex:
+        m_Texture: {fileID: 2800000, guid: d312b8a8464688d41a19cea8a29899dd, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 86b22fe18484eff42958a60ee1a9c982, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -46,6 +54,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NoiseMap:
+        m_Texture: {fileID: 2800000, guid: 6e9512a853c284d4aa7ab2664a478948, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0.81, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -70,11 +82,12 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _Hidden: 0
+    - _InfectionAmount: 0
     - _Metallic: 0.5
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineWidth: 0.03
-    - _OutlineZ: -0.0002
+    - _OutlineWidth: 0
+    - _OutlineZ: -0.002
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -84,7 +97,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
+    - _Emission: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _InfectionColor: {r: 0, g: 0.21698111, b: 0.0977607, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
