@@ -82,7 +82,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _Hidden: 0
-    - _InfectionAmount: 0.19
+    - _InfectionAmount: 0
     - _Metallic: 0.5
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -100,6 +100,6 @@ Material:
     - _Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
     - _Emission: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _InfectionColor: {r: 0, g: 1, b: 0.66946507, a: 0}
+    - _InfectionColor: {r: 0, g: 0.21698111, b: 0.0977607, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
