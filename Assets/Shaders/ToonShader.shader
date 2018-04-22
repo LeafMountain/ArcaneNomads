@@ -143,7 +143,8 @@ Shader "TreeBranch/ToonShader" {
 
 			o.Alpha = color.a;
 
-			o.Emission = lerp(0, emission.rgb, step(noise.rgb, _InfectionAmount));
+			o.Emission = emission;
+			// o.Emission = lerp(0, emission.rgb, step(noise.rgb, _InfectionAmount));
 			// o.Normal = tex2D(_InfectionNormal, IN.uv_MainTex);
 		}
 		ENDCG
