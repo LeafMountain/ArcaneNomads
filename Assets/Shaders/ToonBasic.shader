@@ -1,72 +1,60 @@
-﻿Shader "Custom/ToonBasic" {
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+
+Shader "TreeBranch/ToonBasic" {
 	Properties {
 		_MainTex ("Texture", 2D) = "white" {}
+		// _RampTex ("Light Ramp", 2D) = "white" {}
 		_Color("Main Color", Color) = (0, 0, 0, 0)
-		_Ramp("Toon Ramp (RGB)", 2D) = "gray" {}		
 
-		_OutlineColor("Outline Color", Color) = (0, 0, 0, 0)
-		_OutlineWidth("Outline Width", Range(0.0, 0.07)) = 0.015
-		_OutlineZ("Outline Z", Range(-.002, 0)) = -.001
+		// Emission
+		_EmissionMap("Emission Map", 2D) = "black" {}
+		_Emission("Emission Color", Color) = (1, 1, 1, 1)
 	}
 
 	SubShader {
-		Tags { "RenderType"="Opaque" }
-		LOD 200
-		Cull Off
 
+		Tags{ 
+			"RenderType" = "Opaque"
+		}
+
+		// Toon shading
 		CGPROGRAM
+		#pragma surface surf CelShadingForward
+		#pragma target 3.0
 
-		#pragma surface surf ToonRamp vertex:disp addshadow
-		sampler2D _Ramp;
-
-		#pragma lighting ToonRamp exclude_path:prepass
-		inline half4 LightingToonRamp(SurfaceOutput s, half3 lightDir, half atten){
-			#ifndef USING_DIRECTIONAL_LIGHT
-			lightDir = normalize(lightDir);
-			#endif
-
-			half d = dot(s.Normal, lightDir) * 0.5 + 0.5;
-			half3 ramp = tex2D(_Ramp, float2(d, d)).rgb;
-
+		half4 LightingCelShadingForward(SurfaceOutput s, half3 lightDir, half atten) {
+			half NdotL = dot(s.Normal, lightDir);
+			if (NdotL <= 0.0) NdotL = 0;
+			else NdotL = 1;
 			half4 c;
-			c.rgb = s.Albedo * _LightColor0.rgb * ramp * (atten * 2);
-			c.a = 0;
+			c.rgb = s.Albedo * _LightColor0.rgb * (NdotL * atten);
+			c.a = s.Alpha;
 			return c;
 		}
 
 		sampler2D _MainTex;
+		fixed4 _Color;
 
-		float4 _Color;
-		float4 _OutlineColor;
-		float _OutlineWidth;
+		sampler2D _EmissionMap;
+		fixed4 _Emission;
 
 		struct Input {
-			float2 uv_MainTex : TEXCOORD0;
-			float3 worldPos;
-			float3 viewDir;
-			float3 lightDir;
+			float2 uv_MainTex;
 		};
 
-		struct appdata {
-			float4 vertex : POSITION;
-			float3 normal : NORMAL;
-		};
+		void surf(Input IN, inout SurfaceOutput o) {
 
-		void disp(inout appdata_full v, out Input o){
-			UNITY_INITIALIZE_OUTPUT(Input, o);
-			o.lightDir = WorldSpaceLightDir(v.vertex);
+			fixed4 color = tex2D(_MainTex, IN.uv_MainTex) * _Color;
+			fixed4 emission = tex2D(_EmissionMap, IN.uv_MainTex) * _Emission;
 
-			v.vertex.xyz += v.normal * _OutlineWidth;
+			o.Albedo = color.rgb;
+			o.Alpha = color.a;
+			o.Emission = emission;
 		}
-
-		void surf(Input IN, inout SurfaceOutput o){
-			half4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
-			o.Albedo = c.rgb * _Color;
-			o.Alpha = c.a;
-		}
-
-
 		ENDCG
 	}
-	FallBack "Diffuse"
+
+
+	Fallback "Toon/Basic"
 }

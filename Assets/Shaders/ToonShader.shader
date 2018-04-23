@@ -1,20 +1,33 @@
 ﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 
-Shader "Custom/ToonShader" {
+Shader "TreeBranch/ToonShader" {
 	Properties {
 		_MainTex ("Texture", 2D) = "white" {}
 		// _RampTex ("Light Ramp", 2D) = "white" {}
 		_Color("Main Color", Color) = (0, 0, 0, 0)
 
+		// Emission
+		_EmissionMap("Emission Map", 2D) = "black" {}
+		_Emission("Emission Color", Color) = (1, 1, 1, 1)
+
+		// Infection
+		_NoiseMap("Noise", 2D) = "white" {}
+		_InfectionTex("Infection Texture", 2D) = "white" {}
+		_InfectionColor("Infection Color", Color) = (1, 1, 1, 1)
+		// _InfectionNormal("Infection Normal", 2D) = "white" {}		
+		_InfectionAmount("Infection Amount", Range(0, .5)) = 0
+
+		// Outline
 		_OutlineColor("Outline Color", Color) = (0, 0, 0, 0)
-		_OutlineWidth("Outline Width", Range(0.0, 0.07)) = 0.015
+		_OutlineWidth("Outline Width", Range(0.0, 0.07)) = 0
 		_OutlineZ("Outline Z", Range(-.002, 0)) = -.001
 	}
 
 	CGINCLUDE
 	#include "UnityCG.cginc"
 
-		struct appdata{
+		struct appdata {
 			float4 vertex : POSITION;
 			float3 normal :  NORMAL;
 			float4 texcoord : TEXCOORD0;
@@ -53,12 +66,12 @@ Shader "Custom/ToonShader" {
 
 		Tags{ 
 			"RenderType" = "Opaque"
-			// "Queue" = "Transparent" 
+			// "Queue" = "Transparent"
 		}
 
-        UsePass "Toon/Lit/FORWARD"
+        // UsePass "Toon/Lit/FORWARD"
 
-		//Outline
+		// Outline
 		Pass {
 			Name "OUTLINE"
 			Tags { "LightMode" = "Always" }
@@ -81,7 +94,7 @@ Shader "Custom/ToonShader" {
 
 		// Toon shading
 		CGPROGRAM
-		#pragma surface surf CelShadingForward
+		#pragma surface surf CelShadingForward addshadow vertex:avert
 		#pragma target 3.0
 
 		half4 LightingCelShadingForward(SurfaceOutput s, half3 lightDir, half atten) {
@@ -97,15 +110,42 @@ Shader "Custom/ToonShader" {
 		sampler2D _MainTex;
 		fixed4 _Color;
 
+		sampler2D _InfectionTex;
+		sampler2D _NoiseMap;
+		sampler2D _InfectionNormal;
+		float _InfectionAmount;
+		fixed4 _InfectionColor;
+
+		sampler2D _EmissionMap;
+		fixed4 _Emission;
+
 		struct Input {
 			float2 uv_MainTex;
+			float2 uv_NoiseMap;
+			float2 uv_InfectionTex;
 		};
 
+		void avert( inout appdata_full v) {
+			fixed4 noise = tex2Dlod (_NoiseMap, float4(v.texcoord.xy,0,0));
+
+			v.vertex.xyz += lerp(0, -((v.normal * noise) * 0.1), step(noise, _InfectionAmount));
+		}
+
 		void surf(Input IN, inout SurfaceOutput o) {
-			// Albedo comes from a texture tinted by color
-			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
-			o.Albedo = c.rgb;
-			o.Alpha = c.a;
+
+			fixed4 color = tex2D(_MainTex, IN.uv_MainTex) * _Color;
+			fixed4 infectionColor = tex2D(_InfectionTex, IN.uv_InfectionTex) * _InfectionColor;
+			fixed4 noise = tex2D(_NoiseMap, IN.uv_NoiseMap);
+			fixed4 emission = tex2D(_EmissionMap, IN.uv_MainTex) * _Emission;			
+
+			// Lerp between maintex and infectiontex depending on noisemap and infectionamount
+			o.Albedo = lerp(color.rgb, infectionColor.rgb, step(noise.r, _InfectionAmount));
+
+			o.Alpha = color.a;
+
+			o.Emission = emission;
+			// o.Emission = lerp(0, emission.rgb, step(noise.rgb, _InfectionAmount));
+			// o.Normal = tex2D(_InfectionNormal, IN.uv_MainTex);
 		}
 		ENDCG
 	}
