@@ -8,7 +8,7 @@ public class ThreadingSystem : MonoBehaviour
 {
     public static ThreadingSystem Instance;
 
-    public const int numberOfThreads = 4;
+    public const int numberOfThreads = 3;
     Queue<UnityAction>[] threadQueues;
     
     Queue<UnityAction> taskQueue = new Queue<UnityAction>();
