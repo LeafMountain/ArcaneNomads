@@ -352,6 +352,8 @@ GameObject:
   - component: {fileID: 136693656944005880}
   - component: {fileID: 114952022653232232}
   - component: {fileID: 54116342597699486}
+  - component: {fileID: 114108264633274608}
+  - component: {fileID: 114904434268392878}
   m_Layer: 0
   m_Name: pref_char_zombie01
   m_TagString: Untagged
@@ -2713,12 +2715,35 @@ Animator:
   m_Controller: {fileID: 9100000, guid: bbbc3ba59b19c924baf5886e2b53c42f, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114108264633274608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1195686378583526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a773f0aef2f54046bc35a56ba3dd96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114904434268392878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1195686378583526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef63e4e70ea4544bb81e55d1852bd6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
 --- !u!114 &114952022653232232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2730,8 +2755,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b1d08cd86ebad44b0eaee4c4f4ebd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3
-  maxForce: 1
+  maxSpeed: 1
+  maxForce: 3
   stoppingDistance: 2
   personalSpace: 3
   neighborDistance: 6

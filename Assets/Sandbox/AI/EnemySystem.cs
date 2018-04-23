@@ -12,6 +12,8 @@ public class EnemySystem : MonoBehaviour {
 	Vector3 center;
 
 	Enemy[] enemies;
+	Attractor[] attractors;
+
 	System.Random random = new System.Random();
 	ThreadingSystem threading;
 
@@ -31,9 +33,21 @@ public class EnemySystem : MonoBehaviour {
 		}
 	}
 
+	public struct Attractor {
+		public Transform transform;
+		public Vector3 position;
+	}
+
 	void Start(){
-		center = center;
+		center = transform.position;
 		threading = ThreadingSystem.Instance;
+		StartCoroutine("LateStart");
+	}
+
+	IEnumerable LateStart(){
+		yield return new WaitForSeconds(5f);
+		updateList = true;
+		Debug.Log("LateStart");
 	}
 
 	void Update () {
@@ -41,6 +55,7 @@ public class EnemySystem : MonoBehaviour {
 			updateList = false;
 
 			CollectData ();
+			CollectAttractors();
 		}
 
 		UpdateEnemies();
@@ -87,28 +102,66 @@ public class EnemySystem : MonoBehaviour {
 		}
 	}
 
+	void CollectAttractors(){
+		ZombieAttractor[] attractors = FindObjectsOfType<ZombieAttractor>();
+		this.attractors = new Attractor[attractors.Length];
+
+		for (int i = 0; i < attractors.Length; i++)
+		{
+			this.attractors[i] = new Attractor();
+			this.attractors[i].transform = attractors[i].transform;
+			this.attractors[i].position = this.attractors[i].transform.position;
+		}
+	}
+
+	void UpdateAttractors(){
+		for (int i = 0; i < attractors.Length; i++)
+		{
+			attractors[i].position = attractors[i].transform.position;
+		}
+	}
+
 	public Vector3 GetFuturePosition (Enemy enemy) {
 		return enemy.position + enemy.velocity;
 	}
 
 	void GetWalkDirection (Enemy enemy) {
 		Vector3 force = Vector3.zero;
-		int[] neighbors = GetEnemiesWithinRadius (enemy.position, enemy.data.neighborDistance);
 
-		if (enemy.data.flock) {
-			force += Flock (enemy, neighbors);
+		UpdateAttractors();
+		float neighborDistanceSqrt = enemy.data.neighborDistance * enemy.data.neighborDistance;
+		bool attractorNearby = false;
+		Attractor attractor = new Attractor();
+
+		for (int i = 0; i < attractors.Length; i++)
+		{
+			if(Vector3.SqrMagnitude(enemy.position - attractors[i].position) < neighborDistanceSqrt){
+				attractorNearby = true;
+				attractor = attractors[i];
+				break;
+			}
 		}
 
-		if (enemy.data.wander) {
-			force += Wander (enemy);
-		}
+		if(attractorNearby){
+			force = attractor.position - enemy.position;
+		} else {
+			int[] neighbors = GetEnemiesWithinRadius (enemy.position, enemy.data.neighborDistance);
 
-		if (enemy.data.align) {
-			force += Align (enemy, neighbors);
-		}
+			if (enemy.data.flock) {
+				force += Flock (enemy, neighbors);
+			}
 
-		if (enemy.data.avoid) {
-			force += Avoid (enemy, neighbors);
+			if (enemy.data.wander) {
+				force += Wander (enemy);
+			}
+
+			if (enemy.data.align) {
+				force += Align (enemy, neighbors);
+			}
+
+			if (enemy.data.avoid) {
+				force += Avoid (enemy, neighbors);
+			}
 		}
 
 		force += KeepWithinArea(enemy);
@@ -245,12 +298,12 @@ public class EnemySystem : MonoBehaviour {
 	int[] GetEnemiesWithinRadius (Vector3 position, float radius, Enemy[] array) {
 		List<int> neighbors = new List<int> ();
 
-		float radiusSqrt = Mathf.Sqrt (radius);
+		float radiusSqr = radius * radius;
 
 		for (int i = 0; i < array.Length; i++) {
 			float sqrtMagnitude = Vector3.SqrMagnitude (enemies[i].position - position);
 
-			if (sqrtMagnitude < radiusSqrt) {
+			if (sqrtMagnitude < radiusSqr) {
 				neighbors.Add (i);
 			}
 		}
