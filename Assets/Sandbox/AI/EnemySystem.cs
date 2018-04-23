@@ -41,11 +41,12 @@ public class EnemySystem : MonoBehaviour {
 	void Start(){
 		center = transform.position;
 		threading = ThreadingSystem.Instance;
+
 		StartCoroutine("LateStart");
 	}
 
-	IEnumerable LateStart(){
-		yield return new WaitForSeconds(5f);
+	IEnumerator LateStart(){
+		yield return new WaitForSeconds(1f);
 		updateList = true;
 		Debug.Log("LateStart");
 	}
@@ -69,11 +70,13 @@ public class EnemySystem : MonoBehaviour {
 			UpdateData(ref enemies[i]);
 		}
 
+		UpdateAttractors();		
+
 		if(useThreading){
-			threading.AddToThreadQueue(0, () => { GetEnemies(0, enemies.Length / 4); } );
-			threading.AddToThreadQueue(1, () => { GetEnemies(enemies.Length / 4, enemies.Length / 2); } );
-			threading.AddToThreadQueue(2, () => { GetEnemies(enemies.Length / 2, enemies.Length / 4 * 3); } );
-			threading.AddToThreadQueue(3, () => { GetEnemies(enemies.Length / 4 * 3, enemies.Length); } );
+			threading.AddToThreadQueue(0, () => { GetEnemies(0, enemies.Length / 3); } );
+			threading.AddToThreadQueue(1, () => { GetEnemies(enemies.Length / 3, enemies.Length / 3 * 2); } );
+			threading.AddToThreadQueue(2, () => { GetEnemies(enemies.Length / 3 * 2, enemies.Length); } );
+			// threading.AddToThreadQueue(3, () => { GetEnemies(enemies.Length / 4 * 3, enemies.Length); } );
 		} else {
 			GetEnemies(0, enemies.Length);
 		}
@@ -128,7 +131,6 @@ public class EnemySystem : MonoBehaviour {
 	void GetWalkDirection (Enemy enemy) {
 		Vector3 force = Vector3.zero;
 
-		UpdateAttractors();
 		float neighborDistanceSqrt = enemy.data.neighborDistance * enemy.data.neighborDistance;
 		bool attractorNearby = false;
 		Attractor attractor = new Attractor();
