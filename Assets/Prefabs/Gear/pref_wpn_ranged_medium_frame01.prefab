@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 33771424814863984}
   - component: {fileID: 23200968369955212}
   m_Layer: 0
-  m_Name: mod_wpn_ranged_medium_frame01
+  m_Name: pref_wpn_ranged_medium_frame01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

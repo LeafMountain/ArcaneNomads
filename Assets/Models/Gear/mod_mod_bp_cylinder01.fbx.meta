@@ -4,11 +4,17 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: mod_mod_bp_canister_arcane_liquid
     400000: //RootNode
+    400002: mod_mod_bp_canister_arcane_liquid
     2100000: lambert13
     2300000: //RootNode
+    2300002: mod_mod_bp_canister_arcane_liquid
     3300000: //RootNode
+    3300002: mod_mod_bp_canister_arcane_liquid
     4300000: mod_mod_bp_canister02
+    4300002: mod_mod_bp_canister01
+    4300004: mod_mod_bp_canister_arcane_liquid
   externalObjects: {}
   materials:
     importMaterials: 0
