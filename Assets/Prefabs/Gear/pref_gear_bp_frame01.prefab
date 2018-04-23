@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 33598771732223664}
   - component: {fileID: 23315847562103376}
   m_Layer: 0
-  m_Name: mod_gear_bp_frame01
+  m_Name: pref_gear_bp_frame01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
