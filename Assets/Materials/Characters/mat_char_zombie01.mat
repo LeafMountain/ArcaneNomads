@@ -43,8 +43,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _InfectionTex:
-        m_Texture: {fileID: 2800000, guid: d312b8a8464688d41a19cea8a29899dd, type: 3}
-        m_Scale: {x: 3, y: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 5.53, y: 4.11}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 86b22fe18484eff42958a60ee1a9c982, type: 3}
@@ -83,11 +83,11 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _Hidden: 0
-    - _InfectionAmount: 0.189
+    - _InfectionAmount: 0.094
     - _Metallic: 0.5
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.014
     - _OutlineZ: -0.002
     - _Parallax: 0.02
     - _Rim: 0.0137
@@ -106,7 +106,7 @@ Material:
     - _Emission: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
-    - _InfectionColor: {r: 0, g: 0.3490566, b: 0.21207887, a: 0}
+    - _InfectionColor: {r: 0, g: 0, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

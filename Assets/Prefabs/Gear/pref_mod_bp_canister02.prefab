@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4003520823455878}
   - component: {fileID: 33924502173830458}
   - component: {fileID: 23473364255573032}
+  - component: {fileID: 114694586254611968}
   m_Layer: 0
   m_Name: mod_mod_bp_canister_arcane_liquid
   m_TagString: Untagged
@@ -122,7 +123,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 6a51756caa2421b44aaa58b3547408eb, type: 2}
+  - {fileID: 2100000, guid: 511d4efee4ebc2a4396662e6158b3d86, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,3 +157,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1092978776798482}
   m_Mesh: {fileID: 4300004, guid: 9266beb1a8541ed4db1484fd7ba5378d, type: 3}
+--- !u!114 &114694586254611968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1092978776798482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aa31d1654318b48a08bc009541d058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWobble: 0.03
+  WobbleSpeed: 1
+  Recovery: 1
