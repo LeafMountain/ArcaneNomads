@@ -23,18 +23,13 @@ public class SuperCharacterController : MonoBehaviour {
 	// Vector3 velocity;
 	public Vector3 Velocity { 
 		get{
-			// Vector3 currentPosition = transform.position;
-			// Vector3 velocity = lastPosition - currentPosition;
-			// velocity = velocity.normalized;
-			// lastPosition = currentPosition;
-			Vector3 velocity = ConvertToCameraForward(rb.velocity);
-			Vector3 forward = transform.forward;
-			Vector3 velocityRelativeToForward = new Vector3(forward.x * velocity.x, 0, forward.z * velocity.z);
+			return rb.velocity;
+		} 
+	}
 
-			Debug.DrawRay(transform.position + Vector3.up, velocityRelativeToForward * 4, Color.red);
-
-
-			return velocityRelativeToForward;
+	public Vector3 ForwardVelocity { 
+		get{
+			return transform.InverseTransformDirection(rb.velocity);
 		} 
 	}
 

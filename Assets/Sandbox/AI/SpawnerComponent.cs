@@ -13,7 +13,7 @@ public class SpawnerComponent : MonoBehaviour {
 	public int numberSpawned;
 	public float timeSinceLastSpawn;
 
-	void OnDrawGizmos(){
+	void OnDrawGizmosSelected(){
 		Gizmos.DrawWireCube(transform.position, new Vector3(spawnArea.x, 0, spawnArea.y));
 	}
 }

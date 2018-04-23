@@ -19,6 +19,6 @@ public abstract class ComponentSystem<T> : MonoBehaviour where T : UnityEngine.O
 	}
 
 	protected void UpdateComponentsList(){
-		components = GameObject.FindObjectsOfType<T>();		
+		components = GameObject.FindObjectsOfType<T>();	
 	}
 }

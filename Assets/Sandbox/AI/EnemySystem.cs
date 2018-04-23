@@ -1,236 +1,348 @@
-﻿using System.Collections; 
-using System.Collections.Generic; 
-using UnityEngine; 
-using UnityEngine.AI; 
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Threading;
+using UnityEngine;
+using UnityEngine.Events;
 
-public class EnemySystem:ComponentSystem < EnemyComponent >  {
+public class EnemySystem : MonoBehaviour {
 
-	public bool updateList = true; 
-	public Vector3 area; 
+	public bool updateList = true;
+	public Vector3 area;
 
-	protected override void OnUpdate() {
+	Vector3 center;
+
+	Enemy[] enemies;
+	Attractor[] attractors;
+
+	System.Random random = new System.Random();
+	ThreadingSystem threading;
+
+	public struct Enemy {
+		public EnemyComponent data;
+		public Transform transform;
+		public Rigidbody rigidbody;
+		public Vector3 position;
+		public Vector3 velocity;
+
+		public Enemy (EnemyComponent enemy, Transform transform, Rigidbody rigidbody, Vector3 position, Vector3 velocity) {
+			this.data = enemy;
+			this.transform = transform;
+			this.rigidbody = rigidbody;
+			this.position = position;
+			this.velocity = velocity;
+		}
+	}
+
+	public struct Attractor {
+		public Transform transform;
+		public Vector3 position;
+	}
+
+	void Start(){
+		center = transform.position;
+		threading = ThreadingSystem.Instance;
+		StartCoroutine("LateStart");
+	}
+
+	IEnumerable LateStart(){
+		yield return new WaitForSeconds(5f);
+		updateList = true;
+		Debug.Log("LateStart");
+	}
+
+	void Update () {
 		if (updateList) {
-			updateList = false; 
-			UpdateComponentsList(); 
+			updateList = false;
 
-			for (int i = 0; i < components.Length; i++) {
-				if ( ! components[i].rigidbody) {
-					Setup(components[i]); 
-				}
-			}
+			CollectData ();
+			CollectAttractors();
+		}
+
+		UpdateEnemies();
+	}
+
+	public bool useThreading;
+
+	void UpdateEnemies(){
+		for (int i = 0; i < enemies.Length; i++)
+		{
+			UpdateData(ref enemies[i]);
+		}
+
+		if(useThreading){
+			threading.AddToThreadQueue(0, () => { GetEnemies(0, enemies.Length / 4); } );
+			threading.AddToThreadQueue(1, () => { GetEnemies(enemies.Length / 4, enemies.Length / 2); } );
+			threading.AddToThreadQueue(2, () => { GetEnemies(enemies.Length / 2, enemies.Length / 4 * 3); } );
+			threading.AddToThreadQueue(3, () => { GetEnemies(enemies.Length / 4 * 3, enemies.Length); } );
+		} else {
+			GetEnemies(0, enemies.Length);
 		}
 		
-		for (int i = 0; i < components.Length; i++) {
-			DoBehaviour(components[i]); 
+	}
+
+	void UpdateData(ref Enemy enemy) {
+		enemy.position = enemy.transform.position;
+		enemy.velocity = enemy.rigidbody.velocity;
+	}
+
+	void GetEnemies(int start, int end){
+		for (int i = start; i < end; i++)
+		{
+			GetWalkDirection (enemies[i]);
 		}
 	}
 
-	public Vector3 GetVelocity(EnemyComponent enemy) {
-		return enemy.rigidbody.velocity; 
+	void CollectData () {
+		EnemyComponent[] enemies = GameObject.FindObjectsOfType<EnemyComponent> ();
+		this.enemies = new Enemy[enemies.Length];
+
+		for (int i = 0; i < enemies.Length; i++) {
+			enemies[i].transform.name = "Enemy nr." + i;
+			this.enemies[i] = new Enemy (enemies[i], enemies[i].transform, enemies[i].GetComponent<Rigidbody> (), enemies[i].transform.position, Vector3.zero);
+		}
 	}
 
-	public Vector3 GetFuturePosition(EnemyComponent enemy) {
-		Vector3 futurePosition = enemy.transform.position + GetVelocity(enemy); 
-		// enemy.futurePosition = futurePosition;
-		return futurePosition; 
+	void CollectAttractors(){
+		ZombieAttractor[] attractors = FindObjectsOfType<ZombieAttractor>();
+		this.attractors = new Attractor[attractors.Length];
+
+		for (int i = 0; i < attractors.Length; i++)
+		{
+			this.attractors[i] = new Attractor();
+			this.attractors[i].transform = attractors[i].transform;
+			this.attractors[i].position = this.attractors[i].transform.position;
+		}
 	}
 
-	void Setup(EnemyComponent enemy) {
-		enemy.rigidbody = enemy.GetComponent < Rigidbody > (); 
-		enemy.rigidbody.AddForce(RandomVector(), ForceMode.VelocityChange); 
-		// enemy.neighbors = new Collider[enemy.numberOfNeighbors];
+	void UpdateAttractors(){
+		for (int i = 0; i < attractors.Length; i++)
+		{
+			attractors[i].position = attractors[i].transform.position;
+		}
 	}
 
-	void DoBehaviour(EnemyComponent enemy) {
-		EnemyComponent[] neighbors = GetNeighbors(enemy);
-		
-		if (enemy.flock) {
-			Flock(enemy); 
-		}
-
-		if (enemy.wander) {
-			Wander(enemy); 
-		}
-
-		if (enemy.align) {
-			Align(enemy, neighbors); 
-		}
-
-		if(enemy.avoid){
-			Avoid(enemy, neighbors);
-		}
-
-		KeepWithinArea(enemy);
-		RotateGameObject(enemy);
+	public Vector3 GetFuturePosition (Enemy enemy) {
+		return enemy.position + enemy.velocity;
 	}
 
-	void Wander(EnemyComponent enemy) {
-		if (Random.Range(0, 100) < 50) {
-			return; 
-		}
+	void GetWalkDirection (Enemy enemy) {
+		Vector3 force = Vector3.zero;
 
-		Vector3 direction = Vector3.zero; 
-		float angleOffset = 15; 
-		Vector3 offset = Quaternion.Euler(0, Random.Range( - angleOffset, angleOffset), 0) * GetVelocity(enemy); 
+		UpdateAttractors();
+		float neighborDistanceSqrt = enemy.data.neighborDistance * enemy.data.neighborDistance;
+		bool attractorNearby = false;
+		Attractor attractor = new Attractor();
 
-		if (GetVelocity(enemy) == Vector3.zero) {
-			enemy.rigidbody.AddForce(new Vector3(Random.Range(-1f, 1), 0, Random.Range(-1f, 1))); 
-		}
-
-		direction = enemy.transform.position + GetVelocity(enemy) + offset; 
-
-		Seek(enemy, direction); 
-	}
-
-	void Avoid(EnemyComponent enemy, EnemyComponent[] neighbors) {
-		if(enemy.personalSpace == 0){
-			return;
-		}
-
-		for (int i = 0; i < neighbors.Length; i++){
-			Vector3 angleTowardsNeighbor = neighbors[i].transform.position - enemy.transform.position;
-
-			if(angleTowardsNeighbor.magnitude < enemy.personalSpace){
-				Seek(enemy, transform.position - angleTowardsNeighbor);
+		for (int i = 0; i < attractors.Length; i++)
+		{
+			if(Vector3.SqrMagnitude(enemy.position - attractors[i].position) < neighborDistanceSqrt){
+				attractorNearby = true;
+				attractor = attractors[i];
+				break;
 			}
 		}
 
+		if(attractorNearby){
+			force = attractor.position - enemy.position;
+		} else {
+			int[] neighbors = GetEnemiesWithinRadius (enemy.position, enemy.data.neighborDistance);
+
+			if (enemy.data.flock) {
+				force += Flock (enemy, neighbors);
+			}
+
+			if (enemy.data.wander) {
+				force += Wander (enemy);
+			}
+
+			if (enemy.data.align) {
+				force += Align (enemy, neighbors);
+			}
+
+			if (enemy.data.avoid) {
+				force += Avoid (enemy, neighbors);
+			}
+		}
+
+		force += KeepWithinArea(enemy);
+
+		UnityAction DoStuff = () => {
+			Seek(enemy, force + enemy.position);
+			RotateGameObject(enemy);
+		};
+
+		threading.Schedule(DoStuff);
 	}
 
-	void KeepWithinArea(EnemyComponent enemy) {
+	Vector3 Wander (Enemy enemy) {
+		Vector3 force = Vector3.zero;
+
+		if (enemy.velocity == Vector3.zero) {
+			force += RandomVector ();
+		} else {
+			float angleOffset = 45;
+			Vector3 offset = Quaternion.Euler (0, RandomInt * angleOffset, 0) * enemy.velocity;
+
+			force = enemy.velocity + offset;
+		}
+
+		return force;
+	}
+
+	Vector3 Avoid (Enemy enemy, int[] neighbors) {
+		Vector3 force = Vector3.zero;
+		int[] neigh = GetEnemiesWithinRadius (enemy.position, enemy.data.personalSpace);
+
+		float personalSpaceSqrt = Mathf.Sqrt (enemy.data.personalSpace);
+
+		for (int i = 0; i < neigh.Length; i++) {
+			int enemyIndex = neigh[i];
+
+			if (enemies[enemyIndex].data == enemy.data) {
+				continue;
+			}
+
+			Vector3 angleTowardsNeighbor = enemies[enemyIndex].position - enemy.position;
+
+			if (Vector3.SqrMagnitude (angleTowardsNeighbor) < personalSpaceSqrt) {
+				force -= angleTowardsNeighbor;
+			}
+		}
+
+		return force;
+	}
+
+	Vector3 KeepWithinArea (Enemy enemy) {
+		Vector3 force = Vector3.zero;
+
 		// Outside West side
-		if (enemy.transform.position.x < transform.position.x +  - area.x / 2) {
-			Seek(enemy, Vector3.right); 
+		if (enemy.position.x < center.x + -area.x / 2) {
+			force += Vector3.right;
 		}
 		// Outside East side
-		else if (enemy.transform.position.x > transform.position.x + area.x / 2) {
-			Seek(enemy, Vector3.left); 
+		else if (enemy.position.x > center.x + area.x / 2) {
+			force += Vector3.left;
 		}
 		// Outside South side
-		if (enemy.transform.position.z < transform.position.z +  - area.z / 2) {
-			Seek(enemy, Vector3.forward); 
+		if (enemy.position.z < center.z + -area.z / 2) {
+			force += Vector3.forward;
 		}
 		// Outside North side
-		else if (enemy.transform.position.z > transform.position.z + area.z / 2) {
-			Seek(enemy, Vector3.back); 
+		else if (enemy.position.z > center.z + area.z / 2) {
+			force += Vector3.back;
 		}
+
+		return force;
 	}
 
-	void Align(EnemyComponent enemy, EnemyComponent[] neighbors) {
-		if (Random.Range(0, 100) < 1 || neighbors.Length < 3) {
-			return; 
+	Vector3 Align (Enemy enemy, int[] neighbors) {
+		if (neighbors.Length < 3) {
+			return Vector3.zero;
 		}
 
-		Vector3[] directions = new Vector3[neighbors.Length]; 
+		Vector3 force = Vector3.zero;
+
+		Vector3[] directions = new Vector3[neighbors.Length];
 
 		for (int i = 0; i < neighbors.Length; i++) {
-			directions[i] = GetVelocity(neighbors[i]); 
+			directions[i] = enemies[neighbors[i]].velocity;
 		}
 
-		Vector3 averageDirection = GetAveragePosition(enemy, directions); 
+		Vector3 averageDirection = GetAverageVector (enemy, directions);
 
 		if (averageDirection != Vector3.zero) {
-			Seek(enemy, enemy.transform.position + averageDirection); 
+			force = averageDirection;
 		}
+
+		return force;
 	}
 
-	void Flock(EnemyComponent enemy) {
-		EnemyComponent[] enemies = GetNeighbors(enemy); 
-		// Vector3[] positionsOfNeightbors = ExtractPositions(enemies);
-		Vector3 averagePosition = GetAveragePosition(enemy, enemies); 
-		float distanceToTarget = (averagePosition - enemy.transform.position).magnitude; 
+	Vector3 Flock (Enemy enemy, int[] neighbors) {
+		Vector3 averagePosition = GetAveragePosition (enemy, neighbors);
+		float distanceToTarget = (averagePosition - enemy.position).magnitude;
+		Vector3 force = Vector3.zero;
 
-		Seek(enemy, averagePosition); 
+		if (distanceToTarget > enemy.data.personalSpace) {
+			force = averagePosition;
+		}
+
+		return force;
 	}
 
-	void Arrive() {		
-		// Slow down when getting within stopping distance
-		// if(distanceToTarget < stoppingDistance){
-		// 	float m = Mathf.Lerp(0, maxSpeed, distanceToTarget / stoppingDistance);
-		// 	desired = desired.normalized;
-		// 	desired *= m;
-		// } 
-		// // Use max speed to get to the desired position
-		// else {
-			// desired = desired.normalized;
-			// desired *= enemy.maxSpeed;
-		// }
-	}
-
-	void Seek(EnemyComponent enemy, Vector3 target) {
+	void Seek (Enemy enemy, Vector3 target) {
 		// The desired direction
-		Vector3 desired; 
+		Vector3 desired;
 		// Amount of force to apply
-		Vector3 steer; 
+		Vector3 steer;
 
-		desired = target - GetFuturePosition(enemy); 
-		desired = desired.normalized; 
-		desired *= enemy.maxSpeed; 
+		desired = target - GetFuturePosition (enemy);
+		desired = desired.normalized;
+		desired *= enemy.data.maxSpeed;
 
 		// Find the force to apply 
-		steer = desired - GetVelocity(enemy); 
-		steer = steer.normalized * enemy.maxForce; 
+		steer = desired - enemy.velocity;
+		steer = steer.normalized * enemy.data.maxForce;
 
 		// Add force to physics system
-		enemy.rigidbody.AddForce(steer, ForceMode.Acceleration);
-
-		// Debug.DrawRay(enemy.transform.position, steer, Color.red);
+		enemy.rigidbody.AddForce (steer);
 	}
 
-	void RotateGameObject(EnemyComponent enemy) {
-		enemy.transform.LookAt(GetVelocity(enemy)); 
+	void RotateGameObject (Enemy enemy) {
+		enemy.transform.LookAt (enemy.velocity + enemy.position);
 	}
 
-	// RaycastHit See(EnemyComponent enemy){
-	// 	Ray vision = new Ray(enemy.transform.position, GetVelocity(enemy));
-	// 	RaycastHit hit;
+	int[] GetEnemiesWithinRadius (Vector3 position, float radius) {
+		return GetEnemiesWithinRadius (position, radius, enemies);
+	}
 
-	// 	Physics.Raycast(vision, out hit, enemy.maxSpeed);
+	int[] GetEnemiesWithinRadius (Vector3 position, float radius, Enemy[] array) {
+		List<int> neighbors = new List<int> ();
 
-	// 	return hit;
-	// }
+		float radiusSqr = radius * radius;
 
-	EnemyComponent[] GetNeighbors(EnemyComponent enemy) {
-		List < EnemyComponent > neighbors = new List < EnemyComponent > (); 
+		for (int i = 0; i < array.Length; i++) {
+			float sqrtMagnitude = Vector3.SqrMagnitude (enemies[i].position - position);
 
-		for (int y = 0; y < components.Length; y++) {
-			if (Vector3.Distance(components[y].transform.position, enemy.transform.position) < enemy.neighborDistance && components[y] != enemy) {
-				neighbors.Add(components[y]); 
+			if (sqrtMagnitude < radiusSqr) {
+				neighbors.Add (i);
 			}
 		}
 
-		return neighbors.ToArray(); 
+		return neighbors.ToArray ();
 	}
 
-	Vector3 GetAveragePosition(EnemyComponent enemy, EnemyComponent[] positions) {
-		Vector3 sum = Vector3.zero; 
-		enemy.numberOfNeighbors = positions.Length; 
+	Vector3 GetAveragePosition (Enemy enemy, int[] positions) {
+		Vector3 sum = Vector3.zero;
 
 		// Get the sum of all the positions
 		for (int i = 0; i < positions.Length; i++) {
-			sum += positions[i].transform.position; 
+			sum += enemies[positions[i]].position;
 		}
 
-		return sum / positions.Length; 
+		return sum / positions.Length;
 	}
 
-	Vector3 GetAveragePosition(EnemyComponent enemy, Vector3[] positions) {
-		Vector3 sum = Vector3.zero; 
-		enemy.numberOfNeighbors = positions.Length; 
+	Vector3 GetAverageVector (Enemy enemy, Vector3[] positions) {
+		Vector3 sum = Vector3.zero;
 
 		// Get the sum of all the positions
 		for (int i = 0; i < positions.Length; i++) {
-			sum += positions[i]; 
+			sum += positions[i];
 		}
-
-		return sum / positions.Length; 
+		return sum / positions.Length;
 	}
 
-	Vector3 RandomVector() {
-		return new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)); 
+	float RandomInt {
+		get {
+			return (float)random.Next(-100, 100) / 100f;
+		}
 	}
 
-	void OnDrawGizmos() {
-		Gizmos.DrawWireCube(transform.position, area); 
+	Vector3 RandomVector () {
+		return new Vector3(RandomInt, 0, RandomInt);
+	}
+
+	void OnDrawGizmosSelected () {
+		Gizmos.DrawWireCube (center, area);
 	}
 }
