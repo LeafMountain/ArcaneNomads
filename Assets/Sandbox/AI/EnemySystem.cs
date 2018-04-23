@@ -19,13 +19,15 @@ public class EnemySystem : MonoBehaviour {
 
 	public struct Enemy {
 		public EnemyComponent data;
+		public int id;
 		public Transform transform;
 		public Rigidbody rigidbody;
 		public Vector3 position;
 		public Vector3 velocity;
 
-		public Enemy (EnemyComponent enemy, Transform transform, Rigidbody rigidbody, Vector3 position, Vector3 velocity) {
+		public Enemy (EnemyComponent enemy, int id, Transform transform, Rigidbody rigidbody, Vector3 position, Vector3 velocity) {
 			this.data = enemy;
+			this.id = id;
 			this.transform = transform;
 			this.rigidbody = rigidbody;
 			this.position = position;
@@ -46,9 +48,8 @@ public class EnemySystem : MonoBehaviour {
 	}
 
 	IEnumerator LateStart(){
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForEndOfFrame();
 		updateList = true;
-		Debug.Log("LateStart");
 	}
 
 	void Update () {
@@ -76,7 +77,6 @@ public class EnemySystem : MonoBehaviour {
 			threading.AddToThreadQueue(0, () => { GetEnemies(0, enemies.Length / 3); } );
 			threading.AddToThreadQueue(1, () => { GetEnemies(enemies.Length / 3, enemies.Length / 3 * 2); } );
 			threading.AddToThreadQueue(2, () => { GetEnemies(enemies.Length / 3 * 2, enemies.Length); } );
-			// threading.AddToThreadQueue(3, () => { GetEnemies(enemies.Length / 4 * 3, enemies.Length); } );
 		} else {
 			GetEnemies(0, enemies.Length);
 		}
@@ -101,7 +101,7 @@ public class EnemySystem : MonoBehaviour {
 
 		for (int i = 0; i < enemies.Length; i++) {
 			enemies[i].transform.name = "Enemy nr." + i;
-			this.enemies[i] = new Enemy (enemies[i], enemies[i].transform, enemies[i].GetComponent<Rigidbody> (), enemies[i].transform.position, Vector3.zero);
+			this.enemies[i] = new Enemy (enemies[i], i, enemies[i].transform, enemies[i].GetComponent<Rigidbody> (), enemies[i].transform.position, Vector3.zero);
 		}
 	}
 
@@ -128,29 +128,33 @@ public class EnemySystem : MonoBehaviour {
 		return enemy.position + enemy.velocity;
 	}
 
-	void GetWalkDirection (Enemy enemy) {
-		Vector3 force = Vector3.zero;
+	Vector3 GetNearbyAttractor(Vector3 position, float distance){
+		float neighborDistanceSqrt = distance * distance;
 
-		float neighborDistanceSqrt = enemy.data.neighborDistance * enemy.data.neighborDistance;
-		bool attractorNearby = false;
-		Attractor attractor = new Attractor();
-
-		for (int i = 0; i < attractors.Length; i++)
-		{
-			if(Vector3.SqrMagnitude(enemy.position - attractors[i].position) < neighborDistanceSqrt){
-				attractorNearby = true;
-				attractor = attractors[i];
-				break;
+		for (int i = 0; i < attractors.Length; i++){
+			if(Vector3.SqrMagnitude(position - attractors[i].position) < neighborDistanceSqrt){
+				return attractors[i].position;
 			}
 		}
 
-		if(attractorNearby){
-			force = attractor.position - enemy.position;
-		} else {
-			int[] neighbors = GetEnemiesWithinRadius (enemy.position, enemy.data.neighborDistance);
+		return Vector3.zero;
+	}
+
+	void GetWalkDirection (Enemy enemy) {
+		Vector3 force = Vector3.zero;
+
+		Vector3 attractor = GetNearbyAttractor(enemy.position, enemy.data.neighborDistance);
+
+		if(attractor != Vector3.zero)
+		{
+			force = attractor - enemy.position;
+		} 
+		else
+		{
+			int[] neighborIDs = GetNeighbors (enemy.id, enemy.position, enemy.data.neighborDistance);
 
 			if (enemy.data.flock) {
-				force += Flock (enemy, neighbors);
+				force += Flock (enemy, neighborIDs);
 			}
 
 			if (enemy.data.wander) {
@@ -158,11 +162,11 @@ public class EnemySystem : MonoBehaviour {
 			}
 
 			if (enemy.data.align) {
-				force += Align (enemy, neighbors);
+				force += Align (enemy, neighborIDs);
 			}
 
 			if (enemy.data.avoid) {
-				force += Avoid (enemy, neighbors);
+				force += Avoid (enemy, neighborIDs);
 			}
 		}
 
@@ -173,7 +177,9 @@ public class EnemySystem : MonoBehaviour {
 			RotateGameObject(enemy);
 		};
 
-		threading.Schedule(DoStuff);
+		DoStuff.Invoke();
+
+		// threading.Schedule(DoStuff);
 	}
 
 	Vector3 Wander (Enemy enemy) {
@@ -183,7 +189,7 @@ public class EnemySystem : MonoBehaviour {
 			force += RandomVector ();
 		} else {
 			float angleOffset = 45;
-			Vector3 offset = Quaternion.Euler (0, RandomInt * angleOffset, 0) * enemy.velocity;
+			Vector3 offset = Quaternion.Euler (0, RandomFloat * angleOffset, 0) * enemy.velocity;
 
 			force = enemy.velocity + offset;
 		}
@@ -191,22 +197,19 @@ public class EnemySystem : MonoBehaviour {
 		return force;
 	}
 
-	Vector3 Avoid (Enemy enemy, int[] neighbors) {
+	Vector3 Avoid (Enemy enemy, int[] neighborIDs) {
 		Vector3 force = Vector3.zero;
-		int[] neigh = GetEnemiesWithinRadius (enemy.position, enemy.data.personalSpace);
+		
+		int[] intrusiveNeighbors = GetNeighbors (enemy.id, enemy.position, enemy.data.personalSpace, neighborIDs);
 
-		float personalSpaceSqrt = Mathf.Sqrt (enemy.data.personalSpace);
+		float personalSpaceSqr = enemy.data.personalSpace * enemy.data.personalSpace;
 
-		for (int i = 0; i < neigh.Length; i++) {
-			int enemyIndex = neigh[i];
+		for (int i = 0; i < intrusiveNeighbors.Length; i++) {
+			int neighborID = intrusiveNeighbors[i];
 
-			if (enemies[enemyIndex].data == enemy.data) {
-				continue;
-			}
+			Vector3 angleTowardsNeighbor = enemies[neighborID].position - enemy.position;
 
-			Vector3 angleTowardsNeighbor = enemies[enemyIndex].position - enemy.position;
-
-			if (Vector3.SqrMagnitude (angleTowardsNeighbor) < personalSpaceSqrt) {
+			if (Vector3.SqrMagnitude (angleTowardsNeighbor) < personalSpaceSqr) {
 				force -= angleTowardsNeighbor;
 			}
 		}
@@ -216,22 +219,10 @@ public class EnemySystem : MonoBehaviour {
 
 	Vector3 KeepWithinArea (Enemy enemy) {
 		Vector3 force = Vector3.zero;
+		Bounds bounds = new Bounds(center, area);
 
-		// Outside West side
-		if (enemy.position.x < center.x + -area.x / 2) {
-			force += Vector3.right;
-		}
-		// Outside East side
-		else if (enemy.position.x > center.x + area.x / 2) {
-			force += Vector3.left;
-		}
-		// Outside South side
-		if (enemy.position.z < center.z + -area.z / 2) {
-			force += Vector3.forward;
-		}
-		// Outside North side
-		else if (enemy.position.z > center.z + area.z / 2) {
-			force += Vector3.back;
+		if(!bounds.Contains(enemy.position)) {
+			force = bounds.ClosestPoint(enemy.position) - enemy.position;
 		}
 
 		return force;
@@ -259,13 +250,22 @@ public class EnemySystem : MonoBehaviour {
 		return force;
 	}
 
-	Vector3 Flock (Enemy enemy, int[] neighbors) {
-		Vector3 averagePosition = GetAveragePosition (enemy, neighbors);
-		float distanceToTarget = (averagePosition - enemy.position).magnitude;
+	Vector3 Flock (Enemy enemy, int[] neighborIDs) {
+		Vector3[] neighborPositions = new Vector3[neighborIDs.Length];
+
+		for (int i = 0; i < neighborIDs.Length; i++)
+		{
+			neighborPositions[i] = enemies[neighborIDs[i]].position;
+		}
+
+		Vector3 averagePosition = GetAverageVector (enemy, neighborPositions);
+
+		Vector3 towardsAverage = averagePosition - enemy.position;
 		Vector3 force = Vector3.zero;
 
-		if (distanceToTarget > enemy.data.personalSpace) {
-			force = averagePosition;
+		if (towardsAverage.magnitude > enemy.data.personalSpace) 
+		{
+			force = towardsAverage;
 		}
 
 		return force;
@@ -293,35 +293,34 @@ public class EnemySystem : MonoBehaviour {
 		enemy.transform.LookAt (enemy.velocity + enemy.position);
 	}
 
-	int[] GetEnemiesWithinRadius (Vector3 position, float radius) {
-		return GetEnemiesWithinRadius (position, radius, enemies);
+	int[] GetNeighbors (int id, Vector3 position, float radius) {
+		int[] neighborIDs = new int[enemies.Length];
+
+		for (int i = 0; i < enemies.Length; i++) {
+			neighborIDs[i] = i;
+		}
+
+		return GetNeighbors(id, position, radius, neighborIDs);
 	}
 
-	int[] GetEnemiesWithinRadius (Vector3 position, float radius, Enemy[] array) {
+	int[] GetNeighbors (int id, Vector3 position, float radius, int[] enemyIDs) {
 		List<int> neighbors = new List<int> ();
 
 		float radiusSqr = radius * radius;
 
-		for (int i = 0; i < array.Length; i++) {
-			float sqrtMagnitude = Vector3.SqrMagnitude (enemies[i].position - position);
+		for (int i = 0; i < enemyIDs.Length; i++) {
+			if(enemyIDs[i] == id){
+				continue;
+			}
 
-			if (sqrtMagnitude < radiusSqr) {
+			float sqrMagnitude = Vector3.SqrMagnitude (enemies[enemyIDs[i]].position - position);
+
+			if (sqrMagnitude < radiusSqr) {
 				neighbors.Add (i);
 			}
 		}
 
 		return neighbors.ToArray ();
-	}
-
-	Vector3 GetAveragePosition (Enemy enemy, int[] positions) {
-		Vector3 sum = Vector3.zero;
-
-		// Get the sum of all the positions
-		for (int i = 0; i < positions.Length; i++) {
-			sum += enemies[positions[i]].position;
-		}
-
-		return sum / positions.Length;
 	}
 
 	Vector3 GetAverageVector (Enemy enemy, Vector3[] positions) {
@@ -334,17 +333,19 @@ public class EnemySystem : MonoBehaviour {
 		return sum / positions.Length;
 	}
 
-	float RandomInt {
-		get {
-			return (float)random.Next(-100, 100) / 100f;
-		}
-	}
+	float RandomFloat { get { return (float)random.Next(-100, 100) / 100f; } }
 
+	// Get a random vector 3
 	Vector3 RandomVector () {
-		return new Vector3(RandomInt, 0, RandomInt);
+		return new Vector3(RandomFloat, 0, RandomFloat);
 	}
 
 	void OnDrawGizmosSelected () {
+		// Display area restriction
 		Gizmos.DrawWireCube (center, area);
 	}
+}
+
+public interface IAIBehavior {
+	Vector3 GetForce(EnemyComponent enemy);
 }

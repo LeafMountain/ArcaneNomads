@@ -353,7 +353,10 @@ GameObject:
   - component: {fileID: 114952022653232232}
   - component: {fileID: 54116342597699486}
   - component: {fileID: 114108264633274608}
-  - component: {fileID: 114904434268392878}
+  - component: {fileID: 135227738890608544}
+  - component: {fileID: 114655293915981680}
+  - component: {fileID: 114424232132635208}
+  - component: {fileID: 114461114632824512}
   m_Layer: 0
   m_Name: pref_char_zombie01
   m_TagString: Untagged
@@ -2732,7 +2735,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a773f0aef2f54046bc35a56ba3dd96a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114904434268392878
+--- !u!114 &114424232132635208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1195686378583526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74adf6a3ec0a68d46be55eb473f8e5ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checks:
+  - tag: {fileID: 11400000, guid: 97c88001d33470345a38e7f56a4d5526, type: 2}
+    acceptedTagFound:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114461114632824512}
+          m_MethodName: Damage
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityGameObjectEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+--- !u!114 &114461114632824512
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2743,7 +2775,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef63e4e70ea4544bb81e55d1852bd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: -50
+--- !u!114 &114655293915981680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1195686378583526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9283586832fee3943a524e17a79bbc68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exclusiveTo: []
+  OnTriggerEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114424232132635208}
+        m_MethodName: CheckTags
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityGameObjectEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnTriggerExited:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityGameObjectEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114952022653232232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2756,10 +2821,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 1
-  maxForce: 3
+  maxForce: 2
   stoppingDistance: 2
-  personalSpace: 3
-  neighborDistance: 6
+  personalSpace: 1
+  neighborDistance: 3
   flock: 0
   wander: 1
   align: 1
@@ -2778,6 +2843,18 @@ MonoBehaviour:
   MaxWobble: 0.03
   WobbleSpeed: 1
   Recovery: 1
+--- !u!135 &135227738890608544
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1195686378583526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.58
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!136 &136693656944005880
 CapsuleCollider:
   m_ObjectHideFlags: 1
