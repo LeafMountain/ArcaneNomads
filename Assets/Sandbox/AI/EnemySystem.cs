@@ -289,7 +289,7 @@ public class EnemySystem : MonoBehaviour {
 		return new Vector3(RandomInt, 0, RandomInt);
 	}
 
-	void OnDrawGizmos () {
+	void OnDrawGizmosSelected () {
 		Gizmos.DrawWireCube (center, area);
 	}
 }

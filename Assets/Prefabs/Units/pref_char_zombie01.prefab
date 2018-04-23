@@ -1149,6 +1149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4201521907323538}
   - component: {fileID: 137651116203702302}
+  - component: {fileID: 114992182916867558}
   m_Layer: 0
   m_Name: mod_char_zombie01
   m_TagString: Untagged
@@ -2418,7 +2419,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1195686378583526}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -2.4863486, y: 0, z: -0.7272711}
+  m_LocalPosition: {x: -3.347, y: 0, z: -0.7272711}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4204656966007620}
@@ -2738,6 +2739,20 @@ MonoBehaviour:
   wander: 1
   align: 1
   avoid: 0
+--- !u!114 &114992182916867558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1799313584757406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aa31d1654318b48a08bc009541d058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWobble: 0.03
+  WobbleSpeed: 1
+  Recovery: 1
 --- !u!136 &136693656944005880
 CapsuleCollider:
   m_ObjectHideFlags: 1
