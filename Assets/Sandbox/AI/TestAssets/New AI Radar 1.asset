@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: New AI Radar 1
   m_EditorClassIdentifier: Assembly-CSharp::AIRadar
-  range: 0
+  range: 10
