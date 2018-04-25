@@ -82,7 +82,6 @@ public class SuperCharacterController : MonoBehaviour {
 		switch (relativeTo) {
 			case(RelativeDirection.Camera):
 				Vector3 newMoveDir = ConvertToCameraForward(_input);
-				Debug.Log(newMoveDir);
 				moveDirection = newMoveDir;
 				break;
 			case(RelativeDirection.World):
