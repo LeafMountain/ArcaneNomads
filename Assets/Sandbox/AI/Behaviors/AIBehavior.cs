@@ -1,8 +1,8 @@
 using UnityEngine;
 
 [System.Serializable]
-public class AIBeahvior : ScriptableObject {
-    public virtual Vector3 DoBehavior(AISystem system, Boid boid){
+public abstract class AIBeahvior : ScriptableObject {
+    public virtual Vector3 DoBehavior(AIComponent boid){
         return Vector3.zero;
     }
 }
