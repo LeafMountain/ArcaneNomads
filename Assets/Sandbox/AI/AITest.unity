@@ -288,13 +288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a86a07bde3b214b90e02bccab794c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateList: 1
-  area: {x: 100, y: 0, z: 100}
-  center: {x: 0, y: 0, z: 0}
-  behaviors:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!4 &426366927 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4860050380687398, guid: e85f40f4bcd1de14da13291393ee7c2f,
