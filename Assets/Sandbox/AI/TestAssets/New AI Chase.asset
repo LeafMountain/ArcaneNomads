@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19fb7f559c7701341be2448bd7c172ea, type: 3}
   m_Name: New AI Chase
   m_EditorClassIdentifier: 
-  sensor: {fileID: 11400000, guid: c09edff65ac10724e873a798d9f025b8, type: 2}
+  sensor: {fileID: 11400000, guid: 5b8cc2897fc683e4ea8fb0e541ba9fa3, type: 2}
