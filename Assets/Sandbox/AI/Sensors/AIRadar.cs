@@ -8,8 +8,12 @@ public class AIRadar : AISensor {
 	public float range;
 
 	Collider[] colliders = new Collider[10];
+
+	Vector3 currentPos;
 	
 	public override Collider[] GetObjects(AIComponent boid){
+		currentPos = boid.position;
+
 		int numberOfColliders = Physics.OverlapSphereNonAlloc(boid.position, range, colliders, layerMask);
 
 		for (int i = 0; i < colliders.Length; i++) {

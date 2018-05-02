@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Name: New AI Template
   m_EditorClassIdentifier: 
   maxSpeed: 50
-  maxForce: 50
+  maxForce: 25
   behaviors:
   - {fileID: 11400000, guid: 3a31dd8415032624998c45034a1d1c43, type: 2}
   - {fileID: 11400000, guid: 602acfc423879cb45996529ea18263d0, type: 2}
   - {fileID: 11400000, guid: dc3a49b7c64d78c4f8464971626fb51c, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: af2650d304c9a664e897632bec0cbec8, type: 2}
+  - {fileID: 11400000, guid: 824ea7a78fa7ec34ca9e39feec853bee, type: 2}
