@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1195686378583526, guid: e85f40f4bcd1de14da13291393ee7c2f, type: 2}
-  amount: 50
+  amount: 300
   spawnInterval: 0
   spawnArea: {x: 50, y: 50}
   numberSpawned: 0
@@ -877,8 +877,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1778848608}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.41, z: 6.92}
-  m_LocalScale: {x: 8.955104, y: 8.955111, z: 8.955111}
+  m_LocalPosition: {x: 0, y: 3.41, z: 12.87}
+  m_LocalScale: {x: 55.46619, y: 8.955111, z: 17.123629}
   m_Children: []
   m_Father: {fileID: 673959098}
   m_RootOrder: 1
