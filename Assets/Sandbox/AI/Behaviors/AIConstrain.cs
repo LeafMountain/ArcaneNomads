@@ -13,7 +13,7 @@ public class AIConstrain : AIBeahvior {
             force = bounds.ClosestPoint(boid.position) - boid.position;
         }
 
-        return force;
+        return force.normalized;
     }
 
 }
