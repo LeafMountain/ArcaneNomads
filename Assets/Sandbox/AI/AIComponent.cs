@@ -7,6 +7,7 @@ public class AIComponent : MonoBehaviour {
 
 	[HideInInspector]
 	public Vector3 velocity;
+	[HideInInspector]	
 	public Vector3 position;
 
 	public AITemplate template;

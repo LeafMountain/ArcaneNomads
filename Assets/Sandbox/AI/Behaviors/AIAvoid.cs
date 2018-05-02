@@ -1,8 +1,9 @@
-
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="AI/Behaviors/Flock")]
-public class AIFlock : AIBeahvior {
+[CreateAssetMenu(menuName = "AI/Behaviors/Avoid")]
+public class AIAvoid : AIBeahvior {
 
 	public AISensor sensor;
 
@@ -18,7 +19,7 @@ public class AIFlock : AIBeahvior {
 
 		Vector3 averagePosition = GetAverageVector (boid, neighborPositions);
 
-		Vector3 force = averagePosition - boid.position;
+		Vector3 force = boid.position - averagePosition;
 
 		return force;
 	}

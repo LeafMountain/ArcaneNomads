@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class AISensor : ScriptableObject {
 
+	[SerializeField]
+	protected LayerMask layerMask;
+
 	public virtual Collider[] GetObjects(AIComponent boid){
 		return null;
 	}

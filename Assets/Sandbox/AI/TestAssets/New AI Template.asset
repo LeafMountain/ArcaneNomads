@@ -14,7 +14,7 @@ MonoBehaviour:
   maxSpeed: 5
   maxForce: 1
   behaviors:
-  - {fileID: 11400000, guid: 602acfc423879cb45996529ea18263d0, type: 2}
   - {fileID: 11400000, guid: 3a31dd8415032624998c45034a1d1c43, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 602acfc423879cb45996529ea18263d0, type: 2}
+  - {fileID: 11400000, guid: dc3a49b7c64d78c4f8464971626fb51c, type: 2}
   - {fileID: 0}

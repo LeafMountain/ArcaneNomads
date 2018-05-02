@@ -10,12 +10,19 @@ public class AIRadar : AISensor {
 	Collider[] colliders = new Collider[10];
 	
 	public override Collider[] GetObjects(AIComponent boid){
-		int numberOfColliders = Physics.OverlapSphereNonAlloc(boid.position, range, colliders);
+		int numberOfColliders = Physics.OverlapSphereNonAlloc(boid.position, range, colliders, layerMask);
 
-		// Reset the rest of the slots
-		for (int i = numberOfColliders; i < colliders.Length; i++)
-		{
-			colliders[i] = null;
+		for (int i = 0; i < colliders.Length; i++) {
+			// Remove boid from array			
+			if(i < numberOfColliders) {
+				if(colliders[i].transform == boid.transform){
+					colliders[i] = null;
+				}
+			}
+			// Reset the rest of the slots
+			else{
+				colliders[i] = null;				
+			}
 		}
 
 		return colliders;
