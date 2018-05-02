@@ -22,7 +22,7 @@ public class AIWander : AIBeahvior {
 			force = boid.velocity + offset;
 		}
 
-		return force;
+		return force.normalized;
 		
 	}
 }

@@ -17,15 +17,17 @@ public class AIAvoidEnvironment : AIBeahvior {
 
 		for (int i = 0; i < obstacles.Length; i++) {
 			if(obstacles[i]){
-				positions[i] = obstacles[i].transform.position;
+				positions[i] = boid.position - obstacles[i].transform.position;
 			}
 		}
 
-		Vector3 averagePosition = GetAverageVector (boid, positions);
+		Vector3 averagePosition = GetAverageVector (positions);
 
 		if(averagePosition != Vector3.zero){
-			force = boid.position - averagePosition;
+			force = averagePosition;
 		}
+
+		Debug.DrawRay(boid.transform.position, force.normalized, Color.red);
 
 		return force.normalized;
 	}
@@ -34,7 +36,7 @@ public class AIAvoidEnvironment : AIBeahvior {
 		return sensor.GetObjects(boid);
 	}
 
-	Vector3 GetAverageVector (AIComponent enemy, Vector3[] positions) {
+	Vector3 GetAverageVector (Vector3[] positions) {
 		Vector3 sum = Vector3.zero;
 
 		// Get the sum of all the positions
