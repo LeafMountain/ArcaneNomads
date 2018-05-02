@@ -8,8 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5f22f3d45654347ad6cf34547dbb79, type: 3}
-  m_Name: New AI Ray
+  m_Script: {fileID: 11500000, guid: a1b2ef7f47560e040bb7e8be1af3eb41, type: 3}
+  m_Name: New AI Align
   m_EditorClassIdentifier: 
-  range: 1
-  direction: {x: 0, y: 0, z: 1}
+  sensor: {fileID: 11400000, guid: 5b8cc2897fc683e4ea8fb0e541ba9fa3, type: 2}
+  neighborMinLimit: 5

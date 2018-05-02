@@ -28,7 +28,7 @@ public class AIAlign : AIBeahvior {
 			force = averageDirection;
 		}
 
-		return force;
+		return force.normalized;
 	}
 
 	AIComponent[] GetNeighbors (AIComponent boid) {
