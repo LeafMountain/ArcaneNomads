@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54faa3e152c12f4cbefbd4f9a3a8e8b, type: 3}
   m_Name: New AI Constrain
   m_EditorClassIdentifier: 
-  center: {x: 0, y: 0, z: 0}
-  area: {x: 50, y: 0, z: 50}
+  center: {x: 0, y: 0, z: 182}
+  area: {x: 100, y: 0, z: 100}
