@@ -7,28 +7,36 @@ public class AIAvoid : AIBeahvior {
 
 	public AISensor sensor;
 
+	Vector3 force;
+
 	public override Vector3 DoBehavior (AIComponent boid) {
-		AIComponent[] neighbors = GetNeighbors(boid);
+		Vector3 force = Vector3.zero;
+		Collider[] obstacles = GetObstacles(boid);
 
-		Vector3[] neighborPositions = new Vector3[neighbors.Length];
+		Vector3[] positions = new Vector3[obstacles.Length];
 
-		for (int i = 0; i < neighbors.Length; i++)
-		{
-			neighborPositions[i] = neighbors[i].position;
+		for (int i = 0; i < obstacles.Length; i++) {
+			if(obstacles[i]){
+				positions[i] = boid.position - obstacles[i].transform.position;
+			}
 		}
 
-		Vector3 averagePosition = GetAverageVector (boid, neighborPositions);
+		Vector3 averagePosition = GetAverageVector (positions);
 
-		Vector3 force = boid.position - averagePosition;
+		if(averagePosition != Vector3.zero){
+			force = averagePosition;
+		}
 
-		return force;
+		Debug.DrawRay(boid.transform.position, force.normalized, Color.red);
+
+		return force.normalized;
 	}
 
-	AIComponent[] GetNeighbors(AIComponent boid){
-		return sensor.GetObjects<AIComponent>(boid);
+	Collider[] GetObstacles(AIComponent boid){
+		return sensor.GetObjects(boid);
 	}
 
-	Vector3 GetAverageVector (AIComponent enemy, Vector3[] positions) {
+	Vector3 GetAverageVector (Vector3[] positions) {
 		Vector3 sum = Vector3.zero;
 
 		// Get the sum of all the positions
