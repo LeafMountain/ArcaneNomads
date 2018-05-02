@@ -1155,7 +1155,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4201521907323538}
   - component: {fileID: 137651116203702302}
-  - component: {fileID: 114992182916867558}
   m_Layer: 9
   m_Name: mod_char_zombie01
   m_TagString: Untagged
@@ -2836,20 +2835,6 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
   template: {fileID: 11400000, guid: ae6466a17c723784489df94a75e47546, type: 2}
---- !u!114 &114992182916867558
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1799313584757406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46aa31d1654318b48a08bc009541d058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxWobble: 0.03
-  WobbleSpeed: 1
-  Recovery: 1
 --- !u!135 &135227738890608544
 SphereCollider:
   m_ObjectHideFlags: 1
