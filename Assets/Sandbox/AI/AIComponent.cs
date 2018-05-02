@@ -55,6 +55,7 @@ public class AIComponent : MonoBehaviour {
 		// Find the force to apply 
 		steer = desired - velocity;
 		steer = steer.normalized * template.maxForce;
+		steer.y = 0;
 
 		// Add force to physics system
 		rigidbody.AddForce (steer);
@@ -66,8 +67,15 @@ public class AIComponent : MonoBehaviour {
 
 	void RotateTowardsVelocity () {
 		if (velocity != Vector3.zero) {
-			Quaternion lookRot = Quaternion.LookRotation (velocity);
-			transform.rotation = lookRot;
+			Vector3 dir = velocity;
+			dir.y = 0;
+
+			if(dir == Vector3.zero){
+				return;
+			}
+
+			Quaternion lookRot = Quaternion.LookRotation (dir);
+			transform.rotation = Quaternion.Lerp(transform.rotation, lookRot, Time.deltaTime * 5);
 		}
 	}
 
