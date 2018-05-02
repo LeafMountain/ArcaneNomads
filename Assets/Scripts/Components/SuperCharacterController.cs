@@ -81,7 +81,8 @@ public class SuperCharacterController : MonoBehaviour {
 
 		switch (relativeTo) {
 			case(RelativeDirection.Camera):
-				moveDirection = ConvertToCameraForward(_input);
+				Vector3 newMoveDir = ConvertToCameraForward(_input);
+				moveDirection = newMoveDir;
 				break;
 			case(RelativeDirection.World):
 				moveDirection = _input;
@@ -149,17 +150,27 @@ public class SuperCharacterController : MonoBehaviour {
 
 	//Common ------------------
 
-	Vector3 ConvertToCameraForward(Vector3 position){
-		Transform cameraTransform = Camera.main.transform;
+	Vector3 ConvertToCameraForward(Vector3 direction){
+		// Vector3 and = Quaternion.Euler(0, Camera.main.transform.rotation.y, 0) * Vector3.one;
 		
-		Vector3 cameraForward = cameraTransform.forward;
-		cameraForward.y = 0;
-		Vector3 cameraRight = cameraTransform.right;
-		cameraRight.y = 0;
-		Vector3 cameraUp = cameraTransform.up;
-		cameraUp.y = 0;
+		Vector3 newMoveDir = Camera.main.transform.TransformDirection(direction);
 
-		return ((cameraForward + cameraUp) * position.z + cameraRight * position.x).normalized;
+		
+		newMoveDir.y = 0;
+		newMoveDir = newMoveDir.normalized;
+		return newMoveDir;
+
+
+		// Transform cameraTransform = Camera.main.transform;
+		
+		// Vector3 cameraForward = cameraTransform.forward;
+		// cameraForward.y = 0;
+		// Vector3 cameraRight = cameraTransform.right;
+		// cameraRight.y = 0;
+		// Vector3 cameraUp = cameraTransform.up;
+		// cameraUp.y = 0;
+
+		// return ((cameraForward + cameraUp) * direction.z + cameraRight * direction.x).normalized;
 	}
 
 	Vector3 ConvertToSelfForward(Vector3 position){
