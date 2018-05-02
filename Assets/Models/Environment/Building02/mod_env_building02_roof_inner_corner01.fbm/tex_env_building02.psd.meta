@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 4e22f3bfaf054ca44b608705e573e378
-timeCreated: 1522933251
-licenseType: Free
-TextureImporter:
-  fileIDToRecycleName: {}
-  externalObjects: {}
-  serializedVersion: 4
-=======
-guid: a20a8b8b25ab89742b3920d862dd6196
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 5
->>>>>>> dev
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
@@ -53,33 +43,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
-=======
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
->>>>>>> dev
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 0
   textureShape: 1
-<<<<<<< HEAD
-=======
   singleChannelComponent: 0
->>>>>>> dev
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-<<<<<<< HEAD
-  - buildTarget: DefaultTexturePlatform
-=======
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
->>>>>>> dev
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -94,15 +72,12 @@ TextureImporter:
     sprites: []
     outline: []
     physicsShape: []
-<<<<<<< HEAD
-=======
     bones: []
     spriteID: 
     vertices: []
     indices: 
     edges: []
     weights: []
->>>>>>> dev
   spritePackingTag: 
   userData: 
   assetBundleName: 
