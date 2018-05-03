@@ -14,4 +14,4 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294966527
-  range: 2
+  range: 1
