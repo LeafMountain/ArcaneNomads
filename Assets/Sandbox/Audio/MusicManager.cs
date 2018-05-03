@@ -10,13 +10,14 @@ public enum PlayerState{campSite, exploring, tension, spotted, danger, Length}
 
 
 
+
 public class MusicManager : MonoBehaviour {
 
 	//public properties
 	public bool debug;
 	public PlayerState state;
 	public float stateValue;
-	public bool updateState;
+	
 
 	public AudioClipContainer[] soundLibrary;
 	//private properties
@@ -35,19 +36,12 @@ public class MusicManager : MonoBehaviour {
 	
 		StartCoroutine(UpdateMusic());
 
+		stateValues[(int)PlayerState.campSite] = 1.0f;
+
 		if(debug)Debug.Log("<MusicManager> up and running.....................");
 	}
-	void Update(){
-
-		if(updateState){
-			if(debug)Debug.Log("New PlayerState Input to DJ: " + state.ToString()
-			 + " with the value " + stateValue);
-
-			updateState = !updateState;
-			Input(state, stateValue);
-		}
-
-	}
+	
+	
 	
 	public void Input(PlayerState ps, float value)
 	{

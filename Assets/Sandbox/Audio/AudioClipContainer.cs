@@ -7,12 +7,12 @@ using UnityEngine;
 public class AudioClipContainer : ScriptableObject{
 
 	public Track trackType;
-	public AudioClip[] clips;
+	public AudioClip[] clip;
+	public int clipBarLength;
+	public int barStart;
 
-	public AudioClip GetRandomStartClip(){
-
-		return clips[Random.Range(0,clips.Length)];
+	public AudioClip GetAudioClip(){
+		return clip[Random.Range(0, clip.Length)];
 	}
-
 	
 }
