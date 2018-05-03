@@ -8,8 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5f22f3d45654347ad6cf34547dbb79, type: 3}
-  m_Name: New AI Ray
+  m_Script: {fileID: 11500000, guid: 87d1fed3d0732ed4da1d94cda230e165, type: 3}
+  m_Name: New AI Avoid
   m_EditorClassIdentifier: 
-  range: 1
-  direction: {x: 0, y: 0, z: 1}
+  sensor: {fileID: 11400000, guid: 51a334d4e83f7404f8a856b5b85f47cb, type: 2}
