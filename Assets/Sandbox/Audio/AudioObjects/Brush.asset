@@ -11,5 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ffee2d23aa68e4c977677319b6d74c, type: 3}
   m_Name: Brush
   m_EditorClassIdentifier: 
-  trackType: 0
-  clips: []
+  trackType: 8
+  clip:
+  - {fileID: 8300000, guid: cc33dc7fb853e9e4991d2cab83ff209d, type: 3}
+  clipBarLength: 4
+  barStart: 1

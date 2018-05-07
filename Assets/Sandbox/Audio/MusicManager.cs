@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum Track { ambient, bassTop, runningLate, heartBeat, venyl, boom, 
-drumBeat, newDay, brush, Length }
+drumBeat, newDay, brush, weather, Length }
 public enum PlayerState{campSite, exploring, tension, spotted, danger, Length}
 
 
@@ -16,12 +16,13 @@ public class MusicManager : MonoBehaviour {
 	//public properties
 	public bool debug;
 	public PlayerState state;
+	[Range(0,1)]
 	public float stateValue;
 	
-
 	public AudioClipContainer[] soundLibrary;
 	//private properties
 	private float updateInterval;
+	private AudioClipContainer[][] sortedacContainers;
 	private DJ djRef;	
 	private bool gameRunning;
 	private AudioSource[] audioSources;
@@ -65,6 +66,9 @@ public class MusicManager : MonoBehaviour {
 	public AudioClipContainer[] SoundLibrary{get{return soundLibrary;} 
 		set{soundLibrary = value;}}
 	public DJ DJRef {get{return djRef;} set{djRef = value;}}
+	public AudioClipContainer[][] SortedACContainers {get{return sortedacContainers;}
+		set{sortedacContainers = value;}}
+
 
 	
 	

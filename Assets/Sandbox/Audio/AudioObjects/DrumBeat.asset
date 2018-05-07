@@ -11,5 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ffee2d23aa68e4c977677319b6d74c, type: 3}
   m_Name: DrumBeat
   m_EditorClassIdentifier: 
-  trackType: 0
-  clips: []
+  trackType: 6
+  clip:
+  - {fileID: 8300000, guid: 9b4c607f053fad84eb324b6be5c516c1, type: 3}
+  clipBarLength: 8
+  barStart: 1

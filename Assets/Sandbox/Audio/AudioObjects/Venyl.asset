@@ -13,8 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trackType: 4
   clip:
-  - {fileID: 8300000, guid: bb3f50ffd4da5f94381f40736e24ca6d, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  clipBarLength: 32
-  barStart: 0
+  - {fileID: 8300000, guid: dd2c5ad1e1b7b7c43817d6b6787c810d, type: 3}
+  clipBarLength: 2
+  barStart: 1

@@ -11,5 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ffee2d23aa68e4c977677319b6d74c, type: 3}
   m_Name: NewDay
   m_EditorClassIdentifier: 
-  trackType: 0
-  clips: []
+  trackType: 7
+  clip: []
+  clipBarLength: 0
+  barStart: 0

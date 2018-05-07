@@ -14,5 +14,7 @@ MonoBehaviour:
   trackType: 0
   clip:
   - {fileID: 8300000, guid: ec3528720a290454195e7b0c784a7d5e, type: 3}
+  - {fileID: 8300000, guid: 0b5287f23eb72f14a9a1e5be3665d5c1, type: 3}
+  - {fileID: 8300000, guid: b24f1bd18666c2c41891778cd67c0429, type: 3}
   clipBarLength: 8
   barStart: 1

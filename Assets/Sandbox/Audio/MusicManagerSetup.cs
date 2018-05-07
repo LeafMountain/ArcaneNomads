@@ -16,6 +16,7 @@ public class MusicManagerSetup  {
 			mm.StateValues = new float[(int)PlayerState.Length];
 			mm.AudioSources = new AudioSource[(int)Track.Length];
 			GetAudioSources();
+			SortAudioContainers(mm.SoundLibrary);
 			mm.UpdateInterval = 3.0f;
 		
 		
@@ -31,5 +32,41 @@ public class MusicManagerSetup  {
 			mm.AudioSources[i] = mm.gameObject.transform.GetChild(i).GetComponent<AudioSource>();
 		}
 	}
+	private void SortAudioContainers(AudioClipContainer[] containers)
+	{
+		if(mm.debug)Debug.Log("MusicManagerSetup.SortAudioContainers");
+		mm.SortedACContainers = new AudioClipContainer[(int)Track.Length][];
+		int[] trackVariationIndex = new int[(int)Track.Length];
+		
+		foreach (AudioClipContainer item in mm.SoundLibrary)
+		{
+			trackVariationIndex[(int)item.trackType]++;
+
+			if(mm.debug)Debug.Log("TrackVariationIndex "  + item.trackType.ToString() + 
+								" has value: " + trackVariationIndex[(int)item.trackType] );
+		}
+
+		
+		for (int i = 0; i < mm.SortedACContainers.Length; i++)
+		{
+			mm.SortedACContainers[i] = new AudioClipContainer[trackVariationIndex[i]];	
+		}
+
+		for (int i = 0; i < (int)Track.Length; i++)
+		{
+			int index = 0;
+
+			foreach (AudioClipContainer item in mm.SoundLibrary)
+			{
+				if((int)item.trackType == i)
+				{
+					mm.SortedACContainers[i][index] = item;
+					index++;
+				}
+			}
+		}
+		if(mm.debug)Debug.Log("MusicManagerSetup.SortAudioContainers DONE");
+	}
+	
 	
 }
