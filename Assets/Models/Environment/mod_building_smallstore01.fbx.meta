@@ -8,11 +8,29 @@ ModelImporter:
     100004: mod_building_smallstore01_entrance_l_door
     100006: mod_building_smallstore01_entrance_r_door
     100008: mod_building_smallstore01_floor
+    100010: polySurface3
+    100012: polySurface4
+    100014: polySurface5
+    100016: polySurface6
+    100018: transform1
+    100020: transform2
+    100022: transform3
+    100024: transform4
+    100026: transform5
     400000: //RootNode
     400002: mod_building_smallstore01_backdoor
     400004: mod_building_smallstore01_entrance_l_door
     400006: mod_building_smallstore01_entrance_r_door
     400008: mod_building_smallstore01_floor
+    400010: polySurface3
+    400012: polySurface4
+    400014: polySurface5
+    400016: polySurface6
+    400018: transform1
+    400020: transform2
+    400022: transform3
+    400024: transform4
+    400026: transform5
     2100000: lambert1
     2100002: lambert16
     2300000: //RootNode
@@ -65,7 +83,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     importVisibility: 0
-    importBlendShapes: 1
+    importBlendShapes: 0
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
@@ -84,9 +102,9 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 0
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
