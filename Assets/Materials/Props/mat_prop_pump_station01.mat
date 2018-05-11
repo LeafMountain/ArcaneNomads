@@ -101,7 +101,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Emission: {r: 1, g: 1, b: 1, a: 1}
+    - _Emission: {r: 1, g: 0, b: 0.36453626, a: 1}
     - _EmissionColor: {r: 4.1010003, g: 2.189934, b: 0, a: 1}
     - _InfectionColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
