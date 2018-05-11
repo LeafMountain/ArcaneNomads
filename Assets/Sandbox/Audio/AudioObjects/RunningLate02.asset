@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13ffee2d23aa68e4c977677319b6d74c, type: 3}
-  m_Name: Boom02
+  m_Name: RunningLate02
   m_EditorClassIdentifier: 
-  trackType: 5
+  trackType: 2
   clip:
-  - {fileID: 8300000, guid: 1ae5d8c54a0cd72478a74cd028a00170, type: 3}
-  clipBarLength: 8
-  barStart: 1
+  - {fileID: 8300000, guid: aa1707f392e91404aba20e9fffb31d76, type: 3}
+  clipBeatLength: 16
+  beatStart: 3

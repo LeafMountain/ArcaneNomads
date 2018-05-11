@@ -7,6 +7,7 @@ public class BarMixer  {
 
 	private MusicManager mm; 
 	private DJ dj;
+	private List<AudioSource> sourcesInUse;
 
 	private int state;
 
@@ -15,59 +16,78 @@ public class BarMixer  {
 
 		this.mm = dj.MM;
 		this.dj = dj;
+		sourcesInUse = new List<AudioSource>();
 	}
 	public void ClipPlaner(PlayerState ps){
 
 			if(mm.debug)Debug.Log("Composing Bar with State: " + state.ToString() );
 
-		state = (int)ps;
+		
+		if(state != (int)ps)
+			{	mm._FadeTrack.StartFade(sourcesInUse, Fader.fadeOut);
+											sourcesInUse.Clear();}
 		
 		switch (state)
 		{
 			case 0:
-				PlayTrack(Track.ambient);
+				PlayTrack(Track.ambient,ps);
+				state = (int)ps;
 				break;
 			case 1:
-				PlayTrack(Track.venyl);
+				PlayTrack(Track.venyl,ps);
+				state = (int)ps;
 				break;
 			case 2:
-				PlayTrack(Track.heartBeat);
+				PlayTrack(Track.heartBeat,ps);
+				state = (int)ps;
 				break;
 			case 3:
-				PlayTrack(Track.bassTop);
-				if(mm.StateValues[state] > 0.75)PlayTrack(Track.runningLate);
-				if(mm.StateValues[state] >= 1)PlayTrack(Track.boom);
+				PlayTrack(Track.bassTop,ps);
+				PlayTrack(Track.runningLate,ps);
+				PlayTrack(Track.boom,ps);
+				state = (int)ps;
 				break;
 			case 4:
-				PlayTrack(Track.drumBeat);
-				if(mm.StateValues[state] > 0.75)PlayTrack(Track.brush);
+				PlayTrack(Track.drumBeat,ps);
+				PlayTrack(Track.brush,ps);
+				
+				state = (int)ps;
 				break;
+
+			
 
 	}
 	
 }
-private void PlayTrack(Track t)
+private void PlayTrack(Track t, PlayerState ps)
 	{
-		
-			if(dj.TrackCooldowns[(int)t] == 0 && dj.BarCount % 2 != 0)
+		if((int)ps != state){
+			sourcesInUse.Add(mm.AudioSources[(int)t]);
+		}
+
+			if(dj.TrackCooldowns[(int)t] == 0)
 			{
 				
 				if(mm.debug)Debug.Log("Playing track " + t.ToString());
-				mm.AudioSources[(int)t].clip = dj.PickedVariations[(int)t].GetAudioClip();
-				dj.TrackCooldowns[(int)t] = mm.SoundLibrary[(int)t].clipBarLength;
 				
-				if(mm.SoundLibrary[(int)t].barStart == 1)
+				//ResetVolume
+				mm.AudioSources[(int)t].volume = 1.0f;
+				//Picking a random AudioClip from the PickedVariations.
+				mm.AudioSources[(int)t].clip = dj.PickedVariations[(int)t].GetAudioClip();
+				//Adding the cooldown for the track.
+				dj.TrackCooldowns[(int)t] = mm.SoundLibrary[(int)t].clipBeatLength;
+				
+				if(mm.SoundLibrary[(int)t].beatStart == 1)
 				{
+					
 					mm.AudioSources[(int)t].Play();
 				}
 				else
 				{
 					mm.AudioSources[(int)t].PlayDelayed(
-						(mm.SoundLibrary[(int)t].barStart * 3.0f) - 1.0f);
+						(mm.SoundLibrary[(int)t].beatStart * 3.0f) - 1.0f);
 				}
 			}
-			else if(t == Track.boom ||t == Track.heartBeat){
-				mm.AudioSources[(int)t].Play();
-			}
+			
 	}
 }

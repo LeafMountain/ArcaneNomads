@@ -1,4 +1,5 @@
 ﻿//This Class is the component used in Unity3D. This is the class that other components call.
+//Every thing is working around a updatecycle of 0.75 of a second or one beat at 80 bpm.
 
 using System.Collections;
 using System.Collections.Generic;
@@ -8,16 +9,11 @@ public enum Track { ambient, bassTop, runningLate, heartBeat, venyl, boom,
 drumBeat, newDay, brush, weather, Length }
 public enum PlayerState{campSite, exploring, tension, spotted, danger, Length}
 
-
-
-
 public class MusicManager : MonoBehaviour {
 
 	//public properties
 	public bool debug;
 	public PlayerState state;
-	[Range(0,1)]
-	public float stateValue;
 	
 	public AudioClipContainer[] soundLibrary;
 	//private properties
@@ -27,6 +23,7 @@ public class MusicManager : MonoBehaviour {
 	private bool gameRunning;
 	private AudioSource[] audioSources;
 	private float[] stateValues;
+	private FadeTrack fadeTrack;
     
 
 	void Start () {
@@ -34,11 +31,14 @@ public class MusicManager : MonoBehaviour {
 		gameRunning = true;
 
 		new MusicManagerSetup(this);
+		fadeTrack = GetComponent<FadeTrack>();
 	
 		StartCoroutine(UpdateMusic());
 
-		stateValues[(int)PlayerState.campSite] = 1.0f;
+	
 
+
+	
 		if(debug)Debug.Log("<MusicManager> up and running.....................");
 	}
 	
@@ -62,12 +62,12 @@ public class MusicManager : MonoBehaviour {
 	//properties
 	public AudioSource[] AudioSources{get{return audioSources;}set{audioSources = value;}}
 	public float UpdateInterval{get{return updateInterval;} set{updateInterval = value;} }
-	public float[] StateValues {get{return stateValues;}set{stateValues = value;}}
 	public AudioClipContainer[] SoundLibrary{get{return soundLibrary;} 
 		set{soundLibrary = value;}}
 	public DJ DJRef {get{return djRef;} set{djRef = value;}}
 	public AudioClipContainer[][] SortedACContainers {get{return sortedacContainers;}
 		set{sortedacContainers = value;}}
+	public FadeTrack _FadeTrack{get{return fadeTrack;}}
 
 
 	

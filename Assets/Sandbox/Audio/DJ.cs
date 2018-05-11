@@ -6,7 +6,7 @@ public class DJ {
 
 	private MusicManager mm;
 	private int[] trackCooldowns;
-	private int barCount;
+	private int beatCount;
 	private AudioClipContainer[] pickedVariations;
 	private int currentState = 0;
 	private BarMixer barMixer;
@@ -15,7 +15,7 @@ public class DJ {
 	{
 		if(mm.debug) Debug.Log("Constructing <DJ>.......");
 		this.mm = mm;
-		barCount = 0;
+		beatCount = 0;
 		trackCooldowns = new int[(int)Track.Length];
 		pickedVariations = new AudioClipContainer[(int)Track.Length];
 		barMixer = new BarMixer(this);
@@ -24,12 +24,10 @@ public class DJ {
 	}
 	public void UpdateState()
 	{
-		barCount++;
-
-		mm.StateValues[(int)mm.state] = mm.stateValue;
-
-		if(barCount==9) {barCount = 1;}
-		if(mm.debug) Debug.Log("DJ.UpdateState, Bar Count: " + barCount);
+		beatCount++;
+		
+		if(beatCount==33) {beatCount = 1;}
+		if(mm.debug) Debug.Log("DJ.UpdateState, Bar Count: " + beatCount + " State: " + mm.state.ToString());
 		
 		
 		barMixer.ClipPlaner(mm.state);
@@ -56,7 +54,7 @@ public class DJ {
 	}
 	//properties
 	public int[] TrackCooldowns{get{return trackCooldowns;} set{trackCooldowns = value;}}
-	public int BarCount{get{return barCount;}set{barCount = value;}}
+	public int BarCount{get{return beatCount;}set{beatCount = value;}}
 	public int CurrentState{get{return currentState;}set{currentState = value;}}
 	public MusicManager MM {get{return mm;}}
 	public AudioClipContainer[] PickedVariations{get{return pickedVariations;}set{pickedVariations = value;}}

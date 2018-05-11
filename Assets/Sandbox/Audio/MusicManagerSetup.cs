@@ -13,11 +13,11 @@ public class MusicManagerSetup  {
 	{
 		if(mm.debug)Debug.Log("RUNNING RUNNING <MusicManagerSetup> RUNNING RUNNING");
 
-			mm.StateValues = new float[(int)PlayerState.Length];
+		
 			mm.AudioSources = new AudioSource[(int)Track.Length];
 			GetAudioSources();
 			SortAudioContainers(mm.SoundLibrary);
-			mm.UpdateInterval = 3.0f;
+			mm.UpdateInterval = 0.75f; // a 0.75 second is the length of one beat at 80 bpm.
 		
 		
 			mm.DJRef = new DJ(mm);
@@ -35,6 +35,7 @@ public class MusicManagerSetup  {
 	private void SortAudioContainers(AudioClipContainer[] containers)
 	{
 		if(mm.debug)Debug.Log("MusicManagerSetup.SortAudioContainers");
+	
 		mm.SortedACContainers = new AudioClipContainer[(int)Track.Length][];
 		int[] trackVariationIndex = new int[(int)Track.Length];
 		

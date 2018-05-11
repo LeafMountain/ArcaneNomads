@@ -14,5 +14,5 @@ MonoBehaviour:
   trackType: 5
   clip:
   - {fileID: 8300000, guid: 018bbf1f2db11204ea2c101b48d74a9e, type: 3}
-  clipBarLength: 1
-  barStart: 1
+  clipBeatLength: 4
+  beatStart: 1

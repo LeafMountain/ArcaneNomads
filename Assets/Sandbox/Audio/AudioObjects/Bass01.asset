@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ed810b2cdb3ef7849bcc9063da193085, type: 3}
   - {fileID: 8300000, guid: 541d2f7c1d6ed744180e729ea99b37f3, type: 3}
   - {fileID: 8300000, guid: 17799d7bc8dc17547829426e2f94acdd, type: 3}
-  clipBarLength: 4
-  barStart: 1
+  clipBeatLength: 16
+  beatStart: 1

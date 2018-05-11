@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: NewDay
   m_EditorClassIdentifier: 
   trackType: 7
-  clip: []
-  clipBarLength: 0
-  barStart: 0
+  clip:
+  - {fileID: 8300000, guid: aa1707f392e91404aba20e9fffb31d76, type: 3}
+  clipBeatLength: 4
+  beatStart: 1
