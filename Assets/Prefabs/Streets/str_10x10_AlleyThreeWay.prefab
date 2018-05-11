@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33112836757622118}
   - component: {fileID: 23151401080431712}
   - component: {fileID: 65897217697951206}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (42)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33628437031530064}
   - component: {fileID: 23353067743329196}
   - component: {fileID: 65450990994390924}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_outer_corner (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 33596723660427780}
   - component: {fileID: 23710263915764560}
   - component: {fileID: 65015950427276642}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 33993362691091230}
   - component: {fileID: 23996602860416010}
   - component: {fileID: 65042696497270444}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 33647922799288750}
   - component: {fileID: 23161650029983334}
   - component: {fileID: 65418064465686740}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (46)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 33657083825524476}
   - component: {fileID: 23523302509213056}
   - component: {fileID: 65368652257512536}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 33103453267980560}
   - component: {fileID: 23320953364691128}
   - component: {fileID: 65537524126821124}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 33723237314299152}
   - component: {fileID: 23198437782299920}
   - component: {fileID: 65024078675160790}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (44)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 33644919830362354}
   - component: {fileID: 23074358925091454}
   - component: {fileID: 65512352298537056}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 33688857356343326}
   - component: {fileID: 23543909209698670}
   - component: {fileID: 65165096619719506}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_inner_corner (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 33755652615600100}
   - component: {fileID: 23434941105123530}
   - component: {fileID: 65592663089026868}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (51)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 33222398847327060}
   - component: {fileID: 23738192279995640}
   - component: {fileID: 65004608002392032}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_outer_corner (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 33033281054922388}
   - component: {fileID: 23134121338614486}
   - component: {fileID: 65229729526903102}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 33028621034338032}
   - component: {fileID: 23880953958536190}
   - component: {fileID: 65992675838029268}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 33596689238341550}
   - component: {fileID: 23387947042124934}
   - component: {fileID: 65595253401348912}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 33835358013830106}
   - component: {fileID: 23309221709570516}
   - component: {fileID: 65988873506690266}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 33015055613098942}
   - component: {fileID: 23199014800592900}
   - component: {fileID: 65730958972380322}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 33546590771845234}
   - component: {fileID: 23364236760338770}
   - component: {fileID: 65805559848170408}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (70)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 33416864482432904}
   - component: {fileID: 23801429416814522}
   - component: {fileID: 65235181520408056}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (71)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 33324988113534542}
   - component: {fileID: 23941145488978518}
   - component: {fileID: 65347661225883616}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 33377887816121064}
   - component: {fileID: 23079967070041120}
   - component: {fileID: 65147360865277688}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 33065680050283962}
   - component: {fileID: 23898009963009554}
   - component: {fileID: 65659446654010926}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 33447145549870058}
   - component: {fileID: 64890951398676834}
   - component: {fileID: 23627975008799132}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: asfalt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 33893600484669242}
   - component: {fileID: 23958618227069490}
   - component: {fileID: 65455737855999498}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 33602433461705870}
   - component: {fileID: 23074439869112210}
   - component: {fileID: 65895033363386034}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_inner_corner (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 33717642247988940}
   - component: {fileID: 23892149590006282}
   - component: {fileID: 65780137612988010}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (49)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 33795589366366300}
   - component: {fileID: 23872410708057194}
   - component: {fileID: 65790488743999826}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4102319183078934}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: str_10x10_AlleyThreeWay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 33168946411189512}
   - component: {fileID: 23594931483644294}
   - component: {fileID: 65739694090988780}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (69)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 33931833155118522}
   - component: {fileID: 23386971883116698}
   - component: {fileID: 65384685318405180}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (47)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 33136492983422124}
   - component: {fileID: 23604314514320880}
   - component: {fileID: 65850947436926022}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 33057984571780562}
   - component: {fileID: 23575283598038816}
   - component: {fileID: 65035493846332036}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 33128549032398444}
   - component: {fileID: 23154902370787638}
   - component: {fileID: 65634561929197394}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (45)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 33123284120754916}
   - component: {fileID: 23848019764008674}
   - component: {fileID: 65536293431153354}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (41)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 33872484453630468}
   - component: {fileID: 23092910560724734}
   - component: {fileID: 65937693935397500}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 33778712025759336}
   - component: {fileID: 23277553319841742}
   - component: {fileID: 65523290025664898}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 33974856282019452}
   - component: {fileID: 23348473863454534}
   - component: {fileID: 65979681605477090}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 33581400156470786}
   - component: {fileID: 23845599479813540}
   - component: {fileID: 65779896760193764}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 33920933427118146}
   - component: {fileID: 23886956141988870}
   - component: {fileID: 65617743547952146}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 33303238032438814}
   - component: {fileID: 23543538970882848}
   - component: {fileID: 65138807128830066}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 33892158606474996}
   - component: {fileID: 23263751666631430}
   - component: {fileID: 65560525797047422}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (66)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 33059973994450484}
   - component: {fileID: 23046404135505742}
   - component: {fileID: 65133698207444838}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (65)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 33084749751818506}
   - component: {fileID: 23923643116102926}
   - component: {fileID: 65710053938885864}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,7 +793,7 @@ GameObject:
   - component: {fileID: 33318897524421854}
   - component: {fileID: 23057529912488286}
   - component: {fileID: 65918794816471438}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 33480356806630484}
   - component: {fileID: 23724556985516496}
   - component: {fileID: 65907819141703082}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 33501237438083366}
   - component: {fileID: 23378552930846298}
   - component: {fileID: 65013477495568736}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,7 +847,7 @@ GameObject:
   - component: {fileID: 33259506654979452}
   - component: {fileID: 23026664990164146}
   - component: {fileID: 65012022764278716}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (68)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 33132589853040276}
   - component: {fileID: 23050252167173680}
   - component: {fileID: 65342931314018446}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (50)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -883,7 +883,7 @@ GameObject:
   - component: {fileID: 33014755860160796}
   - component: {fileID: 23086434514042144}
   - component: {fileID: 65302753724264778}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 33475034144454060}
   - component: {fileID: 23988988719016254}
   - component: {fileID: 65501859671589708}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +919,7 @@ GameObject:
   - component: {fileID: 33680858930771440}
   - component: {fileID: 23134588485754206}
   - component: {fileID: 65746674242336972}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 33440421031630980}
   - component: {fileID: 23721687400890890}
   - component: {fileID: 65543906504930082}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: pref_prop_curb_straight (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -989,8 +989,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1658759666208832}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: -5}
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -37, y: 0, z: 112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4790985263406460}
@@ -1040,13 +1040,13 @@ Transform:
   - {fileID: 4964217489520546}
   - {fileID: 4587702093418960}
   - {fileID: 4213667495505648}
-  - {fileID: 4621239463204498}
   - {fileID: 4766102220027566}
+  - {fileID: 4621239463204498}
   - {fileID: 4938405852169560}
   - {fileID: 4155310620503642}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!4 &4135800975570530
 Transform:
   m_ObjectHideFlags: 1
@@ -1383,7 +1383,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4102319183078934}
-  m_RootOrder: 47
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
 --- !u!4 &4633143747362790
 Transform:
@@ -1487,7 +1487,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4102319183078934}
-  m_RootOrder: 48
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: -270, z: 0}
 --- !u!4 &4778558572574826
 Transform:
@@ -1684,6 +1684,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -1718,6 +1719,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -1752,6 +1754,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -1786,6 +1789,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -1820,6 +1824,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -1854,6 +1859,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -1888,6 +1894,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -1922,6 +1929,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -1956,6 +1964,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -1990,6 +1999,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2024,6 +2034,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2058,6 +2069,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2092,6 +2104,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2126,6 +2139,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2160,6 +2174,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2194,6 +2209,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2228,6 +2244,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2262,6 +2279,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2296,6 +2314,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2330,6 +2349,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2364,6 +2384,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2398,6 +2419,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2432,6 +2454,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2466,6 +2489,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2500,6 +2524,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2534,6 +2559,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2568,6 +2594,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2602,6 +2629,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2636,6 +2664,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2670,6 +2699,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2704,6 +2734,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2738,6 +2769,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2772,6 +2804,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2806,6 +2839,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 07a67f8d4d2e7544ebcac994af92727f, type: 2}
   m_StaticBatchInfo:
@@ -2840,6 +2874,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2874,6 +2909,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2908,6 +2944,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2942,6 +2979,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -2976,6 +3014,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -3010,6 +3049,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -3044,6 +3084,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -3078,6 +3119,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -3112,6 +3154,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -3146,6 +3189,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -3180,6 +3224,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -3214,6 +3259,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -3248,6 +3294,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -3282,6 +3329,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -3316,6 +3364,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -3350,6 +3399,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
@@ -3384,6 +3434,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:

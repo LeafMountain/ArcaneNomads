@@ -13,5 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
+<<<<<<< HEAD:Assets/Sandbox/AI/TestAssets/New AI Radar Personal Space.asset
+    m_Bits: 4294966527
+  range: 1
+=======
     m_Bits: 513
   range: 0.5
+>>>>>>> dev:Assets/Sandbox/AI/TestAssets/TestSensors/New AI Radar Personal Space.asset

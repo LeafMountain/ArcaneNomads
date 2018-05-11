@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ffee2d23aa68e4c977677319b6d74c, type: 3}
+  m_Name: Bass02
+  m_EditorClassIdentifier: 
+  trackType: 1
+  clip:
+  - {fileID: 8300000, guid: 3beb708c78802d54cb3fb839e13432a0, type: 3}
+  - {fileID: 8300000, guid: a1040dc1c77d0c24a8f15abb6cb5cc1c, type: 3}
+  - {fileID: 8300000, guid: cb581ba3adcba0b46a18e28557c4c897, type: 3}
+  - {fileID: 8300000, guid: c4075c6d9c1039944995303c3a0a72d9, type: 3}
+  clipBeatLength: 16
+  beatStart: 1

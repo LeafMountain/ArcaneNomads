@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33472811182092728}
   - component: {fileID: 23712268563631878}
   - component: {fileID: 65136691155321172}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pref_prop_curb_outer_corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,6 +55,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 426fc5ff7a147994ca3b783ab1bed137, type: 2}
   m_StaticBatchInfo:
