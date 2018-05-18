@@ -76,7 +76,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.528
     - _GlossyReflections: 1
     - _InfectionAmount: 0
     - _Metallic: 0
@@ -93,7 +93,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0.9019608}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.92156863}
     - _Emission: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _InfectionColor: {r: 1, g: 1, b: 1, a: 1}
