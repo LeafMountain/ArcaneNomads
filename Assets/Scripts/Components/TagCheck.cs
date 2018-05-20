@@ -6,6 +6,8 @@ using UnityEngine.Events;
 [System.Serializable]
 public class TagCheck {
 
+	public bool contains;
+
 	public Tag tag;
 
 	public UnityGameObjectEvent acceptedTagFound;
@@ -17,7 +19,7 @@ public class TagCheck {
 	}
 
 	public void CheckTags(Taggable taggable){
-		if(taggable.Contains(tag)){
+		if(taggable.Contains(tag) == contains){
 			acceptedTagFound.Invoke(taggable.gameObject);
 		}
 	}

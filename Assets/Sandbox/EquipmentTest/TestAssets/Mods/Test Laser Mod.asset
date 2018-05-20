@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641b20852a1337c4288d0e73eaa04983, type: 3}
+  m_Name: Test Laser Mod
+  m_EditorClassIdentifier: 
+  name: TestMod
+  stats: {fileID: 11400000, guid: 6328ba2f777a572428bf272b36b429cc, type: 2}
+  prefab: {fileID: 1518452789542912, guid: 8335897de7454774982dee36adfeaa42, type: 2}

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditorInternal;
 
-[CustomEditor(typeof(TagFilter))]
+// [CustomEditor(typeof(TagFilter))]
 public class TagFilterEditor : Editor {
 
 	ReorderableList listOfTagChecks;
@@ -21,6 +21,7 @@ public class TagFilterEditor : Editor {
 
 		    listOfTagChecks.elementHeight = 110;            
 
+            EditorGUI.PropertyField(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("contains"), GUIContent.none);            
             EditorGUI.PropertyField(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("tag"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rect.x, rect.y + EditorGUIUtility.singleLineHeight + 2, rect.width, 100), element.FindPropertyRelative("acceptedTagFound"), GUIContent.none);
         };
