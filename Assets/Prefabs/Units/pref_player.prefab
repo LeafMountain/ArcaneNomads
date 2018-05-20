@@ -702,6 +702,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1580107151756464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4781811082273442}
+  m_Layer: 0
+  m_Name: GunPosPlaceholder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1580467801487666
 GameObject:
   m_ObjectHideFlags: 1
@@ -912,7 +927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1848766849635818
 GameObject:
   m_ObjectHideFlags: 1
@@ -1542,6 +1557,7 @@ Transform:
   m_Children:
   - {fileID: 4430533440243718}
   - {fileID: 4958140383590552}
+  - {fileID: 4781811082273442}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -161.419, z: 0}
@@ -1966,6 +1982,19 @@ Transform:
   m_Father: {fileID: 4862601356383382}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4781811082273442
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580107151756464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.1, z: 0.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4379180111014244}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4821387334594196
 Transform:
   m_ObjectHideFlags: 1
@@ -2232,9 +2261,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e49431339626c4a92b12b7594ead1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: a606d9acc6ea64849884f56e39b69ae8, type: 2}
+  currentSetup: {fileID: 11400000, guid: 1633918fe8d00cc41b9c5ce8f9080108, type: 2}
   parent: {fileID: 4379180111014244}
-  rightHandPosition: {fileID: 4142337437053530}
+  rightHandPosition: {fileID: 4781811082273442}
   leftHandPosition: {fileID: 4840662757672840}
   refresh: 0
 --- !u!114 &114392920850720366
@@ -2386,6 +2415,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_MethodName: PrintMessage
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     OnButtonStay:
@@ -2448,6 +2488,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visionLength: 2
+  sphereRadius: 0.2
+  focusTarget: {fileID: 0}
 --- !u!114 &114604218615037536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2674,7 +2716,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e28e42f1150f6c64196275ef3b756439, type: 2}
+  - {fileID: 2100000, guid: f722cf58f0893a247b65acf60610d55d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
