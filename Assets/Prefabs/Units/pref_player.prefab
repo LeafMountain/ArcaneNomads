@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 114662661053155324}
   - component: {fileID: 114701768157148908}
   - component: {fileID: 114604218615037536}
+  - component: {fileID: 114180303690606808}
   m_Layer: 0
   m_Name: pref_player
   m_TagString: Untagged
@@ -1536,7 +1537,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146904742983320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.440408, y: 0, z: -0.5536488}
+  m_LocalPosition: {x: 0.81182534, y: 0, z: -0.77642846}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4430533440243718}
@@ -2220,6 +2221,22 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114180303690606808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146904742983320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e49431339626c4a92b12b7594ead1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: a606d9acc6ea64849884f56e39b69ae8, type: 2}
+  parent: {fileID: 4379180111014244}
+  rightHandPosition: {fileID: 4142337437053530}
+  leftHandPosition: {fileID: 4840662757672840}
+  refresh: 0
 --- !u!114 &114392920850720366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2243,7 +2260,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0.15
+            m_FloatArgument: 5
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -2265,7 +2282,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 0.07
+            m_FloatArgument: 3
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -2500,7 +2517,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146904742983320}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 460313828068c2b40838ca99788ef819, type: 3}
   m_Name: 
@@ -2657,7 +2674,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f722cf58f0893a247b65acf60610d55d, type: 2}
+  - {fileID: 2100000, guid: e28e42f1150f6c64196275ef3b756439, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

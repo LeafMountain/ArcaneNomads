@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TagFilter : MonoBehaviour {
 
+	public bool contains = true;
 	public List<TagCheck> checks;
 
 	public void CheckTags(GameObject go){

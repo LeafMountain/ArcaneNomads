@@ -5,9 +5,13 @@ using UnityEngine;
 public class Interactor : MonoBehaviour {
 	
 	public float visionLength = 2;
+	public float sphereRadius = .2f;
 
 	Vector3 origin;
-	Interactable focusTarget;
+
+	[Header("READ ONLY")]
+	[SerializeField]
+	private Interactable focusTarget;
 
 	void Start(){
 		origin = GetComponent<Collider>().bounds.center;
@@ -18,7 +22,9 @@ public class Interactor : MonoBehaviour {
 			Ray visionRay = new Ray(origin, transform.forward);
 			RaycastHit visionHit;
 
-			Physics.Raycast(visionRay, out visionHit, visionLength);
+			Physics.SphereCast(visionRay, sphereRadius, out visionHit, visionLength);
+
+			// Physics.Raycast(visionRay, out visionHit, visionLength);
 
 			return visionHit;
 		}
@@ -76,5 +82,6 @@ public class Interactor : MonoBehaviour {
 		Gizmos.color = Color.blue;
 		origin = GetComponent<Collider>().bounds.center;
 		Gizmos.DrawLine(origin, origin + transform.forward * visionLength);
+		Gizmos.DrawWireSphere(origin, sphereRadius);
 	}
 }

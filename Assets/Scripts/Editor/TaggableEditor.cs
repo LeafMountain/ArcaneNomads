@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditorInternal;
 
-[CustomEditor(typeof(Taggable))]
+// [CustomEditor(typeof(Taggable))]
 public class TaggableEditor : Editor {
 
 	ReorderableList listOfTags;
