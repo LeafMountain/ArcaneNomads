@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour {
 
 	public void SetDamage(float damage){
 		this.damage = damage;
+		GetComponent<Damager>()?.SetDamage(Mathf.CeilToInt(damage));
 	}
 
 	IEnumerator DestroyMe(){
