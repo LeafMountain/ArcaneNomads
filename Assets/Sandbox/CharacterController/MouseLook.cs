@@ -8,14 +8,22 @@ public class MouseLook : MonoBehaviour {
 
 	public UnityVector2Event OnMouseLook;
 
-	RaycastHit Hit {
+	Vector3? WorldPosition {
+		get {
+			return Hit?.point;
+		}
+	}
+
+	RaycastHit? Hit {
 		get{
 			Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit mouseHit;
 
-			Physics.Raycast(mouseRay, out mouseHit, layer);
+			if(Physics.Raycast(mouseRay, out mouseHit, layer)){
+				return mouseHit;
+			}
 
-			return mouseHit;
+			return null;
 		}
 	}
 
@@ -28,7 +36,9 @@ public class MouseLook : MonoBehaviour {
 	}
 
 	Vector2 DirectionToGameObject(){
-		Vector3 angleBetweenMouseAndObject = Hit.point - transform.position;
+		
+
+		Vector3 angleBetweenMouseAndObject = (Vector3)Hit?.point - transform.position;
 		angleBetweenMouseAndObject.Normalize();
 
 		angleBetweenMouseAndObject = Camera.main.transform.InverseTransformDirection(angleBetweenMouseAndObject);
@@ -42,5 +52,10 @@ public class MouseLook : MonoBehaviour {
 		if(Moving){
 			OnMouseLook.Invoke(DirectionToGameObject());
 		}
+	}
+
+	void OnDrawGizmos () {
+		Gizmos.color = Color.red;
+		Gizmos.DrawSphere((Vector3)WorldPosition, .5f);
 	}
 }

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641b20852a1337c4288d0e73eaa04983, type: 3}
+  m_Name: Muzzle_Damage
+  m_EditorClassIdentifier: 
+  name: Damage Muzzle
+  stats: {fileID: 11400000, guid: 84f5bfcfd2af06e44b5ad4fb261e547a, type: 2}
+  prefab: {fileID: 1514915085258708, guid: b21d96960d62b404b8bb3b98250eb765, type: 2}

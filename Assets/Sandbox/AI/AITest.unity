@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18154615, g: 0.22718893, b: 0.30740756, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -213,11 +213,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114786910620420208, guid: e85f40f4bcd1de14da13291393ee7c2f,
+    - target: {fileID: 114494121225139772, guid: e85f40f4bcd1de14da13291393ee7c2f,
         type: 2}
       propertyPath: currentValue
       value: 
-      objectReference: {fileID: 534668443}
+      objectReference: {fileID: 1789814519}
+    - target: {fileID: 114494121225139772, guid: e85f40f4bcd1de14da13291393ee7c2f,
+        type: 2}
+      propertyPath: OnDecrease.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114494121225139772, guid: e85f40f4bcd1de14da13291393ee7c2f,
+        type: 2}
+      propertyPath: OnIncrease.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e85f40f4bcd1de14da13291393ee7c2f, type: 2}
   m_IsPrefabParent: 0
@@ -255,19 +265,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4860050380687398, guid: e85f40f4bcd1de14da13291393ee7c2f,
     type: 2}
   m_PrefabInternal: {fileID: 165882183}
---- !u!114 &534668443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 'pref_char_zombie01 '
-  m_EditorClassIdentifier: Assembly-CSharp::IntVariable
-  DeveloperDescription: 
-  Value: 0
 --- !u!1 &541811971
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +477,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 5f31e1b5de0b1524da2ea42cefad21f2, type: 2}
+  - {fileID: 2100000, guid: 72edb3f54216f0f4b8012452d8a27fae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -522,7 +519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &705873965
 Transform:
   m_ObjectHideFlags: 0
@@ -546,12 +543,12 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -565,7 +562,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
@@ -579,11 +576,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 217948998}
     m_Modifications:
-    - target: {fileID: 114241236480071268, guid: 4d00d9b027f9e024fb0f688774d19ee0,
-        type: 2}
-      propertyPath: targets.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4110962458700194, guid: 4d00d9b027f9e024fb0f688774d19ee0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -621,19 +613,6 @@ Prefab:
       propertyPath: targets.Array.data[0]
       value: 
       objectReference: {fileID: 1083542223}
-    - target: {fileID: 1400226052599954, guid: 4d00d9b027f9e024fb0f688774d19ee0, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114241236480071268, guid: 4d00d9b027f9e024fb0f688774d19ee0,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4110962458700194, guid: 4d00d9b027f9e024fb0f688774d19ee0, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d00d9b027f9e024fb0f688774d19ee0, type: 2}
   m_IsPrefabParent: 0
@@ -778,6 +757,19 @@ Transform:
   m_Father: {fileID: 673959098}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1789814519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 'pref_char_zombie01 '
+  m_EditorClassIdentifier: Assembly-CSharp::IntVariable
+  DeveloperDescription: 
+  Value: 0
 --- !u!1 &1841151231
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,10 +871,6 @@ Prefab:
     - target: {fileID: 4379180111014244, guid: c539f8f3e7ab4244eadae16e437a533d, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1146904742983320, guid: c539f8f3e7ab4244eadae16e437a533d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c539f8f3e7ab4244eadae16e437a533d, type: 2}
