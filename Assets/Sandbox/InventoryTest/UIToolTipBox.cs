@@ -38,7 +38,7 @@ public class UIToolTipBox {
 		tooltipBox.transform.GetChild(1).GetComponent<Text>().text = itemName;
 		tooltipBox.transform.GetChild(2).GetComponent<Text>().text = quality;
 		//tooltipBox.transform.GetChild(4).GetComponent<Text>().text = item.;
-		tooltipBox.transform.GetChild(1).GetComponent<Text>().text = description;
+		tooltipBox.transform.GetChild(5).GetComponent<Text>().text = description;
 		
 	}
 	
