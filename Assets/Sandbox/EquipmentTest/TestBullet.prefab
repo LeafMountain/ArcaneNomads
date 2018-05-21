@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 0
-  damage: -20
+  damage: -1
   OnCollision:
     m_PersistentCalls:
       m_Calls:

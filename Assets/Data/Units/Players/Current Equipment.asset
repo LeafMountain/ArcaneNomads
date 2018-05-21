@@ -15,5 +15,7 @@ MonoBehaviour:
   faceSlot: {fileID: 11400000, guid: 40518f3b933c89842907f6eceaedd263, type: 2}
   chestSlot: {fileID: 11400000, guid: 716927ed4bce6224e8ec420333897578, type: 2}
   legsSlot: {fileID: 11400000, guid: 8b7805db6428c8d4c82b265e1deeda71, type: 2}
+  backSlot: {fileID: 11400000, guid: 05d3d083ce9683648bb25dc977996703, type: 2}
   rightHand: {fileID: 11400000, guid: 235fcb2dae0323143b9cf446d6352cd0, type: 2}
   leftHand: {fileID: 0}
+  gunProfile: {fileID: 11400000, guid: 5c9412cf354e45747861b65255f025f7, type: 2}

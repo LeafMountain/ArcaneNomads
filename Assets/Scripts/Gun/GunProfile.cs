@@ -4,9 +4,9 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Gun/Profile")]
 public class GunProfile : ScriptableObject {
-	public GunStats baseStats;
+
+	public WeaponRange gun;
 	public GunMods mods;
-	public GameObject prefab;
 
 	// Calculated stats
 	public int Damage { get { return SumInt("damage"); } }
@@ -18,20 +18,31 @@ public class GunProfile : ScriptableObject {
 	public Vector2 Spread  { get { return SumVector("spread"); } }
 
 	public GameObject GetGameObject () {
-		GameObject gunGo = Instantiate(prefab);
-		gunGo.GetComponent<Gun>().profile = this;
+		GameObject gunGo = Instantiate(this.gun.prefab);
+		Gun gun = gunGo.GetComponent<Gun>();
 
-		return Instantiate(prefab);
+		gun.profile = this;
+
+		if(mods.muzzleMod) SimpleInstantiate(mods.muzzleMod.prefab, gun.muzzleModPosition);
+		if(mods.laserMod) SimpleInstantiate(mods.laserMod.prefab, gun.laserModPosition);
+		if(mods.sightMod) SimpleInstantiate(mods.sightMod.prefab, gun.sightModPosition);
+		if(mods.magazineMod) SimpleInstantiate(mods.magazineMod.prefab, gun.magazineModPosition);
+
+		return gunGo;
+	}
+
+	void SimpleInstantiate(GameObject prefab, Transform parent) {
+		Instantiate(prefab, parent.position, parent.rotation, parent);
 	}
 
 	GunStats[] GetStats() {
 		GunStats[] stats = new GunStats[5];
 
-		stats[0] = baseStats;
-		stats[1] = mods.laserMod.stats;
-		stats[2] = mods.sightMod.stats;
-		stats[3] = mods.muzzleMod.stats;
-		stats[4] = mods.magazineMod.stats;
+		stats[0] = gun.baseStats;
+		if(mods.laserMod) stats[1] = mods.laserMod.stats;
+		if(mods.sightMod) stats[2] = mods.sightMod.stats;
+		if(mods.muzzleMod) stats[3] = mods.muzzleMod.stats;
+		if(mods.magazineMod) stats[4] = mods.magazineMod.stats;
 
 		return stats;
 	}
