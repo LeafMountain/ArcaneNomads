@@ -25,13 +25,13 @@ public class GunReady : IGunState {
 	public void Shoot() {
 		float timeSinceLastShot = Time.time - shotTime;
 		
-		if(timeSinceLastShot > gun.Cooldown){
+		if(timeSinceLastShot > gun.profile.Cooldown){
 			for (int i = 0; i < gun.bullets; i++) {
 				GameObject go = GameObject.Instantiate(gun.bulletPrefab, gun.origin.position, Quaternion.LookRotation(ShootDirection()));
 				
 				Bullet bullet = go.GetComponent<Bullet>();
-				bullet.SetDamage(-gun.Damage); 				
-				bullet.SetLifetime(gun.Lifetime);
+				bullet.SetDamage(-gun.profile.Damage); 				
+				bullet.SetLifetime(gun.profile.Lifetime);
 			}
 
 			shotTime = Time.time;
@@ -43,7 +43,7 @@ public class GunReady : IGunState {
 		Vector3 dir = Vector3.zero; 
 
 		dir = gun.origin.forward - gun.origin.position;
-		Vector3 test = new Vector3(Random.Range( - gun.Spread.x, gun.Spread.x), Random.Range( - gun.Spread.y, gun.Spread.y), 1).normalized; 
+		Vector3 test = new Vector3(Random.Range( - gun.profile.Spread.x, gun.profile.Spread.x), Random.Range( - gun.profile.Spread.y, gun.profile.Spread.y), 1).normalized; 
 
 		return gun.origin.TransformDirection(test);
 	}

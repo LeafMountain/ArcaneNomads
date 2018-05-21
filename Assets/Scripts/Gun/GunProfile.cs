@@ -4,8 +4,9 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Gun/Profile")]
 public class GunProfile : ScriptableObject {
-	public GunStats stats;
+	public GunStats baseStats;
 	public GunMods mods;
+	public GameObject prefab;
 
 	// Calculated stats
 	public int Damage { get { return SumInt("damage"); } }
@@ -16,7 +17,28 @@ public class GunProfile : ScriptableObject {
 	public float Lifetime  { get { return SumFloat("lifetime"); } }
 	public Vector2 Spread  { get { return SumVector("spread"); } }
 
+	public GameObject GetGameObject () {
+		GameObject gunGo = Instantiate(prefab);
+		gunGo.GetComponent<Gun>().profile = this;
+
+		return Instantiate(prefab);
+	}
+
+	GunStats[] GetStats() {
+		GunStats[] stats = new GunStats[5];
+
+		stats[0] = baseStats;
+		stats[1] = mods.laserMod.stats;
+		stats[2] = mods.sightMod.stats;
+		stats[3] = mods.muzzleMod.stats;
+		stats[4] = mods.magazineMod.stats;
+
+		return stats;
+	}
+
 	int SumInt(string name){
+		GunStats[] stats = GetStats();
+
 		int sum = 0;
 			
 		for (int i = 0; i < stats.Length; i++) {
@@ -31,6 +53,8 @@ public class GunProfile : ScriptableObject {
 	}
 
 	float SumFloat(string name){
+		GunStats[] stats = GetStats();
+		
 		float sum = 0;
 			
 		for (int i = 0; i < stats.Length; i++) {
@@ -39,12 +63,14 @@ public class GunProfile : ScriptableObject {
 			}
 		}
 
-		variable = Mathf.Clamp(sum, 0.01f, Mathf.Infinity);
+		sum = Mathf.Clamp(sum, 0.01f, Mathf.Infinity);
 
 	 	return sum;
 	}
 
-	Vector2 SumVector(string name, ref Vector2 variable){
+	Vector2 SumVector(string name){
+		GunStats[] stats = GetStats();
+		
 		Vector2 sum = Vector2.zero;
 			
 		for (int i = 0; i < stats.Length; i++) {
@@ -53,7 +79,7 @@ public class GunProfile : ScriptableObject {
 			}
 		}
 
-		variable = new Vector2(Mathf.Clamp(sum.x, 0, Mathf.Infinity), Mathf.Clamp(sum.y, 0, Mathf.Infinity));
+		sum = new Vector2(Mathf.Clamp(sum.x, 0, Mathf.Infinity), Mathf.Clamp(sum.y, 0, Mathf.Infinity));
 
 	 	return sum;
 	}
