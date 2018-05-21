@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: mat_prop_pump_station01
-  m_Shader: {fileID: 4800000, guid: f5509a00ebefb884890eb501943afeb0, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4afeb5231f43c1f4cb8fc1a06ad12dfc, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
