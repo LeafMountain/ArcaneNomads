@@ -7,8 +7,10 @@ public class InventoryManager : MonoBehaviour {
 	public GameObject inventoryPanel;
 	public GameObject tooltipBox;
 	public GameObject player;
+	private UIToolTipBox uitooltipbox;
 	void Start () {
-		
+
+		uitooltipbox = new UIToolTipBox(tooltipBox);
 	}
 	
 	// Update is called once per frame
@@ -20,6 +22,8 @@ public class InventoryManager : MonoBehaviour {
 		}		
 	}
 	public void ShowTooltipBox(Item slotItem){
+
+		uitooltipbox.UpdateToolTip(slotItem);
 		tooltipBox.SetActive(true);
 		
 	}
