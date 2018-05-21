@@ -319,6 +319,7 @@ MonoBehaviour:
   laserModPosition: {fileID: 4684035717238004}
   sightModPosition: {fileID: 4277297872303652}
   muzzleModPosition: {fileID: 4790701623685612}
+  usedBullets: 0
   magazine: 0
   updateStats: 0
 --- !u!114 &114897793889714202
@@ -344,7 +345,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 114356241394573964}
-          m_MethodName: Shoot
+          m_MethodName: Trigger
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
