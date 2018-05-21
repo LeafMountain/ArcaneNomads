@@ -22,9 +22,9 @@ public class Bullet : MonoBehaviour {
 		Destroy(gameObject);
 	}
 
-	void OnTriggerEnter(Collider col){
-		if(!col.GetComponent<Bullet>()){
-			OnCollision.Invoke(gameObject);
-		}
-	}
+	// void OnTriggerEnter(Collider col){
+	// 	if(!col.GetComponent<Bullet>()){
+	// 		OnCollision.Invoke(gameObject);
+	// 	}
+	// }
 }
