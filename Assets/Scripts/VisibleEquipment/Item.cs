@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Item : ScriptableObject {
 
 	public string title;
+	public string description;
 	public Sprite icon;
 	public GameObject prefab;
 	public Vector2Int size = new Vector2Int(1,1);
