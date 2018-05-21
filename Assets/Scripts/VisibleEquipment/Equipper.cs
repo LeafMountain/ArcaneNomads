@@ -8,6 +8,7 @@ public class Equipper : MonoBehaviour {
     [SerializeField] private Transform parent;
 
     [Header ("Positions")]
+    [SerializeField] private Transform backSlotPosition;
     [SerializeField] private Transform rightHandPosition;
     [SerializeField] private Transform leftHandPosition;
 
@@ -15,6 +16,7 @@ public class Equipper : MonoBehaviour {
     Transform faceSlot;
     Transform chestSlot;
     Transform legsSlot;
+    Transform backSlot;
     Transform rightHandSlot;
     Transform leftHandSlot;
 
@@ -50,6 +52,7 @@ public class Equipper : MonoBehaviour {
         EquipItem (currentSetup.chestSlot, ref chestSlot, parent);
         EquipItem (currentSetup.legsSlot, ref legsSlot, parent);
 
+        EquipItem(currentSetup.backSlot, ref backSlot, backSlotPosition);
         EquipItem (currentSetup.rightHand, ref rightHandSlot, rightHandPosition);
         EquipItem (currentSetup.leftHand, ref leftHandSlot, leftHandPosition);
     }

@@ -10,6 +10,7 @@ public class CurrentEquipment : ScriptableObject {
 	public EquipmentFace faceSlot;
 	public EquipmentChest chestSlot;
 	public EquipmentLegs legsSlot;
+	public EquipmentBack backSlot;
 
 	[Header ("Weapons")]
 	public Equipment rightHand;

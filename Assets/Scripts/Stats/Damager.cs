@@ -14,4 +14,8 @@ public class Damager : MonoBehaviour {
             OnDamage.Invoke(gameObject);
         }
     }
+
+    public void SetDamage (int damage) {
+        this.damage = damage;
+    }
 }

@@ -2,12 +2,12 @@
 using System.Collections.Generic; 
 using UnityEngine;
 
-public class Gun:MonoBehaviour {
+public class Gun : MonoBehaviour {
 
-	public int numberOfMods; 
-	private GunStats[] stats; 
+	public int numberOfMods;
+	private GunStats[] stats;
 
-	public GunStats baseStats; 
+	public GunStats baseStats;
 
 	// Calculated stats
 	public int Damage { get { return SumInt("damage", ref damage); } }
@@ -18,7 +18,7 @@ public class Gun:MonoBehaviour {
 	public float Lifetime  { get { return SumFloat("lifetime", ref lifetime); } }
 	public Vector2 Spread  { get { return SumVector("spread", ref spread); } }
 
-	[Header("Summed Stats")]
+	[Header("Summed Stats")]  
 	public int damage; 
 	public int bullets;	
 	public int magazineSize;
@@ -199,6 +199,4 @@ public class Gun:MonoBehaviour {
 		UnityEditor.Handles.color = Color.blue; 
 		UnityEditor.Handles.DrawWireDisc(origin.position + origin.forward * lifetime, origin.forward, spread.x); 
 	}
-
-
 }
