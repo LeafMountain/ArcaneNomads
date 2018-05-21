@@ -52,9 +52,13 @@ public class Equipper : MonoBehaviour {
         EquipItem (currentSetup.chestSlot, ref chestSlot, parent);
         EquipItem (currentSetup.legsSlot, ref legsSlot, parent);
 
-        EquipItem(currentSetup.backSlot, ref backSlot, backSlotPosition);
-        EquipItem (currentSetup.rightHand, ref rightHandSlot, rightHandPosition);
-        EquipItem (currentSetup.leftHand, ref leftHandSlot, leftHandPosition);
+        EquipItem (currentSetup.backSlot, ref backSlot, backSlotPosition);
+
+       
+        EquipWeapon(currentSetup.gunProfile);
+
+        // EquipItem (currentSetup.rightHand, ref rightHandSlot, rightHandPosition);
+        // EquipItem (currentSetup.leftHand, ref leftHandSlot, leftHandPosition);
     }
 
     void Update () {
@@ -66,6 +70,18 @@ public class Equipper : MonoBehaviour {
 
     void EquipItem (Equipment item, ref Transform oldItem) {
         EquipItem (item, ref oldItem, transform);
+    }
+
+    void EquipWeapon (GunProfile gun) {
+        if(rightHandSlot) {
+            Destroy(rightHandSlot);
+        }
+        
+        GameObject go = gun.GetGameObject();
+        go.transform.position = rightHandPosition.position;
+        go.transform.rotation = rightHandPosition.rotation;
+        go.transform.SetParent(rightHandPosition);
+        rightHandSlot = go.transform;
     }
 
     void EquipItem (Equipment item, ref Transform oldItem, Transform parent) {

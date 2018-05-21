@@ -17,4 +17,4 @@ MonoBehaviour:
   reloadSpeed: 0
   cooldown: 0.05
   lifetime: 1
-  spread: {x: -1, y: -1}
+  spread: {x: 0, y: 0}

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 641b20852a1337c4288d0e73eaa04983, type: 3}
-  m_Name: Test Mag Mod Small
+  m_Name: Muzzle_Damage
   m_EditorClassIdentifier: 
-  name: 
-  stats: {fileID: 11400000, guid: c7012dac1754d5d40870b9791c5ea704, type: 2}
-  prefab: {fileID: 1561146079503580, guid: 8557073c59acf0746a5566fc1372ab3a, type: 2}
+  name: Damage Muzzle
+  stats: {fileID: 11400000, guid: 84f5bfcfd2af06e44b5ad4fb261e547a, type: 2}
+  prefab: {fileID: 1514915085258708, guid: b21d96960d62b404b8bb3b98250eb765, type: 2}

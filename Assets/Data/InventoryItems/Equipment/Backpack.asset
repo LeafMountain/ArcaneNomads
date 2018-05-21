@@ -11,9 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7961c0f25edb75347ac853472a210fdf, type: 3}
   m_Name: Backpack
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: Backpack
+  description: A backpack
   icon: {fileID: 0}
-  prefab: {fileID: 0}
+  quality: 0
+  prefab: {fileID: 1817496145791828, guid: ff3a30350fb0c37468d13bf03423588b, type: 2}
   size: {x: 1, y: 1}
   typeIcon: {fileID: 0}
