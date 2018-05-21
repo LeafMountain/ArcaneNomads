@@ -9,14 +9,16 @@ public class Gun : MonoBehaviour {
 
 	public GunStats baseStats;
 
+	public GunProfile profile;
+
 	// Calculated stats
-	public int Damage { get { return SumInt("damage", ref damage); } }
-	public int Bullets  { get { return SumInt("bullets", ref bullets); } }
-	public int MagazineSize  { get { return SumInt("magazineSize", ref magazineSize); } }
-	public float ReloadSpeed  { get { return SumFloat("reloadSpeed", ref reloadSpeed); } }
-	public float Cooldown  { get { return SumFloat("cooldown", ref cooldown); } }
-	public float Lifetime  { get { return SumFloat("lifetime", ref lifetime); } }
-	public Vector2 Spread  { get { return SumVector("spread", ref spread); } }
+	// public int Damage { get { return SumInt("damage", ref damage); } }
+	// public int Bullets  { get { return SumInt("bullets", ref bullets); } }
+	// public int MagazineSize  { get { return SumInt("magazineSize", ref magazineSize); } }
+	// public float ReloadSpeed  { get { return SumFloat("reloadSpeed", ref reloadSpeed); } }
+	// public float Cooldown  { get { return SumFloat("cooldown", ref cooldown); } }
+	// public float Lifetime  { get { return SumFloat("lifetime", ref lifetime); } }
+	// public Vector2 Spread  { get { return SumVector("spread", ref spread); } }
 
 	[Header("Summed Stats")]  
 	public int damage; 
@@ -46,7 +48,7 @@ public class Gun : MonoBehaviour {
 
 	public int currentMagazine {
 		get {
-			magazine = MagazineSize - usedBullets;
+			magazine = profile.MagazineSize - usedBullets;
 			return magazine; 
 		}
 	}
@@ -56,9 +58,6 @@ public class Gun : MonoBehaviour {
 	public int magazine;	
 
 	public bool updateStats;
-
-	enum State { ready, reloading }
-	State state;
 
 	void Start() {
 		stats = new GunStats[numberOfMods + 1];
@@ -88,45 +87,47 @@ public class Gun : MonoBehaviour {
 	}
 
 	void FullUpdate(){
-		UpdateComponentsList();
+		// UpdateComponentsList();
 		UpdateStats();
 		PlaceMods();
 	}
 
 	void UpdateStats(){
 		// Updates the properties to show in the inspector
-		var temp = Damage;
-		temp = Bullets;
-		temp = MagazineSize;
-		var temp2 = ReloadSpeed;
-		temp2 = Cooldown;
-		temp2 = Lifetime;
-		var temp3 = Spread;
+		damage = profile.Damage;
+		bullets = profile.Bullets;
+		magazineSize = profile.MagazineSize;
+
+		reloadSpeed = profile.ReloadSpeed;
+		cooldown = profile.Cooldown;
+		lifetime = profile.Lifetime;
+
+		spread = profile.Spread;
 	}
 
-	void UpdateComponentsList() {
-		int index = 0;
+	// void UpdateComponentsList() {
+	// 	int index = 0;
 
-		stats[index] = baseStats;
-		index++;
+	// 	stats[index] = baseStats;
+	// 	index++;
 
-		if(magazineMod){
-			stats[index] = magazineMod.stats;
-			index++;
-		}
-		if(laserMod){
-			stats[index] = laserMod.stats;
-			index++;
-		}
-		if(sightMod){
-			stats[index] = sightMod.stats;
-			index++;
-		}
-		if(muzzleMod){
-			stats[index] = muzzleMod.stats;
-			index++;
-		}
-	}
+	// 	if(magazineMod){
+	// 		stats[index] = magazineMod.stats;
+	// 		index++;
+	// 	}
+	// 	if(laserMod){
+	// 		stats[index] = laserMod.stats;
+	// 		index++;
+	// 	}
+	// 	if(sightMod){
+	// 		stats[index] = sightMod.stats;
+	// 		index++;
+	// 	}
+	// 	if(muzzleMod){
+	// 		stats[index] = muzzleMod.stats;
+	// 		index++;
+	// 	}
+	// }
 
 	List<GameObject> placedMods = new List<GameObject>();
 
@@ -153,47 +154,47 @@ public class Gun : MonoBehaviour {
 	// 	state = State.ready;
 	// }
 
-	int SumInt(string name, ref int variable){
-		int sum = 0;
+	// int SumInt(string name, ref int variable){
+	// 	int sum = 0;
 			
-		for (int i = 0; i < stats.Length; i++) {
-			if(stats[i] != null) {
-				sum += (int)typeof(GunStats).GetField(name).GetValue(stats[i]);
-			}
-		}
+	// 	for (int i = 0; i < stats.Length; i++) {
+	// 		if(stats[i] != null) {
+	// 			sum += (int)typeof(GunStats).GetField(name).GetValue(stats[i]);
+	// 		}
+	// 	}
 
-		variable = (int)Mathf.Clamp(sum, 1, Mathf.Infinity);
+	// 	variable = (int)Mathf.Clamp(sum, 1, Mathf.Infinity);
 
-	 	return sum;
-	}
+	//  	return sum;
+	// }
 
-	float SumFloat(string name, ref float variable){
-		float sum = 0;
+	// float SumFloat(string name, ref float variable){
+	// 	float sum = 0;
 			
-		for (int i = 0; i < stats.Length; i++) {
-			if(stats[i] != null) {
-				sum += (float)typeof(GunStats).GetField(name).GetValue(stats[i]);
-			}
-		}
+	// 	for (int i = 0; i < stats.Length; i++) {
+	// 		if(stats[i] != null) {
+	// 			sum += (float)typeof(GunStats).GetField(name).GetValue(stats[i]);
+	// 		}
+	// 	}
 
-		variable = Mathf.Clamp(sum, 0.01f, Mathf.Infinity);
+	// 	variable = Mathf.Clamp(sum, 0.01f, Mathf.Infinity);
 
-	 	return sum;
-	}
+	//  	return sum;
+	// }
 
-	Vector2 SumVector(string name, ref Vector2 variable){
-		Vector2 sum = Vector2.zero;
+	// Vector2 SumVector(string name, ref Vector2 variable){
+	// 	Vector2 sum = Vector2.zero;
 			
-		for (int i = 0; i < stats.Length; i++) {
-			if(stats[i] != null) {
-				sum += (Vector2)typeof(GunStats).GetField(name).GetValue(stats[i]);
-			}
-		}
+	// 	for (int i = 0; i < stats.Length; i++) {
+	// 		if(stats[i] != null) {
+	// 			sum += (Vector2)typeof(GunStats).GetField(name).GetValue(stats[i]);
+	// 		}
+	// 	}
 
-		variable = new Vector2(Mathf.Clamp(sum.x, 0, Mathf.Infinity), Mathf.Clamp(sum.y, 0, Mathf.Infinity));
+	// 	variable = new Vector2(Mathf.Clamp(sum.x, 0, Mathf.Infinity), Mathf.Clamp(sum.y, 0, Mathf.Infinity));
 
-	 	return sum;
-	}
+	//  	return sum;
+	// }
 
 	void OnDrawGizmosSelected() {
 		UnityEditor.Handles.color = Color.blue; 

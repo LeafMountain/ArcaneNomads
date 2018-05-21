@@ -13,7 +13,7 @@ public class GunReloading : IGunState {
 	public void Update() {
 		reloadTimeElapsed += Time.deltaTime;
 
-		if(reloadTimeElapsed >= gun.ReloadSpeed){
+		if(reloadTimeElapsed >= gun.profile.ReloadSpeed){
 			gun.usedBullets = 0;
 			gun.ChangeState(new GunReady(gun));
 		}
