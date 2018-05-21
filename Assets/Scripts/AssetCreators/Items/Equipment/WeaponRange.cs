@@ -5,7 +5,4 @@ using UnityEngine;
 [CreateAssetMenu(menuName="Equipment/Weapon/Range")]
 public class WeaponRange : Weapon {
 
-	public int accuracy;
-	public int fireRate;
-
 }
