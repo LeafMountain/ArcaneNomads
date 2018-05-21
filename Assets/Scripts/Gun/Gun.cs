@@ -2,12 +2,12 @@
 using System.Collections.Generic; 
 using UnityEngine;
 
-public class Gun:MonoBehaviour {
+public class Gun : MonoBehaviour {
 
-	public int numberOfMods; 
-	private GunStats[] stats; 
+	public int numberOfMods;
+	private GunStats[] stats;
 
-	public GunStats baseStats; 
+	public GunStats baseStats;
 
 	// Calculated stats
 	public int Damage { get { return SumInt("damage", ref damage); } }
@@ -18,7 +18,7 @@ public class Gun:MonoBehaviour {
 	public float Lifetime  { get { return SumFloat("lifetime", ref lifetime); } }
 	public Vector2 Spread  { get { return SumVector("spread", ref spread); } }
 
-	[Header("Summed Stats")]
+	[Header("Summed Stats")]  
 	public int damage; 
 	public int bullets;	
 	public int magazineSize;
@@ -50,13 +50,12 @@ public class Gun:MonoBehaviour {
 			return magazine; 
 		}
 	}
-	private int usedBullets;
+	public int usedBullets;
 	
 	[Space]
 	public int magazine;	
 
 	public bool updateStats;
-	float shotTime = 0;	
 
 	enum State { ready, reloading }
 	State state;
@@ -65,6 +64,14 @@ public class Gun:MonoBehaviour {
 		stats = new GunStats[numberOfMods + 1];
 		
 		FullUpdate();
+
+		currentState = new GunReady(this);
+	}
+
+	IGunState currentState;
+
+	public void ChangeState (IGunState newState) {
+		currentState = newState;
 	}
 
 	void Update() {
@@ -72,6 +79,12 @@ public class Gun:MonoBehaviour {
 			updateStats = false;
 			FullUpdate();
 		}
+
+		currentState.Update();
+	}
+
+	public void Trigger () {
+		currentState.Trigger();
 	}
 
 	void FullUpdate(){
@@ -81,6 +94,7 @@ public class Gun:MonoBehaviour {
 	}
 
 	void UpdateStats(){
+		// Updates the properties to show in the inspector
 		var temp = Damage;
 		temp = Bullets;
 		temp = MagazineSize;
@@ -133,47 +147,11 @@ public class Gun:MonoBehaviour {
 		placedMods.Add(Instantiate(modification.prefab, slot.position, slot.rotation, slot));
 	}
 
-
-	public void Shoot() {
-		float timeSinceLastShot = Time.time - shotTime;
-
-		if(usedBullets >= MagazineSize && state != State.reloading){
-			Reload();
-		}
-		else if(state == State.ready && timeSinceLastShot > cooldown){
-			for (int i = 0; i < bullets; i++) {
-				GameObject go = Instantiate(bulletPrefab, origin.position, Quaternion.LookRotation(ShootDirection()));
-				
-				Bullet bullet = go.GetComponent<Bullet>();
-				bullet.SetDamage(-Damage); 				
-				bullet.SetLifetime(Lifetime);
-			}
-
-			shotTime = Time.time;
-			usedBullets ++;
-		}
-	}
-
-	public void Reload(){
-		state = State.reloading;
-		Debug.Log("Reloading");
-		StartCoroutine(ReloadTimed(ReloadSpeed));
-	}
-
-	IEnumerator ReloadTimed(float time){
-		yield return new WaitForSeconds(time);
-		usedBullets = 0;
-		state = State.ready;
-	}
-
-	Vector3 ShootDirection() {
-		Vector3 dir = Vector3.zero; 
-
-		dir = origin.forward - origin.position;
-		Vector3 test = new Vector3(Random.Range( - spread.x, spread.x), Random.Range( - spread.y, spread.y), 1).normalized; 
-
-		return origin.TransformDirection(test); 
-	}
+	// IEnumerator ReloadTimed(float time){
+	// 	yield return new WaitForSeconds(time);
+	// 	usedBullets = 0;
+	// 	state = State.ready;
+	// }
 
 	int SumInt(string name, ref int variable){
 		int sum = 0;
@@ -220,10 +198,5 @@ public class Gun:MonoBehaviour {
 	void OnDrawGizmosSelected() {
 		UnityEditor.Handles.color = Color.blue; 
 		UnityEditor.Handles.DrawWireDisc(origin.position + origin.forward * lifetime, origin.forward, spread.x); 
-
-		// UnityEditor.Handles.color = Color.red; 
-		// for (int i = 0; i < bullets; i++) {
-		// 	UnityEditor.Handles.DrawLine(origin.position, origin.position + ShootDirection() * lifetime); 
-		// }
 	}
 }
