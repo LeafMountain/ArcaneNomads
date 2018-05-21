@@ -8,10 +8,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f27ca0b48b5aae479f577c02f5c3e07, type: 3}
-  m_Name: TestFeet
+  m_Script: {fileID: 11500000, guid: 7961c0f25edb75347ac853472a210fdf, type: 3}
+  m_Name: Backpack
   m_EditorClassIdentifier: 
   title: 
+  description: 
   icon: {fileID: 0}
-  weight: 0
-  prefab: {fileID: 1208508529503288, guid: 6bb1644308bf88040a2376bc885d41a9, type: 2}
+  prefab: {fileID: 0}
+  size: {x: 1, y: 1}
+  typeIcon: {fileID: 0}
