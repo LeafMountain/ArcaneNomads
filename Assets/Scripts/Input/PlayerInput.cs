@@ -5,33 +5,36 @@ using UnityEngine.Events;
 
 public class PlayerInput : MonoBehaviour {
 
-	public InputProfile inputProfile;
+	public float horizontal;
+	public float vertical;
 
-	public UnityVector2Event OnMoveInput;
-	public UnityVector2Event OnLookInput;
+	// public InputProfile inputProfile;
 
-	public UnityEvent OnUseInput;
+	// public UnityVector2Event OnMoveInput;
+	// public UnityVector2Event OnLookInput;
 
-	void Update(){
-		Move();
-		Shoot();
-	}
+	// public UnityEvent OnUseInput;
 
-	void Shoot(){
-		if(Input.GetButtonDown(inputProfile.Shoot)){
-			OnUseInput.Invoke();
-		}
-	}
+	// void Update(){
+	// 	Move();
+	// 	Shoot();
+	// }
 
-	void Move(){
-		Vector2 input = new Vector2(Input.GetAxisRaw(inputProfile.HorizontalMove), Input.GetAxisRaw(inputProfile.VerticalMove)).normalized;
+	// void Shoot(){
+	// 	if(Input.GetButtonDown(inputProfile.Shoot)){
+	// 		OnUseInput.Invoke();
+	// 	}
+	// }
 
-		OnMoveInput.Invoke(input);
-	}
+	// void Move(){
+	// 	Vector2 input = new Vector2(Input.GetAxisRaw(inputProfile.HorizontalMove), Input.GetAxisRaw(inputProfile.VerticalMove)).normalized;
+
+	// 	OnMoveInput.Invoke(input);
+	// }
 	
-	void Look(){
-		Vector2 input = new Vector2(Input.GetAxisRaw(inputProfile.HorizontalLook), Input.GetAxisRaw(inputProfile.VerticalLook)).normalized;
+	// void Look(){
+	// 	Vector2 input = new Vector2(Input.GetAxisRaw(inputProfile.HorizontalLook), Input.GetAxisRaw(inputProfile.VerticalLook)).normalized;
 
-		OnLookInput.Invoke(input);
-	}
+	// 	OnLookInput.Invoke(input);
+	// }
 }
