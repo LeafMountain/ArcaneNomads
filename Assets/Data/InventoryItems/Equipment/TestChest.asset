@@ -11,10 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940dd568b8f6496459d92039b378dd8e, type: 3}
   m_Name: TestChest
   m_EditorClassIdentifier: 
-  title: TestChest
-  icon: {fileID: 0}
+  title: Fartous
+  description: Armour is higher when you fart
+  icon: {fileID: 21300000, guid: 5e79b78949713b441a607207ef860ba2, type: 3}
+  quality: 0
   prefab: {fileID: 1352243732590424, guid: a7966bcc86ffa3f45be31f3197afaa01, type: 2}
   size: {x: 1, y: 1}
-  weight: 0
+  typeIcon: {fileID: 0}
   meshRenderer: {fileID: 137595880251698308, guid: 5c6e9400d07a05d4eb0574a4ca4ee700,
     type: 2}

@@ -8,9 +8,12 @@ public class InventoryManager : MonoBehaviour {
 	public GameObject tooltipBox;
 	public GameObject player;
 	private UIToolTipBox uitooltipbox;
+	private InventorySlot[] slots;
+	
 	void Start () {
 
 		uitooltipbox = new UIToolTipBox(tooltipBox);
+		slots = inventoryPanel.GetComponentsInChildren<InventorySlot>();
 	}
 	
 	// Update is called once per frame
