@@ -14,4 +14,4 @@ MonoBehaviour:
   magazineMod: {fileID: 11400000, guid: 67eb35c07d29ad749a5d03c690ae46c8, type: 2}
   laserMod: {fileID: 11400000, guid: cceb177acfcef5c458e52e53f8b6383f, type: 2}
   sightMod: {fileID: 11400000, guid: 15384bd59ec97f24b8ad83702330f480, type: 2}
-  muzzleMod: {fileID: 11400000, guid: 943562f636d8f544187a566be6c0f7b0, type: 2}
+  muzzleMod: {fileID: 11400000, guid: e0a43e782ee5bda4e88af6c57b00814c, type: 2}

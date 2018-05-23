@@ -212,7 +212,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384903176390616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 5.0759177, y: -1.0682821e-17, z: 4.811115}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4293173590904932}
@@ -299,8 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4703076698ec94bb2a42616384274d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfMods: 4
-  baseStats: {fileID: 11400000, guid: 26d837b0140812243ba7d2d17f5b3db3, type: 2}
+  profile: {fileID: 11400000, guid: 5c9412cf354e45747861b65255f025f7, type: 2}
   damage: 0
   bullets: 0
   magazineSize: 0
@@ -311,10 +310,6 @@ MonoBehaviour:
   origin: {fileID: 4933181621318758}
   bulletPrefab: {fileID: 1310351311922346, guid: f2d01107d4bd6bd49a39102d058329e3,
     type: 2}
-  magazineMod: {fileID: 11400000, guid: 67eb35c07d29ad749a5d03c690ae46c8, type: 2}
-  laserMod: {fileID: 11400000, guid: cceb177acfcef5c458e52e53f8b6383f, type: 2}
-  sightMod: {fileID: 11400000, guid: 15384bd59ec97f24b8ad83702330f480, type: 2}
-  muzzleMod: {fileID: 11400000, guid: e0a43e782ee5bda4e88af6c57b00814c, type: 2}
   magazineModPosition: {fileID: 4587318471017894}
   laserModPosition: {fileID: 4684035717238004}
   sightModPosition: {fileID: 4277297872303652}
@@ -362,3 +357,8 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+  OnRightTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
