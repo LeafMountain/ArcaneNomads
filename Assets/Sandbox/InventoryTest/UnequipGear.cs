@@ -18,6 +18,8 @@ public class UnequipGear {
 				slot.slotItem = unequipingGear;
 				slotClicked.gearItem = null;
 				inventoryManager.HideTooltipBox();
+				new UpdateCurrentGear(inventoryManager);
+
 				break;
 			}
 		}

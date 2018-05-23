@@ -26,9 +26,13 @@ public class EquipGear{
         else if(equipingGear is EquipmentLegs){
            inventoryManager.GearSlots[3].gearItem = equipingGear;
        }
+        else if(equipingGear is WeaponRange){
+            inventoryManager.GearSlots[4].gearItem = equipingGear;
+        }
 
         inventoryManager.HideTooltipBox();
 
+        new UpdateCurrentGear(inventoryManager);
 
     }
 

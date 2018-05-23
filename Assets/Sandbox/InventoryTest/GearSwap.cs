@@ -9,15 +9,34 @@ using UnityEngine;
 public class GearSwap {
 
 	private InventoryManager inventoryManger;
+	private Item equipingItem;
+	private Item unequipingItem;
 	private GearSwap(){}
-	public GearSwap(InventoryManager inventoryManager, int gearIndex){
+	public GearSwap(InventoryManager inventoryManager, int gearIndex, InventorySlot inventoryslot){
 		this.inventoryManger = inventoryManager;
+		equipingItem = inventoryslot.slotItem;
+		inventoryslot.slotItem = null;
+		unequipingItem = inventoryManager.GearSlots[gearIndex].gearItem;
 
-
-
-	}
-	public void Swap(){
+		inventoryManager.GearSlots[gearIndex].gearItem = equipingItem;
 
 		
+		foreach(InventorySlot slot in inventoryManager.InventorySlots){
+			if(slot.slotItem == null)
+			{
+				slot.slotItem = unequipingItem;
+				
+				inventoryManager.uiToolTipBox.UpdateToolTip(unequipingItem);
+				inventoryManager.uiToolTipBox.UpdateToolTipGear(equipingItem);
+				
+				new UpdateCurrentGear(inventoryManager); 
+
+				break;
+			}
+		}
+		
+		
+
 	}
+
 }

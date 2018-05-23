@@ -7,7 +7,8 @@ public class InventoryManager : MonoBehaviour {
 	public GameObject inventoryPanel;
 	public GameObject tooltipBox;
 	public GameObject tooltipBoxGear;
-	public GameObject player;
+
+	public CurrentEquipment currentEquipment;
 	private UIToolTipBox uitooltipbox;
 	private InventorySlot[] inventoryslots;
 	private GearSlot[] gearSlots;
@@ -54,6 +55,10 @@ public class InventoryManager : MonoBehaviour {
 			uitooltipbox.UpdateToolTipGear(gearSlots[3].gearItem);
 			tooltipBoxGear.SetActive(true);
 		}
+		else if(slotItem is WeaponRange && gearSlots[4].gearItem != null){
+			uitooltipbox.UpdateToolTipGear(gearSlots[4].gearItem);
+			tooltipBoxGear.SetActive(true);
+		}
 	}
 	public void HideTooltipBox(){
 		tooltipBox.SetActive(false);
@@ -73,7 +78,7 @@ public class InventoryManager : MonoBehaviour {
 					}
 					else
 					{
-						// new GearSwap()
+						new GearSwap(this, 0, slot as InventorySlot);
 					}
 				}
 				else if(iSlot.slotItem is EquipmentFace){
@@ -83,7 +88,7 @@ public class InventoryManager : MonoBehaviour {
 					}
 					else
 					{
-						// new GearSwap()
+						new GearSwap(this, 1, slot as InventorySlot);
 					}
 
 				}
@@ -94,7 +99,7 @@ public class InventoryManager : MonoBehaviour {
 					}
 					else
 					{
-						// new GearSwap()
+						new GearSwap(this, 2, slot as InventorySlot);
 					}
 
 				}
@@ -105,9 +110,19 @@ public class InventoryManager : MonoBehaviour {
 					}
 					else
 					{
-						// new GearSwap()
+						new GearSwap(this, 3, slot as InventorySlot);
 					}
 
+				}
+				else if(iSlot.slotItem is WeaponRange){
+					if(gearSlots[4].gearItem == null){
+						new EquipGear(iSlot.slotItem, this);
+						iSlot.slotItem = null;
+					}
+					else
+					{
+						new GearSwap(this, 4, slot as InventorySlot);
+					}
 				}
 			}
 		}
@@ -124,4 +139,5 @@ public class InventoryManager : MonoBehaviour {
 
 	public InventorySlot[] InventorySlots {get{return inventoryslots;} set{inventoryslots = value;}}
 	public GearSlot[] GearSlots {get{return gearSlots;} set{gearSlots = value;}}
+	public UIToolTipBox uiToolTipBox{get{return uitooltipbox;}}
 }
