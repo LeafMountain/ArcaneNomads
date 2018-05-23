@@ -37,19 +37,20 @@ public class InventoryManager : MonoBehaviour {
 	}
 	public void ShowTooltipBoxGear(Item slotItem){	
 		
-		if(slotItem is EquipmentHead){
+		if(slotItem is EquipmentHead && gearSlots[0].gearItem != null){
+			
 			uitooltipbox.UpdateToolTipGear(gearSlots[0].gearItem);
 			tooltipBoxGear.SetActive(true);
 		}
-		else if(slotItem is EquipmentFace){
+		else if(slotItem is EquipmentFace && gearSlots[1].gearItem != null){
 			uitooltipbox.UpdateToolTipGear(gearSlots[1].gearItem);
 			tooltipBoxGear.SetActive(true);
 		}
-		else if(slotItem is EquipmentChest){
+		else if(slotItem is EquipmentChest && gearSlots[2].gearItem != null){
 			uitooltipbox.UpdateToolTipGear(gearSlots[2].gearItem);
 			tooltipBoxGear.SetActive(true);
 		}
-		else if(slotItem is EquipmentLegs){
+		else if(slotItem is EquipmentLegs && gearSlots[3].gearItem != null){
 			uitooltipbox.UpdateToolTipGear(gearSlots[3].gearItem);
 			tooltipBoxGear.SetActive(true);
 		}
@@ -108,6 +109,12 @@ public class InventoryManager : MonoBehaviour {
 					}
 
 				}
+			}
+		}
+		else if(slot is GearSlot){
+			GearSlot gSlot = slot as GearSlot;
+			if(gSlot.gearItem != null){
+				new UnequipGear(gSlot.gearItem, this, slot as GearSlot);
 			}
 		}
 

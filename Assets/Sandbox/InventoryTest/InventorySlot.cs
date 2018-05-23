@@ -14,7 +14,7 @@ public class InventorySlot : Slot {
 	}
 	
 
-	public void SendMyItem(Item slotItem){
+	public void SendMyItem(){
 		if(slotItem != null){
 			
 			inventoryManager.ShowTooltipBox(slotItem);

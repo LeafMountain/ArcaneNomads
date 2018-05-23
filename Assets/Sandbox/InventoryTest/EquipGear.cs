@@ -27,7 +27,8 @@ public class EquipGear{
            inventoryManager.GearSlots[3].gearItem = equipingGear;
        }
 
-       
+        inventoryManager.HideTooltipBox();
+
 
     }
 

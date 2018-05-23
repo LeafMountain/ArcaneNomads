@@ -10,8 +10,11 @@ public class GearSwap {
 
 	private InventoryManager inventoryManger;
 	private GearSwap(){}
-	public GearSwap(InventoryManager inventoryManager){
+	public GearSwap(InventoryManager inventoryManager, int gearIndex){
 		this.inventoryManger = inventoryManager;
+
+
+
 	}
 	public void Swap(){
 

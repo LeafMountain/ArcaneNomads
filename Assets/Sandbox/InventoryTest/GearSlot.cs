@@ -22,5 +22,8 @@ public class GearSlot : Slot{
 	public void HideTooltip(){
 		inventoryManager.HideTooltipBox();
 	}
+	public void RightClicked(){
+		inventoryManager.SlotRightClicked(this);
+	}
 	
 }
