@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65597532208450738}
   - component: {fileID: 54388328056385620}
   - component: {fileID: 59520107461383070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mod_building_smallstore02_backdoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4466917673269306}
   - component: {fileID: 33009105339150408}
   - component: {fileID: 23435485660078262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mod_building_smallstore02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4263915729748426}
   - component: {fileID: 33318938427828104}
   - component: {fileID: 23986017882828234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mod_building_smallstore02_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4862416044577270}
   - component: {fileID: 64681867193401998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pref_building_smallstore02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4330268384601700}
   - component: {fileID: 65603367519460242}
   - component: {fileID: 114914514823625276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 65727382610430952}
   - component: {fileID: 54864913805980790}
   - component: {fileID: 59430593590429794}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mod_building_smallstore02_entrance_r_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 65954756334784904}
   - component: {fileID: 54405467330055704}
   - component: {fileID: 59705472201923940}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mod_building_smallstore02_entrance_l_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}

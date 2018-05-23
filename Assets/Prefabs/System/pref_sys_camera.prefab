@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   distanceToTarget: 30
-  smoothing: 0.2
+  smoothing: 0.5
   rotation: {x: -1, y: 1, z: -1}
   mask:
     serializedVersion: 2

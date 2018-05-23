@@ -18,8 +18,9 @@ Shader "TreeBranch/ToonCutout" {
 			"RenderType"="TransparentCutout"			
 			"Queue"="Transparent" 
 		}
-		ZWrite Off
-		Blend SrcAlpha OneMinusSrcAlpha
+		Cull off
+		// ZWrite Off
+		// Blend SrcAlpha OneMinusSrcAlpha
 
 		// Toon shading
 		CGPROGRAM

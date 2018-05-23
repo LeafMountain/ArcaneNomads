@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54362201831543610}
   - component: {fileID: 59327172133374538}
   - component: {fileID: 65046664643916564}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mod_building_residential01_backdoor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 33733944769599374}
   - component: {fileID: 23242581135836862}
   - component: {fileID: 64748999099610904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pref_building_residential01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 4059022491935914}
   - component: {fileID: 65648657540199390}
   - component: {fileID: 114324816321671020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 4633405628776736}
   - component: {fileID: 33945888182443320}
   - component: {fileID: 23286986903769558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mod_building_residential01_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 54276096527459930}
   - component: {fileID: 59512698353148510}
   - component: {fileID: 65650980217353002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mod_building_residential01_backdoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,8 @@ GameObject:
   - component: {fileID: 4271593307489708}
   - component: {fileID: 33558390350808402}
   - component: {fileID: 23859272316628714}
-  m_Layer: 0
+  - component: {fileID: 65434994406566374}
+  m_Layer: 8
   m_Name: mod_env_building_residential01_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +131,7 @@ GameObject:
   - component: {fileID: 4912145708842608}
   - component: {fileID: 33321360400090270}
   - component: {fileID: 23687241352994810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mod_building_residential01_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,6 +613,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.785556, y: 2, z: 0.1}
   m_Center: {x: -0.39277706, y: 0, z: -0.0000009536743}
+--- !u!65 &65434994406566374
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1909673070153634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13.299412, y: 20.397554, z: 13.299244}
+  m_Center: {x: -0.00008416176, y: 1.6987772, z: 0.00016784668}
 --- !u!65 &65648657540199390
 BoxCollider:
   m_ObjectHideFlags: 1
