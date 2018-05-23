@@ -22,7 +22,7 @@ public class TriggerOverlap : MonoBehaviour {
 	void OnTriggerExit(Collider col){
 		GameObject go = col.gameObject;
 
-		if(go.layer == mask) {
+		if((mask & 1 << go.layer) == 1 << go.layer){
 			OnTriggerExited.Invoke(go);
 		}
 	}

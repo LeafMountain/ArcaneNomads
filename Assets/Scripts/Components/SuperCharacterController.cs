@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent (typeof (Rigidbody))]
 public class SuperCharacterController : MonoBehaviour {
 	public enum RelativeDirection { Camera, World, Self }
 	public enum RotationMode { MoveDirection, Manual }
@@ -13,32 +13,32 @@ public class SuperCharacterController : MonoBehaviour {
 	public float normalSpeed = 1f;
 	public float speedMultiplier = .5f;
 	public float smoothAmount;
-	
-	float Speed { get { return normalSpeed * speedMultiplier; }}
+
+	float Speed { get { return normalSpeed * speedMultiplier; } }
 
 	Rigidbody rb;
 
 	// Vector3 velocity;
-	public Vector3 Velocity { 
-		get{
+	public Vector3 Velocity {
+		get {
 			return rb.velocity;
-		} 
+		}
 	}
 
-	public Vector3 ForwardVelocity { 
-		get{
-			return transform.InverseTransformDirection(rb.velocity);
-		} 
+	public Vector3 ForwardVelocity {
+		get {
+			return transform.InverseTransformDirection (rb.velocity);
+		}
 	}
 
 	Vector3 lastPosition = Vector3.zero;
 
 	Vector3 currentVelocity;
 	Vector3 velocity;
-	[Range(0, 1)]
+	[Range (0, 1)]
 
 	[HideInInspector]
-	public float currentSpeedPercentage;	//Make this into a property
+	public float currentSpeedPercentage; //Make this into a property
 
 	Vector3 moveDirection;
 
@@ -48,45 +48,45 @@ public class SuperCharacterController : MonoBehaviour {
 	Vector3 lookVelocity;
 	public float lookSmooth;
 
-	void Start(){
-		rb = GetComponent<Rigidbody>();
+	void Start () {
+		rb = GetComponent<Rigidbody> ();
 	}
 
-	void Update(){
+	void Update () {
 		Vector3 newDir = lookDirection;
 		// newDir = Vector3.SmoothDamp(transform.rotation.eulerAngles, lookDirection, ref lookVelocity, lookSmooth);
 
-		if(newDir != Vector3.zero){
-			transform.LookAt(transform.position + newDir);
+		if (newDir != Vector3.zero) {
+			transform.LookAt (transform.position + newDir);
 		}
 
 		// RotateToMoveDirection();
 	}
 
-	void FixedUpdate(){
+	void FixedUpdate () {
 		Vector3 newPos = transform.position;
-		newPos = Vector3.SmoothDamp(transform.position, transform.position + moveDirection * Speed, ref currentVelocity, smoothAmount);
-		
+		newPos = Vector3.SmoothDamp (transform.position, transform.position + moveDirection * Speed, ref currentVelocity, smoothAmount);
+
 		// rb.MovePosition(newPos);
 		// rb.AddForce(moveDirection * Speed, ForceMode.VelocityChange);
 		rb.velocity = moveDirection * Speed;
 	}
 
-#region Move
-	public void Move(Vector2 input){
-		Vector3 _input = new Vector3(input.x, 0, input.y);
+	#region Move
+	public void Move (Vector2 input) {
+		Vector3 _input = new Vector3 (input.x, 0, input.y);
 		Vector3 moveDirection = Vector3.zero;
 
 		switch (relativeTo) {
-			case(RelativeDirection.Camera):
-				Vector3 newMoveDir = ConvertToCameraForward(_input);
+			case (RelativeDirection.Camera):
+				Vector3 newMoveDir = ConvertToCameraForward (_input);
 				moveDirection = newMoveDir;
 				break;
-			case(RelativeDirection.World):
+			case (RelativeDirection.World):
 				moveDirection = _input;
 				break;
-			case(RelativeDirection.Self):
-				moveDirection = ConvertToSelfForward(_input);
+			case (RelativeDirection.Self):
+				moveDirection = ConvertToSelfForward (_input);
 				break;
 			default:
 				break;
@@ -95,45 +95,45 @@ public class SuperCharacterController : MonoBehaviour {
 		this.moveDirection = moveDirection;
 	}
 
-	public void SetSpeed(float value){
+	public void SetSpeed (float value) {
 		normalSpeed = value;
 	}
 
-#endregion
+	#endregion
 
-#region Rotation
+	#region Rotation
 
 	Vector3 lookDirection;
 
 	public bool add;
 
-	public void Rotate(Vector2 input){
-		if(input == Vector2.zero){
+	public void Rotate (Vector2 input) {
+		if (input == Vector2.zero) {
 			return;
 		}
 
-		Vector3 _input = new Vector3(input.x, 0, input.y);
+		Vector3 _input = new Vector3 (input.x, 0, input.y);
 
 		switch (relativeTo) {
-			case(RelativeDirection.World):
+			case (RelativeDirection.World):
 				lookDirection = _input;
 				break;
-			case(RelativeDirection.Camera):
-				lookDirection = ConvertToCameraForward(_input);
+			case (RelativeDirection.Camera):
+				lookDirection = ConvertToCameraForward (_input);
 				break;
-			case(RelativeDirection.Self):
-				lookDirection = ConvertToSelfForward(_input);
+			case (RelativeDirection.Self):
+				lookDirection = ConvertToSelfForward (_input);
 				break;
 		}
 
 		// lookDirection += transform.position;
 	}
 
-	public void SetRotation(float pitch, float yaw, float roll){
-		SetRotation(Quaternion.Euler(pitch, yaw, roll));
+	public void SetRotation (float pitch, float yaw, float roll) {
+		SetRotation (Quaternion.Euler (pitch, yaw, roll));
 	}
 
-	public void SetRotation(Quaternion rotation){
+	public void SetRotation (Quaternion rotation) {
 		Quaternion newRotation = rotation;
 		transform.rotation = newRotation;
 	}
@@ -144,23 +144,24 @@ public class SuperCharacterController : MonoBehaviour {
 	// 	Rotate(direction);
 	// }
 
-#endregion
+	#endregion
 
 	//Common ------------------
 
-	Vector3 ConvertToCameraForward(Vector3 direction){
+	Vector3 ConvertToCameraForward (Vector3 direction) {
 		// Vector3 and = Quaternion.Euler(0, Camera.main.transform.rotation.y, 0) * Vector3.one;
-		
-		Vector3 newMoveDir = Camera.main.transform.TransformDirection(direction);
 
-		
+		Vector3 newMoveDir = Camera.main.transform.TransformDirection (direction);
+
+		// newMoveDir.z += newMoveDir.y;
+		// newMoveDir /= 2;
+
 		newMoveDir.y = 0;
 		newMoveDir = newMoveDir.normalized;
 		return newMoveDir;
 
-
 		// Transform cameraTransform = Camera.main.transform;
-		
+
 		// Vector3 cameraForward = cameraTransform.forward;
 		// cameraForward.y = 0;
 		// Vector3 cameraRight = cameraTransform.right;
@@ -171,8 +172,8 @@ public class SuperCharacterController : MonoBehaviour {
 		// return ((cameraForward + cameraUp) * direction.z + cameraRight * direction.x).normalized;
 	}
 
-	Vector3 ConvertToSelfForward(Vector3 position){
+	Vector3 ConvertToSelfForward (Vector3 position) {
 		return transform.forward * position.z + transform.right * position.x;
 	}
-	
+
 }
