@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 114604218615037536}
   - component: {fileID: 114180303690606808}
   - component: {fileID: 114223228775150542}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: pref_player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2291,6 +2291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSetup: {fileID: 11400000, guid: 1633918fe8d00cc41b9c5ce8f9080108, type: 2}
+  equipmentChanged: {fileID: 11400000, guid: e1865caff881f084c8dd385566a7d3d1, type: 2}
   parent: {fileID: 4379180111014244}
   backSlotPosition: {fileID: 4231293150886672}
   rightHandPosition: {fileID: 4781811082273442}
