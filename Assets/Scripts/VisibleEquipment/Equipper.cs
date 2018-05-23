@@ -5,6 +5,8 @@ using UnityEngine;
 public class Equipper : MonoBehaviour {
 
     public CurrentEquipment currentSetup;
+    public GameEvent equipmentChanged;
+
     [SerializeField] private Transform parent;
 
     [Header ("Positions")]
@@ -36,9 +38,11 @@ public class Equipper : MonoBehaviour {
         }
 
         Refresh ();
+        equipmentChanged.AddListener (() => Refresh ());
     }
 
     public void Refresh () {
+        Debug.Log ("Refreshing equipment");
         Equip ();
     }
 
@@ -54,8 +58,7 @@ public class Equipper : MonoBehaviour {
 
         EquipItem (currentSetup.backSlot, ref backSlot, backSlotPosition);
 
-       
-        EquipWeapon(currentSetup.gunProfile);
+        EquipWeapon (currentSetup.gunProfile);
 
         // EquipItem (currentSetup.rightHand, ref rightHandSlot, rightHandPosition);
         // EquipItem (currentSetup.leftHand, ref leftHandSlot, leftHandPosition);
@@ -73,14 +76,14 @@ public class Equipper : MonoBehaviour {
     }
 
     void EquipWeapon (GunProfile gun) {
-        if(rightHandSlot) {
-            Destroy(rightHandSlot);
+        if (rightHandSlot) {
+            Destroy (rightHandSlot.gameObject);
         }
-        
-        GameObject go = gun.GetGameObject();
+
+        GameObject go = gun.GetGameObject ();
         go.transform.position = rightHandPosition.position;
         go.transform.rotation = rightHandPosition.rotation;
-        go.transform.SetParent(rightHandPosition);
+        go.transform.SetParent (rightHandPosition);
         rightHandSlot = go.transform;
     }
 
@@ -91,7 +94,7 @@ public class Equipper : MonoBehaviour {
 
         //Destroy old item
         if (oldItem != null) {
-            Destroy (oldItem);
+            Destroy (oldItem.gameObject);
         }
 
         GameObject newItem = Instantiate (item.prefab, parent.position, parent.rotation, parent);
