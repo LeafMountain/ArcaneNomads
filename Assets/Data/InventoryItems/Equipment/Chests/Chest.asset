@@ -9,11 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 940dd568b8f6496459d92039b378dd8e, type: 3}
-  m_Name: TestChest
+  m_Name: Chest
   m_EditorClassIdentifier: 
   title: TestChest
+  description: 
   icon: {fileID: 0}
-  weight: 0
-  prefab: {fileID: 100002, guid: 1ef817fe5c672314f9950c16374f21c4, type: 3}
+  quality: 0
+  prefab: {fileID: 1352243732590424, guid: a7966bcc86ffa3f45be31f3197afaa01, type: 2}
+  size: {x: 1, y: 1}
+  typeIcon: {fileID: 0}
   meshRenderer: {fileID: 137595880251698308, guid: 5c6e9400d07a05d4eb0574a4ca4ee700,
     type: 2}

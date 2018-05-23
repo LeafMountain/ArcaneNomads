@@ -8,11 +8,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8adb38949379034dba7b67308f3adae, type: 3}
-  m_Name: TestLegs
+  m_Script: {fileID: 11500000, guid: 6439bddf40190dc44b0618df3eeec07b, type: 3}
+  m_Name: SG
   m_EditorClassIdentifier: 
   title: 
+  description: 
   icon: {fileID: 0}
-  prefab: {fileID: 1291562689109590, guid: 85c3f17b18ba3874d970a1e4aac2c4a9, type: 2}
+  quality: 0
+  prefab: {fileID: 1183872390465474, guid: 126e9a77b9d6f7c4c8032711220284c5, type: 2}
   size: {x: 1, y: 1}
-  weight: 0
+  typeIcon: {fileID: 0}
+  damage: 0
+  baseStats: {fileID: 0}

@@ -9,7 +9,6 @@ public class GameEvent : ScriptableObject {
 	List<UnityAction> listeners = new List<UnityAction> ();
 
 	public void AddListener (UnityAction listener) {
-		Debug.Log ("Adding " + listener);
 		if (!ListenerExists (listener)) {
 			listeners.Add (listener);
 		}
