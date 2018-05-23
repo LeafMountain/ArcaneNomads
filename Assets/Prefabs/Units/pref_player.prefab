@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 114604218615037536}
   - component: {fileID: 114180303690606808}
   - component: {fileID: 114223228775150542}
+  - component: {fileID: 81429033040072014}
   m_Layer: 10
   m_Name: pref_player
   m_TagString: Player
@@ -258,6 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4421217327753868}
   - component: {fileID: 95539172109025644}
+  - component: {fileID: 114581302972084246}
   m_Layer: 0
   m_Name: mod_char_player01
   m_TagString: Untagged
@@ -2189,6 +2191,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!81 &81429033040072014
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146904742983320}
+  m_Enabled: 1
 --- !u!95 &95539172109025644
 Animator:
   serializedVersion: 3
@@ -2535,6 +2544,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114581302972084246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1165697423688322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0354b60b0f331444caa6c58c61cd57c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - name: footstep
+    audioContainer: {fileID: 11400000, guid: a37e07fa270da7a4c96c42242c50f94e, type: 2}
 --- !u!114 &114584295417780322
 MonoBehaviour:
   m_ObjectHideFlags: 1

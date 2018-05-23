@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f296f72fcfaf4941910f433941fe520, type: 3}
-  m_Name: Muzzle_Damage
+  m_Name: Gun_Stats
   m_EditorClassIdentifier: 
-  damage: 10
-  magazineSize: -10
-  bullets: 5
-  reloadSpeed: 1
+  damage: 1
+  magazineSize: 0
+  bullets: 1
+  reloadSpeed: 0.5
   cooldown: 0.5
-  lifetime: -1
-  spread: {x: 1, y: 1}
+  lifetime: 1
+  spread: {x: 0.5, y: 0.5}

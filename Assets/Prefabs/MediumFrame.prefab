@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 114356241394573964}
   - component: {fileID: 114897793889714202}
   m_Layer: 0
-  m_Name: TestGun
+  m_Name: MediumFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
