@@ -11,7 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b158d869da8fab478cfc4d587d1496f, type: 3}
   m_Name: TestHead
   m_EditorClassIdentifier: 
-  title: HejEHej
+  title: Keps
+  description: Very awesome hat
   icon: {fileID: 0}
-  weight: 0
+  quality: 0
   prefab: {fileID: 100006, guid: d835d9c3f1930d64881b272bb749ea1f, type: 3}
+  size: {x: 1, y: 1}
+  typeIcon: {fileID: 0}

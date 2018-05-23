@@ -11,9 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940dd568b8f6496459d92039b378dd8e, type: 3}
   m_Name: TestChest
   m_EditorClassIdentifier: 
-  title: TestChest
-  icon: {fileID: 0}
-  weight: 0
+  title: Tank Top of Doom
+  description: Bruce Willis wore this as he went to the bathroom
+  icon: {fileID: 21300000, guid: d130987e942ecae439ce0fd99f25526d, type: 3}
+  quality: 0
   prefab: {fileID: 100002, guid: 1ef817fe5c672314f9950c16374f21c4, type: 3}
+  size: {x: 1, y: 1}
+  typeIcon: {fileID: 21300000, guid: d130987e942ecae439ce0fd99f25526d, type: 3}
   meshRenderer: {fileID: 137595880251698308, guid: 5c6e9400d07a05d4eb0574a4ca4ee700,
     type: 2}

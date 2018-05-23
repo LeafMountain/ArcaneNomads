@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GearSlot : MonoBehaviour {
+public enum GearSlotType {head, face, body, legs, Length}
+public class GearSlot : Slot{
 
-	// Use this for initialization
+	public Item gearItem;
+	public GearSlotType type;
+	private InventoryManager inventoryManager;
+
 	void Start () {
+
+		inventoryManager = GameObject.FindObjectOfType<InventoryManager>();
 		
+	}
+
+	public void SendMyItem(){
+		if(gearItem != null) inventoryManager.ShowTooltipBoxGear(gearItem);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	public void HideTooltip(){
+		inventoryManager.HideTooltipBox();
 	}
+	
 }
