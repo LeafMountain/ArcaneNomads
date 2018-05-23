@@ -1,7 +1,7 @@
 ﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 // Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 
-Shader "TreeBranch/ToonBasic" {
+Shader "TreeBranch/ToonCutout" {
 	Properties {
 		_MainTex ("Color (RGB) Alpha (A)", 2D) = "white" {}
 		// _RampTex ("Light Ramp", 2D) = "white" {}
@@ -23,7 +23,7 @@ Shader "TreeBranch/ToonBasic" {
 
 		// Toon shading
 		CGPROGRAM
-		#pragma surface surf CelShadingForward alpha
+		#pragma surface surf CelShadingForward alpha alphatest:_Cutoff addshadow fullforwardshadows
 		#pragma target 3.0
 
 		half4 LightingCelShadingForward(SurfaceOutput s, half3 lightDir, half atten) {

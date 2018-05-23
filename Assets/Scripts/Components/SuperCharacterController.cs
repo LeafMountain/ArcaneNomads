@@ -4,8 +4,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class SuperCharacterController : MonoBehaviour {
-
-	
 	public enum RelativeDirection { Camera, World, Self }
 	public enum RotationMode { MoveDirection, Manual }
 

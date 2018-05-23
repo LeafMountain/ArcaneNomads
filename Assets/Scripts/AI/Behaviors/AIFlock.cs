@@ -8,7 +8,7 @@ public class AIFlock : AIBeahvior {
 
 	public override Vector3 DoBehavior (AIComponent boid) {
 		Vector3 force = Vector3.zero;
-		AIComponent[] neighbors = GetNeighbors(boid);
+		Transform[] neighbors = GetNeighbors(boid);
 
 		Vector3[] neighborPositions = new Vector3[neighbors.Length];
 
@@ -26,8 +26,8 @@ public class AIFlock : AIBeahvior {
 		return force.normalized;
 	}
 
-	AIComponent[] GetNeighbors(AIComponent boid){
-		return sensor.GetObjects<AIComponent>(boid);
+	Transform[] GetNeighbors(AIComponent boid){
+		return sensor.GetObjects<Transform>(boid);
 	}
 
 	Vector3 GetAverageVector (AIComponent enemy, Vector3[] positions) {

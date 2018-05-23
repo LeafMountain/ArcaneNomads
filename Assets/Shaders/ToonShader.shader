@@ -66,7 +66,7 @@ Shader "TreeBranch/ToonShader" {
 
 		Tags{ 
 			"RenderType" = "Opaque"
-			// "Queue" = "Transparent"
+			"Queue" = "Transparent"
 		}
 
         // UsePass "Toon/Lit/FORWARD"
@@ -89,12 +89,11 @@ Shader "TreeBranch/ToonShader" {
 				}
 
 			ENDCG
-
 		}
 
 		// Toon shading
 		CGPROGRAM
-		#pragma surface surf CelShadingForward addshadow vertex:avert
+		#pragma surface surf CelShadingForward fullforwardshadows vertex:avert
 		#pragma target 3.0
 
 		half4 LightingCelShadingForward(SurfaceOutput s, half3 lightDir, half atten) {

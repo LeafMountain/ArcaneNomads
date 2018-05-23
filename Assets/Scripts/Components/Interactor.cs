@@ -9,16 +9,28 @@ public class Interactor : MonoBehaviour {
 
 	Vector3 origin;
 
+	Collider collider;
+	Collider Collider {
+		get {
+			if(!collider){
+				collider = GetComponent<Collider>();
+			}
+
+			return collider;
+		}
+	}
+
 	[Header("READ ONLY")]
 	[SerializeField]
 	private Interactable focusTarget;
 
 	void Start(){
-		origin = GetComponent<Collider>().bounds.center;
+		collider = GetComponent<Collider>();
 	}
 
 	RaycastHit VisionRay {
 		get {
+			Vector3 origin = Collider.bounds.center;
 			Ray visionRay = new Ray(origin, transform.forward);
 			RaycastHit visionHit;
 
@@ -66,22 +78,13 @@ public class Interactor : MonoBehaviour {
 
 	//Interact with the interactable the character is looking at (if it's looking at an interactable)
 	public void Interact(){
-		Transform visionTarget = VisionRay.transform;
-		Interactable interactable = null;
-
-		if(visionTarget){
-			interactable = visionTarget.GetComponent<Interactable>();
-
-			if(interactable){
-				interactable.Interact();
-			}
-		}
+		VisionRay.transform?.GetComponent<Interactable>()?.Interact();
 	}
 
 	void OnDrawGizmos(){
 		Gizmos.color = Color.blue;
 		origin = GetComponent<Collider>().bounds.center;
 		Gizmos.DrawLine(origin, origin + transform.forward * visionLength);
-		Gizmos.DrawWireSphere(origin, sphereRadius);
+		Gizmos.DrawWireSphere(origin + transform.forward * visionLength, sphereRadius);
 	}
 }
