@@ -13,8 +13,10 @@ public class CurrentEquipment : ScriptableObject {
 	public EquipmentBack backSlot;
 
 	[Header ("Weapons")]
-	public Equipment rightHand;
-	public Equipment leftHand;
+	public WeaponRange rightHand;
+	public WeaponRange leftHand;
+
+	public GunProfile gunProfile;
 
 	public void EditHeadSlot (EquipmentHead equipment) {
 		headSlot = equipment;
@@ -31,11 +33,11 @@ public class CurrentEquipment : ScriptableObject {
 		legsSlot = equipment;
 	}
 
-	public void EditRightSlot (Equipment equipment) {
+	public void EditRightSlot (WeaponRange equipment) {
 		rightHand = equipment;
 	}
 
-	public void EditLeftSlot (Equipment equipment) {
+	public void EditLeftSlot (WeaponRange equipment) {
 		leftHand = equipment;
 	}
 }

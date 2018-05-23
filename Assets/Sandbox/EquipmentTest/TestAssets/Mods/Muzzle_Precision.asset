@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 641b20852a1337c4288d0e73eaa04983, type: 3}
-  m_Name: Test Muzzle Mod
+  m_Name: Muzzle_Precision
   m_EditorClassIdentifier: 
-  name: Test Muzzle
-  stats: {fileID: 0}
-  prefab: {fileID: 1514915085258708, guid: b21d96960d62b404b8bb3b98250eb765, type: 2}
+  name: Precision Muzzle
+  stats: {fileID: 11400000, guid: a969ff8f81634104295573d407ee47ac, type: 2}
+  prefab: {fileID: 1186742492377288, guid: 28089a1350689bf4a86124d316daecaf, type: 2}
