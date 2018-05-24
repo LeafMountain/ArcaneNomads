@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: PlayerMagazine
   m_EditorClassIdentifier: Assembly-CSharp::IntVariable
   DeveloperDescription: 
-  Value: 0
+  Value: 8
