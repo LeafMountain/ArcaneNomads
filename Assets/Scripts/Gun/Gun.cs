@@ -1,25 +1,26 @@
-﻿using System.Collections; 
-using System.Collections.Generic; 
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Gun : MonoBehaviour {
 
 	public GunProfile profile;
 
-	[Header("Summed Stats")]  
-	public int damage; 
-	public int bullets;	
+	[Header ("Summed Stats")]
+	public int damage;
+	public int bullets;
 	public int magazineSize;
-	public float reloadSpeed; 
-	public float cooldown; 
-	public float lifetime; 
-	public Vector2 spread; 
+	public float reloadSpeed;
+	public float cooldown;
+	public float lifetime;
+	public Vector2 spread;
 
-	[Header("Other")]
-	public Transform origin; 
-	public GameObject bulletPrefab; 
+	[Header ("Other")]
+	public Transform origin;
+	public GameObject bulletPrefab;
 
-	[Header("Mod Slots")]
+	[Header ("Mod Slots")]
 
 	public Transform magazineModPosition;
 	public Transform laserModPosition;
@@ -29,20 +30,25 @@ public class Gun : MonoBehaviour {
 	public int currentMagazine {
 		get {
 			magazine = profile.MagazineSize - usedBullets;
-			return magazine; 
+			return magazine;
 		}
 	}
 	public int usedBullets;
-	
+
+	public IntVariable _currentMagazine;
+	public IntVariable maxMagazine;
+
 	[Space]
-	public int magazine;	
+	public int magazine;
+
+	public UnityEvent OnShoot;
 
 	public bool updateStats;
 
-	void Start() {
-		FullUpdate();
+	void Start () {
+		FullUpdate ();
 
-		currentState = new GunReady(this);
+		currentState = new GunReady (this);
 	}
 
 	IGunState currentState;
@@ -51,25 +57,27 @@ public class Gun : MonoBehaviour {
 		currentState = newState;
 	}
 
-	void Update() {
-		if(updateStats){
+	void Update () {
+		if (updateStats) {
 			updateStats = false;
-			FullUpdate();
+			FullUpdate ();
 		}
 
-		currentState.Update();
+		currentState.Update ();
+
+		_currentMagazine.SetValue (currentMagazine);
 	}
 
 	public void Trigger () {
-		currentState.Trigger();
+		currentState.Trigger ();
 	}
 
-	void FullUpdate(){
-		UpdateStats();
+	void FullUpdate () {
+		UpdateStats ();
 		// PlaceMods();
 	}
 
-	void UpdateStats(){
+	void UpdateStats () {
 		// Updates the properties to show in the inspector
 		damage = profile.Damage;
 		bullets = profile.Bullets;
@@ -80,10 +88,12 @@ public class Gun : MonoBehaviour {
 		lifetime = profile.Lifetime;
 
 		spread = profile.Spread;
+
+		maxMagazine.SetValue (profile.MagazineSize);
 	}
 
-	void OnDrawGizmosSelected() {
-		UnityEditor.Handles.color = Color.blue; 
-		UnityEditor.Handles.DrawWireDisc(origin.position + origin.forward * lifetime, origin.forward, spread.x); 
+	void OnDrawGizmosSelected () {
+		UnityEditor.Handles.color = Color.blue;
+		UnityEditor.Handles.DrawWireDisc (origin.position + origin.forward * lifetime, origin.forward, spread.x);
 	}
 }

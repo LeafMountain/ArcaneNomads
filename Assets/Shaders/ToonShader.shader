@@ -68,6 +68,7 @@ Shader "TreeBranch/ToonShader" {
 			"RenderType" = "Opaque"
 			"Queue" = "Transparent"
 		}
+		Cull off
 
         // UsePass "Toon/Lit/FORWARD"
 

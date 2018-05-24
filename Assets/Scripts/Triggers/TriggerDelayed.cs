@@ -9,22 +9,22 @@ public class TriggerDelayed : MonoBehaviour {
 	public bool startOnEnabled;
 	public UnityEvent OnTriggered;
 
-	void Start(){
-		if(startOnEnabled){
-			StartTimer();
+	void OnEnable () {
+		if (startOnEnabled) {
+			StartTimer ();
 		}
 	}
 
-	public void Trigger(){
-		OnTriggered.Invoke();
-	}	
-
-	public void StartTimer(){
-		StartCoroutine("TriggerWithDelay", delay);
+	public void Trigger () {
+		OnTriggered.Invoke ();
 	}
 
-	IEnumerator TriggerWithDelay(float delay){
-		yield return new WaitForSeconds(delay);
-		Trigger();
+	public void StartTimer () {
+		StartCoroutine ("TriggerWithDelay", delay);
+	}
+
+	IEnumerator TriggerWithDelay (float delay) {
+		yield return new WaitForSeconds (delay);
+		Trigger ();
 	}
 }

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 124288491600501698}
   - component: {fileID: 81049294833640684}
   - component: {fileID: 114241236480071268}
+  - component: {fileID: 114948442787416578}
   m_Layer: 0
   m_Name: pref_sys_camera
   m_TagString: MainCamera
@@ -36,13 +37,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400226052599954}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
   m_LocalPosition: {x: 0, y: 47.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
 --- !u!20 &20394267736548242
 Camera:
   m_ObjectHideFlags: 1
@@ -59,7 +60,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.001
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -92,7 +93,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400226052599954}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c91bc711f000a3b42ab42551d336c63d, type: 3}
   m_Name: 
@@ -113,6 +114,24 @@ MonoBehaviour:
   smoothing: 0.5
   enableReplacementShader: 0
   replacementShader: {fileID: 0}
+--- !u!114 &114948442787416578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1400226052599954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a00b93338a2b904cb935d732517ff4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  distanceToTarget: 30
+  smoothing: 0.5
+  rotation: {x: -1, y: 1, z: -1}
+  mask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!124 &124288491600501698
 Behaviour:
   m_ObjectHideFlags: 1

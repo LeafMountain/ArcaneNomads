@@ -42,7 +42,6 @@ public class Equipper : MonoBehaviour {
     }
 
     public void Refresh () {
-        Debug.Log ("Refreshing equipment");
         Equip ();
     }
 

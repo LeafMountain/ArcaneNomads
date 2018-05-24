@@ -49,11 +49,23 @@
 		UNITY_INSTANCING_BUFFER_END(Props)
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
-			fixed4 noise = tex2D(_NoiseTex, IN.worldPos.xz * _NoiseScale);
-			fixed4 decal = tex2D(_DecalTex, IN.worldPos.xz * _DecalScale) * _DecalColor;
+			float3 xd = tex2D(_DecalTex, IN.worldPos.zy * _DecalScale) * _DecalColor;
+			float3 zd = tex2D(_DecalTex, IN.worldPos.xy * _DecalScale) * _DecalColor;
+			float3 yd = tex2D(_DecalTex, IN.worldPos.zx * _DecalScale) * _DecalColor;
+
+			float3 xn = tex2D(_NoiseTex, IN.worldPos.zy * _NoiseScale);
+			float3 zn = tex2D(_NoiseTex, IN.worldPos.xy * _NoiseScale);
+			float3 yn = tex2D(_NoiseTex, IN.worldPos.zx * _NoiseScale);
+
+			// float3 toptexture = zm;
+			// toptexture = lerp(toptexture, xm, blendNormal.x);
+			// toptexture = lerp(toptexture, ym, blendNormal.y);
+
 			fixed4 mainTex = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 
-			o.Albedo = lerp(mainTex.rgb, decal.rgb, step(noise.r, step(mainTex.a, 0.5) * _NoiseAmount));
+			o.Albedo = lerp(mainTex.rgb, xd.rgb, step(xn.r, step(mainTex.a, 0.5) * _NoiseAmount));
+			o.Albedo = lerp(mainTex.rgb, zd.rgb, step(zn.r, step(mainTex.a, 0.5) * _NoiseAmount));
+			o.Albedo = lerp(mainTex.rgb, yd.rgb, step(yn.r, step(mainTex.a, 0.5) * _NoiseAmount));
 			
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
