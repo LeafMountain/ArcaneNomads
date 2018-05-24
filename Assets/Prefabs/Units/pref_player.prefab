@@ -2646,11 +2646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460313828068c2b40838ca99788ef819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentValue: {fileID: 11400000, guid: bafcd2763d498264e88f8f607b9bad04, type: 2}
+  currentValue: {fileID: 11400000, guid: 80e002ffb8be72846b20a306c54e9297, type: 2}
   maxValue:
     useConstant: 0
     constantValue: 0
-    variable: {fileID: 11400000, guid: e504249ba81fabf4ab23c0f315b89fde, type: 2}
+    variable: {fileID: 11400000, guid: 970cfdadacf43224ca94d614037fa4e2, type: 2}
   resetOnPlay: 1
   OnDecrease:
     m_PersistentCalls:
