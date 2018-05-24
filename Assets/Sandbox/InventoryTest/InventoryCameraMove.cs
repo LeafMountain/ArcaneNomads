@@ -38,7 +38,8 @@ public class InventoryCameraMove {
 				}
 				else
 				{
-					if(isDown)inventoryManager.inventoryPanel.SetActive(false);
+					inventoryManager.inventoryPanel.SetActive(false);
+					PlayCloseInventorySound();
 				}
 			
 			startTime = Time.time;
@@ -69,7 +70,10 @@ public class InventoryCameraMove {
 				moving = false;
 				inventoryManager.MoveCamera = false;
 				isDown = !isDown;
-				if(isDown)inventoryManager.inventoryPanel.SetActive(true);
+				if(isDown){
+					inventoryManager.inventoryPanel.SetActive(true);
+					 PlayOpenInventorySound();
+				}
 
 			}
 		
@@ -91,6 +95,12 @@ public class InventoryCameraMove {
 			(player.transform.position.x -0.1f), 1.17f, (player.transform.position.z -0.86f));
 
 		camDownRotation = player.transform.rotation;
+
+	}
+	private void PlayOpenInventorySound(){
+
+	}
+	private void PlayCloseInventorySound(){
 
 	}
 }

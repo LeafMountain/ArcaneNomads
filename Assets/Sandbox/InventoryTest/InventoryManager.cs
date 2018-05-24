@@ -9,8 +9,11 @@ public class InventoryManager : MonoBehaviour {
 	public GameObject tooltipBoxGear;
 	public GameObject mainCamera;
 	public GameObject player;
-
 	public CurrentEquipment currentEquipment;
+
+	[Header("SFX")]
+	public AudioClip[] inventorySFXClips;
+	private AudioSource inventoryAS;
 	private UIToolTipBox uitooltipbox;
 	private InventorySlot[] inventoryslots;
 	private GearSlot[] gearSlots;
@@ -22,6 +25,7 @@ public class InventoryManager : MonoBehaviour {
 		uitooltipbox = new UIToolTipBox(tooltipBox, tooltipBoxGear);
 		inventoryslots = inventoryPanel.GetComponentsInChildren<InventorySlot>();
 		gearSlots = inventoryPanel.GetComponentsInChildren<GearSlot>();
+		inventoryAS = GetComponent<AudioSource>();
 
 		inventoryCameraMove = new InventoryCameraMove(mainCamera, player, this);
 		moveCamera = false;
