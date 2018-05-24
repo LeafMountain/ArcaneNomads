@@ -92,6 +92,7 @@ public class InventoryManager : MonoBehaviour {
 					else
 					{
 						new GearSwap(this, 0, slot as InventorySlot);
+						PlayEquipSound(5);
 					}
 				}
 				else if(iSlot.slotItem is EquipmentFace){
@@ -102,6 +103,8 @@ public class InventoryManager : MonoBehaviour {
 					else
 					{
 						new GearSwap(this, 1, slot as InventorySlot);
+						PlayEquipSound(4);
+
 					}
 
 				}
@@ -113,6 +116,7 @@ public class InventoryManager : MonoBehaviour {
 					else
 					{
 						new GearSwap(this, 2, slot as InventorySlot);
+						PlayEquipSound(2);
 					}
 
 				}
@@ -124,6 +128,7 @@ public class InventoryManager : MonoBehaviour {
 					else
 					{
 						new GearSwap(this, 3, slot as InventorySlot);
+						PlayEquipSound(3);
 					}
 
 				}
@@ -135,6 +140,7 @@ public class InventoryManager : MonoBehaviour {
 					else
 					{
 						new GearSwap(this, 4, slot as InventorySlot);
+						PlayEquipSound(6);
 					}
 				}
 			}
@@ -147,6 +153,12 @@ public class InventoryManager : MonoBehaviour {
 		}
 
 	}
+	private void PlayEquipSound(int whatClip){
+
+        InventoryAS.clip = inventorySFXClips[whatClip];
+           InventoryAS.Play();
+
+    }
 
 	//properties
 
@@ -154,4 +166,5 @@ public class InventoryManager : MonoBehaviour {
 	public GearSlot[] GearSlots {get{return gearSlots;} set{gearSlots = value;}}
 	public UIToolTipBox uiToolTipBox{get{return uitooltipbox;}}
 	public bool MoveCamera{get{return moveCamera;}set{moveCamera = value;}}
+	public AudioSource InventoryAS {get{return inventoryAS;}} 
 }

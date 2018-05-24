@@ -5,6 +5,7 @@ using UnityEngine;
 public class InventoryCameraMove {
 
 	private InventoryManager inventoryManager;
+	
 	private GameObject mainCamera;
 	private GameObject player;
 
@@ -34,6 +35,7 @@ public class InventoryCameraMove {
 			moving = true;
 			UpdateCamDownData();
 			if(!isDown){
+				PlayOpenInventorySound();
 				UpdateCamUpData();
 				}
 				else
@@ -72,7 +74,7 @@ public class InventoryCameraMove {
 				isDown = !isDown;
 				if(isDown){
 					inventoryManager.inventoryPanel.SetActive(true);
-					 PlayOpenInventorySound();
+					
 				}
 
 			}
@@ -99,8 +101,17 @@ public class InventoryCameraMove {
 	}
 	private void PlayOpenInventorySound(){
 
+
+		inventoryManager.InventoryAS.clip = inventoryManager.inventorySFXClips[0];
+		inventoryManager.InventoryAS.Play();
+		
+			
+
 	}
 	private void PlayCloseInventorySound(){
+
+		inventoryManager.InventoryAS.clip = inventoryManager.inventorySFXClips[1];
+		inventoryManager.InventoryAS.Play();
 
 	}
 }
