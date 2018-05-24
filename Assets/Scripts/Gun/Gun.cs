@@ -35,6 +35,9 @@ public class Gun : MonoBehaviour {
 	}
 	public int usedBullets;
 
+	public IntVariable _currentMagazine;
+	public IntVariable maxMagazine;
+
 	[Space]
 	public int magazine;
 
@@ -61,6 +64,8 @@ public class Gun : MonoBehaviour {
 		}
 
 		currentState.Update ();
+
+		_currentMagazine.SetValue (currentMagazine);
 	}
 
 	public void Trigger () {
@@ -83,6 +88,8 @@ public class Gun : MonoBehaviour {
 		lifetime = profile.Lifetime;
 
 		spread = profile.Spread;
+
+		maxMagazine.SetValue (profile.MagazineSize);
 	}
 
 	void OnDrawGizmosSelected () {

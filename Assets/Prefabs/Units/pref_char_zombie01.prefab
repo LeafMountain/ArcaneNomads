@@ -3091,7 +3091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef63e4e70ea4544bb81e55d1852bd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: -50
+  damage: -10
   OnDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -3428,7 +3428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d549f3bd414e2b546aacfd26facbe5b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 10
+  delay: 30
   startOnEnabled: 0
   OnTriggered:
     m_PersistentCalls:

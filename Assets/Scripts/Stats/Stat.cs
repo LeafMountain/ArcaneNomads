@@ -20,7 +20,6 @@ public class Stat : MonoBehaviour {
     }
 
     public void ModifyValue (int amount) {
-
         currentValue.ApplyChange (amount);
 
         if (amount > 0) {
