@@ -7,26 +7,35 @@ public class InventoryManager : MonoBehaviour {
 	public GameObject inventoryPanel;
 	public GameObject tooltipBox;
 	public GameObject tooltipBoxGear;
+	public GameObject mainCamera;
+	public GameObject player;
 
 	public CurrentEquipment currentEquipment;
 	private UIToolTipBox uitooltipbox;
 	private InventorySlot[] inventoryslots;
 	private GearSlot[] gearSlots;
+	private InventoryCameraMove inventoryCameraMove;
+	private bool moveCamera;
 	
 	void Start () {
 
 		uitooltipbox = new UIToolTipBox(tooltipBox, tooltipBoxGear);
 		inventoryslots = inventoryPanel.GetComponentsInChildren<InventorySlot>();
 		gearSlots = inventoryPanel.GetComponentsInChildren<GearSlot>();
+
+		inventoryCameraMove = new InventoryCameraMove(mainCamera, player, this);
+		moveCamera = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		if(Input.GetKeyUp(KeyCode.I)){
-			inventoryPanel.SetActive(!inventoryPanel.activeSelf);
-
+			
+			moveCamera = !moveCamera;
+			
 		}		
+		inventoryCameraMove.MoveCamera(moveCamera);
 	}
 	public void ShowTooltipBox(Item slotItem){
 
@@ -140,4 +149,5 @@ public class InventoryManager : MonoBehaviour {
 	public InventorySlot[] InventorySlots {get{return inventoryslots;} set{inventoryslots = value;}}
 	public GearSlot[] GearSlots {get{return gearSlots;} set{gearSlots = value;}}
 	public UIToolTipBox uiToolTipBox{get{return uitooltipbox;}}
+	public bool MoveCamera{get{return moveCamera;}set{moveCamera = value;}}
 }
