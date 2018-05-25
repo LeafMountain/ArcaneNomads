@@ -58,11 +58,13 @@ public class InventoryCameraMove {
 			if(!isDown){
 
 				mainCamera.transform.position = Vector3.Slerp(camUpPosition, camDownPosition, fracJourney);
-			
+				mainCamera.transform.rotation = Quaternion.Slerp(camUpRotation, camDownRotation, fracJourney);
+				
 			}
 			else
 			{
 				mainCamera.transform.position = Vector3.Slerp(camDownPosition, camUpPosition, fracJourney);
+				mainCamera.transform.rotation = Quaternion.Slerp(camDownRotation, camUpRotation, fracJourney);
 			}
 
 			if(fracJourney > 0.99f)
@@ -93,10 +95,13 @@ public class InventoryCameraMove {
 	}
 	private void UpdateCamDownData(){
 
-		camDownPosition = new Vector3(
-			(player.transform.position.x -0.1f), 1.17f, (player.transform.position.z -0.86f));
+		camDownPosition = player.GetComponentInChildren<Renderer>().bounds.center;
 
 		camDownRotation = player.transform.rotation;
+
+		 camDownPosition -= player.transform.forward * 1.0f ;
+
+		
 
 	}
 	private void PlayOpenInventorySound(){
