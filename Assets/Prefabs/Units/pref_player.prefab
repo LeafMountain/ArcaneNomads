@@ -213,6 +213,9 @@ GameObject:
   - component: {fileID: 114180303690606808}
   - component: {fileID: 114223228775150542}
   - component: {fileID: 81429033040072014}
+  - component: {fileID: 114360098393075404}
+  - component: {fileID: 114171948293690028}
+  - component: {fileID: 114171590318946960}
   m_Layer: 10
   m_Name: pref_player
   m_TagString: Player
@@ -1582,7 +1585,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146904742983320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.440408, y: 0, z: -0.5536488}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4430533440243718}
@@ -1591,7 +1594,7 @@ Transform:
   - {fileID: 4231293150886672}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -161.419, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4400618081031276
 Transform:
   m_ObjectHideFlags: 1
@@ -2288,6 +2291,28 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114171590318946960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146904742983320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb076cda245cd8c4dab5a3c0a9b3ec24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114171948293690028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146904742983320}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114180303690606808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2318,6 +2343,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0.2
+--- !u!114 &114360098393075404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146904742983320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9dcfdc3f4ecf14bba52f31216b6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Move:
+    x: 0
+    y: 0
+  playerIndex: 0
+  OnMove:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityVector2Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114392920850720366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2738,6 +2783,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityVector2Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  cam: {fileID: 0}
 --- !u!136 &136756151097549516
 CapsuleCollider:
   m_ObjectHideFlags: 1
