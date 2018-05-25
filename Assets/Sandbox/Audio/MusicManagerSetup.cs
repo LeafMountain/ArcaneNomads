@@ -14,8 +14,8 @@ public class MusicManagerSetup  {
 		if(mm.debug)Debug.Log("RUNNING RUNNING <MusicManagerSetup> RUNNING RUNNING");
 
 		
-			mm.AudioSources = new AudioSource[(int)Track.Length];
-			GetAudioSources();
+			mm.AudioSources = mm.gameObject.GetComponentsInChildren<AudioSource>();
+		
 			SortAudioContainers(mm.SoundLibrary);
 			mm.UpdateInterval = 0.75f; // a 0.75 second is the length of one beat at 80 bpm.
 		
@@ -25,13 +25,7 @@ public class MusicManagerSetup  {
 		if(mm.debug)Debug.Log("COMPLETE COMPLETE <MusicManagerSetup> COMPLETE COMPLETE");
 	}
 	
-	private void GetAudioSources()
-	{
-		for (int i = 0; i < (int)Track.Length; i++)
-		{
-			mm.AudioSources[i] = mm.gameObject.transform.GetChild(i).GetComponent<AudioSource>();
-		}
-	}
+	
 	private void SortAudioContainers(AudioClipContainer[] containers)
 	{
 		if(mm.debug)Debug.Log("MusicManagerSetup.SortAudioContainers");
