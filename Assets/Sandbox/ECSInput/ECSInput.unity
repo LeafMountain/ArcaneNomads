@@ -208,7 +208,7 @@ Transform:
   m_PrefabParentObject: {fileID: 4379180111014244, guid: c539f8f3e7ab4244eadae16e437a533d,
     type: 2}
   m_PrefabInternal: {fileID: 2029423960}
---- !u!114 &964965242
+--- !u!114 &964965258
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -216,27 +216,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 964965240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a9dcfdc3f4ecf14bba52f31216b6ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Move:
-    x: 0
-    y: 0
-  playerIndex: 0
-  OnMove:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityVector2Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
---- !u!114 &964965243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 964965240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Script: {fileID: 11500000, guid: eb076cda245cd8c4dab5a3c0a9b3ec24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1142696537
@@ -371,6 +351,7 @@ GameObject:
   - component: {fileID: 1740657155}
   - component: {fileID: 1740657154}
   - component: {fileID: 1740657153}
+  - component: {fileID: 1740657157}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -441,6 +422,24 @@ Transform:
   m_Father: {fileID: 2040853361}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1740657157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1740657152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a00b93338a2b904cb935d732517ff4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 964965241}
+  distanceToTarget: 15
+  smoothing: 0.5
+  rotation: {x: 45, y: 45, z: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &1796520679
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +451,7 @@ GameObject:
   - component: {fileID: 1796520682}
   - component: {fileID: 1796520681}
   - component: {fileID: 1796520680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +468,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -595,25 +594,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379180111014244, guid: c539f8f3e7ab4244eadae16e437a533d, type: 2}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4379180111014244, guid: c539f8f3e7ab4244eadae16e437a533d, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114834881562973018, guid: c539f8f3e7ab4244eadae16e437a533d,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114515448556455402, guid: c539f8f3e7ab4244eadae16e437a533d,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114701768157148908, guid: c539f8f3e7ab4244eadae16e437a533d,
-        type: 2}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
