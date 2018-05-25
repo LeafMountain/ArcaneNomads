@@ -31,7 +31,7 @@ public class UnequipGear {
 	}
 	private void PlayUnequipSound(){
 
-		inventoryManager.InventoryAS.clip = inventoryManager.inventorySFXClips[7];
+		inventoryManager.InventoryAS.clip = inventoryManager.InventorySFXClips[7];
 		inventoryManager.InventoryAS.Play();
 
 	}

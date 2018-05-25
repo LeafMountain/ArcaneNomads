@@ -1329,7 +1329,7 @@ MonoBehaviour:
   player: {fileID: 0}
   currentEquipment: {fileID: 11400000, guid: 1633918fe8d00cc41b9c5ce8f9080108, type: 2}
   inventorySFXClips:
-  - {fileID: 8300000, guid: 32d8a39a449a91e4786af708e5b6fa0f, type: 3}
+  - {fileID: 0}
   - {fileID: 8300000, guid: cbab25dd50ce3464d931c726f2e56daf, type: 3}
   - {fileID: 8300000, guid: 77f6aafa766510046810e70080e1ce19, type: 3}
   - {fileID: 8300000, guid: db982fe09b208ae4fa33c34b3533d774, type: 3}
@@ -1337,6 +1337,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6f6dbb5c50b87394f8e50d1d8dc24025, type: 3}
   - {fileID: 8300000, guid: e60ddc92b322da74fa4ae59660398b22, type: 3}
   - {fileID: 8300000, guid: 50b5112c05cfb004bb3ce2a55f83d13d, type: 3}
+  inventorySFXContainer: {fileID: 11400000, guid: aaa3977eb005fe34a805a1c91f3e665a,
+    type: 2}
 --- !u!114 &114047827978580144
 MonoBehaviour:
   m_ObjectHideFlags: 1

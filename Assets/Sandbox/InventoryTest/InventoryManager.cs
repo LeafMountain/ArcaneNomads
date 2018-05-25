@@ -12,7 +12,9 @@ public class InventoryManager : MonoBehaviour {
 	public CurrentEquipment currentEquipment;
 
 	[Header("SFX")]
-	public AudioClip[] inventorySFXClips;
+	public AudioClipContainer inventorySFXContainer;
+	private AudioClip[] inventorySFXClips;
+
 	private AudioSource inventoryAS;
 	private UIToolTipBox uitooltipbox;
 	private InventorySlot[] inventoryslots;
@@ -29,6 +31,18 @@ public class InventoryManager : MonoBehaviour {
 
 		inventoryCameraMove = new InventoryCameraMove(mainCamera, player, this);
 		moveCamera = false;
+
+		if(inventoryPanel == null) inventoryPanel = transform.GetChild(0).GetChild(0).gameObject;
+		if(player == null) player = Player.Instance.gameObject;
+		if(mainCamera == null) mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+		if(tooltipBox == null) tooltipBox = inventoryPanel.transform.GetChild(0).gameObject;
+		if(tooltipBoxGear == null) tooltipBoxGear = inventoryPanel.transform.GetChild(1).gameObject;
+		
+			
+		inventorySFXClips = inventorySFXContainer.clip;
+			
+			
+		
 	}
 	
 	// Update is called once per frame
@@ -37,6 +51,7 @@ public class InventoryManager : MonoBehaviour {
 		if(Input.GetKeyUp(KeyCode.I)){
 			
 			moveCamera = !moveCamera;
+			
 			
 		}		
 		inventoryCameraMove.MoveCamera(moveCamera);
@@ -155,7 +170,7 @@ public class InventoryManager : MonoBehaviour {
 	}
 	private void PlayEquipSound(int whatClip){
 
-        InventoryAS.clip = inventorySFXClips[whatClip];
+        InventoryAS.clip = InventorySFXClips[whatClip];
            InventoryAS.Play();
 
     }
@@ -167,4 +182,5 @@ public class InventoryManager : MonoBehaviour {
 	public UIToolTipBox uiToolTipBox{get{return uitooltipbox;}}
 	public bool MoveCamera{get{return moveCamera;}set{moveCamera = value;}}
 	public AudioSource InventoryAS {get{return inventoryAS;}} 
+	public AudioClip[] InventorySFXClips {get{return inventorySFXClips;}}
 }

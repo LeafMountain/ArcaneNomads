@@ -42,7 +42,7 @@ public class EquipGear{
     }
     private void PlayEquipSound(int whatClip){
 
-        inventoryManager.InventoryAS.clip = inventoryManager.inventorySFXClips[whatClip];
+        inventoryManager.InventoryAS.clip = inventoryManager.InventorySFXClips[whatClip];
            inventoryManager.InventoryAS.Play();
 
     }

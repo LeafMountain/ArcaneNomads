@@ -1269,6 +1269,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1146904742983320, guid: c539f8f3e7ab4244eadae16e437a533d,
     type: 2}
   m_PrefabInternal: {fileID: 1925701017}
+--- !u!4 &1229257418 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4379180111014244, guid: c539f8f3e7ab4244eadae16e437a533d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1925701017}
 --- !u!1 &1258213514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1285,7 @@ GameObject:
   - component: {fileID: 1258213517}
   - component: {fileID: 1258213516}
   - component: {fileID: 1258213515}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1926,6 +1931,7 @@ GameObject:
   - component: {fileID: 2050540383}
   - component: {fileID: 2050540382}
   - component: {fileID: 2050540381}
+  - component: {fileID: 2050540385}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1966,8 +1972,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1996,3 +2002,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2050540385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2050540380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a00b93338a2b904cb935d732517ff4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1229257418}
+  distanceToTarget: 30
+  smoothing: 0
+  rotation: {x: -1, y: 1, z: -1}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0

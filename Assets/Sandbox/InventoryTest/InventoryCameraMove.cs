@@ -35,13 +35,19 @@ public class InventoryCameraMove {
 			moving = true;
 			UpdateCamDownData();
 			if(!isDown){
+			
 				PlayOpenInventorySound();
 				UpdateCamUpData();
+				Player.Instance.ToggleInput(false);
+				mainCamera.GetComponent<SimpleCamera>().enabled = false;
+				
 				}
 				else
 				{
+					mainCamera.GetComponent<Camera>().orthographic = true;
 					inventoryManager.inventoryPanel.SetActive(false);
 					PlayCloseInventorySound();
+					
 				}
 			
 			startTime = Time.time;
@@ -78,7 +84,16 @@ public class InventoryCameraMove {
 					inventoryManager.inventoryPanel.SetActive(true);
 					
 				}
+				else{
+						Player.Instance.ToggleInput(true);
+						mainCamera.GetComponent<SimpleCamera>().enabled = true;
+						
+				}
 
+			}
+			if(!isDown && fracJourney > 0.4f && moving){
+				mainCamera.GetComponent<Camera>().orthographic = false;
+				
 			}
 		
 		}
@@ -107,7 +122,7 @@ public class InventoryCameraMove {
 	private void PlayOpenInventorySound(){
 
 
-		inventoryManager.InventoryAS.clip = inventoryManager.inventorySFXClips[0];
+		inventoryManager.InventoryAS.clip = inventoryManager.InventorySFXClips[0];
 		inventoryManager.InventoryAS.Play();
 		
 			
@@ -115,7 +130,7 @@ public class InventoryCameraMove {
 	}
 	private void PlayCloseInventorySound(){
 
-		inventoryManager.InventoryAS.clip = inventoryManager.inventorySFXClips[1];
+		inventoryManager.InventoryAS.clip = inventoryManager.InventorySFXClips[1];
 		inventoryManager.InventoryAS.Play();
 
 	}
