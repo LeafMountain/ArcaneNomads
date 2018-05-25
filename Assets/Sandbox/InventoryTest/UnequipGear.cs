@@ -20,9 +20,19 @@ public class UnequipGear {
 				inventoryManager.HideTooltipBox();
 				new UpdateCurrentGear(inventoryManager);
 
+				PlayUnequipSound();
+
+
+
 				break;
 			}
 		}
+
+	}
+	private void PlayUnequipSound(){
+
+		inventoryManager.InventoryAS.clip = inventoryManager.inventorySFXClips[7];
+		inventoryManager.InventoryAS.Play();
 
 	}
 }
