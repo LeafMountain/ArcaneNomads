@@ -11,3 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84533b4927b53d647b1c5cd9e40653e9, type: 3}
   m_Name: Cookbook
   m_EditorClassIdentifier: 
+  recipes:
+  - {fileID: 11400000, guid: 694e99b8666cff3479e7287a59302cd7, type: 2}

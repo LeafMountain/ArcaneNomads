@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu (menuName = "Crafting/Cookbook")]
 public class Cookbook : ScriptableObject {
 
-	private List<Recipe> recipes = new List<Recipe> ();
+	[SerializeField] private List<Recipe> recipes = new List<Recipe> ();
 
 	public List<Recipe> GetRecipes () {
 		return recipes;
