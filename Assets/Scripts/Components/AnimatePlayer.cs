@@ -13,8 +13,16 @@ public class AnimatePlayer : MonoBehaviour {
 	}
 	
 	void Update () {
-		Vector3 velocity = characterController.ForwardVelocity;
-		animator.SetFloat("velocityX", velocity.x);
-		animator.SetFloat("velocityY", velocity.z);
+		// Vector3 velocity = characterController.ForwardVelocity;
+		// animator.SetFloat("velocityX", velocity.x);
+		// animator.SetFloat("velocityY", velocity.z);
+
+		
+
+
+	}
+
+	void FixedUpdate ()
+	{
 	}
 }

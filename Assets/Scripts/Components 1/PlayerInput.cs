@@ -5,8 +5,12 @@ using UnityEngine;
 using XInputDotNetPure;
 
 public class PlayerInput : MonoBehaviour {
-	public float2 Move;
+	public Vector2 Move;
+	public Vector2 Look;
+
 	public PlayerIndex playerIndex;
 
-	public UnityVector2Event OnMove;
+	[Range(0, 1)]public float leftDeadZone;
+	[Range(0, 1)]public float rightDeadZone;
+	
 }
