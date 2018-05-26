@@ -9,6 +9,10 @@ public class CameraComponent : MonoBehaviour {
 
 	[Range (0, 1)] public float smoothing;
 
+	public float pitch;
+
+	public Vector2 minMaxPitch;
+
 	public LayerMask avoid;
 
 	[HideInInspector] public Vector3 currentVelocity;

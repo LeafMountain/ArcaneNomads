@@ -10,19 +10,20 @@ public class PlayerMoveSystem : ComponentSystem
 	public struct Data
 	{
 		public PlayerInput Input;
-		public Rigidbody rigidbody;
+		public Rigidbody Rigidbody;
+		public Transform Transform;
 	}
 
     protected override void OnUpdate()
     {
-		float moveSpeed = .1f;
+		float moveSpeed = 150f;
 
         foreach (var entity in GetEntities<Data>())
 		{
-			if(entity.Input.Move != Vector2.zero)
-			{
-				entity.rigidbody.MovePosition (entity.rigidbody.position + new Vector3(entity.Input.Move.x, 0, entity.Input.Move.y) * moveSpeed);
-			}
+			float3 moveDirection = new float3(entity.Input.Move.x, 0, entity.Input.Move.y);
+			entity.Rigidbody.AddRelativeForce(moveDirection * Time.deltaTime * moveSpeed, ForceMode.VelocityChange);
+
+			entity.Rigidbody.rotation = Quaternion.Euler(entity.Rigidbody.rotation.eulerAngles + entity.Transform.up * entity.Input.Look.x);
 		}
     }
 }

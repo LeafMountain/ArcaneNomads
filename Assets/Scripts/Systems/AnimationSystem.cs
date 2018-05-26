@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Entities;
 
+[UpdateAfter(typeof(Rigidbody))]
 public class AnimationSystem : ComponentSystem
 {
 
@@ -10,7 +11,6 @@ public class AnimationSystem : ComponentSystem
 	{
 		public Rigidbody rigidbody;
 		public Animator animator;
-		// public SuperCharacterController characterController;
 	}
 
     protected override void OnUpdate()

@@ -8,4 +8,6 @@ public class Velocity : MonoBehaviour {
 
 	public Vector3 value;
 	public Vector3 lastPosition;
+	public float smoothing;
+	public Vector3 velocity;
 }

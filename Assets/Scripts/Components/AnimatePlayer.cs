@@ -6,23 +6,23 @@ public class AnimatePlayer : MonoBehaviour {
 
 	Animator animator;
 	SuperCharacterController characterController;
+	Rigidbody rigidbody;
+
+	public Vector3 velocity;
 
 	void Start () {
 		animator = GetComponentInChildren<Animator>();
-		characterController = GetComponent<SuperCharacterController>();
+		// characterController = GetComponent<SuperCharacterController>();
+		rigidbody = GetComponent<Rigidbody>();
 	}
 	
 	void Update () {
-		// Vector3 velocity = characterController.ForwardVelocity;
-		// animator.SetFloat("velocityX", velocity.x);
-		// animator.SetFloat("velocityY", velocity.z);
-
-		
-
-
+		animator.SetFloat("velocityX", velocity.x);
+		animator.SetFloat("velocityY", velocity.z);
 	}
 
 	void FixedUpdate ()
 	{
+		velocity = rigidbody.velocity;
 	}
 }
