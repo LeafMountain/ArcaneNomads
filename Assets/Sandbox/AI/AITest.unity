@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18154615, g: 0.22718893, b: 0.30740756, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -395,6 +395,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &531474197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 531474177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5692ef768bc699d4994e3aaec9200dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 0, y: 0, z: 0}
+  smoothing: 0.1
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &541811971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,7 +2220,7 @@ Prefab:
     - target: {fileID: 114701768157148908, guid: c539f8f3e7ab4244eadae16e437a533d,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114171948293690028, guid: c539f8f3e7ab4244eadae16e437a533d,
         type: 2}
@@ -2220,6 +2235,11 @@ Prefab:
     - target: {fileID: 54294898084145670, guid: c539f8f3e7ab4244eadae16e437a533d,
         type: 2}
       propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114820191576591024, guid: c539f8f3e7ab4244eadae16e437a533d,
+        type: 2}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2462,6 +2482,8 @@ MonoBehaviour:
   target: {fileID: 1083542223}
   offset: {x: 0, y: 2, z: 5}
   smoothing: 0.2
+  pitch: 0
+  minMaxPitch: {x: 40, y: -85}
   avoid:
     serializedVersion: 2
     m_Bits: 0
@@ -2488,8 +2510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9dcfdc3f4ecf14bba52f31216b6ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerIndex: 0
   Move: {x: 0, y: 0}
   Look: {x: 0, y: 0}
-  playerIndex: 0
   leftDeadZone: 0
   rightDeadZone: 0
