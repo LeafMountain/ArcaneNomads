@@ -10,8 +10,9 @@ public class CameraComponent : MonoBehaviour {
 	[Range (0, 1)] public float smoothing;
 
 	public float pitch;
+	public float yaw;
 
-	public Vector2 minMaxPitch;
+	public Vector2 pitchMinMax;
 
 	public LayerMask avoid;
 

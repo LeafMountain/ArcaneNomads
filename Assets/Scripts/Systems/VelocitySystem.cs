@@ -16,8 +16,10 @@ public class VelocitySystem : ComponentSystem
     {
 		foreach (var entitiy in GetEntities<Data>())
 		{
-			entitiy.Velocity.value = entitiy.Rigidbody.position - entitiy.Velocity.lastPosition;
-			entitiy.Velocity.lastPosition = entitiy.Rigidbody.position;
+			// entitiy.Velocity.value = entitiy.Rigidbody.position - entitiy.Velocity.lastPosition;
+			// entitiy.Velocity.lastPosition = entitiy.Rigidbody.position;
+			// entitiy.Velocity.value = math.lerp(entitiy.Velocity.value, entitiy.Rigidbody.velocity, Time.deltaTime * 3);
+			entitiy.Velocity.value = entitiy.Rigidbody.velocity;
 			// Vector3 smoothVelocity = Vector3.SmoothDamp(entitiy.Velocity.value, entitiy.Rigidbody.velocity, ref entitiy.Velocity.velocity, entitiy.Velocity.smoothing);
 			// entitiy.Velocity.value = smoothVelocity;
 		}

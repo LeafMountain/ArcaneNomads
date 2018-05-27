@@ -4,7 +4,7 @@ using UnityEngine;
 using Unity.Entities;
 using Unity.Mathematics;
 
-[UpdateAfter(typeof(PlayerInputSystem)), UpdateAfter(typeof(PlayerMoveSystem))]
+[UpdateAfter(typeof(PlayerInputSystem))]
 public class CameraSystem : ComponentSystem {
 
 	public struct Data
@@ -18,25 +18,32 @@ public class CameraSystem : ComponentSystem {
 	{
 		foreach (var entity in GetEntities<Data>())
 		{
-			Vector3 targetPosition = entity.Camera.target.position + entity.Camera.target.TransformDirection(new Vector3(entity.Camera.offset.x, entity.Camera.offset.y));
-			Vector3 desiredPositon = targetPosition;
+			// Rotation
+			float pitch = entity.Camera.pitch;
+			float yaw = entity.Camera.yaw;
 
-			Vector3 lookRotation = entity.Transform.rotation.eulerAngles;
-			lookRotation.x -= entity.Input.Look.y;
-			lookRotation.x = math.clamp(lookRotation.x, entity.Camera.minMaxPitch.y, entity.Camera.minMaxPitch.x);
+			pitch -= entity.Input.Look.y;
+			pitch = math.clamp(pitch, entity.Camera.pitchMinMax.x, entity.Camera.pitchMinMax.y);
+			yaw += entity.Input.Look.x % 360;
 
-			Debug.Log(math.clamp(lookRotation.y, entity.Camera.minMaxPitch.y, 300));
+			entity.Transform.rotation = Quaternion.Euler(pitch, yaw, 0);
 
-			lookRotation.y = entity.Camera.target.transform.rotation.eulerAngles.y;
+			// Position
+			Vector3 lookTarget = entity.Camera.target.position;
+			Vector3 offset = entity.Camera.offset;
 
-			entity.Transform.rotation = Quaternion.Euler(lookRotation);
+			offset.x = (entity.Input.swapShoulder) ? -offset.x : offset.x;
+			offset.y = (entity.Input.aim) ? 1.5f : 1.2f;			
+			offset.z = (entity.Input.aim) ? -1 : -3;
+		
+			lookTarget += entity.Transform.TransformDirection(offset);
 
-			desiredPositon -= entity.Camera.target.forward * entity.Camera.offset.z;
+			entity.Transform.position = Vector3.SmoothDamp(entity.Transform.position, lookTarget, ref entity.Camera.currentVelocity, entity.Camera.smoothing);
 
-			Vector3 smoothPosition = Vector3.SmoothDamp(entity.Transform.position, desiredPositon, ref entity.Camera.currentVelocity, entity.Camera.smoothing);
-			entity.Transform.position = smoothPosition;
-
-			
+			// Update variables in components
+			entity.Camera.pitch = pitch;
+			entity.Camera.yaw = yaw;
+			entity.Camera.offset = offset;
 		}
 	}
 }

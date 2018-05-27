@@ -11,13 +11,14 @@ public class AnimationSystem : ComponentSystem
 	{
 		public Rigidbody rigidbody;
 		public Animator animator;
+		public Transform Transform;
 	}
 
     protected override void OnUpdate()
     {
         foreach (var entity in GetEntities<Data>())
 		{
-			Vector3 velocity = entity.rigidbody.velocity;
+			Vector3 velocity = entity.Transform.InverseTransformDirection(entity.rigidbody.velocity);
 			entity.animator.SetFloat("velocityX", velocity.x);
 			entity.animator.SetFloat("velocityY", velocity.z);
 		}

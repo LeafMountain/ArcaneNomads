@@ -5,11 +5,17 @@ using UnityEngine;
 using XInputDotNetPure;
 
 public class PlayerInput : MonoBehaviour {
-	public PlayerIndex playerIndex;
-
 	public Vector2 Move;
 	public Vector2 Look;
+	public bool swapShoulder;
+	public bool aim;
+	public bool sprint;
+
+	[Header("Settings")]
+	public float lookSensitivity;
 
 	[Range(0, 1)]public float leftDeadZone;
 	[Range(0, 1)]public float rightDeadZone;
+
+
 }
