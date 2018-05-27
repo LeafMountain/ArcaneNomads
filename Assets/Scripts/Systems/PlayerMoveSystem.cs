@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Unity.Entities;
 using Unity.Mathematics;
+using UnityEngine;
 
-[UpdateAfter(typeof(CameraSystem))]
-public class PlayerMoveSystem : ComponentSystem 
+public class PlayerMoveSystem : ComponentSystem
 {
 
 	public struct Data
@@ -15,19 +14,20 @@ public class PlayerMoveSystem : ComponentSystem
 		public Transform Transform;
 	}
 
-    protected override void OnUpdate()
-    {
-		float moveSpeed = 5f;
+	protected override void OnUpdate ()
+	{
+		float moveSpeed = 4f;
 		Camera camera = Camera.main;
 
-        foreach (var entity in GetEntities<Data>())
+		foreach (var entity in GetEntities<Data> ())
 		{
-			moveSpeed = (entity.Input.sprint) ? moveSpeed * 2: moveSpeed;
+			moveSpeed = (entity.Input.sprint) ? moveSpeed * 2 : moveSpeed;
 
-			float3 moveDirection = camera.transform.TransformVector(new float3(entity.Input.Move.x, 0, entity.Input.Move.y));
+			Vector3 moveDirection = camera.transform.TransformVector (new Vector3 (entity.Input.Move.x, 0, entity.Input.Move.y));
+			moveDirection = moveDirection.normalized;
 			moveDirection.y = 0;
 
-			if((Vector3)moveDirection == Vector3.zero && !entity.Input.aim)
+			if (moveDirection == Vector3.zero && !entity.Input.aim)
 			{
 				continue;
 			}
@@ -35,16 +35,16 @@ public class PlayerMoveSystem : ComponentSystem
 			entity.Rigidbody.velocity = moveDirection * moveSpeed;
 			Vector3 lookDirection = camera.transform.forward;
 
-			if(!entity.Input.aim)
+			if (!entity.Input.aim)
 			{
 				lookDirection.y = 0;
 			}
 			else
 			{
-				lookDirection = camera.GetComponent<CameraComponent>().lookPosition - entity.Transform.position;	
+				lookDirection = camera.GetComponent<CameraComponent> ().lookPosition - entity.Transform.position;
 			}
-			
-			entity.Transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+
+			entity.Rigidbody.MoveRotation(Quaternion.Lerp (entity.Rigidbody.rotation, Quaternion.LookRotation (lookDirection, Vector3.up), Time.deltaTime * 5));
 		}
-    }
+	}
 }

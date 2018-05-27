@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 114171590318946960}
   - component: {fileID: 95032099780860920}
   - component: {fileID: 114093578715862424}
+  - component: {fileID: 114433933084156784}
   m_Layer: 10
   m_Name: pref_player
   m_TagString: Player
@@ -728,13 +729,16 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4781811082273442}
+  - component: {fileID: 114275503188374862}
+  - component: {fileID: 114724680422306574}
+  - component: {fileID: 114241334294151846}
   m_Layer: 0
   m_Name: GunPosPlaceholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1580467801487666
 GameObject:
   m_ObjectHideFlags: 1
@@ -2373,6 +2377,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0.2
+--- !u!114 &114241334294151846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580107151756464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9dcfdc3f4ecf14bba52f31216b6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Move: {x: 0, y: 0}
+  Look: {x: 0, y: 0}
+  swapShoulder: 0
+  aim: 0
+  sprint: 0
+  lookSensitivity: 0
+  leftDeadZone: 0
+  rightDeadZone: 0
+--- !u!114 &114275503188374862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580107151756464}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114360098393075404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2470,6 +2504,19 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+--- !u!114 &114433933084156784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146904742983320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fcb521148405e440b1d77d272821724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 0
+  weapon: {fileID: 1580107151756464}
 --- !u!114 &114581302972084246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2550,6 +2597,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114724680422306574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580107151756464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fcb521148405e440b1d77d272821724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 0
+  weapon: {fileID: 0}
 --- !u!114 &114731297977544326
 MonoBehaviour:
   m_ObjectHideFlags: 1
