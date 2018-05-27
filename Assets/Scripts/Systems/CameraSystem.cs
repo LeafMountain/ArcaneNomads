@@ -38,7 +38,6 @@ public class CameraSystem : ComponentSystem
 
 		if (hitTarget?.transform != null)
 		{
-			Debug.Log (hitTarget?.transform);
 			offset.z = (float) - hitTarget?.distance;
 		}
 

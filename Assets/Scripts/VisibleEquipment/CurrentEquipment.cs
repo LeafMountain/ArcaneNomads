@@ -39,8 +39,8 @@ public class CurrentEquipment : ScriptableObject {
 		UpdateEvent ();
 	}
 
-	public void EditRightSlot (WeaponRange equipment) {
-		rightHand = equipment;
+	public void EditRightSlot (GunProfile equipment) {
+		gunProfile = equipment;
 		UpdateEvent ();
 	}
 
