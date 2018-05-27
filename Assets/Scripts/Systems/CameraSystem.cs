@@ -40,10 +40,15 @@ public class CameraSystem : ComponentSystem {
 
 			entity.Transform.position = Vector3.SmoothDamp(entity.Transform.position, lookTarget, ref entity.Camera.currentVelocity, entity.Camera.smoothing);
 
+			Ray lookRay = new Ray(entity.Transform.position, entity.Transform.forward);
+			RaycastHit hit;
+			Physics.Raycast(lookRay, out hit, Mathf.Infinity);
+
 			// Update variables in components
 			entity.Camera.pitch = pitch;
 			entity.Camera.yaw = yaw;
 			entity.Camera.offset = offset;
+			entity.Camera.lookPosition = hit.point;
 		}
 	}
 }

@@ -27,14 +27,23 @@ public class PlayerMoveSystem : ComponentSystem
 			float3 moveDirection = camera.transform.TransformVector(new float3(entity.Input.Move.x, 0, entity.Input.Move.y));
 			moveDirection.y = 0;
 
-			if((Vector3)moveDirection == Vector3.zero)
+			if((Vector3)moveDirection == Vector3.zero && !entity.Input.aim)
 			{
 				continue;
 			}
 
-			entity.Rigidbody.velocity = (moveDirection * moveSpeed);
+			entity.Rigidbody.velocity = moveDirection * moveSpeed;
 			Vector3 lookDirection = camera.transform.forward;
-			lookDirection.y = 0;
+
+			if(!entity.Input.aim)
+			{
+				lookDirection.y = 0;
+			}
+			else
+			{
+				lookDirection = camera.GetComponent<CameraComponent>().lookPosition - entity.Transform.position;	
+			}
+			
 			entity.Transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
 		}
     }
