@@ -2138,6 +2138,11 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1083542223}
+    - target: {fileID: 114703125537152162, guid: 4d00d9b027f9e024fb0f688774d19ee0,
+        type: 2}
+      propertyPath: avoid.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d00d9b027f9e024fb0f688774d19ee0, type: 2}
   m_IsPrefabParent: 0

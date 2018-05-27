@@ -17,7 +17,7 @@ public class CameraComponent : MonoBehaviour {
 	public Vector3 lookPosition;
 	public Vector3 lookDirection;
 
-	// public LayerMask avoid;
+	public LayerMask avoid;
 
 	[HideInInspector] public Vector3 currentVelocity;
 }

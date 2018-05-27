@@ -29,7 +29,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1174072446863068
 GameObject:
@@ -46,7 +46,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1311575240718322
 GameObject:
@@ -63,7 +63,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1418699954717524
 GameObject:
@@ -79,7 +79,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1532091678633484
 GameObject:
@@ -116,7 +116,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1966552365613974
 GameObject:
@@ -136,7 +136,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4263915729748426
 Transform:
@@ -213,15 +213,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1418699954717524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.001682, y: 0, z: 14.772595}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -12, y: 0.035872, z: 47.011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4466917673269306}
   - {fileID: 4330268384601700}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4866593889921236
 Transform:
   m_ObjectHideFlags: 1
@@ -250,7 +250,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: fe6180e521c78254696ff5200d5b1857, type: 2}
+  - {fileID: 2100000, guid: 4847d096a82373d42919983a9e4378e6, type: 2}
   - {fileID: 2100000, guid: 18f2b297f07b9ae4fb18415ef721c655, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -503,7 +503,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1.2918938, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 16.948015, y: 2.6196837, z: 9.392683}
+  m_ConnectedAnchor: {x: -6.620087, y: 2.6555557, z: 47.957336}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -537,7 +537,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.99539393, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 20.948017, y: 2.0266838, z: 20.254318}
+  m_ConnectedAnchor: {x: -17.481724, y: 2.0625558, z: 51.957336}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -571,7 +571,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1.2918938, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 15.033859, y: 2.6196837, z: 9.392683}
+  m_ConnectedAnchor: {x: -6.620087, y: 2.6555557, z: 46.04318}
   m_UseSpring: 0
   m_Spring:
     spring: 0

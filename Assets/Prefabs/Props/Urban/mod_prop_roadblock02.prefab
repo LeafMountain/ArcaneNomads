@@ -21,12 +21,13 @@ GameObject:
   - component: {fileID: 4502622861949466}
   - component: {fileID: 33382877571981316}
   - component: {fileID: 23714059208773838}
+  - component: {fileID: 65676618025939750}
   m_Layer: 0
   m_Name: mod_prop_roadblock02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4502622861949466
 Transform:
@@ -34,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1814647418911402}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.31808, y: -0.2, z: 53.756836}
+  m_LocalRotation: {x: -0, y: -0.74923664, z: -0, w: -0.6623025}
+  m_LocalPosition: {x: -66.49, y: 0.2, z: 17.489998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -262.951, z: 0}
 --- !u!23 &23714059208773838
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -83,3 +84,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1814647418911402}
   m_Mesh: {fileID: 4300000, guid: 3e727011deb21664da2d818299496063, type: 3}
+--- !u!65 &65676618025939750
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1814647418911402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44, y: 1.2676265, z: 2.0493324}
+  m_Center: {x: 0, y: 0.63381326, z: 0}
