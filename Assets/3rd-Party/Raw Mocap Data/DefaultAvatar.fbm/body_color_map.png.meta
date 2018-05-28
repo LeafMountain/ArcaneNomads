@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Graphical Assets/Models/Environment/mod_env_curb_inner.fbm/tex_prop_curb01.psd.meta
+guid: 122b3985789d0fc409bfef22e7778d0b
+=======
 guid: 5d7cc12ffeee9d244b789b38d6f4ba50
+>>>>>>> dev:Assets/3rd-Party/Raw Mocap Data/DefaultAvatar.fbm/body_color_map.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}

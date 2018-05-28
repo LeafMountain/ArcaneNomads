@@ -11,6 +11,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053b56e255f2c1b41a8c275fd8ddf274, type: 3}
   m_Name: Face2
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Assets/Data/InventoryItems/Equipment/TestFace.asset
+  title: Gasmask
+  description: Cheap gasmask made in Malmoe
+  icon: {fileID: 21300000, guid: 28e6b8ac8bef1814d93012137fd003c6, type: 3}
+  quality: 0
+  prefab: {fileID: 1433899875868774, guid: c2a7f4488ecaea94caf830170199cadb, type: 2}
+  size: {x: 1, y: 1}
+  typeIcon: {fileID: 21300000, guid: 28e6b8ac8bef1814d93012137fd003c6, type: 3}
+=======
   title: 
   description: 
   icon: {fileID: 0}
@@ -18,3 +27,4 @@ MonoBehaviour:
   prefab: {fileID: 1433899875868774, guid: c2a7f4488ecaea94caf830170199cadb, type: 2}
   size: {x: 1, y: 1}
   typeIcon: {fileID: 0}
+>>>>>>> dev:Assets/Data/InventoryItems/Equipment/Faces/Face2.asset

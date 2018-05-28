@@ -12,9 +12,18 @@ MonoBehaviour:
   m_Name: Head
   m_EditorClassIdentifier: 
   title: HejEHej
+<<<<<<< HEAD:Assets/Data/InventoryItems/Equipment/TestHead.asset
+  description: Leally good hat
+  icon: {fileID: 21300000, guid: 0267da51ed42d704c875eb8efefe718e, type: 3}
+  quality: 0
+  prefab: {fileID: 1562726033216068, guid: 54d2610340a6afc4993335cc601aee6b, type: 2}
+  size: {x: 1, y: 1}
+  typeIcon: {fileID: 21300000, guid: 0267da51ed42d704c875eb8efefe718e, type: 3}
+=======
   description: 
   icon: {fileID: 0}
   quality: 0
   prefab: {fileID: 1562726033216068, guid: 54d2610340a6afc4993335cc601aee6b, type: 2}
   size: {x: 1, y: 1}
   typeIcon: {fileID: 0}
+>>>>>>> dev:Assets/Data/InventoryItems/Equipment/Heads/Head.asset

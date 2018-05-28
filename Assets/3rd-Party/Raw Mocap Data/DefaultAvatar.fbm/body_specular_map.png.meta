@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Graphical Assets/Models/Environment/mod_env_curb_outer_corner.fbm/tex_prop_curb01.psd.meta
+guid: 13576358fe77aab4d8f9aecd76ba5ff4
+=======
 guid: e6b3d4f4f03674a47bda9d1bcf695177
+>>>>>>> dev:Assets/3rd-Party/Raw Mocap Data/DefaultAvatar.fbm/body_specular_map.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
