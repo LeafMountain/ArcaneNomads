@@ -21,8 +21,6 @@ public class MouseLook : MonoBehaviour {
 			RaycastHit mouseHit;
 
 			if (Physics.Raycast (mouseRay, out mouseHit, Mathf.Infinity, layer)) {
-				Debug.DrawRay (mouseRay.origin, mouseRay.direction * mouseHit.distance, Color.blue);
-				Debug.Log (mouseHit.transform.name);
 				return mouseHit;
 			}
 
