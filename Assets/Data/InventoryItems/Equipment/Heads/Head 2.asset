@@ -11,18 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b158d869da8fab478cfc4d587d1496f, type: 3}
   m_Name: Head 2
   m_EditorClassIdentifier: 
-<<<<<<< HEAD:Assets/Sandbox/Equipment Test/Equipment/TestHead.asset
-  title: Keps
-  description: Very awesome hat
-  icon: {fileID: 21300000, guid: 0267da51ed42d704c875eb8efefe718e, type: 3}
-  quality: 0
-  prefab: {fileID: 100006, guid: d835d9c3f1930d64881b272bb749ea1f, type: 3}
-=======
   title: 
   description: 
   icon: {fileID: 0}
   quality: 0
   prefab: {fileID: 1487664769564730, guid: 851da057a3ec0d94cad5db5d4fc748b5, type: 2}
->>>>>>> dev:Assets/Data/InventoryItems/Equipment/Heads/Head 2.asset
   size: {x: 1, y: 1}
   typeIcon: {fileID: 0}

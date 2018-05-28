@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 021e4633af38d444eaf7f96fb11e9213, type: 3}
+  m_Name: GunModsAR
+  m_EditorClassIdentifier: 
+  magazineMod: {fileID: 11400000, guid: 67eb35c07d29ad749a5d03c690ae46c8, type: 2}
+  laserMod: {fileID: 11400000, guid: cceb177acfcef5c458e52e53f8b6383f, type: 2}
+  sightMod: {fileID: 11400000, guid: 15384bd59ec97f24b8ad83702330f480, type: 2}
+  muzzleMod: {fileID: 11400000, guid: e0a43e782ee5bda4e88af6c57b00814c, type: 2}
