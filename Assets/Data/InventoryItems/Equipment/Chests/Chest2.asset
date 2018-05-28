@@ -11,6 +11,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940dd568b8f6496459d92039b378dd8e, type: 3}
   m_Name: Chest2
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Assets/Data/InventoryItems/Equipment/TestChest2.asset
+  title: Shirt
+  description: This shirt is stinky
+  icon: {fileID: 21300000, guid: d130987e942ecae439ce0fd99f25526d, type: 3}
+  quality: 0
+  prefab: {fileID: 1767466186438040, guid: b9e80f1dde722dc40b67959627916a05, type: 2}
+  size: {x: 1, y: 1}
+  typeIcon: {fileID: 21300000, guid: d130987e942ecae439ce0fd99f25526d, type: 3}
+=======
   title: 
   description: 
   icon: {fileID: 0}
@@ -18,4 +27,5 @@ MonoBehaviour:
   prefab: {fileID: 1767466186438040, guid: b9e80f1dde722dc40b67959627916a05, type: 2}
   size: {x: 1, y: 1}
   typeIcon: {fileID: 0}
+>>>>>>> dev:Assets/Data/InventoryItems/Equipment/Chests/Chest2.asset
   meshRenderer: {fileID: 0}
