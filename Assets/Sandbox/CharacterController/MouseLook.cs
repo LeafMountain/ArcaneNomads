@@ -56,9 +56,4 @@ public class MouseLook : MonoBehaviour {
 			OnMouseLook.Invoke (DirectionToGameObject ());
 		}
 	}
-
-	void OnDrawGizmos () {
-		Gizmos.color = Color.red;
-		Gizmos.DrawSphere ((Vector3) WorldPosition, .5f);
-	}
 }

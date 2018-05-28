@@ -3,6 +3,7 @@
     "com.unity.probuilder": "3.0.2",
     "com.unity.render-pipelines.lightweight": "1.1.2-preview",
     "com.unity.entities": "0.0.12-preview.4",
-    "com.unity.incrementalcompiler": "0.0.42-preview.1"
+    "com.unity.incrementalcompiler": "0.0.42-preview.1",
+    "com.unity.assetbundlebrowser": "1.5.0"
   }
 }
