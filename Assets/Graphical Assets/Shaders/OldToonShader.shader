@@ -1,7 +1,7 @@
 ﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 // Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 
-Shader "TreeBranch/ToonShader" {
+Shader "TreeBranch/OldToonShader" {
 	Properties {
 		_MainTex ("Texture", 2D) = "white" {}
 		// _RampTex ("Light Ramp", 2D) = "white" {}
