@@ -84,6 +84,7 @@ Material:
     - _NoiseScale: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Scale: 0.26
     - _Scaling: 0.07
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
