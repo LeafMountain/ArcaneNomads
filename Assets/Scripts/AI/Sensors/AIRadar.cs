@@ -12,9 +12,10 @@ public class AIRadar : AISensor {
 	Vector3 currentPos;
 	
 	public override Collider[] GetObjects(AIComponent boid){
-		currentPos = boid.position;
+		Rigidbody rigidbody = boid.GetComponent<Rigidbody>();
+		currentPos = rigidbody.position;
 
-		int numberOfColliders = Physics.OverlapSphereNonAlloc(boid.position, range, colliders, layerMask);
+		int numberOfColliders = Physics.OverlapSphereNonAlloc(rigidbody.position, range, colliders, layerMask);
 
 		for (int i = 0; i < colliders.Length; i++) {
 			// Remove boid from array			

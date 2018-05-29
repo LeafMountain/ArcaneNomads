@@ -19,7 +19,7 @@ public class AIAlign : AIBeahvior {
 		Vector3[] directions = new Vector3[neighbors.Length];
 
 		for (int i = 0; i < neighbors.Length; i++) {
-			directions[i] = neighbors[i].velocity;
+			directions[i] = neighbors[i].GetComponent<Rigidbody>().velocity;
 		}
 
 		Vector3 averageDirection = GetAverageVector (boid, directions);

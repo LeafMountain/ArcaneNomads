@@ -23,7 +23,7 @@ public class AIRay:AISensor
 			dir = boid.transform.TransformDirection(dir);
 		}
 
-		Ray ray = new Ray(boid.position, direction); 
+		Ray ray = new Ray(boid.transform.position, direction); 
 		RaycastHit hit; 
 
 		if (Physics.Raycast(ray, out hit, range, layerMask))

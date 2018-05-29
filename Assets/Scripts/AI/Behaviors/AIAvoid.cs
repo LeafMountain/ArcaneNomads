@@ -17,7 +17,7 @@ public class AIAvoid : AIBeahvior {
 
 		for (int i = 0; i < obstacles.Length; i++) {
 			if(obstacles[i]){
-				positions[i] = boid.position - obstacles[i].transform.position;
+				positions[i] = boid.GetComponent<Rigidbody>().position - obstacles[i].transform.position;
 			}
 		}
 

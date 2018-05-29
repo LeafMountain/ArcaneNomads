@@ -1,7 +1,7 @@
 ﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 // Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 
-Shader "TreeBranch/ToonCutout" {
+Shader "TreeBranch/Toon/Cutout" {
 	Properties {
 		_MainTex ("Color (RGB) Alpha (A)", 2D) = "white" {}
 		_Color("Main Color", Color) = (0, 0, 0, 0)

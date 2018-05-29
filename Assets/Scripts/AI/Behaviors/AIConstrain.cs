@@ -10,7 +10,8 @@ public class AIConstrain : AIBeahvior {
         Bounds bounds = new Bounds(center, area);
 
         if(!bounds.Contains(boid.transform.position)) {
-            force = bounds.ClosestPoint(boid.position) - boid.position;
+            Vector3 position = boid.GetComponent<Rigidbody>().position;
+            force = bounds.ClosestPoint(position) - position;
         }
 
         return force.normalized;
