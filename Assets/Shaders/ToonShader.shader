@@ -14,7 +14,7 @@
 
 		// Outline
 		_OutlineColor("Outline Color", Color) = (0, 0, 0, 0)
-		_OutlineWidth("Outline Width", Range(0.0, 0.10)) = 0
+		_OutlineWidth("Outline Width", Range(0.0, 0.10)) = 0.1
 	}
 
 	CGINCLUDE
