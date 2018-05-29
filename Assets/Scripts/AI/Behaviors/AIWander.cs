@@ -9,17 +9,18 @@ public class AIWander : AIBeahvior {
 
 	public override Vector3 DoBehavior(AIComponent boid){
 		Vector3 force = Vector3.zero;
+		Rigidbody rigidbody = boid.GetComponent<Rigidbody>();
 
-		if (boid.velocity == Vector3.zero) 
+		if (rigidbody.velocity == Vector3.zero) 
 		{
 			force += RandomVector;
 		} 
 		else 
 		{
 			float angleOffset = 45;
-			Vector3 offset = Quaternion.Euler (0, RandomFloat * angleOffset, 0) * boid.velocity;
+			Vector3 offset = Quaternion.Euler (0, RandomFloat * angleOffset, 0) * rigidbody.velocity;
 
-			force = boid.velocity + offset;
+			force = rigidbody.velocity + offset;
 		}
 
 		return force.normalized;

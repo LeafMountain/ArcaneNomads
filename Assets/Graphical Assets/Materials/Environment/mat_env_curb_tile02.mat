@@ -95,6 +95,7 @@ Material:
     - _OutlineWidth: 0
     - _OutlineZ: -0.001
     - _Parallax: 0.02
+    - _Scale: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

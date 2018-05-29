@@ -1,4 +1,4 @@
-﻿Shader "Unlit/SimpleWater"{
+﻿Shader "TreeBranch/SimpleWater"{
 	Properties{
 		_Tint("Tint", Color) = (1, 1, 1, .5)
 		_MainTex ("Main Texture", 2D) = "whtie" {}

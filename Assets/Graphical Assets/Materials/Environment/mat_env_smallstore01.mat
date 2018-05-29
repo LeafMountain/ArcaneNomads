@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: mat_env_smallstore01
-  m_Shader: {fileID: 4800000, guid: 4afeb5231f43c1f4cb8fc1a06ad12dfc, type: 3}
+  m_Shader: {fileID: 4800000, guid: c51b592c8aee17147934f55aa73b6aa1, type: 3}
   m_ShaderKeywords: _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -42,6 +42,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _LightRamp:
+        m_Texture: {fileID: 2800000, guid: 67aa2eda174d43841bdf7dbf4fa6313e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 576906e33baefe64d94a1d03aee2eb6b, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -62,7 +66,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 2800000, guid: 67aa2eda174d43841bdf7dbf4fa6313e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ToonShade:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -81,8 +93,8 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineWidth: 0
-    - _OutlineZ: -0.001
+    - _OutlineWidth: 0.0305
+    - _OutlineZ: -0.002
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1

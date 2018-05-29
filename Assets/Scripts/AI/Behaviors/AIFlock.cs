@@ -20,7 +20,7 @@ public class AIFlock : AIBeahvior {
 		Vector3 averagePosition = GetAverageVector (boid, neighborPositions);
 
 		if(averagePosition != Vector3.zero){
-			force = averagePosition - boid.position;
+			force = averagePosition - boid.GetComponent<Rigidbody>().position;
 		}
 
 		return force.normalized;

@@ -46,6 +46,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: d312b8a8464688d41a19cea8a29899dd, type: 3}
         m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
+    - _LightRamp:
+        m_Texture: {fileID: 2800000, guid: 67aa2eda174d43841bdf7dbf4fa6313e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 86b22fe18484eff42958a60ee1a9c982, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -87,8 +91,8 @@ Material:
     - _Metallic: 0.5
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineWidth: 0.0176
-    - _OutlineZ: -0.001523
+    - _OutlineWidth: 0.05
+    - _OutlineZ: 0
     - _Parallax: 0.02
     - _Rim: 0.0137
     - _RimPower: 0
