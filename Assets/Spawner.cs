@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
 	{
 		for (int i = 0; i < amount; i++)
 		{
-			Instantiate (prefab, new Vector3 (Random.Range (-area.x / 2, area.x / 2), area.y, Random.Range (-area.y / 2, area.y / 2)), Quaternion.identity);
+			Instantiate (prefab, new Vector3 (Random.Range (-area.x / 2, area.x / 2), area.y, Random.Range (-area.z / 2, area.z / 2)), Quaternion.identity);
 		}
 	}
 
