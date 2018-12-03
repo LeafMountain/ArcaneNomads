@@ -4,8 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using XInputDotNetPure;
 
-public class PlayerInput : MonoBehaviour
-{
+public class PlayerInputComponent : MonoBehaviour{
 	public Vector2 Move;
 	public Vector2 Look;
 	public bool swapShoulder;

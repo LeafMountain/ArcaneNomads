@@ -11,7 +11,7 @@ public class CameraSystem : ComponentSystem
 	public struct Data
 	{
 		public CameraComponent Camera;
-		public PlayerInput Input;
+		public PlayerInputComponent Input;
 		public Transform Transform;
 	}
 

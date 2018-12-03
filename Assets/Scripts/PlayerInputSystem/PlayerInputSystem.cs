@@ -8,14 +8,14 @@ using XInputDotNetPure;
 public class PlayerInputSystem : ComponentSystem
 {
 
-	public struct PlayerData
+	public struct Data
 	{
-		public PlayerInput Input;
+		public PlayerInputComponent Input;
 	}
 
 	protected override void OnUpdate ()
 	{
-		foreach (var entity in GetEntities<PlayerData> ())
+		foreach (var entity in GetEntities<Data> ())
 		{
 			Vector2 move = Move ();
 			Vector2 look = Look ();

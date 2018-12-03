@@ -5,16 +5,16 @@ using Unity.Entities;
 
 public class DamageSystem : ComponentSystem
 {
-	struct Data
-	{
-		DamageComponent[] DamageComponents;
-	}
+	// struct Data
+	// {
+	// 	DamageComponent[] DamageComponents;
+	// }
 
     protected override void OnUpdate()
     {
-        foreach(var Entity in GetEntities<Data>())
-		{
+        // foreach(var Entity in GetEntities<Data>())
+		// {
 			
-		}
+		// }
     }
 }

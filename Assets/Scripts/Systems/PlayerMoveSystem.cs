@@ -9,7 +9,7 @@ public class PlayerMoveSystem : ComponentSystem
 
 	public struct Data
 	{
-		public PlayerInput Input;
+		public PlayerInputComponent Input;
 		public Rigidbody Rigidbody;
 		public Transform Transform;
 	}
