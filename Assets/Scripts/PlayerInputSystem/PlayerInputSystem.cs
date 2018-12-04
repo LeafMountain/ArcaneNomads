@@ -27,6 +27,7 @@ public class PlayerInputSystem : ComponentSystem
 			entity.Input.sprint = Sprint ();
 			entity.Input.reload = Reload ();
 			entity.Input.fire = Fire ();
+			entity.Input.interact = Interact();
 		}
 	}
 
@@ -125,5 +126,9 @@ public class PlayerInputSystem : ComponentSystem
 	bool SwapShoulder ()
 	{
 		return Input.GetKeyDown (KeyCode.V);
+	}
+
+	bool Interact(){
+		return Input.GetKeyDown(KeyCode.F);
 	}
 }

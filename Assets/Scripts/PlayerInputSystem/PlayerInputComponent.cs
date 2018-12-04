@@ -12,6 +12,7 @@ public class PlayerInputComponent : MonoBehaviour{
 	public bool sprint;
 	public bool reload;
 	public bool fire;
+	public bool interact;
 
 	[Header ("Settings")]
 	public float lookSensitivity;

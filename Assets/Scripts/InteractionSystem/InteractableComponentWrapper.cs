@@ -5,7 +5,8 @@ using UnityEngine;
 
 [System.Serializable]
 public struct InteractableComponent : IComponentData {
-
+    // public bool interacted;
+    public float test;
 }
 
 public class InteractableComponentWrapper : ComponentDataWrapper<InteractableComponent> {}
