@@ -12,3 +12,4 @@ public class SpawnerComponent : MonoBehaviour {
 	[HideInInspector]
 	public GameObject[] SpawnedObjects = new GameObject[MAXIMUMALLOWEDOBJECTS];
 }
+

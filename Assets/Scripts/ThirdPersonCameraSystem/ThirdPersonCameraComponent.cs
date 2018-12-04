@@ -7,5 +7,5 @@ public class ThirdPersonCameraComponent : MonoBehaviour {
 	public Vector3 lookDirection = Vector3.forward;
 	public Vector3 Offset;
 	public float DistanceToTarget = 10;
-	public float YRotation;
+	public Vector3 Rotation;
 }
