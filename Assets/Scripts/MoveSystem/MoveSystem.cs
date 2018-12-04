@@ -16,7 +16,10 @@ public class MoveSystem : ComponentSystem {
     {
        	foreach (var entity in GetEntities<Data>())
 		{
-			entity.rigidbody.AddForce(entity.heading.value * entity.speed.value, ForceMode.Impulse);
+			if(entity.heading.value != Vector3.zero) {
+				entity.rigidbody.AddForce(entity.heading.value * entity.speed.value, ForceMode.Impulse);
+				entity.rigidbody.MoveRotation(Quaternion.LookRotation(entity.heading.value));
+			}
 		}
     }
 }

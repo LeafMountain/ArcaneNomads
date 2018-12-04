@@ -14,9 +14,13 @@ public class ThirdPersonCameraSystem : ComponentSystem {
 
     protected override void OnUpdate(){
 		foreach(var Entity in GetEntities<Data>()) {
+			// Lock and hide curson
+			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
+
 			// Add player as target if no other target is assigned
 			if(!Entity.Camera.Target) {
-				Entity.Camera.Target = GameObject.FindObjectOfType<Player>()?.transform;
+				Entity.Camera.Target = GameObject.FindObjectOfType<PlayerComponent>()?.transform;
 			}
 
 			Vector3 LookTarget = Entity.Camera.Target.position;

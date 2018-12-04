@@ -199,24 +199,24 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4379180111014244}
+  - component: {fileID: 114171948293690028}
   - component: {fileID: 114731297977544326}
   - component: {fileID: 54294898084145670}
   - component: {fileID: 136756151097549516}
   - component: {fileID: 114584295417780322}
   - component: {fileID: 114392920850720366}
   - component: {fileID: 114662661053155324}
-  - component: {fileID: 114604218615037536}
   - component: {fileID: 114180303690606808}
-  - component: {fileID: 114223228775150542}
   - component: {fileID: 81429033040072014}
   - component: {fileID: 114360098393075404}
-  - component: {fileID: 114171948293690028}
-  - component: {fileID: 114171590318946960}
   - component: {fileID: 95032099780860920}
   - component: {fileID: 114093578715862424}
   - component: {fileID: 114433933084156784}
-  - component: {fileID: 114952537436498358}
   - component: {fileID: 114146816523879438}
+  - component: {fileID: 114376873486325662}
+  - component: {fileID: 114532851355248218}
+  - component: {fileID: 114371788185547294}
+  - component: {fileID: 114695953022972504}
   m_Layer: 10
   m_Name: pref_player
   m_TagString: Player
@@ -2204,7 +2204,7 @@ AudioListener:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146904742983320}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!95 &95032099780860920
 Animator:
   serializedVersion: 3
@@ -2444,17 +2444,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
---- !u!114 &114171590318946960
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146904742983320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb076cda245cd8c4dab5a3c0a9b3ec24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114171948293690028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2484,18 +2473,6 @@ MonoBehaviour:
   rightHandPosition: {fileID: 4781811082273442}
   leftHandPosition: {fileID: 4840662757672840}
   refresh: 0
---- !u!114 &114223228775150542
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146904742983320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f49f9a7dca879e942b2977ce3708a985, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 0.2
 --- !u!114 &114241334294151846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2549,6 +2526,29 @@ MonoBehaviour:
   lookSensitivity: 0
   leftDeadZone: 0
   rightDeadZone: 0
+--- !u!114 &114371788185547294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146904742983320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3ace78489e73045bc7b48205690ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 15
+--- !u!114 &114376873486325662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146904742983320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac724debe916f09488a0811d4b102c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114392920850720366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2640,6 +2640,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enabled: 0
   weapon: {fileID: 1580107151756464}
+--- !u!114 &114532851355248218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146904742983320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4081c9de6aecd9041beb9bd78547c32c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {x: 0, y: 0, z: 0}
 --- !u!114 &114581302972084246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2668,19 +2680,6 @@ MonoBehaviour:
   visionLength: 1
   sphereRadius: 0.2
   focusTarget: {fileID: 0}
---- !u!114 &114604218615037536
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146904742983320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8951a183d26763746946171b21d12797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tags:
-  - {fileID: 11400000, guid: 97c88001d33470345a38e7f56a4d5526, type: 2}
 --- !u!114 &114662661053155324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2720,6 +2719,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114695953022972504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146904742983320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f9e401446d34c4390b14a97c29df36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedData:
+    distance: 1
 --- !u!114 &114724680422306574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2753,7 +2765,7 @@ MonoBehaviour:
   OnDecrease:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114223228775150542}
+      - m_Target: {fileID: 0}
         m_MethodName: Trigger
         m_Mode: 4
         m_Arguments:
@@ -2785,51 +2797,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &114952537436498358
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146904742983320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cf6801565b91df4dabfd903b4012cba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axes: []
-  buttons:
-  - buttonName: Interact
-    OnButtonDown:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114584295417780322}
-          m_MethodName: Interact
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    OnButtonStay:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    OnButtonUp:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  OnRightTrigger:
-    m_PersistentCalls:
-      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!136 &136756151097549516
