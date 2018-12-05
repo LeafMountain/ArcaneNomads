@@ -9,20 +9,29 @@ public class InteractionSystem : ComponentSystem
 	struct InteractablesData {
 		public readonly int Length;
 		public ComponentDataArray<InteractableComponent> components;
-		public ComponentArray<Transform> transforms;
+		[ReadOnly]public ComponentArray<Transform> transforms;
+		// Exclude entities with the component interact focus
 	}
 
 	struct InteractorsData {
 		public readonly int Length;
-		public ComponentDataArray<InteractorComponent> components;
-		public ComponentArray<Transform> transforms;
-		public ComponentArray<PlayerInputComponent> inputs;
+		[ReadOnly] public ComponentDataArray<InteractorComponent> components;
+		[ReadOnly] public ComponentArray<Transform> transforms;
+		[ReadOnly] public ComponentArray<PlayerInputComponent> inputs;
+	}
+
+	struct InteractFocusData {
+		public readonly int Length;
+		public ComponentDataArray<InteractFocusComponent> components;
+		public ComponentArray<MeshRenderer> renderers;	// temp
 	}
 
 	[Inject] InteractablesData interactables;
 	[Inject] InteractorsData interactors;
+	[Inject] InteractFocusData focusData;
 
     protected override void OnUpdate(){
+
 		// Loop through the interactors
 		for(int i = 0; i < interactors.Length; i++) {
 			float interactDistance = interactors.components[i].distance;
@@ -34,36 +43,35 @@ public class InteractionSystem : ComponentSystem
 
 				// Check if interactor looking at interactable
 				if(Vector3.Distance(interactablePosition, interactorPosition) < interactDistance){
-					Debug.Log("Im close to an interactable");
-
-					// Interact
-					if(interactors.inputs[i].interact){
-						Interact(j);
-						// InteractableComponent interactable;
-						// interactable.interacted = true;
-
-						// // Assign new interactable values to interactable
-						// interactables.components[j] = interactable;
-
-						Debug.Log(interactors.transforms[i].name + " is interacting with " + interactables.transforms[j].name);
+					// Add interact focus. Fix this when you have excluded the correct components
+					if(!interactables.transforms[j].GetComponent<InteractFocusComponentWrapper>()){
+						Debug.Log("Im close to a new interactable");
+						interactables.transforms[j].gameObject.AddComponent<InteractFocusComponentWrapper>();
 					}
 				}
+			}
 
+			// Focus
+			for (int j = 0; j < focusData.Length; j++)
+			{
+				// Add focus grapic
+				focusData.renderers[j].material.color = Color.red;	// temp
+
+				// Interact
+				if(interactors.inputs[i].interact) {
+					focusData.renderers[j].material.color = Color.green;	// temp
+				}
 			}
 		}
+
     }
 
 	void Interact(int interactableIndex) {
 		InteractableComponent interactable = interactables.components[interactableIndex];
-		// interactable.interacted = true;
 
 		interactable.test = 1.0f;
-		// // Assign new interactable values to interactable
+		// Assign new interactable values to interactable
 		interactables.components[interactableIndex] = interactable;
-
-		// interactables.components[interactableIndex].interacted = true;
-
-		// Debug.Log(interactors.transforms[i].name + " is interacting with " + interactables.transforms[j].name);
 	}
 }
 
