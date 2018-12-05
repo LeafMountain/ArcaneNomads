@@ -4,9 +4,6 @@ using Unity.Entities;
 using UnityEngine;
 
 [System.Serializable]
-public struct InteractableComponent : IComponentData {
-    // public bool interacted;
-    public float test;
-}
+public struct InteractableComponent : IComponentData { }
 
 public class InteractableComponentWrapper : ComponentDataWrapper<InteractableComponent> {}

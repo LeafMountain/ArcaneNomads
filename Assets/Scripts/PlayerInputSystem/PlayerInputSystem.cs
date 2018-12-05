@@ -8,26 +8,31 @@ using XInputDotNetPure;
 public class PlayerInputSystem : ComponentSystem
 {
 
-	public struct Data
-	{
-		public PlayerInputComponent Input;
+	public struct InputData{
+		public readonly int Length;
+		public ComponentDataArray<PlayerInputComponent> components;
 	}
+
+	[Inject] InputData inputData;
 
 	protected override void OnUpdate ()
 	{
-		foreach (var entity in GetEntities<Data> ())
-		{
+		for (int i = 0; i < inputData.Length; i++){
+			PlayerInputComponent newComponent = inputData.components[i];
+
 			Vector2 move = Move ();
 			Vector2 look = Look ();
 
-			entity.Input.Move = move;
-			entity.Input.Look = look;
-			entity.Input.swapShoulder = SwapShoulder ();
-			entity.Input.aim = Aim ();
-			entity.Input.sprint = Sprint ();
-			entity.Input.reload = Reload ();
-			entity.Input.fire = Fire ();
-			entity.Input.interact = Interact();
+			newComponent.Move = move;
+			newComponent.Look = look;
+			newComponent.swapShoulder = SwapShoulder ();
+			newComponent.aim = Aim ();
+			newComponent.sprint = Sprint ();
+			newComponent.reload = Reload ();
+			newComponent.fire = Fire ();
+			newComponent.interact = Interact();
+
+			inputData.components[i] = newComponent;
 		}
 	}
 

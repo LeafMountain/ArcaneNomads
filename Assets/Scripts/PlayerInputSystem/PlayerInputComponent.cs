@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using XInputDotNetPure;
+using Unity.Entities;
 
-public class PlayerInputComponent : MonoBehaviour{
+public struct PlayerInputComponent : IComponentData{
 	public Vector2 Move;
 	public Vector2 Look;
 	public bool swapShoulder;
@@ -21,3 +22,5 @@ public class PlayerInputComponent : MonoBehaviour{
 	[Range (0, 1)] public float rightDeadZone;
 
 }
+
+public class PlayerInputComponentWrapper : ComponentDataWrapper<PlayerInputComponent> {}

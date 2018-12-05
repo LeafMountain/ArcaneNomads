@@ -153,8 +153,8 @@ MonoBehaviour:
   - {fileID: 1590492307914222, guid: 43d70644c680713469e4bfa411d02610, type: 2}
   TileSize: {x: 13, y: 3, z: 11}
   RandomizeArea: 1
-  Area: {x: 1, y: 2, z: 1}
-  AreaMax: {x: 1, y: 10, z: 1}
+  Area: {x: 1, y: 3, z: 1}
+  AreaMax: {x: 1, y: 20, z: 1}
   RandomizeRotation: 0
   RandomizeBy90Degrees: 1
   SpawnedTiles: []

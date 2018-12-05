@@ -5,5 +5,5 @@ using Unity.Entities;
 
 public struct InteractFocusComponent : IComponentData { }
 
-// [DisallowMultipleComponent]
+[DisallowMultipleComponent]
 public class InteractFocusComponentWrapper : ComponentDataWrapper<InteractFocusComponent> {}

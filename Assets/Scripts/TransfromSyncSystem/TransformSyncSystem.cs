@@ -17,7 +17,8 @@ public class TransformSyncSystem : ComponentSystem
     protected override void OnUpdate(){
 		for (int i = 0; i < data.Length; i++){
 			Position positionComponent = data.positions[i];
-			positionComponent.Value = data.transforms[i].position;			
+			positionComponent.Value = data.transforms[i].position;
+			data.positions[i] = positionComponent;		
 		}
     }
 }

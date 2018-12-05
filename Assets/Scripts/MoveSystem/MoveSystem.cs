@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class MoveSystem : ComponentSystem {
 
-	public struct Data
-	{
-		public HeadingComponent heading;
-		public MoveSpeedComponent speed;
-		public Rigidbody rigidbody;		// Try to exclude this
+	public struct Data {
+		public readonly int Length;
+		public ComponentDataArray<HeadingComponent> heading;
+		public ComponentDataArray<MoveSpeedComponent> speed;
+		public ComponentArray<Rigidbody> rigidbody;		// Try to exclude this
 	}
 
-    protected override void OnUpdate()
-    {
-       	foreach (var entity in GetEntities<Data>())
-		{
-			if(entity.heading.value != Vector3.zero) {
-				entity.rigidbody.AddForce(entity.heading.value * entity.speed.value, ForceMode.Impulse);
-				entity.rigidbody.MoveRotation(Quaternion.LookRotation(entity.heading.value));
+	[Inject] Data moveData;
+
+    protected override void OnUpdate() {
+       	for (int i = 0; i < moveData.Length; i++) {
+			if(moveData.heading[i].value != Vector3.zero) {
+				moveData.rigidbody[i].AddForce(moveData.heading[i].value * moveData.speed[i].value, ForceMode.Impulse);
+				moveData.rigidbody[i].MoveRotation(Quaternion.LookRotation(moveData.heading[i].value));
 			}
 		}
     }
