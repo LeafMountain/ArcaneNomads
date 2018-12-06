@@ -203,7 +203,6 @@ GameObject:
   - component: {fileID: 114731297977544326}
   - component: {fileID: 54294898084145670}
   - component: {fileID: 136756151097549516}
-  - component: {fileID: 114584295417780322}
   - component: {fileID: 114392920850720366}
   - component: {fileID: 114662661053155324}
   - component: {fileID: 114180303690606808}
@@ -214,10 +213,10 @@ GameObject:
   - component: {fileID: 114433933084156784}
   - component: {fileID: 114146816523879438}
   - component: {fileID: 114532851355248218}
-  - component: {fileID: 114371788185547294}
   - component: {fileID: 114695953022972504}
   - component: {fileID: 114578218738264250}
   - component: {fileID: 114720410586239478}
+  - component: {fileID: 114808430967664348}
   m_Layer: 10
   m_Name: pref_player
   m_TagString: Player
@@ -2341,110 +2340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49227dc0eabe46439f48985879df8c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToSpawn: {fileID: 1096814096318578, guid: 04b2c236906617e469784a732f8cb39a,
-    type: 2}
-  NumberToSpawn: 1
-  SpawnedObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  m_SerializedData:
+    ObjectToSpawn: {fileID: 1096814096318578, guid: 04b2c236906617e469784a732f8cb39a,
+      type: 2}
 --- !u!114 &114171948293690028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2485,17 +2383,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9dcfdc3f4ecf14bba52f31216b6ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Move: {x: 0, y: 0}
-  Look: {x: 0, y: 0}
-  swapShoulder: 0
-  aim: 0
-  sprint: 0
-  reload: 0
-  fire: 0
-  interact: 0
-  lookSensitivity: 0
-  leftDeadZone: 0
-  rightDeadZone: 0
+  m_SerializedData:
+    Move: {x: 0, y: 0}
+    Look: {x: 0, y: 0}
+    swapShoulder: 0
+    aim: 0
+    sprint: 0
+    reload: 0
+    fire: 0
+    interact: 0
+    lookSensitivity: 0
+    leftDeadZone: 0
+    rightDeadZone: 0
 --- !u!114 &114275503188374862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2518,29 +2417,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9dcfdc3f4ecf14bba52f31216b6ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Move: {x: 0, y: 0}
-  Look: {x: 0, y: 0}
-  swapShoulder: 0
-  aim: 0
-  sprint: 0
-  reload: 0
-  fire: 0
-  interact: 0
-  lookSensitivity: 0
-  leftDeadZone: 0
-  rightDeadZone: 0
---- !u!114 &114371788185547294
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146904742983320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a3ace78489e73045bc7b48205690ec5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 15
+  m_SerializedData:
+    Move: {x: 0, y: 0}
+    Look: {x: 0, y: 0}
+    swapShoulder: 0
+    aim: 0
+    sprint: 0
+    reload: 0
+    fire: 0
+    interact: 0
+    lookSensitivity: 0
+    leftDeadZone: 0
+    rightDeadZone: 0
 --- !u!114 &114392920850720366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2643,7 +2531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4081c9de6aecd9041beb9bd78547c32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: {x: 0, y: 0, z: 0}
+  m_SerializedData:
+    value: {x: 0, y: 0, z: 0}
 --- !u!114 &114578218738264250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2674,20 +2563,6 @@ MonoBehaviour:
   audioClips:
   - name: footstep
     audioContainer: {fileID: 11400000, guid: a37e07fa270da7a4c96c42242c50f94e, type: 2}
---- !u!114 &114584295417780322
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146904742983320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6260d9a0767a24ba83278b8378c8b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visionLength: 1
-  sphereRadius: 0.2
-  focusTarget: {fileID: 0}
 --- !u!114 &114662661053155324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2818,6 +2693,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114808430967664348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146904742983320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3ace78489e73045bc7b48205690ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedData:
+    value: 15
 --- !u!136 &136756151097549516
 CapsuleCollider:
   m_ObjectHideFlags: 1

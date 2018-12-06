@@ -5,23 +5,31 @@ using Unity.Entities;
 
 public class SpawnerSystem : ComponentSystem
 {
-	struct Data{
-		public SpawnerComponent spawner;
-		public Transform transform;
+	struct Data {
+		public readonly int Length;
+		public EntityArray entities;
+		public ComponentDataArray<SpawnerComponent> spawner;
+		public ComponentArray<Transform> transform;	// Switch to position component
 	}
 
+	[Inject] Data data;
+
     protected override void OnUpdate(){
-		foreach(var entity in GetEntities<Data>()){
-			if(entity.spawner.ObjectToSpawn) {
+		for (int i = 0; i < data.Length; i++) {
+			if(data.spawner[i].prefab) {
 				// Add object to spawned list
-				for (int i = 0; i < Mathf.Min(entity.spawner.NumberToSpawn, entity.spawner.SpawnedObjects.Length); i++) {
-					if(!entity.spawner.SpawnedObjects[i]){
-						GameObject NewObject = GameObject.Instantiate(entity.spawner.ObjectToSpawn, entity.transform.position, Quaternion.identity);
-						entity.spawner.SpawnedObjects[i] = NewObject;
-					}
-				}
+				GameObject prefab = data.spawner[i].prefab;
+				Vector3 spawnPosition = data.transform[i].position;
+				Quaternion spawnRotation = Quaternion.identity;
+
+				GameObject.Instantiate(prefab, spawnPosition, spawnRotation);
+				PostUpdateCommands.RemoveComponent(data.entities[i], typeof(SpawnerComponent));
+				// for (int j = 0; j < Mathf.Min(data.spawner[i].NumberToSpawn, data.spawner[i].SpawnedObjects.Length); j++) {
+				// 	if(!data.spawner[i].SpawnedObjects[j]) {
+				// 		data.spawner[i].SpawnedObjects[j] = NewObject;
+				// 	}
+				// }
 			}
 		}
 	}
-
 }

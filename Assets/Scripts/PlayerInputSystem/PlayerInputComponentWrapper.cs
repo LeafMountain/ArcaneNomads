@@ -5,15 +5,16 @@ using UnityEngine;
 using XInputDotNetPure;
 using Unity.Entities;
 
+[System.Serializable]
 public struct PlayerInputComponent : IComponentData{
 	public Vector2 Move;
 	public Vector2 Look;
-	public bool swapShoulder;
-	public bool aim;
-	public bool sprint;
-	public bool reload;
-	public bool fire;
-	public bool interact;
+	public int swapShoulder;
+	public int aim;
+	public int sprint;
+	public int reload;
+	public int fire;
+	public int interact;
 
 	[Header ("Settings")]
 	public float lookSensitivity;
@@ -23,4 +24,5 @@ public struct PlayerInputComponent : IComponentData{
 
 }
 
+[DisallowMultipleComponent]
 public class PlayerInputComponentWrapper : ComponentDataWrapper<PlayerInputComponent> {}

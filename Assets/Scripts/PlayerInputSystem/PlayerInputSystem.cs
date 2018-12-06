@@ -38,54 +38,34 @@ public class PlayerInputSystem : ComponentSystem
 
 	Vector2 Move ()
 	{
-		Vector2 move = UnityMove () + XInputMove (PlayerIndex.One);
+		Vector2 move = UnityMove ();
 		return move;
 	}
 
 	Vector2 Look ()
 	{
-		Vector2 look = UnityLook () + XInputLook (PlayerIndex.One);
+		Vector2 look = UnityLook ();
 		return look;
 	}
 
-	bool Aim ()
+	int Fire ()
 	{
-		return UnityAim () || XInputAim ();
+		return Input.GetButton ("Fire") ? 1 : 0;
 	}
 
-	bool Sprint ()
+	int Reload ()
 	{
-		return UnitySprint ();
+		return Input.GetKeyDown (KeyCode.R) ? 1 : 0;
 	}
 
-	bool Reload ()
+	int Sprint ()
 	{
-		return UnityReload ();
+		return Input.GetKey (KeyCode.LeftShift) ? 1 : 0;
 	}
 
-	bool Fire ()
+	int Aim ()
 	{
-		return Input.GetButton ("Fire");
-	}
-
-	bool UnityReload ()
-	{
-		return Input.GetKeyDown (KeyCode.R);
-	}
-
-	bool UnitySprint ()
-	{
-		return Input.GetKey (KeyCode.LeftShift);
-	}
-
-	bool UnityAim ()
-	{
-		return Input.GetButton ("Aim");
-	}
-
-	bool XInputAim ()
-	{
-		return GamePad.GetState (PlayerIndex.One).Triggers.Left > 0;
+		return Input.GetButton ("Aim") ? 1 : 0;
 	}
 
 	Vector2 UnityMove ()
@@ -128,12 +108,12 @@ public class PlayerInputSystem : ComponentSystem
 		return input;
 	}
 
-	bool SwapShoulder ()
+	int SwapShoulder ()
 	{
-		return Input.GetKeyDown (KeyCode.V);
+		return Input.GetKeyDown (KeyCode.V) ? 1 : 0;
 	}
 
-	bool Interact(){
-		return Input.GetKeyDown(KeyCode.F);
+	int Interact(){
+		return Input.GetKeyDown(KeyCode.F) ? 1 : 0;
 	}
 }

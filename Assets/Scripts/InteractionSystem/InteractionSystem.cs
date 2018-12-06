@@ -74,7 +74,7 @@ public class InteractionSystem : ComponentSystem
 				focusData.renderers[j].material.color = Color.red;	// temp
 
 				// Interact
-				if(interactors.inputs[i].interact) {
+				if(interactors.inputs[i].interact == 1) {
 					PostUpdateCommands.AddComponent(interactables.entities[i], new InteractingComponent());
 					// focusData.renderers[j].material.color = Color.green;	// temp
 					// GameObject.Destroy(focusData.renderers[j].transform.gameObject);	// temp
