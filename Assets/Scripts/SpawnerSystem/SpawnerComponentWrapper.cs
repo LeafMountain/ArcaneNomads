@@ -4,9 +4,14 @@ using Unity.Entities;
 using UnityEngine;
 
 [System.Serializable]
-public struct SpawnerComponent : IComponentData {
-	public GameObject ObjectToSpawn;
+public class SpawnerComponentWrapper : MonoBehaviour {
+	public GameObject objectToSpawn;
+
+	[HideInInspector]
+	public int spawnedEntities;
+	// [SerializeField]
+	// public Prefab prefab;
 }
 
-public class SpawnerComponentWrapper : ComponentDataWrapper<SpawnerComponent> {}
+// public class SpawnerComponentWrapper : ComponentDataWrapper<SpawnerComponent> {}
 

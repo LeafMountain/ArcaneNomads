@@ -2340,9 +2340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49227dc0eabe46439f48985879df8c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SerializedData:
-    ObjectToSpawn: {fileID: 1096814096318578, guid: 04b2c236906617e469784a732f8cb39a,
-      type: 2}
+  objectToSpawn: {fileID: 1096814096318578, guid: 04b2c236906617e469784a732f8cb39a,
+    type: 2}
+  spawnedEntities: 0
 --- !u!114 &114171948293690028
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -102,11 +102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54cba8b9cfc5f6c49b37b0e85fc2e132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  lookDirection: {x: 45, y: 0, z: 1}
-  Offset: {x: 0, y: 0, z: 0}
-  DistanceToTarget: 15
-  Rotation: {x: 0, y: 0, z: 0}
+  m_SerializedData:
+    lookPosition: {x: 0, y: 0, z: 0}
+    lookDirection: {x: 45, y: 0, z: 0}
+    Offset: {x: 0, y: 0, z: 0}
+    DistanceToTarget: 15
+    Rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &114818549458726540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,13 +130,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9dcfdc3f4ecf14bba52f31216b6ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Move: {x: 0, y: 0}
-  Look: {x: 0, y: 0}
-  swapShoulder: 0
-  aim: 0
-  sprint: 0
-  reload: 0
-  fire: 0
-  lookSensitivity: 0
-  leftDeadZone: 0
-  rightDeadZone: 0
+  m_SerializedData:
+    Move: {x: 0, y: 0}
+    Look: {x: 0, y: 0}
+    swapShoulder: 0
+    aim: 0
+    sprint: 0
+    reload: 0
+    fire: 0
+    interact: 0
+    lookSensitivity: 0
+    leftDeadZone: 0
+    rightDeadZone: 0
