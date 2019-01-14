@@ -10,7 +10,7 @@ public class PlayerInputSystem : ComponentSystem
 
 	public struct InputData{
 		public readonly int Length;
-		public ComponentDataArray<PlayerInputComponent> components;
+		public ComponentDataArray<PlayerInputComponent> Components;
 	}
 
 	[Inject] InputData inputData;
@@ -18,9 +18,9 @@ public class PlayerInputSystem : ComponentSystem
 	protected override void OnUpdate ()
 	{
 		for (int i = 0; i < inputData.Length; i++){
-			PlayerInputComponent newComponent = inputData.components[i];
+			PlayerInputComponent newComponent = inputData.Components[i];
 
-			Vector2 move = Move ();
+			Vector2 move = UnityMove ();
 			Vector2 look = Look ();
 
 			newComponent.Move = move;
@@ -32,7 +32,7 @@ public class PlayerInputSystem : ComponentSystem
 			newComponent.fire = Fire ();
 			newComponent.interact = Interact();
 
-			inputData.components[i] = newComponent;
+			inputData.Components[i] = newComponent;
 		}
 	}
 

@@ -10,6 +10,7 @@ public struct ThirdPersonCameraComponent : IComponentData {
 	public Vector3 Offset;
 	public float DistanceToTarget;
 	public Vector3 Rotation;
+	public Vector3 CurrentVelocity;
 }
 
 public class ThirdPersonCameraComponentWrapper : ComponentDataWrapper<ThirdPersonCameraComponent> {}
