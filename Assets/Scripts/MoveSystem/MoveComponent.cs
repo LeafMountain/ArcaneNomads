@@ -12,7 +12,7 @@ public class MoveComponent : MonoBehaviour
     public float MaxSpeed = 100;
 
     [Range(0, 10)]
-    public float Acceleration;
+    public float TurnSpeed = 5;
 
     [Range(0, 1)]
     public float MoveSmoothing;
@@ -32,14 +32,17 @@ public class MoveComponent : MonoBehaviour
 
     void Update () {
         Vector3 CurrentPosition = transform.position;
+        Vector3 TargetPosition = this.TargetPosition;
+        Vector3 SmoothMovePosition = Vector3.SmoothDamp(CurrentPosition, TargetPosition, ref Velocity, MoveSmoothing, MaxSpeed);
+        Vector3 MoveDirection = SmoothMovePosition - CurrentPosition;
 
-        // Vector3 TargetPosition = CurrentPosition + this.TargetPosition;
-        Vector3 SmoothDirection = Vector3.SmoothDamp(CurrentPosition, TargetPosition, ref Velocity, MoveSmoothing, MaxSpeed);
-        CharacterController.Move(SmoothDirection - CurrentPosition);
+        CharacterController.Move(MoveDirection * Time.deltaTime);
+
+        if(MoveDirection != Vector3.zero)
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(MoveDirection, Vector3.up), Time.deltaTime * TurnSpeed);
     }
 
     public void Move(Vector2 Direction) {
-
         if(Direction != Vector2.zero) {
             Vector3 Direction3D = new Vector3(Direction.x, 0, Direction.y);
             TargetPosition = transform.position + Direction3D * Speed;

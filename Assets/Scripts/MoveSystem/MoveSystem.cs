@@ -6,6 +6,7 @@ using Unity.Transforms;
 using Unity.Mathematics;
 using Unity.Collections;
 
+[RequireComponent(typeof(CharacterController))]
 public class MoveSystem : ComponentSystem {
 
 	public struct Data {
