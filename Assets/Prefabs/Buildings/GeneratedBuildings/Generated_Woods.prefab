@@ -61,6 +61,12 @@ MonoBehaviour:
   - {fileID: 1142195677400520, guid: 6f3eed4146a83eb4a9586aa50c37e8ba, type: 3}
   - {fileID: 1277610636766316, guid: 5eca269da905b3542a50d6f3143f97ea, type: 3}
   - {fileID: 411211078905724094, guid: 0a6f32da3b97a00498dd7ba0f58c380e, type: 3}
+  - {fileID: 1711982993280790, guid: 3d0e19736727ae04fa6388c5f67469c3, type: 3}
+  - {fileID: 1722758331309872, guid: 1e65e0d5081cef54d9280a851a4b195c, type: 3}
+  - {fileID: 1884402866375112, guid: 2803aae3f6ea36f40b82521523804d2f, type: 3}
+  - {fileID: 1766093004967366, guid: 0428f599ebda7f24ead102bb7b1dab85, type: 3}
+  - {fileID: 1533612207735890, guid: 6fe61c5d877e2474e9ec692ed27589f8, type: 3}
+  - {fileID: 1032278038317212, guid: 8d940f61ce3ccce41abac990519ed4a5, type: 3}
   TileSize: {x: 5, y: 1, z: 5}
   RandomizeArea: 0
   Area: {x: 20, y: 1, z: 20}
