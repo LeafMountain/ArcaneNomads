@@ -29,9 +29,9 @@ public class GunReady : IGunState {
 			for (int i = 0; i < gun.bullets; i++) {
 				GameObject go = GameObject.Instantiate (gun.bulletPrefab, gun.origin.position, Quaternion.LookRotation (ShootDirection ()));
 
-				Bullet bullet = go.GetComponent<Bullet> ();
-				bullet.SetDamage (-gun.profile.Damage);
-				bullet.SetLifetime (gun.profile.Lifetime);
+				// Bullet bullet = go.GetComponent<Bullet> ();
+				// bullet.SetDamage (-gun.profile.Damage);
+				// bullet.SetLifetime (gun.profile.Lifetime);
 			}
 
 			gun.OnShoot.Invoke ();

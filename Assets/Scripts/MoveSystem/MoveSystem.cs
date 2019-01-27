@@ -6,40 +6,34 @@ using Unity.Transforms;
 using Unity.Mathematics;
 using Unity.Collections;
 
-[RequireComponent(typeof(CharacterController))]
-public class MoveSystem : ComponentSystem {
-
-	public struct Data {
+public class MoveSystem : ComponentSystem
+{
+	public struct Data 
+	{
 		public readonly int Length;
 		[ReadOnly] public ComponentDataArray<HeadingComponent> Headings;
 		[ReadOnly] public ComponentDataArray<MoveSpeedComponent> Speeds;
-		public ComponentArray<CharacterController> Controllers;
-		public ComponentDataArray<Position> Positions;
-		// public ComponentDataArray<VelocityComponent> Velocity;
+		[ReadOnly] public ComponentArray<Rigidbody> Rigidbodies;
 	}
 
 	[Inject] Data MoveData;
 
-    protected override void OnUpdate() {
-       	for (int i = 0; i < MoveData.Length; i++) {
-			Vector3 Position = MoveData.Positions[i].Value;
+    protected override void OnUpdate() 
+	{
+       	for (int i = 0; i < MoveData.Length; i++) 
+		{
 			float Speed = MoveData.Speeds[i].value;
 			float3 Heading = MoveData.Headings[i].value;
 			Vector3 HorizontalVelocity = Heading * Speed;
-			Vector3 TargetPosition = HorizontalVelocity + Position;
 
-			// VelocityComponent EntityVelocityComponent = MoveData.Velocity[i];
-			// Vector3 CurrentVelocity = EntityVelocityComponent.Value;
-			// Vector3 SmoothMove = Vector3.SmoothDamp(Position, TargetPosition, ref CurrentVelocity, .3f);
-			// EntityVelocityComponent.Value = CurrentVelocity;
-			// MoveData.Velocity[i] = EntityVelocityComponent;
-
-			MoveData.Controllers[i].Move(HorizontalVelocity);
-			MoveData.Controllers[i].Move(Vector3.down);
+			MoveData.Rigidbodies[i].AddForce(HorizontalVelocity, ForceMode.VelocityChange);
 			
 			// Rotate
 			if(HorizontalVelocity != Vector3.zero)
-				MoveData.Controllers[i].transform.forward = HorizontalVelocity;
+			{
+				Transform transform = MoveData.Rigidbodies[i].transform;
+				transform.forward = Vector3.Lerp(transform.forward, Heading, Time.deltaTime * 20);
+			}
 		}
     }
 }

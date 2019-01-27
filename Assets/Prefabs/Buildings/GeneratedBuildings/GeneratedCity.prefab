@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1570156346500802
+--- !u!1 &8249988940130505392
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4441047247620550}
-  - component: {fileID: 114972210693692650}
-  - component: {fileID: 114052318638323478}
+  - component: {fileID: 8249988940130505394}
+  - component: {fileID: 8249988940130505395}
+  - component: {fileID: 8249988940130505393}
   m_Layer: 0
-  m_Name: PlayerSpawner
+  m_Name: GeneratedCity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4441047247620550
+--- !u!4 &8249988940130505394
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570156346500802}
+  m_GameObject: {fileID: 8249988940130505392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,30 +32,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114972210693692650
+--- !u!114 &8249988940130505395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570156346500802}
+  m_GameObject: {fileID: 8249988940130505392}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114052318638323478
+--- !u!114 &8249988940130505393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570156346500802}
+  m_GameObject: {fileID: 8249988940130505392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a49227dc0eabe46439f48985879df8c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 5948fd1bc9126bf429810a3940809944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 4399448532005540820, guid: 8cda76210e6dd554c804826bd8e30099,
-    type: 3}
-  spawnedEntities: 0
+  Tiles:
+  - {fileID: 1198104615673192, guid: 21b98bbcc8650dc40bcffc18d19f3b54, type: 3}
+  - {fileID: 1580820865010244, guid: 2b99d6beabd470c4c96a50f787f10de4, type: 3}
+  - {fileID: 1842095029442394, guid: 3f48c357f545bba4794a536b21c1430a, type: 3}
+  TileSize: {x: 20, y: 15, z: 20}
+  RandomizeArea: 0
+  Area: {x: 5, y: 1, z: 5}
+  AreaMax: {x: 1, y: 1, z: 1}
+  RandomizeRotation: 0
+  RandomizeBy90Degrees: 1
+  SpawnedTiles: []
