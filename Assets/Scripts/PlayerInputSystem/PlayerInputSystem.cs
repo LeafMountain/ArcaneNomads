@@ -8,78 +8,64 @@ using XInputDotNetPure;
 public class PlayerInputSystem : ComponentSystem
 {
 
-	public struct Data
-	{
-		public PlayerInputComponent Input;
+	public struct InputData{
+		public readonly int Length;
+		public ComponentDataArray<PlayerInputComponent> Components;
 	}
+
+	[Inject] InputData inputData;
 
 	protected override void OnUpdate ()
 	{
-		foreach (var entity in GetEntities<Data> ())
-		{
-			Vector2 move = Move ();
+		for (int i = 0; i < inputData.Length; i++){
+			PlayerInputComponent newComponent = inputData.Components[i];
+
+			Vector2 move = UnityMove ();
 			Vector2 look = Look ();
 
-			entity.Input.Move = move;
-			entity.Input.Look = look;
-			entity.Input.swapShoulder = SwapShoulder ();
-			entity.Input.aim = Aim ();
-			entity.Input.sprint = Sprint ();
-			entity.Input.reload = Reload ();
-			entity.Input.fire = Fire ();
+			newComponent.Move = move;
+			newComponent.Look = look;
+			newComponent.swapShoulder = SwapShoulder ();
+			newComponent.aim = Aim ();
+			newComponent.sprint = Sprint ();
+			newComponent.reload = Reload ();
+			newComponent.fire = Fire ();
+			newComponent.interact = Interact();
+
+			inputData.Components[i] = newComponent;
 		}
 	}
 
 	Vector2 Move ()
 	{
-		Vector2 move = UnityMove () + XInputMove (PlayerIndex.One);
+		Vector2 move = UnityMove ();
 		return move;
 	}
 
 	Vector2 Look ()
 	{
-		Vector2 look = UnityLook () + XInputLook (PlayerIndex.One);
+		Vector2 look = UnityLook ();
 		return look;
 	}
 
-	bool Aim ()
+	int Fire ()
 	{
-		return UnityAim () || XInputAim ();
+		return Input.GetButton ("Fire") ? 1 : 0;
 	}
 
-	bool Sprint ()
+	int Reload ()
 	{
-		return UnitySprint ();
+		return Input.GetKeyDown (KeyCode.R) ? 1 : 0;
 	}
 
-	bool Reload ()
+	int Sprint ()
 	{
-		return UnityReload ();
+		return Input.GetKey (KeyCode.LeftShift) ? 1 : 0;
 	}
 
-	bool Fire ()
+	int Aim ()
 	{
-		return Input.GetButton ("Fire");
-	}
-
-	bool UnityReload ()
-	{
-		return Input.GetKeyDown (KeyCode.R);
-	}
-
-	bool UnitySprint ()
-	{
-		return Input.GetKey (KeyCode.LeftShift);
-	}
-
-	bool UnityAim ()
-	{
-		return Input.GetButton ("Aim");
-	}
-
-	bool XInputAim ()
-	{
-		return GamePad.GetState (PlayerIndex.One).Triggers.Left > 0;
+		return Input.GetButton ("Aim") ? 1 : 0;
 	}
 
 	Vector2 UnityMove ()
@@ -122,8 +108,12 @@ public class PlayerInputSystem : ComponentSystem
 		return input;
 	}
 
-	bool SwapShoulder ()
+	int SwapShoulder ()
 	{
-		return Input.GetKeyDown (KeyCode.V);
+		return Input.GetKeyDown (KeyCode.V) ? 1 : 0;
+	}
+
+	int Interact(){
+		return Input.GetKeyDown(KeyCode.F) ? 1 : 0;
 	}
 }

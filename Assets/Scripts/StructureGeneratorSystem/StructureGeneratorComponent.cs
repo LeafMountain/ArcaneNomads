@@ -26,14 +26,18 @@ public class StructureGeneratorComponent : MonoBehaviour {
 				for(int x = 0; x < Area.x; x++)
 				{
 					Vector3 DrawPosition = new Vector3(x * TileSize.x, y * TileSize.y + TileSize.y / 2, z * TileSize.z);
+					Vector3 Offset = new Vector3(TileSize.x / 2 * Area.x, TileSize.y / 2 * Area.y, TileSize.z / 2 * Area.z) - TileSize / 2;
+					DrawPosition -= Offset;
+					DrawPosition += transform.position;
+					// DrawPosition -= (Vector3)Area / 2;
 					Gizmos.DrawWireCube(DrawPosition, TileSize);
 				}
 		
 		// The size of the entire structure
-		Vector3 TotalArea = new Vector3(Area.x * TileSize.x, Area.y * TileSize.y, Area.z * TileSize.z);
-		Vector3 Offset = new Vector3(0, TileSize.y / 2, 0);
+		// Vector3 TotalArea = new Vector3(Area.x * TileSize.x, Area.y * TileSize.y, Area.z * TileSize.z);
+		// Vector3 Offset = new Vector3(0, TileSize.y / 2, 0);
 
-		Gizmos.color = Color.blue;
-		Gizmos.DrawWireCube((transform.position - TileSize / 2) + TotalArea / 2 + Offset, TotalArea);
+		// Gizmos.color = Color.blue;
+		// Gizmos.DrawWireCube((transform.position - TileSize / 2) + TotalArea / 2 + Offset, TotalArea);
 	}
 }

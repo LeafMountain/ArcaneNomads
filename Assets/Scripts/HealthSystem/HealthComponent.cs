@@ -5,9 +5,10 @@ using Unity.Entities;
 using System;
 
 [Serializable]
-public struct ECSHealthComponent : IComponentData
+public struct HealthComponent : IComponentData
 {
     public int Value;
 }
 
-public class HealthComponent : ComponentDataWrapper<ECSHealthComponent> {}
+[DisallowMultipleComponent]
+public class HealthComponentWrapper : ComponentDataWrapper<HealthComponent> {}

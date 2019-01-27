@@ -2,23 +2,37 @@
 using System.Collections.Generic;
 using Unity.Entities;
 using UnityEngine;
+using Unity.Transforms;
+using Unity.Mathematics;
+using Unity.Collections;
 
-public class MoveSystem : ComponentSystem {
-
-	public struct Data
+public class MoveSystem : ComponentSystem
+{
+	public struct Data 
 	{
-		public HeadingComponent heading;
-		public MoveSpeedComponent speed;
-		public Rigidbody rigidbody;		// Try to exclude this
+		public readonly int Length;
+		[ReadOnly] public ComponentDataArray<HeadingComponent> Headings;
+		[ReadOnly] public ComponentDataArray<MoveSpeedComponent> Speeds;
+		[ReadOnly] public ComponentArray<Rigidbody> Rigidbodies;
 	}
 
-    protected override void OnUpdate()
-    {
-       	foreach (var entity in GetEntities<Data>())
+	[Inject] Data MoveData;
+
+    protected override void OnUpdate() 
+	{
+       	for (int i = 0; i < MoveData.Length; i++) 
 		{
-			if(entity.heading.value != Vector3.zero) {
-				entity.rigidbody.AddForce(entity.heading.value * entity.speed.value, ForceMode.Impulse);
-				entity.rigidbody.MoveRotation(Quaternion.LookRotation(entity.heading.value));
+			float Speed = MoveData.Speeds[i].value;
+			float3 Heading = MoveData.Headings[i].value;
+			Vector3 HorizontalVelocity = Heading * Speed;
+
+			MoveData.Rigidbodies[i].AddForce(HorizontalVelocity, ForceMode.VelocityChange);
+			
+			// Rotate
+			if(HorizontalVelocity != Vector3.zero)
+			{
+				Transform transform = MoveData.Rigidbodies[i].transform;
+				transform.forward = Vector3.Lerp(transform.forward, Heading, Time.deltaTime * 20);
 			}
 		}
     }
