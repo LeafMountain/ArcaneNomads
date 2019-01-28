@@ -5,7 +5,8 @@ using UnityEngine;
 
 [System.Serializable]
 public struct MoveSpeedComponent : IComponentData {
-	public float value;
+	public float speed;
+	// public float maxSpeed;
 }
 
 [DisallowMultipleComponent]

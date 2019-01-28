@@ -136,7 +136,7 @@ MonoBehaviour:
   m_SerializedData:
     lookPosition: {x: 0, y: 0, z: 0}
     lookDirection: {x: 30, y: 0, z: 0}
-    Offset: {x: 0, y: 0, z: 0}
-    DistanceToTarget: 8
+    Offset: {x: 0, y: 2, z: 0}
+    DistanceToTarget: 10
     Rotation: {x: 0, y: 0, z: 0}
     CurrentVelocity: {x: 0, y: 0, z: 0}

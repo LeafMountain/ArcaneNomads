@@ -31,6 +31,7 @@ public class PlayerInputSystem : ComponentSystem
 			newComponent.reload = Reload ();
 			newComponent.fire = Fire ();
 			newComponent.interact = Interact();
+			newComponent.jump = Input.GetButton("Jump") ? 1 : 0;
 
 			inputData.Components[i] = newComponent;
 		}
