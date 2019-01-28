@@ -3,8 +3,7 @@ using Unity.Transforms;
 using UnityEngine;
 using Unity.Collections;
 
-// [UpdateAfter (typeof(TransformSyncSystem))]
-// [UpdateAfter (typeof(WaitForFixedUpdate))]
+[UpdateAfter(typeof(MoveSystem))]
 public class ThirdPersonCameraSystem : ComponentSystem {
 
 	struct Data {
@@ -18,7 +17,6 @@ public class ThirdPersonCameraSystem : ComponentSystem {
 	struct TargetData {
 		public readonly int Length;
 		public ComponentDataArray<CameraTargetComponent> Targets;
-		// public ComponentArray<Transform> transforms; 
 		public ComponentDataArray<Position> positions;
 	}
 
@@ -32,10 +30,6 @@ public class ThirdPersonCameraSystem : ComponentSystem {
 			Cursor.lockState = CursorLockMode.Locked;
 
 			ThirdPersonCameraComponent Camera = data.Camera[i];
-
-			// // Add player as target if no other target is assigned
-			// if(Camera.lookPosition == Vector3.zero) 
-			// 	Camera.lookPosition = playerData.transforms[0].position;
 
 			Camera.lookPosition = Targets.positions[i].Value;
 
