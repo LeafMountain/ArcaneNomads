@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Unity.Entities;
 using Unity.Mathematics;
+using UnityEngine;
 
 [System.Serializable]
-public struct VelocityComponent : IComponentData
+public struct Velocity : IComponentData
 {
     public float3 Value;
 }
 
-
-public class VelocityComponentWrapper : ComponentDataWrapper<VelocityComponent> {}
+public class VelocityComponent : ComponentDataWrapper<Velocity> {}

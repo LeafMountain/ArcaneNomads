@@ -56,6 +56,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49227dc0eabe46439f48985879df8c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 4399448532005540820, guid: 8cda76210e6dd554c804826bd8e30099,
+  objectToSpawn: {fileID: 6471913641935829631, guid: eaf7326a0a097ad488445feb562d7957,
     type: 3}
   spawnedEntities: 0

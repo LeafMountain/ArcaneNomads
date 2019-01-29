@@ -15,6 +15,7 @@ public struct PlayerInputComponent : IComponentData{
 	public int reload;
 	public int fire;
 	public int interact;
+	public int jump;
 
 	[Header ("Settings")]
 	public float lookSensitivity;

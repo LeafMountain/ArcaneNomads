@@ -6,13 +6,15 @@ using Unity.Transforms;
 using Unity.Mathematics;
 using Unity.Collections;
 
+[UpdateBefore(typeof(UnityEngine.Experimental.PlayerLoop.FixedUpdate))]
 public class MoveSystem : ComponentSystem
 {
 	public struct Data 
 	{
 		public readonly int Length;
-		[ReadOnly] public ComponentDataArray<HeadingComponent> Headings;
-		[ReadOnly] public ComponentDataArray<MoveSpeedComponent> Speeds;
+		// [ReadOnly] public ComponentDataArray<Heading> Headings;
+		// [ReadOnly] public ComponentDataArray<MoveSpeed> Speeds;
+		public ComponentDataArray<Velocity> Velocities;
 		[ReadOnly] public ComponentArray<Rigidbody> Rigidbodies;
 	}
 
@@ -22,18 +24,19 @@ public class MoveSystem : ComponentSystem
 	{
        	for (int i = 0; i < MoveData.Length; i++) 
 		{
-			float Speed = MoveData.Speeds[i].value;
-			float3 Heading = MoveData.Headings[i].value;
-			Vector3 HorizontalVelocity = Heading * Speed;
-
-			MoveData.Rigidbodies[i].AddForce(HorizontalVelocity, ForceMode.VelocityChange);
+			Velocity VelocityComp = MoveData.Velocities[i];
+			float3 Velocity = VelocityComp.Value;
 			
-			// Rotate
-			if(HorizontalVelocity != Vector3.zero)
+			// // Rotate
+			if((Vector3)MoveData.Velocities[i].Value != Vector3.zero)
 			{
+				MoveData.Rigidbodies[i].velocity = Velocity;
 				Transform transform = MoveData.Rigidbodies[i].transform;
-				transform.forward = Vector3.Lerp(transform.forward, Heading, Time.deltaTime * 20);
+				transform.forward = Vector3.Lerp(transform.forward, Velocity, Time.deltaTime * 20);
 			}
+
+			// VelocityComp.Value = MoveData.Rigidbodies[i].velocity;
+			MoveData.Velocities[i] = VelocityComp;
 		}
     }
 }
