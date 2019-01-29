@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using Unity.Entities;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class JumpSystem : ComponentSystem
         public ComponentDataArray<JumpComponent> Jumpers;
         public ComponentArray<Rigidbody> Rigidbodies; 
         public ComponentDataArray<PlayerInputComponent> Inputs;
+        [ReadOnly] public ComponentDataArray<Grounded> Groundeds;
     }
 
     [Inject] Data JumpData;
