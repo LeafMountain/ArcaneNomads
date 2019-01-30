@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Entities;
+using Unity.Mathematics;
 
 [System.Serializable]
 public struct Heading : IComponentData {
-	public Vector3 Value;
+	public float3 Value;
 }
 
 public class HeadingComponent : ComponentDataWrapper<Heading> {}

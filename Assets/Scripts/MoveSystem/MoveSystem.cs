@@ -27,15 +27,14 @@ public class MoveSystem : ComponentSystem
 			Velocity VelocityComp = MoveData.Velocities[i];
 			float3 Velocity = VelocityComp.Value;
 			
-			// // Rotate
+			// Rotate
 			if((Vector3)MoveData.Velocities[i].Value != Vector3.zero)
 			{
+				float3 CurrentVelocity = MoveData.Rigidbodies[i].velocity;
+				Velocity = new float3(Velocity.x == 0 ? CurrentVelocity.x : Velocity.x, Velocity.y == 0 ? CurrentVelocity.y : Velocity.y, Velocity.z == 0 ? CurrentVelocity.z : Velocity.z);
 				MoveData.Rigidbodies[i].velocity = Velocity;
-				Transform transform = MoveData.Rigidbodies[i].transform;
-				transform.forward = Vector3.Lerp(transform.forward, Velocity, Time.deltaTime * 20);
 			}
 
-			// VelocityComp.Value = MoveData.Rigidbodies[i].velocity;
 			MoveData.Velocities[i] = VelocityComp;
 		}
     }
