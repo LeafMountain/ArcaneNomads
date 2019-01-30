@@ -5,6 +5,7 @@ using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine;
 
+[UpdateAfter(typeof(PlayerInputSystem))]
 public class InteractionSystem : ComponentSystem
 {
     struct InteractableData
@@ -12,6 +13,7 @@ public class InteractionSystem : ComponentSystem
         public readonly int Length;
         public ComponentDataArray<Interactable> Interactables;
         public ComponentDataArray<Position> Positions;
+		public EntityArray Entities;
     }
 
     struct InteractorData
@@ -40,12 +42,28 @@ public class InteractionSystem : ComponentSystem
 
                 // Calculate distanc
                 float Distance = math.distance(InteractorPosition, InteractablePosition);
+
+                if(Input)
+                {
+                    Debug.Log(Distance);
+                }
+
                 if(Distance <= Reach)
                 {
-
+                    float DotProduct = math.dot(InteractorPosition, InteractablePosition);
+                    // Calculate view angle with the dot product
+                    if(DotProduct > 0)
+                    {
+                        // PostUpdateCommands.AddComponent<InteractableFocus>(Interactables.Entities[j], new InteractableFocus());
+                        // Debug.Log("Dot = " + DotProduct);
+                        // Check input?
+                        if(Input)
+                        {
+                            PostUpdateCommands.AddComponent<DestroyComponent>(Interactables.Entities[j], new DestroyComponent());
+                            Debug.Log("Interacting");
+                        }
+                    }
                 }
-                // Calculate view angle with the dot product
-                // Check input?
 
             }
         }

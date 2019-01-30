@@ -10,7 +10,7 @@ public class TransformSyncSystem : ComponentSystem
 	struct EntityData {
 		public readonly int Length;
 		public ComponentDataArray<Position> positions;
-		public ComponentDataArray<Rotation> Rotations;
+		// public ComponentDataArray<Rotation> Rotations;
 		public ComponentArray<Transform> Transforms;
 	}
 
