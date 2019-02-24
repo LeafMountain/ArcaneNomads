@@ -9,7 +9,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 891241574585428621}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.2
   m_Height: 1.8
   m_Direction: 1
@@ -35,6 +35,7 @@ GameObject:
   - component: {fileID: 5033235139341567579}
   - component: {fileID: 4994449180785829162}
   - component: {fileID: 3723527657745865131}
+  - component: {fileID: 7672398589828147347}
   m_Layer: 12
   m_Name: pref_player
   m_TagString: Player
@@ -252,6 +253,25 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!95 &7672398589828147347
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6471913641935829631}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: bb26cb94e4205554d8d466f5bd3b4067, type: 3}
+  m_Controller: {fileID: 9100000, guid: 8ed18824446bd5344b3774d0dbad6a72, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7333852929062121158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,6 +348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730327146173760044, guid: 66db9572c8cc1e048af2e4db0da3c08b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3899432958045568636, guid: 66db9572c8cc1e048af2e4db0da3c08b,
         type: 3}
