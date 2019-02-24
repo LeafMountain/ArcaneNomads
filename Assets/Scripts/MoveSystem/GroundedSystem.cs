@@ -40,7 +40,7 @@ public class GroundedSystem : ComponentSystem
             {
                 Debug.DrawRay(Position, Vector3.down, Color.green);
                 PostUpdateCommands.AddComponent<Grounded>(NotGrounded.Entities[i], new Grounded());
-                Debug.Log("grounded");
+                // Debug.Log("grounded");
             }
         }
 
@@ -53,7 +53,7 @@ public class GroundedSystem : ComponentSystem
             {
                 Debug.DrawRay(Position, Vector3.down, Color.red);
                 PostUpdateCommands.RemoveComponent<Grounded>(IsGrounded.Entities[i]);
-                Debug.Log("not grounded");                
+                // Debug.Log("not grounded");                
             }
         }
     }

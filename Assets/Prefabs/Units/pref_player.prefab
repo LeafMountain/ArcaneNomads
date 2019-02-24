@@ -32,9 +32,9 @@ GameObject:
   - component: {fileID: 6673257409116147106}
   - component: {fileID: 256398560355941969}
   - component: {fileID: 7095142344765741244}
-  - component: {fileID: 3614575581257590398}
   - component: {fileID: 5033235139341567579}
   - component: {fileID: 4994449180785829162}
+  - component: {fileID: 3723527657745865131}
   m_Layer: 12
   m_Name: pref_player
   m_TagString: Player
@@ -200,22 +200,6 @@ MonoBehaviour:
       x: 0
       y: 0
       z: 0
---- !u!54 &3614575581257590398
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6471913641935829631}
-  serializedVersion: 2
-  m_Mass: 70
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!114 &5033235139341567579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +234,24 @@ MonoBehaviour:
   m_SerializedData:
     Reach: 1
     Angle: 0
+--- !u!143 &3723527657745865131
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6471913641935829631}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.8
+  m_Radius: 0.3
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1001 &7333852929062121158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -323,16 +325,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3899432958045568632, guid: 66db9572c8cc1e048af2e4db0da3c08b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6939919411949581361, guid: 66db9572c8cc1e048af2e4db0da3c08b,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3899432958045568516, guid: 66db9572c8cc1e048af2e4db0da3c08b,
         type: 3}
       propertyPath: m_Layer
       value: 12
@@ -728,6 +720,16 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3899432958045568548, guid: 66db9572c8cc1e048af2e4db0da3c08b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939919411949581361, guid: 66db9572c8cc1e048af2e4db0da3c08b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899432958045568516, guid: 66db9572c8cc1e048af2e4db0da3c08b,
         type: 3}
       propertyPath: m_Layer
       value: 12

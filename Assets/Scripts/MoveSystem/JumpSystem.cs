@@ -10,7 +10,7 @@ public class JumpSystem : ComponentSystem
     {
         public readonly int Length;
         public ComponentDataArray<JumpComponent> Jumpers;
-        public ComponentArray<Rigidbody> Rigidbodies; 
+        public ComponentDataArray<Velocity> Velocities;
         public ComponentDataArray<PlayerInputComponent> Inputs;
         [ReadOnly] public ComponentDataArray<Grounded> Groundeds;
     }
@@ -23,7 +23,10 @@ public class JumpSystem : ComponentSystem
         {
             if(JumpData.Inputs[i].jump == 1)
             {
-                JumpData.Rigidbodies[i].AddForce(Vector3.up * JumpData.Jumpers[i].Force, ForceMode.Impulse);
+                // JumpData.Rigidbodies[i].AddForce(Vector3.up * JumpData.Jumpers[i].Force, ForceMode.Impulse);
+                Velocity velocity = JumpData.Velocities[i];
+                velocity.Value.y += JumpData.Jumpers[i].Force;
+                JumpData.Velocities[i] = velocity;
             }
         }
     }
