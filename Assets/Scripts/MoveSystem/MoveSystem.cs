@@ -6,7 +6,7 @@ using Unity.Transforms;
 using Unity.Mathematics;
 using Unity.Collections;
 
-[UpdateBefore(typeof(UnityEngine.Experimental.PlayerLoop.FixedUpdate))]
+// [UpdateBefore(typeof(UnityEngine.Experimental.PlayerLoop.FixedUpdate))]
 public class MoveSystem : ComponentSystem
 {
 	public struct Data 
@@ -15,7 +15,9 @@ public class MoveSystem : ComponentSystem
 		// [ReadOnly] public ComponentDataArray<Heading> Headings;
 		// [ReadOnly] public ComponentDataArray<MoveSpeed> Speeds;
 		public ComponentDataArray<Velocity> Velocities;
-		[ReadOnly] public ComponentArray<Rigidbody> Rigidbodies;
+		// [ReadOnly] public ComponentArray<Rigidbody> Rigidbodies;
+		[ReadOnly] public ComponentArray<CharacterController> Rigidbodies;
+
 	}
 
 	[Inject] Data MoveData;
@@ -27,15 +29,17 @@ public class MoveSystem : ComponentSystem
 			Velocity VelocityComp = MoveData.Velocities[i];
 			float3 Velocity = VelocityComp.Value;
 			
-			// // Rotate
+			// Rotate
 			if((Vector3)MoveData.Velocities[i].Value != Vector3.zero)
 			{
-				MoveData.Rigidbodies[i].velocity = Velocity;
-				Transform transform = MoveData.Rigidbodies[i].transform;
-				transform.forward = Vector3.Lerp(transform.forward, Velocity, Time.deltaTime * 20);
+				// float3 CurrentVelocity = MoveData.Rigidbodies[i].velocity;
+				// Velocity = new float3(Velocity.x == 0 ? CurrentVelocity.x : Velocity.x, Velocity.y == 0 ? CurrentVelocity.y : Velocity.y, Velocity.z == 0 ? CurrentVelocity.z : Velocity.z);
+				// Velocity.y = MoveData.Rigidbodies[i].transform.position.y;
+				// MoveData.Rigidbodies[i].velocity = Velocity;
+				MoveData.Rigidbodies[i].Move(MoveData.Velocities[i].Value * Time.deltaTime);
+				// Debug.Log(Velocity);
 			}
 
-			// VelocityComp.Value = MoveData.Rigidbodies[i].velocity;
 			MoveData.Velocities[i] = VelocityComp;
 		}
     }

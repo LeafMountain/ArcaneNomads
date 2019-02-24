@@ -12,7 +12,7 @@ public class VelocitySystem : ComponentSystem
         public ComponentDataArray<Heading> Headings;
         public ComponentDataArray<MoveSpeed> Speeds;
         public ComponentDataArray<Velocity> Velocities;
-        public ComponentDataArray<Grounded> Groundeds;
+        // public ComponentDataArray<Grounded> Groundeds;
     }
 
     [Inject] Data Movers;

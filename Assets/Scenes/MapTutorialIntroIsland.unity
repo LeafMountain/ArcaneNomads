@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -776,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4441047247620550, guid: e3e7c5e7b55e0b448addc39ea3f50e52, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 73.01604
+      value: 73.58
       objectReference: {fileID: 0}
     - target: {fileID: 4441047247620550, guid: e3e7c5e7b55e0b448addc39ea3f50e52, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1559,11 +1559,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1919472061}
     m_Modifications:
-    - target: {fileID: 5908216616091929208, guid: 15d2def0c0f5d7f49a01d1fbb264d8c4,
-        type: 3}
-      propertyPath: m_Name
-      value: mod_cliffbeach_stairs01 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 683834296784922378, guid: 15d2def0c0f5d7f49a01d1fbb264d8c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1618,6 +1613,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908216616091929208, guid: 15d2def0c0f5d7f49a01d1fbb264d8c4,
+        type: 3}
+      propertyPath: m_Name
+      value: mod_cliffbeach_stairs01 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d2def0c0f5d7f49a01d1fbb264d8c4, type: 3}
@@ -2490,11 +2490,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1919472061}
     m_Modifications:
-    - target: {fileID: 5908216616091929208, guid: 15d2def0c0f5d7f49a01d1fbb264d8c4,
-        type: 3}
-      propertyPath: m_Name
-      value: mod_cliffbeach_stairs01
-      objectReference: {fileID: 0}
     - target: {fileID: 683834296784922378, guid: 15d2def0c0f5d7f49a01d1fbb264d8c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2549,6 +2544,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908216616091929208, guid: 15d2def0c0f5d7f49a01d1fbb264d8c4,
+        type: 3}
+      propertyPath: m_Name
+      value: mod_cliffbeach_stairs01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d2def0c0f5d7f49a01d1fbb264d8c4, type: 3}
