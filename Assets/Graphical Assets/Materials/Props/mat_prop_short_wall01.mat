@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: mat_prop_short_wall01
   m_Shader: {fileID: 4800000, guid: cdfd7c26d6ca5b445a43ba117c742da5, type: 3}
   m_ShaderKeywords: 
@@ -47,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8a36f83dacaf4d04a85d647ed6522085, type: 3}
+        m_Texture: {fileID: 2800000, guid: 50814202316e8084eb22ef55930a2d06, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexSide:
@@ -63,7 +64,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
-        m_Texture: {fileID: 2800000, guid: 6e9512a853c284d4aa7ab2664a478948, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
@@ -102,14 +103,14 @@ Material:
     - _InfectionAmount: 0
     - _Metallic: 0
     - _Mode: 0
-    - _NoiseAmount: 0.238
-    - _NoiseScale: 0.67
+    - _NoiseAmount: 0.206
+    - _NoiseScale: 0.22
     - _OcclusionStrength: 1
     - _OutlineWidth: 0
     - _OutlineZ: -0.001
     - _Parallax: 0.02
     - _RimPower: 1
-    - _Scale: 1
+    - _Scale: 0.16
     - _SideScale: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: mat_char_zombie01
   m_Shader: {fileID: 4800000, guid: f5509a00ebefb884890eb501943afeb0, type: 3}
   m_ShaderKeywords: _EMISSION
@@ -91,7 +92,7 @@ Material:
     - _Metallic: 0.5
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineWidth: 0.05
+    - _OutlineWidth: 0.0111
     - _OutlineZ: 0
     - _Parallax: 0.02
     - _Rim: 0.0137
@@ -108,7 +109,7 @@ Material:
     m_Colors:
     - _Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
     - _Emission: {r: 1, g: 1, b: 1, a: 0}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _InfectionColor: {r: 0, g: 0.3490566, b: 0.21207887, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
