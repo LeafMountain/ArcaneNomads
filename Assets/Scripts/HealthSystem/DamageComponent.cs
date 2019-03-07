@@ -10,4 +10,4 @@ public struct ECSDamageComponent : IComponentData
 	int DamageAmount;
 }
 
-public class DamageComponent : ComponentDataWrapper<ECSDamageComponent> {}
+public class DamageComponent : ComponentDataProxy<ECSDamageComponent> {}

@@ -9,4 +9,4 @@ public struct Equippable : IComponentData
     // reference to equipper?
 }
 
-public class EquippableComponent : ComponentDataWrapper<Equippable> {}
+public class EquippableComponent : ComponentDataProxy<Equippable> {}

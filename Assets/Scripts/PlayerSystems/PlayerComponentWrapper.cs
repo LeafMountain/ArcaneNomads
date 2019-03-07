@@ -5,4 +5,4 @@ using UnityEngine;
 
 public struct PlayerComponent : IComponentData { }
 
-public class PlayerComponentWrapper : ComponentDataWrapper<PlayerComponent> {}
+public class PlayerComponentWrapper : ComponentDataProxy<PlayerComponent> {}

@@ -16,4 +16,4 @@ public struct ThirdPersonCamera : IComponentData {
 	public float Smoothing;
 }
 
-public class ThirdPersonCameraComponent : ComponentDataWrapper<ThirdPersonCamera> {}
+public class ThirdPersonCameraComponent : ComponentDataProxy<ThirdPersonCamera> {}

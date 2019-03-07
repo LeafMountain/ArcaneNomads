@@ -9,4 +9,4 @@ public struct JumpComponent : IComponentData
     public float Force;
 }
 
-public class JumpComponentWrapper: ComponentDataWrapper<JumpComponent> {}
+public class JumpComponentWrapper: ComponentDataProxy<JumpComponent> {}

@@ -9,4 +9,6 @@ public struct MoveSpeed : IComponentData {
 }
 
 [DisallowMultipleComponent]
-public class MoveSpeedComponent : ComponentDataWrapper <MoveSpeed> {}
+public class MoveSpeedComponent : ComponentDataProxy <MoveSpeed> {}
+
+// public class MoveSpeedComponent : ComponentDataProxy<MoveSpeed> {}

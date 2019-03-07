@@ -8,4 +8,4 @@ public struct InteractableFocus : IComponentData
     
 }
 
-public class InteractableFocusComponent : ComponentDataWrapper<InteractableFocus> {}
+public class InteractableFocusComponent : ComponentDataProxy<InteractableFocus> {}

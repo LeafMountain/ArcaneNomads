@@ -11,4 +11,4 @@ public struct HealthComponent : IComponentData
 }
 
 [DisallowMultipleComponent]
-public class HealthComponentWrapper : ComponentDataWrapper<HealthComponent> {}
+public class HealthComponentWrapper : ComponentDataProxy<HealthComponent> {}

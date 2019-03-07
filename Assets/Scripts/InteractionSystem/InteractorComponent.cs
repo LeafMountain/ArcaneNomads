@@ -10,4 +10,4 @@ public struct Interactor : IComponentData
     public float Angle;
 }
 
-public class InteractorComponent : ComponentDataWrapper<Interactor> {}
+public class InteractorComponent : ComponentDataProxy<Interactor> {}

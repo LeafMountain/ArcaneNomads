@@ -9,4 +9,4 @@ public struct Equipper : IComponentData
 
 }
 
-public class EquipperComponent : ComponentDataWrapper<Equipper> {}
+public class EquipperComponent : ComponentDataProxy<Equipper> {}

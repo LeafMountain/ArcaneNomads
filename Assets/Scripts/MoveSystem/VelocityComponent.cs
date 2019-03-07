@@ -10,4 +10,4 @@ public struct Velocity : IComponentData
     public float3 Value;
 }
 
-public class VelocityComponent : ComponentDataWrapper<Velocity> {}
+public class VelocityComponent : ComponentDataProxy<Velocity> {}

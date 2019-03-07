@@ -9,4 +9,4 @@ public struct LootInteractable : IComponentData
     // public ScriptableObject Loot;
 }
 
-public class LootInteractableComponent : ComponentDataWrapper<LootInteractable> {}
+public class LootInteractableComponent : ComponentDataProxy<LootInteractable> {}

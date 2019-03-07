@@ -8,4 +8,4 @@ public struct RotationSpeedComponent : IComponentData
     public float Value;
 }
 
-public class RotationSpeedComponentWrapper : ComponentDataWrapper<RotationSpeedComponent> {}
+public class RotationSpeedComponentWrapper : ComponentDataProxy<RotationSpeedComponent> {}

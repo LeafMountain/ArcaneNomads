@@ -9,4 +9,4 @@ public struct Tool : IComponentData
 
 }
 
-public class ToolComponent : ComponentDataWrapper<Tool> {}
+public class ToolComponent : ComponentDataProxy<Tool> {}

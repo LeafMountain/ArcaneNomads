@@ -5,4 +5,4 @@ using Unity.Entities;
 
 public struct CameraTarget : IComponentData { }
 
-public class CameraTargetComponent : ComponentDataWrapper<CameraTarget> {}
+public class CameraTargetComponent : ComponentDataProxy<CameraTarget> {}

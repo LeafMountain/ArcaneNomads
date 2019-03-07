@@ -9,5 +9,5 @@ public struct Heading : IComponentData {
 	public float3 Value;
 }
 
-public class HeadingComponent : ComponentDataWrapper<Heading> {}
+public class HeadingComponent : ComponentDataProxy<Heading> {}
 

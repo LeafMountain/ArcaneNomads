@@ -26,4 +26,4 @@ public struct PlayerInputComponent : IComponentData{
 }
 
 [DisallowMultipleComponent]
-public class PlayerInputComponentWrapper : ComponentDataWrapper<PlayerInputComponent> {}
+public class PlayerInputComponentWrapper : ComponentDataProxy<PlayerInputComponent> {}

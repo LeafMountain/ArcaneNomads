@@ -10,4 +10,4 @@ public struct Interactable : IComponentData
 
 }
 
-public class InteractableComponent : ComponentDataWrapper<Interactable> {}
+public class InteractableComponent : ComponentDataProxy<Interactable> {}

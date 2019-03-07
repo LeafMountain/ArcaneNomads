@@ -10,4 +10,4 @@ public struct Grounded : IComponentData
     public float Distance;
 }
 
-public class GroundedComponent : ComponentDataWrapper<Grounded> {}
+public class GroundedComponent : ComponentDataProxy<Grounded> {}
