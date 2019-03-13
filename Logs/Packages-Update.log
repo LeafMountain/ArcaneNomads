@@ -50,3 +50,13 @@ The following packages were removed:
   com.unity.entities@0.0.12-preview.24
   com.unity.jobs@0.0.7-preview.6
   com.unity.rendering.hybrid@0.0.1-preview.4
+
+=== Wed Mar 13 13:22:22 2019
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.collab-proxy from version 1.2.15 to 1.2.16
+  com.unity.package-manager-ui from version 2.1.1 to 2.1.2
+  com.unity.purchasing from version 2.0.1 to 2.0.5
