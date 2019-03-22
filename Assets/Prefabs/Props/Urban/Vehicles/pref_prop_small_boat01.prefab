@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5775447024640533062}
   - component: {fileID: 9059679603254422058}
   m_Layer: 0
-  m_Name: mod_prop_small_boat01
+  m_Name: pref_prop_small_boat01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 40a151f595b865b40a03f223bdd11842, type: 2}
+  - {fileID: 2100000, guid: eb8fbdcc9881a954ba6cf829d7e278c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
