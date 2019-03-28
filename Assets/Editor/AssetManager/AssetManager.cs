@@ -6,7 +6,7 @@ using UnityEditor;
 
 public class AssetManager
 {
-    // Template = prefix_Name_Variation
+    // Template = prefix_Name_Variation.suffix
 
     // file extensions
     const string PREFIXMESH = "mod_";
@@ -28,28 +28,51 @@ public class AssetManager
     {
         string[] assets = FindAssets("");
         CreateFolderStructure("Sorted");
+        CreateFolderStructure("Unsorted");
+
         for (int i = 0; i < assets.Length; i++)
         {
-            if (assets[i].StartsWith("Assets/Sorted"))
+            string guid = assets[i];
+            string assetFileName = GetFileName(guid);
+
+            if (assets[i].StartsWith("Assets/Sorted") || assets[i].Contains("Editor") || !assetFileName.Contains("."))
                 continue;
 
-            string guid = assets[i];
-            string assetName = ExtractName(guid);
-            string assetFileName = GetFileName(guid);
-            string newAssetPath = "Sorted/" + assetName + "/" + assetFileName;
+            // Move to unsorted if file name is not valid
+            if (!CheckIfValidFileName(assetFileName))
+            {
+                AssetDatabase.MoveAsset(AssetDatabase.GUIDToAssetPath(guid), "Assets/Unsorted/" + assetFileName);
+                continue;
+            }
 
-            // create new asset path
-            CreateFolderStructure(newAssetPath);
+            // Move to sorted if file name is valid
+            {
+                string assetName = ExtractName(guid);
+                string newAssetPath = "Sorted/" + assetName + "/" + assetFileName;
 
-            // move assets
-            string oldPath = AssetDatabase.GUIDToAssetPath(guid);
-            string result = AssetDatabase.MoveAsset(oldPath, "Assets/" + newAssetPath);
+                // create new asset path
+                CreateFolderStructure(newAssetPath);
 
-            if (result != "")
-                Debug.Log(result);
+                // move assets
+                string oldPath = AssetDatabase.GUIDToAssetPath(guid);
+                string result = AssetDatabase.MoveAsset(oldPath, "Assets/" + newAssetPath);
+
+                if (result != "")
+                    Debug.Log(result);
+            }
         }
 
         RemoveEmptyFolders("Assets");
+    }
+
+    private static bool CheckIfValidFileName(string fileName)
+    {
+        string[] splitFileName = fileName.Split('_');
+
+        if (splitFileName.Length < 2)
+            return false;
+
+        return true;
     }
 
     private static string ExtractPrefix(string guid)
@@ -63,6 +86,7 @@ public class AssetManager
     {
         string fileName = GetFileName(guid);
         string[] splitName = fileName.Split('_');
+        Debug.Log(fileName);
         return splitName[1];
     }
 
