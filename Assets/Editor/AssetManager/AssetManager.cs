@@ -26,10 +26,13 @@ public class AssetManager
     [MenuItem("Tools/Sort Project")]
     private static void SortAssets()
     {
-        string[] assets = FindAssets("mod_");
+        string[] assets = FindAssets("");
         CreateFolderStructure("Sorted");
         for (int i = 0; i < assets.Length; i++)
         {
+            if (assets[i].StartsWith("Assets/Sorted"))
+                continue;
+
             string guid = assets[i];
             string assetName = ExtractName(guid);
             string assetFileName = GetFileName(guid);
@@ -46,7 +49,7 @@ public class AssetManager
                 Debug.Log(result);
         }
 
-        // RemoveEmptyFolders();
+        RemoveEmptyFolders("Assets");
     }
 
     private static string ExtractPrefix(string guid)
@@ -88,7 +91,7 @@ public class AssetManager
     [MenuItem("Tools/Print Asset Paths")]
     private static string[] FindAssets(string filter)
     {
-        return AssetDatabase.FindAssets(filter);
+        return AssetDatabase.FindAssets(filter, new[] { "Assets" });
     }
 
     private static void CreateAsset(Object asset, string path)
@@ -133,21 +136,27 @@ public class AssetManager
         // }
     }
 
-    public static void RemoveEmptyFolders(string path)
+    public static bool RemoveEmptyFolders(string path)
     {
         string[] subFolders = AssetDatabase.GetSubFolders(path);
-        Debug.Log(path);
+        int subFoldersLength = subFolders.Length;
+        // Debug.Log(path);
 
-        for (int i = 0; i < subFolders.Length; i++)
+        for (int i = subFoldersLength - 1; i >= 0; i--)
         {
-            RemoveEmptyFolders(subFolders[i]);
+            // reduce subfolders if true
+            if (RemoveEmptyFolders(subFolders[i]))
+                subFoldersLength--;
         }
 
         bool containFiles = AssetDatabase.FindAssets("", new[] { path }).Length > 0;
 
-        if (!containFiles && subFolders.Length == 0)
+        if (!containFiles && subFoldersLength == 0)
         {
             AssetDatabase.DeleteAsset(path);
+            return true;
         }
+
+        return false;
     }
 }
