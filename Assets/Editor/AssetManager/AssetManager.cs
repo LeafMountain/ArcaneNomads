@@ -125,7 +125,12 @@ public class AssetManager
         for (int i = 0; i < guids.Length; i++)
         {
             string path = guids[i];
-            Debug.Log(path);
+            if (path.StartsWith("Assets/zzzz"))
+            {
+                Debug.Log(path + " " + path.Contains("."));
+                AssetDatabase.DeleteAsset(path);
+            }
+
 
             // if (!path.Contains("."))
             // {
