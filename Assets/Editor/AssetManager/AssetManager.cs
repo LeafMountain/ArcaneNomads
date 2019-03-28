@@ -3,10 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+[System.Serializable]
+public struct AssetLabel
+{
+    public string FullLabel;
+    public string ShortLabel;
+
+    public AssetLabel(string FullLabel, string ShortLabel)
+    {
+        this.FullLabel = FullLabel;
+        this.ShortLabel = ShortLabel;
+    }
+}
 
 public class AssetManager
 {
-    // Template = prefix_Name_Variation.suffix
+    // Template     = Name_Variation_type_label.suffix
+    // PathTemplate = label/name/filename.suffix
+
+    // Example1     = Bob_Evil_mat_char.mat
+    // Example2     = Bob_Evil_tex_char.tga
+    // Example3     = Bob_Evil_pref_char.prefab
+    // Example3     = Bob_Normal_pref_char.prefab
+    // PathExample1 = Character/Bob/Bob_Evil_mat_char.mats
 
     // file extensions
     const string PREFIXMESH = "mod_";
@@ -21,7 +40,19 @@ public class AssetManager
     const string PREFIXTEXTURE = "tex_";
     const string SUFFIXTEXTURE = ".tga";
 
+    const string CHARACTERTAG = "char_";
+
     const string SANDBOXPATH = "Assets/Sandbox";
+
+    public static AssetLabel[] Labels;
+    public string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins" };
+
+    public static void CreateDefaultLabels()
+    {
+        Labels = new[] {
+            new AssetLabel("Characters", "char")
+        };
+    }
 
     [MenuItem("Tools/Sort Project")]
     private static void SortAssets()
@@ -29,6 +60,7 @@ public class AssetManager
         string[] assets = FindAssets("");
         CreateFolderStructure("Sorted");
         CreateFolderStructure("Unsorted");
+        CreateDefaultLabels();
 
         for (int i = 0; i < assets.Length; i++)
         {
@@ -38,31 +70,71 @@ public class AssetManager
             if (assets[i].StartsWith("Assets/Sorted") || assets[i].Contains("Editor") || !assetFileName.Contains("."))
                 continue;
 
-            // Move to unsorted if file name is not valid
-            if (!CheckIfValidFileName(assetFileName))
-            {
-                AssetDatabase.MoveAsset(AssetDatabase.GUIDToAssetPath(guid), "Assets/Unsorted/" + assetFileName);
-                continue;
-            }
+            SortFile(AssetDatabase.GUIDToAssetPath(guid));
 
-            // Move to sorted if file name is valid
-            {
-                string assetName = ExtractName(guid);
-                string newAssetPath = "Sorted/" + assetName + "/" + assetFileName;
 
-                // create new asset path
-                CreateFolderStructure(newAssetPath);
+            // // Move to unsorted if file name is not valid
+            // if (!CheckIfValidFileName(assetFileName))
+            // {
+            //     AssetDatabase.MoveAsset(AssetDatabase.GUIDToAssetPath(guid), "Assets/Unsorted/" + assetFileName);
+            //     continue;
+            // }
 
-                // move assets
-                string oldPath = AssetDatabase.GUIDToAssetPath(guid);
-                string result = AssetDatabase.MoveAsset(oldPath, "Assets/" + newAssetPath);
+            // // Move to sorted if file name is valid
+            // {
+            //     string assetName = ExtractName(guid);
+            //     string newAssetPath = "Sorted/" + assetName + "/" + assetFileName;
 
-                if (result != "")
-                    Debug.Log(result);
-            }
+            //     // create new asset path
+            //     CreateFolderStructure(newAssetPath);
+
+            //     // move assets
+            //     string oldPath = AssetDatabase.GUIDToAssetPath(guid);
+            //     string result = AssetDatabase.MoveAsset(oldPath, "Assets/" + newAssetPath);
+
+            //     if (result != "")
+            //         Debug.Log(result);
+            // }
         }
 
         RemoveEmptyFolders("Assets");
+    }
+
+    private static void SortFile(string path)
+    {
+        string fileName = GetFileName(path);
+        string[] splitFileName = SplitName(fileName);
+
+        // 0 = name
+        // 1 = variation
+        // 2 = type
+        // 3 = label
+
+        // Check if file name is in a valid format
+        if (splitFileName == null || splitFileName.Length != 4)
+        {
+            AssetDatabase.MoveAsset(path, "Unsorted/" + fileName);
+            return;
+        }
+
+        string name = splitFileName[0];
+        string variation = splitFileName[1];
+        string type = splitFileName[2];
+        string label = splitFileName[3];
+
+        CreateFolderStructure(label + "/" + name);
+        AssetDatabase.MoveAsset(path, "Assets/" + label + "/" + name + "/" + fileName);
+    }
+
+    private static string GetFullLabelName(string label)
+    {
+        foreach (AssetLabel assetLabel in Labels)
+        {
+            if (assetLabel.ShortLabel == label)
+                return assetLabel.FullLabel;
+        }
+
+        return "Unsorted";
     }
 
     private static bool CheckIfValidFileName(string fileName)
@@ -73,6 +145,12 @@ public class AssetManager
             return false;
 
         return true;
+    }
+
+    private static string[] SplitName(string name)
+    {
+        string[] splitName = name.Split('_');
+        return splitName.Length == 4 ? splitName : null;
     }
 
     private static string ExtractPrefix(string guid)
@@ -86,7 +164,6 @@ public class AssetManager
     {
         string fileName = GetFileName(guid);
         string[] splitName = fileName.Split('_');
-        Debug.Log(fileName);
         return splitName[1];
     }
 
@@ -147,19 +224,9 @@ public class AssetManager
     private static void RemoveEmptyFolders2()
     {
         RemoveEmptyFolders("Assets");
-        // string[] subFolders = AssetDatabase.GetSubFolders(path);
-        // Debug.Log(subFolders[0]);
-        // if (subFolders.Length == 0)
-        // {
-        //     AssetDatabase.DeleteAsset(path);
-        // }
-
-        // for (int i = 0; i < subFolders.Length; i++)
-        // {
-        //     RemoveEmptyFolders(path);
-        // }
     }
 
+    // Recursively removes folders that are empty
     public static bool RemoveEmptyFolders(string path)
     {
         string[] subFolders = AssetDatabase.GetSubFolders(path);
@@ -183,4 +250,9 @@ public class AssetManager
 
         return false;
     }
+
+    // private static void MoveFile(string oldPath, string newPath)
+    // {
+    //     CreateFolderStructure(newPath);
+    // }
 }
