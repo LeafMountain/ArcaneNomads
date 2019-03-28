@@ -117,26 +117,37 @@ public class AssetManager
     }
 
     [MenuItem("Tools/Remove Empty Folders")]
-    private static void RemoveEmptyFolders()
+    private static void RemoveEmptyFolders2()
     {
-        string[] guids = AssetDatabase.GetAllAssetPaths();
+        RemoveEmptyFolders("Assets");
+        // string[] subFolders = AssetDatabase.GetSubFolders(path);
+        // Debug.Log(subFolders[0]);
+        // if (subFolders.Length == 0)
+        // {
+        //     AssetDatabase.DeleteAsset(path);
+        // }
 
-        for (int i = 0; i < guids.Length; i++)
+        // for (int i = 0; i < subFolders.Length; i++)
+        // {
+        //     RemoveEmptyFolders(path);
+        // }
+    }
+
+    public static void RemoveEmptyFolders(string path)
+    {
+        string[] subFolders = AssetDatabase.GetSubFolders(path);
+        Debug.Log(path);
+
+        for (int i = 0; i < subFolders.Length; i++)
         {
-            string path = guids[i];
-            if (path.StartsWith("Assets/") && !path.Contains("."))
-            {
-                // AssetDatabase.FindAssets("")
-                // check to see if the folder contain something
-                Debug.Log(path + " " + path.Contains("."));
-                AssetDatabase.DeleteAsset(path);
-            }
+            RemoveEmptyFolders(subFolders[i]);
+        }
 
+        bool containFiles = AssetDatabase.FindAssets("", new[] { path }).Length > 0;
 
-            // if (!path.Contains("."))
-            // {
-            //     AssetDatabase.DeleteAsset(path);
-            // }
+        if (!containFiles && subFolders.Length == 0)
+        {
+            AssetDatabase.DeleteAsset(path);
         }
     }
 }
