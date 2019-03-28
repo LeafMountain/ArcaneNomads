@@ -69,7 +69,7 @@ public class AssetManager
     {
         string[] splitFileName = fileName.Split('_');
 
-        if (splitFileName.Length < 2)
+        if (splitFileName.Length < 3)
             return false;
 
         return true;
