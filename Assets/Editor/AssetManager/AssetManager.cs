@@ -21,6 +21,8 @@ public class AssetManager
     const string PREFIXTEXTURE = "tex_";
     const string SUFFIXTEXTURE = ".tga";
 
+    const string SANDBOXPATH = "Assets/Sandbox";
+
     [MenuItem("Tools/Sort Project")]
     private static void SortAssets()
     {
@@ -29,7 +31,6 @@ public class AssetManager
         for (int i = 0; i < assets.Length; i++)
         {
             string guid = assets[i];
-            // check name
             string assetName = ExtractName(guid);
             string assetFileName = GetFileName(guid);
             string newAssetPath = "Sorted/" + assetName + "/" + assetFileName;
@@ -41,7 +42,7 @@ public class AssetManager
             string oldPath = AssetDatabase.GUIDToAssetPath(guid);
             string result = AssetDatabase.MoveAsset(oldPath, "Assets/" + newAssetPath);
 
-            if (result != string.Empty)
+            if (result != "")
                 Debug.Log(result);
         }
     }
@@ -110,6 +111,19 @@ public class AssetManager
             }
 
             currentPath += "/" + folder;
+        }
+    }
+
+    private static void RemoveEmptyFolders()
+    {
+        string[] guids = AssetDatabase.GetAllAssetPaths();
+        foreach (string guid in guids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            if (!path.Contains("."))
+            {
+                AssetDatabase.DeleteAsset(path);
+            }
         }
     }
 }
