@@ -45,7 +45,7 @@ public class AssetManager
     const string SANDBOXPATH = "Assets/Sandbox";
 
     public static AssetLabel[] Labels;
-    public string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins" };
+    public string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party" };
 
     public static void CreateDefaultLabels()
     {
@@ -70,7 +70,7 @@ public class AssetManager
             if (assets[i].StartsWith("Assets/Sorted") || assets[i].Contains("Editor") || !assetFileName.Contains("."))
                 continue;
 
-            SortFile(AssetDatabase.GUIDToAssetPath(guid));
+            SortFile(guid);
 
 
             // // Move to unsorted if file name is not valid
@@ -97,12 +97,16 @@ public class AssetManager
             // }
         }
 
-        RemoveEmptyFolders("Assets");
+        // RemoveEmptyFolders("Assets");
     }
 
     private static void SortFile(string path)
     {
+        // Debug.Log(path);
+        // Had trouble with the path (needed to be guid since GetFileName uses guid)
+
         string fileName = GetFileName(path);
+        Debug.Log(fileName);
         string[] splitFileName = SplitName(fileName);
 
         // 0 = name
@@ -113,6 +117,8 @@ public class AssetManager
         // Check if file name is in a valid format
         if (splitFileName == null || splitFileName.Length != 4)
         {
+            if (splitFileName != null)
+                Debug.Log(splitFileName.Length);
             AssetDatabase.MoveAsset(path, "Unsorted/" + fileName);
             return;
         }
@@ -122,8 +128,8 @@ public class AssetManager
         string type = splitFileName[2];
         string label = splitFileName[3];
 
-        CreateFolderStructure(label + "/" + name);
-        AssetDatabase.MoveAsset(path, "Assets/" + label + "/" + name + "/" + fileName);
+        CreateFolderStructure("Sorted/" + label + "/" + name);
+        Debug.Log(AssetDatabase.MoveAsset(path, "Assets/Sorted/" + label + "/" + name + "/" + fileName));
     }
 
     private static string GetFullLabelName(string label)
@@ -149,8 +155,8 @@ public class AssetManager
 
     private static string[] SplitName(string name)
     {
-        string[] splitName = name.Split('_');
-        return splitName.Length == 4 ? splitName : null;
+        Debug.Log(name);
+        return name.Split('_');
     }
 
     private static string ExtractPrefix(string guid)
