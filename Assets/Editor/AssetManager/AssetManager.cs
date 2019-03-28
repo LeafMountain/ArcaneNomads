@@ -120,13 +120,14 @@ public class AssetManager
     private static void RemoveEmptyFolders()
     {
         string[] guids = AssetDatabase.GetAllAssetPaths();
-        // Debug.Log(guids.Length);
 
         for (int i = 0; i < guids.Length; i++)
         {
             string path = guids[i];
             if (path.StartsWith("Assets/") && !path.Contains("."))
             {
+                // AssetDatabase.FindAssets("")
+                // check to see if the folder contain something
                 Debug.Log(path + " " + path.Contains("."));
                 AssetDatabase.DeleteAsset(path);
             }
