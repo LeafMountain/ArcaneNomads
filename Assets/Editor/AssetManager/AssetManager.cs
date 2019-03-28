@@ -6,7 +6,7 @@ using UnityEditor;
 
 public class AssetManager
 {
-    // Template = NAME_Variation?
+    // Template = prefix_Name_Variation
 
     // file extensions
     const string PREFIXMESH = "mod_";
@@ -24,18 +24,68 @@ public class AssetManager
     [MenuItem("Tools/Sort Project")]
     private static void SortAssets()
     {
-        FindAssets();
+        string[] assets = FindAssets("mod_");
+        CreateFolderStructure("Sorted");
+        for (int i = 0; i < assets.Length; i++)
+        {
+            string guid = assets[i];
+            // check name
+            string assetName = ExtractName(guid);
+            string assetFileName = GetFileName(guid);
+            string newAssetPath = "Sorted/" + assetName + "/" + assetFileName;
+
+            // create new asset path
+            CreateFolderStructure(newAssetPath);
+
+            // move assets
+            string oldPath = AssetDatabase.GUIDToAssetPath(guid);
+            string result = AssetDatabase.MoveAsset(oldPath, "Assets/" + newAssetPath);
+
+            if (result != string.Empty)
+                Debug.Log(result);
+        }
+    }
+
+    private static string ExtractPrefix(string guid)
+    {
+        string fileName = GetFileName(guid);
+        string[] splitName = fileName.Split('_');
+        return splitName[0];
+    }
+
+    private static string ExtractName(string guid)
+    {
+        string fileName = GetFileName(guid);
+        string[] splitName = fileName.Split('_');
+        return splitName[1];
+    }
+
+    // need to check if a variation exists
+    private static string ExtractVariation(string guid)
+    {
+        string fileName = GetFileName(guid);
+        string[] splitName = fileName.Split('_');
+        return splitName[2];
+    }
+    // Need to check if a variation exists and pick index 2 instead
+    private static string ExtractSuffix(string guid)
+    {
+        string fileName = GetFileName(guid);
+        string[] splitName = fileName.Split('_');
+        return splitName[3];
+    }
+
+    private static string GetFileName(string guid)
+    {
+        string path = AssetDatabase.GUIDToAssetPath(guid);
+        string[] splitPath = path.Split('/');
+        return splitPath[splitPath.Length - 1];
     }
 
     [MenuItem("Tools/Print Asset Paths")]
-    private static void FindAssets()
+    private static string[] FindAssets(string filter)
     {
-
-
-        // Material material = new Material(Shader.Find("Specular"));
-        // CreateAsset(material, "__Test/Test.mat");
-        // string guid = AssetDatabase.CreateFolder("Assets", "My Folder");
-        // string newFolderPath = AssetDatabase.GUIDToAssetPath(guid);
+        return AssetDatabase.FindAssets(filter);
     }
 
     private static void CreateAsset(Object asset, string path)
@@ -56,9 +106,7 @@ public class AssetManager
             if (!AssetDatabase.IsValidFolder(currentPath + "/" + folder) && !folder.Contains("."))
             {
                 string guid = AssetDatabase.CreateFolder(currentPath, folder);
-                string newFolderPath = AssetDatabase.GUIDToAssetPath(guid);
-
-                Debug.Log("Creating folder at " + currentPath + folder);
+                Debug.Log("Creating folder at " + currentPath + "/" + folder);
             }
 
             currentPath += "/" + folder;
