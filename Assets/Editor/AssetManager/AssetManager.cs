@@ -45,6 +45,8 @@ public class AssetManager
             if (result != "")
                 Debug.Log(result);
         }
+
+        // RemoveEmptyFolders();
     }
 
     private static string ExtractPrefix(string guid)
@@ -114,12 +116,17 @@ public class AssetManager
         }
     }
 
+    [MenuItem("Tools/Remove Empty Folders")]
     private static void RemoveEmptyFolders()
     {
         string[] guids = AssetDatabase.GetAllAssetPaths();
-        foreach (string guid in guids)
+        // Debug.Log(guids.Length);
+
+        for (int i = 0; i < guids.Length; i++)
         {
-            string path = AssetDatabase.GUIDToAssetPath(guid);
+            string path = guids[i];
+            // Debug.Log(path);
+
             if (!path.Contains("."))
             {
                 AssetDatabase.DeleteAsset(path);
