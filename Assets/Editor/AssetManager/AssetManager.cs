@@ -33,12 +33,15 @@ public class AssetManager
     const int LABEL = 3;
 
     public static AssetLabel[] Labels;
-    public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/Sandbox" };
+    public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/Sandbox", "Assets/Scripts" };
 
     public static void CreateDefaultLabels()
     {
         Labels = new[] {
-            new AssetLabel("Characters", "char")
+            new AssetLabel("Characters", "char"),
+            new AssetLabel("Art", "art"),
+            new AssetLabel("Scenes", "sce"),
+            new AssetLabel("Placeables", "plac")
         };
     }
 
@@ -51,37 +54,37 @@ public class AssetManager
         CreateDefaultLabels();
 
         for (int i = 0; i < assets.Length; i++)
-        {
-            string guid = assets[i];
-            string assetFileName = GetFileName(guid);
+            SortFile(assets[i]);
 
-            bool unsortedFolder = false;
-            // check if it's inside a Unsorted Folder
-            for (int j = 0; j < UnsortedFolders.Length; j++)
-            {
-                if (assetFileName.Contains(UnsortedFolders[j]))
-                {
-                    unsortedFolder = true;
-                    break;
-                }
-            }
-
-            if (unsortedFolder || !assetFileName.Contains("."))
-                continue;
-
-            SortFile(guid);
-        }
-
-        // RemoveEmptyFolders("Assets");
+        RemoveEmptyFolders("Assets");
     }
 
     private static void SortFile(string guid)
     {
         string filePath = AssetDatabase.GUIDToAssetPath(guid);
         string fileNameWithExtension = GetFileName(guid);
+
+        // Check if it's a valid file in a valid location
+        {
+            // Check if it has an extension
+            if (!fileNameWithExtension.Contains("."))
+                return;
+
+            // check if it's inside a Unsorted Folder
+            bool unsortedFolder = false;
+            for (int j = 0; j < UnsortedFolders.Length; j++)
+            {
+                if (filePath.Contains(UnsortedFolders[j]))
+                {
+                    unsortedFolder = true;
+                    break;
+                }
+            }
+            if (unsortedFolder) return;
+        }
+
         // Remove file extension
         string fileName = fileNameWithExtension.Split('.')[0];
-
         string[] splitFileName = SplitName(fileName);
 
         // Check if file name is in a valid format
@@ -100,7 +103,7 @@ public class AssetManager
         label = GetFullLabelName(label);
 
         CreateFolderStructure("Sorted/" + label + "/" + name);
-        AssetDatabase.MoveAsset(filePath, "Assets/" + label + "/" + name + "/" + fileNameWithExtension);
+        AssetDatabase.MoveAsset(filePath, "Assets/" + label + "/" + name + "/" + variation + "/" + fileNameWithExtension);
     }
 
     private static string GetFullLabelName(string label)
