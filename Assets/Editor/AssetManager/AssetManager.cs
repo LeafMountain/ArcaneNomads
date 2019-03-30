@@ -41,7 +41,8 @@ public class AssetManager
             new AssetLabel("Characters", "char"),
             new AssetLabel("Art", "art"),
             new AssetLabel("Scenes", "sce"),
-            new AssetLabel("Placeables", "plac")
+            new AssetLabel("Placeables", "plac"),
+            new AssetLabel("Audio", "audio")
         };
     }
 
@@ -90,7 +91,7 @@ public class AssetManager
         // Check if file name is in a valid format
         if (splitFileName == null || !CheckIfValidFileName(fileName))
         {
-            Debug.Log(AssetDatabase.MoveAsset(filePath, "Assets/Unsorted/" + fileNameWithExtension));
+            AssetDatabase.MoveAsset(filePath, "Assets/Unsorted/" + fileNameWithExtension);
             return;
         }
 
@@ -102,8 +103,9 @@ public class AssetManager
         string label = splitFileName[LABEL];
         label = GetFullLabelName(label);
 
-        CreateFolderStructure("Sorted/" + label + "/" + name);
-        AssetDatabase.MoveAsset(filePath, "Assets/" + label + "/" + name + "/" + variation + "/" + fileNameWithExtension);
+        string newPath = label + "/" + name + "/" + variation;
+        CreateFolderStructure(newPath);
+        Debug.Log(AssetDatabase.MoveAsset(filePath, "Assets/" + newPath + "/" + fileNameWithExtension));
     }
 
     private static string GetFullLabelName(string label)
