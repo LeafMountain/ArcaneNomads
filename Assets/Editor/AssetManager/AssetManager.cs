@@ -32,23 +32,6 @@ public class AssetManager
     const int TYPE = 2;
     const int LABEL = 3;
 
-    // file extensions
-    // const string PREFIXMESH = "mod_";
-    // const string SUFFIXMESH = ".fbx";
-
-    // const string PREFIXMATERIAL = "mat_";
-    // const string SUFFIXMATERIAL = ".mat";
-
-    // const string PREFXIPREFAB = "pref_";
-    // const string SUFFIXPREFAB = ".prefab";
-
-    // const string PREFIXTEXTURE = "tex_";
-    // const string SUFFIXTEXTURE = ".tga";
-
-    // const string CHARACTERTAG = "char_";
-
-    // const string SANDBOXPATH = "Assets/Sandbox";
-
     public static AssetLabel[] Labels;
     public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/Sandbox" };
 
@@ -87,29 +70,6 @@ public class AssetManager
                 continue;
 
             SortFile(guid);
-
-            // // Move to unsorted if file name is not valid
-            // if (!CheckIfValidFileName(assetFileName))
-            // {
-            //     AssetDatabase.MoveAsset(AssetDatabase.GUIDToAssetPath(guid), "Assets/Unsorted/" + assetFileName);
-            //     continue;
-            // }
-
-            // // Move to sorted if file name is valid
-            // {
-            //     string assetName = ExtractName(guid);
-            //     string newAssetPath = "Sorted/" + assetName + "/" + assetFileName;
-
-            //     // create new asset path
-            //     CreateFolderStructure(newAssetPath);
-
-            //     // move assets
-            //     string oldPath = AssetDatabase.GUIDToAssetPath(guid);
-            //     string result = AssetDatabase.MoveAsset(oldPath, "Assets/" + newAssetPath);
-
-            //     if (result != "")
-            //         Debug.Log(result);
-            // }
         }
 
         // RemoveEmptyFolders("Assets");
@@ -118,16 +78,16 @@ public class AssetManager
     private static void SortFile(string guid)
     {
         string filePath = AssetDatabase.GUIDToAssetPath(guid);
-        string fileName = GetFileName(guid);
+        string fileNameWithExtension = GetFileName(guid);
         // Remove file extension
-        fileName = fileName.Split('.')[0];
+        string fileName = fileNameWithExtension.Split('.')[0];
 
         string[] splitFileName = SplitName(fileName);
 
         // Check if file name is in a valid format
         if (splitFileName == null || !CheckIfValidFileName(fileName))
         {
-            AssetDatabase.MoveAsset(guid, "Unsorted/" + fileName);
+            Debug.Log(AssetDatabase.MoveAsset(filePath, "Assets/Unsorted/" + fileNameWithExtension));
             return;
         }
 
@@ -137,9 +97,10 @@ public class AssetManager
         string variation = splitFileName[VARIATION];
         string type = splitFileName[TYPE];
         string label = splitFileName[LABEL];
+        label = GetFullLabelName(label);
 
         CreateFolderStructure("Sorted/" + label + "/" + name);
-        Debug.Log(AssetDatabase.MoveAsset(filePath, "Assets/Sorted/" + label + "/" + name + "/" + fileName));
+        AssetDatabase.MoveAsset(filePath, "Assets/" + label + "/" + name + "/" + fileNameWithExtension);
     }
 
     private static string GetFullLabelName(string label)
@@ -175,35 +136,6 @@ public class AssetManager
     {
         return name.Split('_');
     }
-
-    // private static string ExtractType(string guid)
-    // {
-    //     string fileName = GetFileName(guid);
-    //     string[] splitName = fileName.Split('_');
-    //     return splitName[TYPE];
-    // }
-
-    // private static string ExtractName(string guid)
-    // {
-    //     string fileName = GetFileName(guid);
-    //     string[] splitName = fileName.Split('_');
-    //     return splitName[NAME];
-    // }
-
-    // // need to check if a variation exists
-    // private static string ExtractVariation(string guid)
-    // {
-    //     string fileName = GetFileName(guid);
-    //     string[] splitName = fileName.Split('_');
-    //     return splitName[VARIATION];
-    // }
-    // // Need to check if a variation exists and pick index 2 instead
-    // private static string ExtractSuffix(string guid)
-    // {
-    //     string fileName = GetFileName(guid);
-    //     string[] splitName = fileName.Split('_');
-    //     return splitName[splitName.Length - 1].Split('.')[0];
-    // }
 
     private static string GetFileName(string guid)
     {
@@ -261,7 +193,7 @@ public class AssetManager
 
         for (int i = subFoldersLength - 1; i >= 0; i--)
         {
-            // reduce subfolders if true
+            // reduce subfolders count if true
             if (RemoveEmptyFolders(subFolders[i]))
                 subFoldersLength--;
         }
