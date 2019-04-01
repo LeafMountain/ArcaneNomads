@@ -118,7 +118,8 @@ public class AssetManager
                 return assetLabel.FullLabel;
         }
 
-        return "Unsorted";
+        return label;
+        // return "Unsorted";
     }
 
     private static bool CheckIfValidFileName(string fileName)
@@ -135,8 +136,8 @@ public class AssetManager
         }
 
         // Check if the label exists
-        if (GetFullLabelName(splitFileName[LABEL]) == "Unsorted")
-            return false;
+        // if (GetFullLabelName(splitFileName[LABEL]) == "Unsorted")
+        //     return false;
 
         return true;
     }
