@@ -42,7 +42,8 @@ public class AssetManager
             new AssetLabel("Art", "art"),
             new AssetLabel("Scenes", "sce"),
             new AssetLabel("Placeables", "plac"),
-            new AssetLabel("Audio", "audio")
+            new AssetLabel("Audio", "audio"),
+            new AssetLabel("MaterialLibrary", "matlib")
         };
     }
 
@@ -51,7 +52,7 @@ public class AssetManager
     {
         string[] assets = FindAssets("");
         CreateFolderStructure("Sorted");
-        CreateFolderStructure("Unsorted");
+        // CreateFolderStructure("Unsorted");
         CreateDefaultLabels();
 
         for (int i = 0; i < assets.Length; i++)
@@ -91,7 +92,7 @@ public class AssetManager
         // Check if file name is in a valid format
         if (splitFileName == null || !CheckIfValidFileName(fileName))
         {
-            AssetDatabase.MoveAsset(filePath, "Assets/Unsorted/" + fileNameWithExtension);
+            // AssetDatabase.MoveAsset(filePath, "Assets/Unsorted/" + fileNameWithExtension);
             return;
         }
 
