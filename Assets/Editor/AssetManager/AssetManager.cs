@@ -27,10 +27,10 @@ public class AssetManager
     // Example3     = Bob_Normal_pref_char.prefab
     // PathExample1 = Character/Bob/Bob_Evil_mat_char.mats
 
-    const int NAME = 0;
-    const int VARIATION = 1;
-    const int TYPE = 2;
-    const int LABEL = 3;
+    const int TYPE = 0;
+    const int LABEL = 1;
+    const int NAME = 2;
+    const int VARIATION = 3;
 
     public static AssetLabel[] Labels;
     public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/Sandbox", "Assets/Scripts" };
@@ -43,15 +43,16 @@ public class AssetManager
             new AssetLabel("Scenes", "sce"),
             new AssetLabel("Placeables", "plac"),
             new AssetLabel("Audio", "audio"),
-            new AssetLabel("MaterialLibrary", "matlib")
-        };
+            new AssetLabel("MaterialLibrary", "matlib"),
+            new AssetLabel("Environment", "env")
+    };
     }
 
     [MenuItem("Tools/Sort Project")]
     private static void SortAssets()
     {
         string[] assets = FindAssets("");
-        CreateFolderStructure("Sorted");
+        // CreateFolderStructure("Sorted");
         // CreateFolderStructure("Unsorted");
         CreateDefaultLabels();
 
@@ -106,7 +107,7 @@ public class AssetManager
 
         string newPath = label + "/" + name + "/" + variation;
         CreateFolderStructure(newPath);
-        Debug.Log(AssetDatabase.MoveAsset(filePath, "Assets/" + newPath + "/" + fileNameWithExtension));
+        AssetDatabase.MoveAsset(filePath, "Assets/" + newPath + "/" + fileNameWithExtension);
     }
 
     private static string GetFullLabelName(string label)
@@ -128,8 +129,10 @@ public class AssetManager
         string[] splitFileName = SplitName(fileName);
 
         // Check if the length is correct
-        if (splitFileName.Length != 4)
+        if (splitFileName.Length < 4)
+        {
             return false;
+        }
 
         // Check if the label exists
         if (GetFullLabelName(splitFileName[LABEL]) == "Unsorted")
