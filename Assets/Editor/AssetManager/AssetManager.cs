@@ -42,18 +42,28 @@ public class AssetManager
             new AssetLabel("Art", "art"),
             new AssetLabel("Scenes", "sce"),
             new AssetLabel("Placeables", "plac"),
+<<<<<<< HEAD
             new AssetLabel("Audio", "audio"),
             new AssetLabel("MaterialLibrary", "matlib"),
             new AssetLabel("Environment", "env")
     };
+=======
+            new AssetLabel("Audio", "audio")
+        };
+>>>>>>> parent of 737efb13... Renaming some stuff
     }
 
     [MenuItem("Tools/Sort Project")]
     private static void SortAssets()
     {
         string[] assets = FindAssets("");
+<<<<<<< HEAD
         // CreateFolderStructure("Sorted");
         // CreateFolderStructure("Unsorted");
+=======
+        CreateFolderStructure("Sorted");
+        CreateFolderStructure("Unsorted");
+>>>>>>> parent of 737efb13... Renaming some stuff
         CreateDefaultLabels();
 
         for (int i = 0; i < assets.Length; i++)
@@ -93,7 +103,7 @@ public class AssetManager
         // Check if file name is in a valid format
         if (splitFileName == null || !CheckIfValidFileName(fileName))
         {
-            // AssetDatabase.MoveAsset(filePath, "Assets/Unsorted/" + fileNameWithExtension);
+            AssetDatabase.MoveAsset(filePath, "Assets/Unsorted/" + fileNameWithExtension);
             return;
         }
 
