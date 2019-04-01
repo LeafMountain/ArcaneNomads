@@ -49,7 +49,7 @@ public class AssetManager
             new AssetLabel("MaterialLibrary", "matlib"),
 
             new AssetLabel("Environment", "env"),
-            new AssetLabel("Environment", "prop"),
+            new AssetLabel("Props", "prop"),
             // new AssetLabel("Environment", "building"),
 
             new AssetLabel("Effects", "vfx"),
