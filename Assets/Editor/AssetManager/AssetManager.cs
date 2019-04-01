@@ -29,22 +29,38 @@ public class AssetManager
 
     const int TYPE = 0;
     const int LABEL = 1;
-    const int NAME = 2;
-    const int VARIATION = 3;
+    // const int NAME = 2;
+    // const int VARIATION = 3;
 
     public static AssetLabel[] Labels;
-    public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/Sandbox", "Assets/Scripts" };
+    public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/Sandbox", "Assets/Scripts", "Assets/Maps" };
+
+    public static bool AllowOnlyLabeled = true;
+    public static int FolderLayers = 3;
 
     public static void CreateDefaultLabels()
     {
         Labels = new[] {
             new AssetLabel("Characters", "char"),
-            new AssetLabel("Art", "art"),
-            new AssetLabel("Scenes", "sce"),
+            // new AssetLabel("Art", "art"),
+            // new AssetLabel("Scenes", "sce"),
             new AssetLabel("Placeables", "plac"),
             new AssetLabel("Audio", "audio"),
             new AssetLabel("MaterialLibrary", "matlib"),
-            new AssetLabel("Environment", "env")
+
+            new AssetLabel("Environment", "env"),
+            new AssetLabel("Environment", "prop"),
+            // new AssetLabel("Environment", "building"),
+
+            new AssetLabel("Effects", "vfx"),
+            new AssetLabel("Effects", "fx"),
+            new AssetLabel("Maps", "map"),
+            new AssetLabel("Gear", "wpn"),
+            new AssetLabel("Gear", "gear"),
+
+            new AssetLabel("UI", "ui"),
+            new AssetLabel("Audio", "sfx"),
+            new AssetLabel("Terrain", "terrain")
     };
     }
 
@@ -53,7 +69,8 @@ public class AssetManager
     {
         string[] assets = FindAssets("");
         // CreateFolderStructure("Sorted");
-        // CreateFolderStructure("Unsorted");
+        if (AllowOnlyLabeled)
+            CreateFolderStructure("_Unsorted");
         CreateDefaultLabels();
 
         for (int i = 0; i < assets.Length; i++)
@@ -93,19 +110,26 @@ public class AssetManager
         // Check if file name is in a valid format
         if (splitFileName == null || !CheckIfValidFileName(fileName))
         {
-            // AssetDatabase.MoveAsset(filePath, "Assets/Unsorted/" + fileNameWithExtension);
+            AssetDatabase.MoveAsset(filePath, "Assets/_Unsorted/" + fileNameWithExtension);
             return;
         }
 
         Debug.Log("Sorting " + fileName);
 
-        string name = splitFileName[NAME];
-        string variation = splitFileName[VARIATION];
+        // string name = splitFileName[NAME];
+        // string variation = splitFileName[VARIATION];
         string type = splitFileName[TYPE];
         string label = splitFileName[LABEL];
-        label = GetFullLabelName(label);
 
-        string newPath = label + "/" + name + "/" + variation;
+        label = GetFullLabelName(label);
+        int numberOfLayers = FolderLayers < splitFileName.Length ? FolderLayers : splitFileName.Length - 1;
+
+        for (int i = LABEL + 1; i < LABEL + numberOfLayers; i++)
+        {
+            label += "/" + splitFileName[i];
+        }
+
+        string newPath = label;
         CreateFolderStructure(newPath);
         AssetDatabase.MoveAsset(filePath, "Assets/" + newPath + "/" + fileNameWithExtension);
     }
@@ -118,8 +142,7 @@ public class AssetManager
                 return assetLabel.FullLabel;
         }
 
-        return label;
-        // return "Unsorted";
+        return AllowOnlyLabeled ? "Unsorted" : label;
     }
 
     private static bool CheckIfValidFileName(string fileName)
@@ -130,14 +153,14 @@ public class AssetManager
         string[] splitFileName = SplitName(fileName);
 
         // Check if the length is correct
-        if (splitFileName.Length < 4)
+        if (splitFileName.Length < 2)
         {
             return false;
         }
 
         // Check if the label exists
-        // if (GetFullLabelName(splitFileName[LABEL]) == "Unsorted")
-        //     return false;
+        if (GetFullLabelName(splitFileName[LABEL]) == "Unsorted")
+            return false;
 
         return true;
     }
