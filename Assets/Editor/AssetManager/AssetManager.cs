@@ -33,10 +33,10 @@ public class AssetManager
     // const int VARIATION = 3;
 
     public static AssetLabel[] Labels;
-    public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/Sandbox", "Assets/Scripts", "Assets/Maps" };
+    public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/_Sandbox", "Assets/Scripts", "Assets/Maps" };
 
     public static bool AllowOnlyLabeled = true;
-    public static int FolderLayers = 3;
+    public static int FolderLayers = 4;
 
     public static void CreateDefaultLabels()
     {
@@ -49,7 +49,7 @@ public class AssetManager
             new AssetLabel("MaterialLibrary", "matlib"),
 
             new AssetLabel("Environment", "env"),
-            new AssetLabel("Props", "prop"),
+            new AssetLabel("Environment", "prop"),
             // new AssetLabel("Environment", "building"),
 
             new AssetLabel("Effects", "vfx"),
