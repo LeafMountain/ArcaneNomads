@@ -49,7 +49,7 @@ public class AssetAutoStructure
             new AssetLabel("MaterialLibrary", "matlib"),
 
             new AssetLabel("Environment", "env"),
-            new AssetLabel("Environment", "prop"),
+            // new AssetLabel("Environment", "prop"),
             // new AssetLabel("Environment", "building"),
 
             new AssetLabel("Effects", "vfx"),
@@ -114,7 +114,7 @@ public class AssetAutoStructure
             return;
         }
 
-        Debug.Log("Sorting " + fileName);
+        // Debug.Log("Sorting " + fileName);
 
         // string name = splitFileName[NAME];
         // string variation = splitFileName[VARIATION];
@@ -245,7 +245,7 @@ public class AssetAutoStructure
     [MenuItem("Tools/Temp")]
     static void Temp()
     {
-        string[] guids = AssetDatabase.FindAssets("building");
+        string[] guids = AssetDatabase.FindAssets("mod_prop");
         foreach (var guid in guids)
         {
             string oldPath = AssetDatabase.GUIDToAssetPath(guid);
@@ -265,15 +265,15 @@ public class AssetAutoStructure
             for (int i = 2; i < temp2.Length; i++)
             {
                 newPath += "_";
-                if (temp2[i].Contains("building"))
-                {
-                    newPath += "city_";
-                }
+                // if (temp2[i].Contains("building"))
+                // {
+                //     newPath += "city_";
+                // }
                 newPath += temp2[i];
             }
 
-            Debug.Log(oldPath + " to " + newPath);
-            // AssetDatabase.MoveAsset(oldPath, newPath);
+            // Debug.Log(oldPath + " to " + newPath);
+            AssetDatabase.MoveAsset(oldPath, newPath);
         }
     }
 }
