@@ -245,7 +245,7 @@ public class AssetAutoStructure
     [MenuItem("Tools/Temp")]
     static void Temp()
     {
-        string[] guids = AssetDatabase.FindAssets("mod_prop");
+        string[] guids = AssetDatabase.FindAssets("env_car_", new[] { "Assets" });
         foreach (var guid in guids)
         {
             string oldPath = AssetDatabase.GUIDToAssetPath(guid);
@@ -260,7 +260,7 @@ public class AssetAutoStructure
             string[] temp2 = temp.Split('_');
 
             newPath += temp2[0];
-            newPath += "_env";
+            newPath += "_env_city";
 
             for (int i = 2; i < temp2.Length; i++)
             {
