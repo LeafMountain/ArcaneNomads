@@ -16,7 +16,7 @@ public struct AssetLabel
     }
 }
 
-public class AssetManager
+public class AssetAutoStructure
 {
     // Template     = Name_Variation_type_label.suffix
     // PathTemplate = label/name/filename.suffix
@@ -240,5 +240,40 @@ public class AssetManager
         }
 
         return false;
+    }
+
+    [MenuItem("Tools/Temp")]
+    static void Temp()
+    {
+        string[] guids = AssetDatabase.FindAssets("building");
+        foreach (var guid in guids)
+        {
+            string oldPath = AssetDatabase.GUIDToAssetPath(guid);
+            string[] oldPathSplit = oldPath.Split('/');
+            string newPath = "";
+            for (int i = 0; i < oldPathSplit.Length - 1; i++)
+            {
+                newPath += oldPathSplit[i] + "/";
+            }
+
+            string temp = oldPathSplit[oldPathSplit.Length - 1];
+            string[] temp2 = temp.Split('_');
+
+            newPath += temp2[0];
+            newPath += "_env";
+
+            for (int i = 2; i < temp2.Length; i++)
+            {
+                newPath += "_";
+                if (temp2[i].Contains("building"))
+                {
+                    newPath += "city_";
+                }
+                newPath += temp2[i];
+            }
+
+            Debug.Log(oldPath + " to " + newPath);
+            // AssetDatabase.MoveAsset(oldPath, newPath);
+        }
     }
 }
