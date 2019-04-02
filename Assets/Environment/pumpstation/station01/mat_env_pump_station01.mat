@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_env_buildables_tent_02
-  m_Shader: {fileID: 4800000, guid: c51b592c8aee17147934f55aa73b6aa1, type: 3}
+  m_Name: mat_env_pump_station01
+  m_Shader: {fileID: 4800000, guid: 6d81ff409191f7f46926a2b48e6b4ab2, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -20,10 +20,6 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DecalTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -40,19 +36,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 37ca38b4e5c71b643b5b59d41b97df02, type: 3}
+        m_Texture: {fileID: 2800000, guid: 965a01cfd3bc5e9458d549e6707c4594, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _InfectionTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _LightRamp:
-        m_Texture: {fileID: 2800000, guid: 67aa2eda174d43841bdf7dbf4fa6313e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1b7ef1f8dd20a0f42932e97e6bdaaaa3, type: 3}
+        m_Texture: {fileID: 2800000, guid: efb03bd781385e34eba38d0ab0479756, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -60,10 +52,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -93,7 +81,6 @@ Material:
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DecalScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -102,10 +89,8 @@ Material:
     - _InfectionAmount: 0
     - _Metallic: 0.503
     - _Mode: 0
-    - _NoiseAmount: 0.5
-    - _NoiseScale: 1
     - _OcclusionStrength: 1
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.01
     - _OutlineZ: -0.002
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
@@ -117,8 +102,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DecalColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Emission: {r: 0, g: 1, b: 0, a: 1}
+    - _Emission: {r: 1, g: 0, b: 0.36453626, a: 1}
     - _EmissionColor: {r: 4.1010003, g: 2.189934, b: 0, a: 1}
     - _InfectionColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
