@@ -203,8 +203,12 @@ public class AssetAutoStructure
         {
             if (!AssetDatabase.IsValidFolder(currentPath + "/" + folder) && !folder.Contains("."))
             {
-                string guid = AssetDatabase.CreateFolder(currentPath, folder);
-                Debug.Log("Creating folder at " + currentPath + "/" + folder);
+                string fixedFolder = char.ToUpper(folder[0]) + folder.Substring(1);
+                // char[] folderFixedCase = folder.ToCharArray();
+                // folderFixedCase[0] = folderFixedCase[0].ToString().ToUpper().ToCharArray()[0];
+
+                string guid = AssetDatabase.CreateFolder(currentPath, fixedFolder);
+                Debug.Log("Creating folder at " + currentPath + "/" + fixedFolder);
             }
 
             currentPath += "/" + folder;
@@ -245,7 +249,7 @@ public class AssetAutoStructure
     [MenuItem("Tools/Temp")]
     static void Temp()
     {
-        string[] guids = AssetDatabase.FindAssets("env_car_", new[] { "Assets" });
+        string[] guids = AssetDatabase.FindAssets("env_city_building_building", new[] { "Assets" });
         foreach (var guid in guids)
         {
             string oldPath = AssetDatabase.GUIDToAssetPath(guid);
@@ -260,9 +264,9 @@ public class AssetAutoStructure
             string[] temp2 = temp.Split('_');
 
             newPath += temp2[0];
-            newPath += "_env_city";
+            newPath += "_env_city_building";
 
-            for (int i = 2; i < temp2.Length; i++)
+            for (int i = 5; i < temp2.Length; i++)
             {
                 newPath += "_";
                 // if (temp2[i].Contains("building"))
