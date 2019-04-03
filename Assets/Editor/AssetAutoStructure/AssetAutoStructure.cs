@@ -117,40 +117,49 @@ public class AssetAutoStructure
         //     label += "/" + splitFileName[i];
         // }
 
-        string newPath = GetFilePath(guid) + fileNameWithExtension;
+        string newPath = ConstructFilePath(guid) + fileNameWithExtension;
         CreateFolderStructure(newPath);
-        // Debug.Log(newPath);
+        Debug.Log(newPath);
         // AssetDatabase.MoveAsset(filePath, "Assets/" + newPath + "/" + fileNameWithExtension);
     }
 
-    private static string GetFilePath(string guid)
+    private static string ConstructFilePath(string guid)
     {
         string filePath = AssetDatabase.GUIDToAssetPath(guid);
         int fileNameIndex = filePath.LastIndexOf('/');
         string parentFolderPath = filePath.Remove(fileNameIndex, filePath.Length - fileNameIndex);
-        string[] variations = GetVariations(guid);
+        string[] tags = GetTags(guid);
 
         // Check variations and compare to the rest of the project
-        string finalPath = variations[1];
-        int previousMatchingAssetsCount = FindAssetsNoFolders(finalPath).Length;
-        for (int i = 2; i < variations.Length - 1; i++)
+
+        // Start with the first tag
+        string currentFileName = tags[1];
+        // Start with the first tag
+        string finalPath = GetFullLabelName(tags[1]);
+
+        // int previousMatchingAssetsCount = FindAssetsNoFolders(finalPath).Length;
+
+        for (int i = 2; i < tags.Length - 1; i++)
         {
-            string newFinalPath = finalPath + "_" + variations[i];
+            // Add the new tag
+            currentFileName += "_" + tags[i];
+            // Get all the assets with matching tags
+            string[] matchingAssets = FindAssetsNoFolders(currentFileName);
+            // Get all the assets with matching tags plus the next tag
+            string[] nextLayer = FindAssetsNoFolders(currentFileName + "_" + tags[i + 1]);
 
-            string[] matchingAssets = FindAssetsNoFolders(newFinalPath);
-            string[] nextLayer = FindAssetsNoFolders(newFinalPath + "_" + variations[i + 1]);
-
+            // If the next layer has fewer hits, create a folder to gather the variations under
             if (matchingAssets.Length > nextLayer.Length)
             {
-                previousMatchingAssetsCount = matchingAssets.Length;
-                finalPath = newFinalPath;
+                // previousMatchingAssetsCount = matchingAssets.Length;
+                finalPath += "/" + tags[i];
             }
         }
 
-        return parentFolderPath + "/";
+        return finalPath + "/";
     }
 
-    private static string[] GetVariations(string guid)
+    private static string[] GetTags(string guid)
     {
         string fileName = GetFileName(guid);
         fileName = fileName.Split('.')[0];
@@ -216,9 +225,9 @@ public class AssetAutoStructure
         for (int i = assets.Length - 1; i >= 0; i--)
         {
             bool isFolder = AssetDatabase.IsValidFolder(AssetDatabase.GUIDToAssetPath(assets[i]));
-            Debug.Log(isFolder);
+            // Debug.Log(isFolder);
 
-            if (isFolder)
+            if (!isFolder)
                 filesOnly.Add(assets[i]);
         }
 
