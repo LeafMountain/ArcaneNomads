@@ -114,13 +114,7 @@ public class AssetAutoStructure
             return;
         }
 
-        // Debug.Log("Sorting " + fileName);
-
-        // string name = splitFileName[NAME];
-        // string variation = splitFileName[VARIATION];
-        string type = splitFileName[TYPE];
         string label = splitFileName[LABEL];
-
         label = GetFullLabelName(label);
         int numberOfLayers = FolderLayers < splitFileName.Length ? FolderLayers : splitFileName.Length - 1;
 
@@ -132,6 +126,19 @@ public class AssetAutoStructure
         string newPath = label;
         CreateFolderStructure(newPath);
         AssetDatabase.MoveAsset(filePath, "Assets/" + newPath + "/" + fileNameWithExtension);
+    }
+
+    private static string GetFilePath(string guid)
+    {
+        string[] variations = GetVariations(guid);
+        return null;
+    }
+
+    private static string[] GetVariations(string guid)
+    {
+        string fileName = GetFileName(guid);
+        fileName = fileName.Split('.')[0];
+        return fileName.Split('_');
     }
 
     private static string GetFullLabelName(string label)
@@ -175,8 +182,6 @@ public class AssetAutoStructure
         string path = AssetDatabase.GUIDToAssetPath(guid);
         string[] splitPath = path.Split('/');
         string fileName = splitPath[splitPath.Length - 1];
-        // string[] splitSuffix = fileName.Split('.');
-        // Debug.Log(fileName + " " + splitSuffix.Length);
         return fileName;
     }
 
