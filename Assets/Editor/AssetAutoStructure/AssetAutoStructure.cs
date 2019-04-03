@@ -98,15 +98,15 @@ public class AssetAutoStructure
         }
 
         // Remove file extension
-        string fileName = fileNameWithExtension.Split('.')[0];
-        string[] splitFileName = SplitName(fileName);
+        // string fileName = fileNameWithExtension.Split('.')[0];
+        // string[] splitFileName = SplitName(fileName);
 
-        // Check if file name is in a valid format
-        if (splitFileName == null || !CheckIfValidFileName(fileName))
-        {
-            AssetDatabase.MoveAsset(filePath, "Assets/_Unsorted/" + fileNameWithExtension);
-            return;
-        }
+        // // Check if file name is in a valid format
+        // if (splitFileName == null || !CheckIfValidFileName(fileName))
+        // {
+        //     AssetDatabase.MoveAsset(filePath, "Assets/_Unsorted/" + fileNameWithExtension);
+        //     return;
+        // }
 
         // string label = splitFileName[LABEL];
         // label = GetFullLabelName(label);
@@ -117,10 +117,10 @@ public class AssetAutoStructure
         //     label += "/" + splitFileName[i];
         // }
 
-        string newPath = ConstructFilePath(guid) + fileNameWithExtension;
+        string newPath = "Assets/" + ConstructFilePath(guid);
         CreateFolderStructure(newPath);
-        Debug.Log(newPath);
-        // AssetDatabase.MoveAsset(filePath, "Assets/" + newPath + "/" + fileNameWithExtension);
+        Debug.Log(newPath + "/" + fileNameWithExtension);
+        AssetDatabase.MoveAsset(filePath, newPath + "/" + fileNameWithExtension);
     }
 
     private static string ConstructFilePath(string guid)
@@ -129,6 +129,9 @@ public class AssetAutoStructure
         int fileNameIndex = filePath.LastIndexOf('/');
         string parentFolderPath = filePath.Remove(fileNameIndex, filePath.Length - fileNameIndex);
         string[] tags = GetTags(guid);
+
+        if(tags.Length < 2)
+            return "Assets/_Unsorted";
 
         // Check variations and compare to the rest of the project
 
@@ -156,7 +159,7 @@ public class AssetAutoStructure
             }
         }
 
-        return finalPath + "/";
+        return finalPath;
     }
 
     private static string[] GetTags(string guid)
@@ -252,7 +255,8 @@ public class AssetAutoStructure
             string folder = folders[i];
             if (!AssetDatabase.IsValidFolder(currentPath + "/" + folder) && !folder.Contains("."))
             {
-                string fixedFolder = char.ToUpper(folder[0]) + folder.Substring(1);
+                // string fixedFolder = char.ToUpper(folder[0]) + folder.Substring(1);
+                string fixedFolder = folder;
                 AssetDatabase.CreateFolder(currentPath, fixedFolder);
                 // Debug.Log("Creating folder at " + currentPath + "/" + fixedFolder);
             }
