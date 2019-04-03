@@ -249,7 +249,7 @@ public class AssetAutoStructure
     [MenuItem("Tools/Temp")]
     static void Temp()
     {
-        string[] guids = AssetDatabase.FindAssets("env_city_building_building", new[] { "Assets" });
+        string[] guids = AssetDatabase.FindAssets("env_rock_", new[] { "Assets" });
         foreach (var guid in guids)
         {
             string oldPath = AssetDatabase.GUIDToAssetPath(guid);
@@ -264,9 +264,9 @@ public class AssetAutoStructure
             string[] temp2 = temp.Split('_');
 
             newPath += temp2[0];
-            newPath += "_env_city_building";
+            newPath += "_env_nature";
 
-            for (int i = 5; i < temp2.Length; i++)
+            for (int i = 2; i < temp2.Length; i++)
             {
                 newPath += "_";
                 // if (temp2[i].Contains("building"))
