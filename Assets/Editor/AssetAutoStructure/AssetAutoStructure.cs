@@ -108,19 +108,19 @@ public class AssetAutoStructure
             return;
         }
 
-        string label = splitFileName[LABEL];
-        label = GetFullLabelName(label);
-        int numberOfLayers = FolderLayers < splitFileName.Length ? FolderLayers : splitFileName.Length - 1;
+        // string label = splitFileName[LABEL];
+        // label = GetFullLabelName(label);
+        // int numberOfLayers = FolderLayers < splitFileName.Length ? FolderLayers : splitFileName.Length - 1;
 
-        for (int i = LABEL + 1; i < LABEL + numberOfLayers; i++)
-        {
-            label += "/" + splitFileName[i];
-        }
+        // for (int i = LABEL + 1; i < LABEL + numberOfLayers; i++)
+        // {
+        //     label += "/" + splitFileName[i];
+        // }
 
-        string newPath = label;
+        string newPath = GetFilePath(guid) + fileNameWithExtension;
         CreateFolderStructure(newPath);
-        // Debug.Log(GetFilePath(guid));
-        AssetDatabase.MoveAsset(filePath, "Assets/" + newPath + "/" + fileNameWithExtension);
+        // Debug.Log(newPath);
+        // AssetDatabase.MoveAsset(filePath, "Assets/" + newPath + "/" + fileNameWithExtension);
     }
 
     private static string GetFilePath(string guid)
@@ -212,9 +212,13 @@ public class AssetAutoStructure
         string[] assets = AssetDatabase.FindAssets(filter, new[] { "Assets" });
         List<string> filesOnly = new List<string>();
 
+
         for (int i = assets.Length - 1; i >= 0; i--)
         {
-            if (AssetDatabase.GUIDToAssetPath(assets[i]).Contains("."))
+            bool isFolder = AssetDatabase.IsValidFolder(AssetDatabase.GUIDToAssetPath(assets[i]));
+            Debug.Log(isFolder);
+
+            if (isFolder)
                 filesOnly.Add(assets[i]);
         }
 
@@ -232,18 +236,19 @@ public class AssetAutoStructure
     private static void CreateFolderStructure(string path)
     {
         string[] folders = path.Split('/');
-        string currentPath = "Assets";
+        string currentPath = "";
 
-        foreach (string folder in folders)
+        for (int i = 0; i < folders.Length; i++)
         {
+            string folder = folders[i];
             if (!AssetDatabase.IsValidFolder(currentPath + "/" + folder) && !folder.Contains("."))
             {
                 string fixedFolder = char.ToUpper(folder[0]) + folder.Substring(1);
                 AssetDatabase.CreateFolder(currentPath, fixedFolder);
-                Debug.Log("Creating folder at " + currentPath + "/" + fixedFolder);
+                // Debug.Log("Creating folder at " + currentPath + "/" + fixedFolder);
             }
 
-            currentPath += "/" + folder;
+            currentPath += folder += "/";
         }
     }
 
