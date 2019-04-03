@@ -63,14 +63,16 @@ public class AssetAutoStructure
         string[] assets = FindAssetsNoFolders("");
 
         if (AllowOnlyLabeled)
-            CreateFolderStructure("_Unsorted");
+            CreateFolderStructure("Assets/_Unsorted");
 
-        CreateDefaultLabels();
+        CreateFolderStructure("Assets/Test/Test");
 
-        for (int i = 0; i < assets.Length; i++)
-            SortFile(assets[i]);
+        // CreateDefaultLabels();
 
-        RemoveEmptyFolders("Assets");
+        // for (int i = 0; i < assets.Length; i++)
+        //     SortFile(assets[i]);
+
+        // RemoveEmptyFolders("Assets");
     }
 
     private static void SortFile(string guid)
@@ -119,8 +121,8 @@ public class AssetAutoStructure
 
         string newPath = "Assets/" + ConstructFilePath(guid);
         CreateFolderStructure(newPath);
-        Debug.Log(newPath + "/" + fileNameWithExtension);
-        AssetDatabase.MoveAsset(filePath, newPath + "/" + fileNameWithExtension);
+        // Debug.Log(newPath + "/" + fileNameWithExtension);
+        Debug.Log(AssetDatabase.MoveAsset(filePath, newPath + "/" + fileNameWithExtension));
     }
 
     private static string ConstructFilePath(string guid)
@@ -253,7 +255,7 @@ public class AssetAutoStructure
         for (int i = 0; i < folders.Length; i++)
         {
             string folder = folders[i];
-            if (!AssetDatabase.IsValidFolder(currentPath + "/" + folder) && !folder.Contains("."))
+            if (!AssetDatabase.IsValidFolder(currentPath + "/" + folder))
             {
                 // string fixedFolder = char.ToUpper(folder[0]) + folder.Substring(1);
                 string fixedFolder = folder;
@@ -261,7 +263,7 @@ public class AssetAutoStructure
                 // Debug.Log("Creating folder at " + currentPath + "/" + fixedFolder);
             }
 
-            currentPath += folder += "/";
+            currentPath += folder + (i != folders.Length - 1 ? "/" : "");
         }
     }
 
