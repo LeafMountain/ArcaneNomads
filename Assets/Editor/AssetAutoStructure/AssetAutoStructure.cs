@@ -249,7 +249,7 @@ public class AssetAutoStructure
     [MenuItem("Tools/Temp")]
     static void Temp()
     {
-        string[] guids = AssetDatabase.FindAssets("env_rock_", new[] { "Assets" });
+        string[] guids = AssetDatabase.FindAssets("env_grass_", new[] { "Assets" });
         foreach (var guid in guids)
         {
             string oldPath = AssetDatabase.GUIDToAssetPath(guid);
