@@ -42,35 +42,29 @@ public class AssetAutoStructure
     {
         Labels = new[] {
             new AssetLabel("Characters", "char"),
-            // new AssetLabel("Art", "art"),
-            // new AssetLabel("Scenes", "sce"),
             new AssetLabel("Placeables", "plac"),
             new AssetLabel("Audio", "audio"),
             new AssetLabel("MaterialLibrary", "matlib"),
-
             new AssetLabel("Environment", "env"),
-            // new AssetLabel("Environment", "prop"),
-            // new AssetLabel("Environment", "building"),
-
             new AssetLabel("Effects", "vfx"),
             new AssetLabel("Effects", "fx"),
             new AssetLabel("Maps", "map"),
             new AssetLabel("Gear", "wpn"),
             new AssetLabel("Gear", "gear"),
-
             new AssetLabel("UI", "ui"),
             new AssetLabel("Audio", "sfx"),
             new AssetLabel("Terrain", "terrain")
-    };
+        };
     }
 
     [MenuItem("Tools/Sort Project")]
     private static void SortAssets()
     {
-        string[] assets = FindAssets("");
-        // CreateFolderStructure("Sorted");
+        string[] assets = FindAssetsNoFolders("");
+
         if (AllowOnlyLabeled)
             CreateFolderStructure("_Unsorted");
+
         CreateDefaultLabels();
 
         for (int i = 0; i < assets.Length; i++)
@@ -87,8 +81,8 @@ public class AssetAutoStructure
         // Check if it's a valid file in a valid location
         {
             // Check if it has an extension
-            if (!fileNameWithExtension.Contains("."))
-                return;
+            // if (!fileNameWithExtension.Contains("."))
+            //     return;
 
             // check if it's inside a Unsorted Folder
             bool unsortedFolder = false;
@@ -125,13 +119,35 @@ public class AssetAutoStructure
 
         string newPath = label;
         CreateFolderStructure(newPath);
+        // Debug.Log(GetFilePath(guid));
         AssetDatabase.MoveAsset(filePath, "Assets/" + newPath + "/" + fileNameWithExtension);
     }
 
     private static string GetFilePath(string guid)
     {
+        string filePath = AssetDatabase.GUIDToAssetPath(guid);
+        int fileNameIndex = filePath.LastIndexOf('/');
+        string parentFolderPath = filePath.Remove(fileNameIndex, filePath.Length - fileNameIndex);
         string[] variations = GetVariations(guid);
-        return null;
+
+        // Check variations and compare to the rest of the project
+        string finalPath = variations[1];
+        int previousMatchingAssetsCount = FindAssetsNoFolders(finalPath).Length;
+        for (int i = 2; i < variations.Length - 1; i++)
+        {
+            string newFinalPath = finalPath + "_" + variations[i];
+
+            string[] matchingAssets = FindAssetsNoFolders(newFinalPath);
+            string[] nextLayer = FindAssetsNoFolders(newFinalPath + "_" + variations[i + 1]);
+
+            if (matchingAssets.Length > nextLayer.Length)
+            {
+                previousMatchingAssetsCount = matchingAssets.Length;
+                finalPath = newFinalPath;
+            }
+        }
+
+        return parentFolderPath + "/";
     }
 
     private static string[] GetVariations(string guid)
@@ -191,6 +207,20 @@ public class AssetAutoStructure
         return AssetDatabase.FindAssets(filter, new[] { "Assets" });
     }
 
+    private static string[] FindAssetsNoFolders(string filter)
+    {
+        string[] assets = AssetDatabase.FindAssets(filter, new[] { "Assets" });
+        List<string> filesOnly = new List<string>();
+
+        for (int i = assets.Length - 1; i >= 0; i--)
+        {
+            if (AssetDatabase.GUIDToAssetPath(assets[i]).Contains("."))
+                filesOnly.Add(assets[i]);
+        }
+
+        return filesOnly.ToArray();
+    }
+
     private static void CreateAsset(Object asset, string path)
     {
         // Create the asset path
@@ -209,10 +239,7 @@ public class AssetAutoStructure
             if (!AssetDatabase.IsValidFolder(currentPath + "/" + folder) && !folder.Contains("."))
             {
                 string fixedFolder = char.ToUpper(folder[0]) + folder.Substring(1);
-                // char[] folderFixedCase = folder.ToCharArray();
-                // folderFixedCase[0] = folderFixedCase[0].ToString().ToUpper().ToCharArray()[0];
-
-                string guid = AssetDatabase.CreateFolder(currentPath, fixedFolder);
+                AssetDatabase.CreateFolder(currentPath, fixedFolder);
                 Debug.Log("Creating folder at " + currentPath + "/" + fixedFolder);
             }
 
@@ -231,7 +258,6 @@ public class AssetAutoStructure
     {
         string[] subFolders = AssetDatabase.GetSubFolders(path);
         int subFoldersLength = subFolders.Length;
-        // Debug.Log(path);
 
         for (int i = subFoldersLength - 1; i >= 0; i--)
         {
