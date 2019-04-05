@@ -23,14 +23,7 @@ public class AssetAutoStructure
 
     const string UNSORTEDFOLDER = "_Unsorted";
 
-    public static AssetLabel[] Labels;
-    public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/_Sandbox", "Assets/Scripts", "Assets/Maps" };
-
-    public static bool AllowOnlyLabeled = true;
-
-    public static void CreateDefaultLabels()
-    {
-        Labels = new[] {
+    public static AssetLabel[] Labels = new[] {
             new AssetLabel("Characters", "char"),
             new AssetLabel("Placeables", "plac"),
             new AssetLabel("Audio", "audio"),
@@ -44,20 +37,19 @@ public class AssetAutoStructure
             new AssetLabel("UI", "ui"),
             new AssetLabel("Audio", "sfx"),
             new AssetLabel("Terrain", "terrain"),
-            new AssetLabel("Core", "core"),
+            new AssetLabel("Core", "core")
+    };
+    public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/_Sandbox", "Assets/Scripts", "Assets/Maps" };
 
-        };
-    }
+    public static bool AllowOnlyLabeled = true;
 
     [MenuItem("Tools/Auto Structure/Sort Project")]
-    private static void SortAssets()
+    public static void SortAssets()
     {
         string[] assets = FindAssetsNoFolders("");
 
         if (AllowOnlyLabeled)
             CreateFolderStructure(UNSORTEDFOLDER);
-
-        CreateDefaultLabels();
 
         for (int i = 0; i < assets.Length; i++)
             SortFile(assets[i]);
@@ -65,7 +57,7 @@ public class AssetAutoStructure
         RemoveEmptyFolders("Assets");
     }
 
-    private static void SortFile(string guid)
+    public static void SortFile(string guid)
     {
         string filePath = AssetDatabase.GUIDToAssetPath(guid);
         string fileNameWithExtension = GetFileName(guid);
@@ -89,7 +81,7 @@ public class AssetAutoStructure
         CreateFolderStructure(newPath);
         string newCompletePath = "Assets/" + newPath + "/" + fileNameWithExtension;
         if(filePath != newCompletePath)
-            AssetDatabase.MoveAsset(filePath, newCompletePath);
+            Debug.Log(AssetDatabase.MoveAsset(filePath, newCompletePath));
     }
 
     private static string ConstructFilePath(string guid)

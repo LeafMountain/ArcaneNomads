@@ -87,3 +87,17 @@ The following packages were removed:
   com.unity.entities@0.0.12-preview.24
   com.unity.mathematics@1.0.0-preview.1
   com.unity.rendering.hybrid@0.0.1-preview.4
+
+=== Fri Apr  5 16:21:18 2019
+
+Packages were changed.
+Update Mode: resetToDefaultDependencies
+
+The following packages were updated:
+  com.unity.purchasing from version 2.0.5 to 2.0.1
+  com.unity.package-manager-ui from version 2.1.2 to 2.1.1
+  com.unity.collab-proxy from version 1.2.16 to 1.2.15
+The following packages were removed:
+  com.unity.2d.sprite@1.0.0
+  com.unity.2d.tilemap@1.0.0
+  com.unity.modules.androidjni@1.0.0
