@@ -153,7 +153,6 @@ public class AssetAutoStructure
         return fileName;
     }
 
-    [MenuItem("Tools/Print Asset Paths")]
     private static string[] FindAssets(string filter)
     {
         return AssetDatabase.FindAssets(filter, new[] { "Assets" });
