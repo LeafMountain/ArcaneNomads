@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_env_buildables_tent_01
+  m_Name: mat_env_industrial_tent_01
   m_Shader: {fileID: 4800000, guid: c51b592c8aee17147934f55aa73b6aa1, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
