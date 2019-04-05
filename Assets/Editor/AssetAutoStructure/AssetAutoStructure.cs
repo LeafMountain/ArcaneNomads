@@ -24,20 +24,20 @@ public class AssetAutoStructure
     const string UNSORTEDFOLDER = "_Unsorted";
 
     public static AssetLabel[] Labels = new[] {
-            new AssetLabel("Characters", "char"),
-            new AssetLabel("Placeables", "plac"),
-            new AssetLabel("Audio", "audio"),
-            new AssetLabel("MaterialLibrary", "matlib"),
-            new AssetLabel("Environment", "env"),
-            new AssetLabel("Effects", "vfx"),
-            new AssetLabel("Effects", "fx"),
-            new AssetLabel("Maps", "map"),
-            new AssetLabel("Gear", "wpn"),
-            new AssetLabel("Gear", "gear"),
-            new AssetLabel("UI", "ui"),
-            new AssetLabel("Audio", "sfx"),
-            new AssetLabel("Terrain", "terrain"),
-            new AssetLabel("Core", "core")
+        new AssetLabel("Characters", "char"),
+        new AssetLabel("Placeables", "plac"),
+        new AssetLabel("Audio", "audio"),
+        new AssetLabel("MaterialLibrary", "matlib"),
+        new AssetLabel("Environment", "env"),
+        new AssetLabel("Effects", "vfx"),
+        new AssetLabel("Effects", "fx"),
+        new AssetLabel("Maps", "map"),
+        new AssetLabel("Gear", "wpn"),
+        new AssetLabel("Gear", "gear"),
+        new AssetLabel("UI", "ui"),
+        new AssetLabel("Audio", "sfx"),
+        new AssetLabel("Terrain", "terrain"),
+        new AssetLabel("Core", "core")
     };
     public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/_Sandbox", "Assets/Scripts", "Assets/Maps" };
 
@@ -94,8 +94,6 @@ public class AssetAutoStructure
         if(tags.Length < 2)
             return UNSORTEDFOLDER;
 
-        // Check variations and compare to the rest of the project
-
         // Start with the first tag
         string currentFileName = tags[1];
         // Start with the first tag
@@ -116,7 +114,6 @@ public class AssetAutoStructure
             // If the next layer has fewer hits, create a folder to gather the variations under
             if (previousMatchingAssetsCount > currentLayer.Length)
             {
-                // previousMatchingAssetsCount = matchingAssets.Length;
                 finalPath += "/" + tags[i];
                 previousMatchingAssetsCount = currentLayer.Length;
             }
@@ -178,11 +175,10 @@ public class AssetAutoStructure
         return filesOnly.ToArray();
     }
 
-    private static void CreateAsset(Object asset, string path)
+    private static string MoveAsset(string oldPath, string newPath)
     {
-        // Create the asset path
-        CreateFolderStructure(path);
-        AssetDatabase.CreateAsset(asset, "Assets/" + path);
+        CreateFolderStructure(newPath);
+        return AssetDatabase.MoveAsset(oldPath, "Assets/" + newPath);
     }
 
     // Create path
