@@ -4,9 +4,9 @@ using Unity.Entities;
 using Unity.Mathematics;
 
 [Serializable]
-public struct Velocity : IComponentData
+public struct MoveSpeed : IComponentData
 {
-    public float3 Value;
+    public float Value;
     // Add fields to your component here. Remember that:
     //
     // * A component itself is for storing data and doesn't 'do' anything.

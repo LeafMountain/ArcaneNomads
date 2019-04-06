@@ -6,7 +6,7 @@ using Unity.Mathematics;
 using Unity.Transforms;
 using static Unity.Mathematics.math;
 
-public class PlayerInputSystem : JobComponentSystem
+public class PlayerMoveSystem : JobComponentSystem
 {
     // This declares a new kind of job, which is a unit of work to do.
     // The job is declared as an IJobForEach<Translation, Rotation>,
@@ -17,24 +17,16 @@ public class PlayerInputSystem : JobComponentSystem
     // The job is also tagged with the BurstCompile attribute, which means
     // that the Burst compiler will optimize it for the best performance.
     [BurstCompile]
-    struct PlayerInputSystemJob : IJobForEach<PlayerInput>
+    struct PlayerMoveSystemJob : IJobForEach<PlayerInput, Velocity, MoveSpeed>
     {
         // Add fields here that your job needs to do its work.
         // For example,
         //    public float deltaTime;
         
-        public int jump;
-        public float2 move;
         
-        public void Execute(ref PlayerInput input)
+        
+        public void Execute([ReadOnly] ref PlayerInput input, ref Velocity velocity, [ReadOnly] ref MoveSpeed speed)
         {
-            input.Jump = jump;
-
-            if(!move.Equals(new float2(0, 0)))
-            {
-                input.Move = move;
-                // UnityEngine.Debug.Log(move);
-            }
             // Implement the work to perform for each entity here.
             // You should only access data that is local or that is a
             // field on this job. Note that the 'rotation' parameter is
@@ -43,22 +35,19 @@ public class PlayerInputSystem : JobComponentSystem
             // that want to read Rotation component data.
             // For example,
             //     translation.Value += mul(rotation.Value, new float3(0, 0, 1)) * deltaTime;
-            
-            
+            velocity.Value = new float3(input.Move.x, input.Move.y, 0) * speed.Value;            
         }
     }
     
     protected override JobHandle OnUpdate(JobHandle inputDependencies)
     {
-        var job = new PlayerInputSystemJob();
+        var job = new PlayerMoveSystemJob();
         
         // Assign values to the fields on your job here, so that it has
         // everything it needs to do its work when it runs later.
         // For example,
         //     job.deltaTime = UnityEngine.Time.deltaTime;
         
-        job.jump = UnityEngine.Input.GetButtonDown("Jump") ? 1 : 0;
-        job.move = math.normalize(new float2(UnityEngine.Input.GetAxisRaw("Horizontal"), UnityEngine.Input.GetAxisRaw("Vertical")));
         
         
         // Now that the job is set up, schedule it to be run. 

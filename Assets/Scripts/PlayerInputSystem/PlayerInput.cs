@@ -2,10 +2,19 @@
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
+using UnityEngine.Experimental.Input;
 
 [Serializable]
 public struct PlayerInput : IComponentData
 {
+    // Buttons
+    // public char[] JumpButton;
+    // public InputAction JumpAction;
+
+    // Output
+    public int Jump;
+    public float2 Move;
+
     // Add fields to your component here. Remember that:
     //
     // * A component itself is for storing data and doesn't 'do' anything.
