@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6438968820896905950}
   - component: {fileID: 7765002314357313139}
   m_Layer: 0
-  m_Name: mod_cliffbeach_stairs01
+  m_Name: pref_env_city_stairs_cliffbeach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f28feef0036a05844b9bd51c8418fa23, type: 2}
+  - {fileID: 2100000, guid: 07a67f8d4d2e7544ebcac994af92727f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
