@@ -8,7 +8,8 @@ public class MoveComponent : MonoBehaviour
     [Range(0, 20)]
     public float MoveSpeed = 1;
     [Range(0, 1)]
-    public float Smoothing = .3f;
+    public float Smoothing = .05f;
+    public float RotationSpeed = 3;
     [Range(0, 1)]
     public float AnimationSmoothing = 0;
     public bool RelativeToCamera;
@@ -28,8 +29,8 @@ public class MoveComponent : MonoBehaviour
     void Update()
     {
         Vector3 moveDirection = moveVector;
-        if(RelativeToCamera) moveDirection = Camera.main.transform.TransformVector(moveDirection);
-        if(IgnoreY) moveDirection.y = 0;
+        if (RelativeToCamera) moveDirection = Camera.main.transform.TransformVector(moveDirection);
+        if (IgnoreY) moveDirection.y = 0;
         Vector3 smoothMove = Vector3.SmoothDamp(transform.position, transform.position + moveDirection, ref currentVelocity, Smoothing, MoveSpeed, Time.deltaTime);
         smoothMove += Physics.gravity;
         characterController.Move(smoothMove - transform.position);
@@ -39,12 +40,13 @@ public class MoveComponent : MonoBehaviour
         Vector3 localVelocity = transform.InverseTransformDirection(currentVelocity);
         Debug.DrawRay(transform.position, localVelocity, Color.red);
         Debug.DrawRay(transform.position, currentVelocity, Color.blue);
-        
+
         // Send velocity to animator if it exists
-        if(animator){
-            animator.SetFloat("VelocityX", localVelocity.x, Smoothing, Time.deltaTime);
-            animator.SetFloat("VelocityY", localVelocity.y, Smoothing, Time.deltaTime);
-            animator.SetFloat("VelocityZ", localVelocity.z, Smoothing, Time.deltaTime);
+        if (animator)
+        {
+            animator.SetFloat("VelocityX", localVelocity.x, AnimationSmoothing, Time.deltaTime);
+            animator.SetFloat("VelocityY", localVelocity.y, AnimationSmoothing, Time.deltaTime);
+            animator.SetFloat("VelocityZ", localVelocity.z, AnimationSmoothing, Time.deltaTime);
         }
     }
 
@@ -52,7 +54,8 @@ public class MoveComponent : MonoBehaviour
     void RotateTowardsMoveDir(Vector3 direction)
     {
         direction.y = 0;
-        transform.LookAt(transform.position + direction);
+        Vector3 lookDirection = Vector3.Lerp(transform.forward, direction, Time.deltaTime * RotationSpeed);
+        transform.LookAt(transform.position + lookDirection);
     }
 
     public void Move(Vector2 direction)
@@ -62,6 +65,7 @@ public class MoveComponent : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
+        direction.Normalize();
         moveVector = direction * MoveSpeed;
     }
 

@@ -9,32 +9,42 @@ public class ThirdPersonCameraComponent : MonoBehaviour
     public float Distance;
     [Range(0, 1)]
     public float Smoothing = .3f;
+    public Vector2 PitchMinMax = new Vector2(0, 80);
+    public bool LockAndHideCursor = false;
 
-    // public Vector2 YawMinMax;
-    public Vector2 PitchMinMax = new Vector2(-80, 80);
+    Vector3 currentVelocity;
+    Vector3 currentrotation;
+
+    float yaw;
+    float pitch;
 
     void Start()
     {
-
+        if (LockAndHideCursor)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     void LateUpdate()
     {
-        Vector3 targetPosition = Target.position;
-        transform.position = targetPosition + Offset + (-transform.forward * Distance);
+        transform.eulerAngles = currentrotation;
+        transform.position = Target.position + Offset + (-transform.forward * Distance);
     }
 
     public void Move(Vector2 direction)
     {
-        // dir X will rotate Y
-        // dir Y will rotate X
-        // Nothing should rotate Z
-        // Clamp values
+        yaw += direction.x;
+        pitch -= direction.y;
+        pitch = Mathf.Clamp(pitch, PitchMinMax.x, PitchMinMax.y);
+
+        currentrotation = Vector3.SmoothDamp(currentrotation, new Vector3(pitch, yaw), ref currentVelocity, Smoothing);
     }
 
     public void AddRotation(Quaternion rotation)
     {
-        
+
     }
 
     public void SetRotation(Quaternion rotation)

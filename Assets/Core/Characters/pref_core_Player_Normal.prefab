@@ -11,13 +11,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 1.8
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &1449974071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 3
   Smoothing: 0.3
+  RotationSpeed: 3
   AnimationSmoothing: 0
   RelativeToCamera: 1
   IgnoreY: 1
@@ -74,11 +75,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7609191233580024907, guid: 66db9572c8cc1e048af2e4db0da3c08b,
-        type: 3}
-      propertyPath: m_Name
-      value: pref_core_Player_Normal
-      objectReference: {fileID: 0}
     - target: {fileID: 4883660797043905853, guid: 66db9572c8cc1e048af2e4db0da3c08b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -133,6 +129,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609191233580024907, guid: 66db9572c8cc1e048af2e4db0da3c08b,
+        type: 3}
+      propertyPath: m_Name
+      value: pref_core_Player_Normal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66db9572c8cc1e048af2e4db0da3c08b, type: 3}

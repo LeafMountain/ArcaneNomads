@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 92090823}
   - component: {fileID: 92090822}
   - component: {fileID: 92090825}
+  - component: {fileID: 92090826}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -221,7 +222,42 @@ MonoBehaviour:
   Target: {fileID: 1449974075}
   Offset: {x: 0, y: 0, z: 0}
   Distance: 10
-  Smoothing: 0
+  Smoothing: 0.05
+  PitchMinMax: {x: 10, y: 80}
+  LockAndHideCursor: 1
+--- !u!114 &92090826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92090821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd011871b6d0ffe4e8e2799862c1f8d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Keys: []
+  Directions:
+  - HorizontalName: Mouse X
+    VerticalName: Mouse Y
+    Sensitivity: 3
+    OnDirection:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 92090825}
+          m_MethodName: Move
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEventVector2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
 --- !u!1 &785137276
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,11 +356,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5968595348269621960, guid: 22a3029b28baa1b4894103b02b65cdbf,
-        type: 3}
-      propertyPath: m_Name
-      value: pref_core_Player_Normal
-      objectReference: {fileID: 0}
     - target: {fileID: 8686262097029936062, guid: 22a3029b28baa1b4894103b02b65cdbf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -380,6 +411,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5968595348269621960, guid: 22a3029b28baa1b4894103b02b65cdbf,
+        type: 3}
+      propertyPath: m_Name
+      value: pref_core_Player_Normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449974071, guid: 22a3029b28baa1b4894103b02b65cdbf, type: 3}
+      propertyPath: Directions.Array.data[0].Sensitivity
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22a3029b28baa1b4894103b02b65cdbf, type: 3}
 --- !u!4 &1449974075 stripped
@@ -405,7 +445,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!64 &1723871634
 MeshCollider:
@@ -429,7 +469,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723871633}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1

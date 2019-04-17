@@ -13,14 +13,14 @@ public class InputComponent : MonoBehaviour
         for (int i = 0; i < Keys.Length; i++)
         {
             InputKey key = Keys[i];
-            if(Input.GetKeyDown(key.Name)) key.OnPressed.Invoke();
-            else if(Input.GetKeyUp(key.Name)) key.OnReleased.Invoke();
-            if(Input.GetKey(key.Name)) key.OnHold.Invoke();
+            if (Input.GetKeyDown(key.Name)) key.OnPressed.Invoke();
+            else if (Input.GetKeyUp(key.Name)) key.OnReleased.Invoke();
+            if (Input.GetKey(key.Name)) key.OnHold.Invoke();
         }
 
         for (int i = 0; i < Directions.Length; i++)
         {
-            Directions[i].OnDirection.Invoke(new Vector2(Input.GetAxisRaw(Directions[i].HorizontalName), Input.GetAxisRaw(Directions[i].VerticalName)).normalized);
+            Directions[i].OnDirection.Invoke(new Vector2(Input.GetAxisRaw(Directions[i].HorizontalName), Input.GetAxisRaw(Directions[i].VerticalName)) * Directions[i].Sensitivity);
         }
     }
 }
@@ -39,5 +39,6 @@ public struct InputDirection
 {
     public string HorizontalName;
     public string VerticalName;
+    public float Sensitivity;
     public UnityEventVector2 OnDirection;
 }
