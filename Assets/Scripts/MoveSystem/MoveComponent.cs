@@ -64,4 +64,9 @@ public class MoveComponent : MonoBehaviour
     {
         moveVector = direction * MoveSpeed;
     }
+
+    public void Jump(float height)
+    {
+        // Look up the algorithm
+    }
 }
