@@ -69,6 +69,33 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+  - Name: Jump
+    OnPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5264710719309577225}
+          m_MethodName: Jump
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    OnReleased:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    OnHold:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   Directions:
   - HorizontalName: Horizontal
     VerticalName: Vertical
@@ -103,12 +130,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 2.5
   SprintSpeed: 5
-  Smoothing: 0.05
+  Smoothing: 0.2
   RotationSpeed: 3
   RelativeToCamera: 1
   IgnoreY: 1
   GroundDistance: 0.1
-  AnimationSmoothing: 0
+  Gravity: -0.9
+  JumpHeight: 1
+  AnimationSmoothing: 0.1
 --- !u!114 &9195320134504267960
 MonoBehaviour:
   m_ObjectHideFlags: 0
