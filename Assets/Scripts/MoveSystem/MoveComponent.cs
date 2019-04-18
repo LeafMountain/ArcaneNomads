@@ -15,46 +15,77 @@ public class MoveComponent : MonoBehaviour
     public bool RelativeToCamera;
     public bool IgnoreY;
     public float GroundDistance = .1f;
+    public float Gravity = -.9f;
+
+    [Header("Jumping")]
+    public float JumpHeight;
 
     [Header("Animation")]
     [Range(0, 1)]
     public float AnimationSmoothing = 0;
 
+    float targetSpeed;
     float currentSpeed;
     CharacterController characterController;
     Animator animator;
     Vector3 moveVector;
-    Vector3 currentVelocity;
+    // Vector3 currentSmoothVelocity;
+    float currentSmoothVelocity;
+    float velocityY;
 
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
-        currentSpeed = MoveSpeed;
+        targetSpeed = MoveSpeed;
+        Gravity = Physics.gravity.y;
     }
 
     void Update()
     {
+        // Calculate new position
         Vector3 moveDirection = moveVector;
-        if (RelativeToCamera) moveDirection = Camera.main.transform.TransformVector(moveDirection);
-        if (IgnoreY) moveDirection.y = 0;
-        Vector3 smoothMove = Vector3.SmoothDamp(transform.position, transform.position + moveDirection, ref currentVelocity, Smoothing, currentSpeed, Time.deltaTime);
-        if (IsGrounded()) smoothMove += Physics.gravity;
-        characterController.Move(smoothMove - transform.position);
+        if (RelativeToCamera) moveDirection = MakeRelativeToCamera(moveDirection, IgnoreY);
+        float targetSpeed2 = targetSpeed * moveDirection.z;
 
+        Vector3 currentVelocity = GetCurrentVelocity();
+        currentVelocity.y = 0;
+        currentSpeed = currentVelocity.magnitude;
+        currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref currentSmoothVelocity, Smoothing);
+        // Debug.Log(currentSpeed + " " + targetSpeed);
+
+        // Apply gravity
+        velocityY += Time.deltaTime * Gravity;
+
+        // Move
+        Vector3 velocity = moveDirection * currentSpeed + Vector3.up * velocityY;
+        Debug.Log(velocity);
+        characterController.Move(velocity * Time.deltaTime);
+
+        // Reset gravity
+        if (IsGrounded())
+            velocityY = 0;
+
+        // Rotation
         RotateTowardsMoveDir(moveDirection);
 
-        Vector3 localVelocity = transform.InverseTransformDirection(currentVelocity);
-        Debug.DrawRay(transform.position, localVelocity, Color.red);
-        Debug.DrawRay(transform.position, currentVelocity, Color.blue);
-
-        // Send velocity to animator if it exists
+        // Animation
         if (animator)
         {
+            Vector3 localVelocity = GetLocalVelocity(GetCurrentVelocity());
             animator.SetFloat("VelocityX", localVelocity.x, AnimationSmoothing, Time.deltaTime);
             animator.SetFloat("VelocityY", localVelocity.y, AnimationSmoothing, Time.deltaTime);
             animator.SetFloat("VelocityZ", localVelocity.z, AnimationSmoothing, Time.deltaTime);
         }
+    }
+
+    Vector3 MakeRelativeToCamera(Vector3 vector, bool ignoreY = false)
+    {
+        Vector3 moveDirectionRelativeToCamera = Camera.main.transform.TransformDirection(vector);
+        if (ignoreY) moveDirectionRelativeToCamera.y = 0;
+        moveDirectionRelativeToCamera.Normalize();
+        // Debug.Log(moveDirectionRelativeToCamera);
+        return moveDirectionRelativeToCamera;
     }
 
     // Temporary
@@ -65,45 +96,60 @@ public class MoveComponent : MonoBehaviour
         transform.LookAt(transform.position + lookDirection);
     }
 
-    public void Move(Vector2 direction)
-    {
-        Move(new Vector3(direction.x, 0, direction.y));
-    }
-
+    public void Move(Vector2 direction) => Move(new Vector3(direction.x, 0, direction.y));
     public void Move(Vector3 direction)
     {
-        direction.Normalize();
-        moveVector = direction * currentSpeed;
+        moveVector = Vector3.Normalize(direction) * targetSpeed;
     }
 
-    public void Jump(float height)
+    public void Jump()
     {
-        // Look up the algorithm
+        Debug.Log("Trying to jump");
+        if (IsGrounded())
+        {
+            Debug.Log("Jumping");
+            float jumpVelocity = Mathf.Sqrt(-2 * Gravity * JumpHeight);
+            velocityY = jumpVelocity;
+        }
     }
 
     public void SetSprint(bool value)
     {
-        currentSpeed = value ? SprintSpeed : MoveSpeed;
+        targetSpeed = value ? SprintSpeed : MoveSpeed;
     }
 
     public bool IsGrounded()
     {
         return characterController.isGrounded;
-        float radius = characterController.radius;
-        Vector3 feetPosition = characterController.bounds.center - (Vector3.up * (characterController.height / 2 - radius + GroundDistance));
-        Ray groundedRay = new Ray(feetPosition, Vector3.down);
-        return (Physics.SphereCast(groundedRay, characterController.radius));
+        // float radius = characterController.radius;
+        // Vector3 feetPosition = characterController.bounds.center - (Vector3.up * (characterController.height / 2 - radius + GroundDistance));
+        // Ray groundedRay = new Ray(feetPosition, Vector3.down);
+        // return (Physics.SphereCast(groundedRay, characterController.radius));
     }
 
-    // void OnDrawGizmos()
-    // {
-    //     if (characterController)
-    //     {
-    //         float radius = characterController.radius;
-    //         Vector3 feetPosition = characterController.bounds.center - (Vector3.up * (characterController.height / 2 - radius + GroundDistance));
-    //         Gizmos.DrawWireSphere(feetPosition, characterController.radius);
+    public Vector3 GetLocalVelocity(Vector3 worldVelocity)
+    {
+        Vector3 localVelocity = transform.InverseTransformDirection(worldVelocity);
+        Debug.DrawRay(transform.position, localVelocity, Color.red);
+        Debug.DrawRay(transform.position, worldVelocity, Color.blue);
+        return localVelocity;
+    }
 
-    //         Debug.Log(IsGrounded());
-    //     }
-    // }
+    public Vector3 GetCurrentVelocity()
+    {
+        return characterController.velocity;
+    }
+
+    void OnDrawGizmos()
+    {
+        // Gizmos.DrawSphere(moveTarget, .5f);
+        // if (characterController)
+        // {
+        //     float radius = characterController.radius;
+        //     Vector3 feetPosition = characterController.bounds.center - (Vector3.up * (characterController.height / 2 - radius + GroundDistance));
+        //     Gizmos.DrawWireSphere(feetPosition, characterController.radius);
+
+        //     Debug.Log(IsGrounded());
+        // }
+    }
 }
