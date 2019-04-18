@@ -95,15 +95,15 @@ public class MoveComponent : MonoBehaviour
         return (Physics.SphereCast(groundedRay, characterController.radius));
     }
 
-    void OnDrawGizmos()
-    {
-        if (characterController)
-        {
-            float radius = characterController.radius;
-            Vector3 feetPosition = characterController.bounds.center - (Vector3.up * (characterController.height / 2 - radius + GroundDistance));
-            Gizmos.DrawWireSphere(feetPosition, characterController.radius);
+    // void OnDrawGizmos()
+    // {
+    //     if (characterController)
+    //     {
+    //         float radius = characterController.radius;
+    //         Vector3 feetPosition = characterController.bounds.center - (Vector3.up * (characterController.height / 2 - radius + GroundDistance));
+    //         Gizmos.DrawWireSphere(feetPosition, characterController.radius);
 
-            Debug.Log(IsGrounded());
-        }
-    }
+    //         Debug.Log(IsGrounded());
+    //     }
+    // }
 }
