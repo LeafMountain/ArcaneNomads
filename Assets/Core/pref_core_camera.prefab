@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1400226052599954
+--- !u!1 &5984214493203272502
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4110962458700194}
-  - component: {fileID: 20394267736548242}
-  - component: {fileID: 124288491600501698}
-  - component: {fileID: 114290167171869126}
-  - component: {fileID: 114788210222327278}
-  - component: {fileID: 2754031262340079047}
+  - component: {fileID: 5984214493203272507}
+  - component: {fileID: 5984214493203272500}
+  - component: {fileID: 5984214493203272501}
+  - component: {fileID: 5984214493203272506}
+  - component: {fileID: 5984214493203272505}
   m_Layer: 0
-  m_Name: pref_sys_camera
+  m_Name: pref_core_camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4110962458700194
+--- !u!4 &5984214493203272507
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400226052599954}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.35, y: 2, z: -2.7}
+  m_GameObject: {fileID: 5984214493203272502}
+  m_LocalRotation: {x: 0.2432104, y: 0.33036605, z: -0.08852133, w: 0.9076734}
+  m_LocalPosition: {x: 0, y: 4.94, z: -6.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &20394267736548242
+  m_LocalEulerAnglesHint: {x: 30, y: 40, z: 0}
+--- !u!20 &5984214493203272500
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400226052599954}
+  m_GameObject: {fileID: 5984214493203272502}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.034042355, g: 0.14150941, b: 0.11279962, a: 0}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -57,11 +57,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 500
+  near clip plane: 0.3
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
-  orthographic size: 7
+  orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -77,71 +77,75 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!124 &124288491600501698
-Behaviour:
+--- !u!81 &5984214493203272501
+AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400226052599954}
+  m_GameObject: {fileID: 5984214493203272502}
   m_Enabled: 1
---- !u!114 &114290167171869126
+--- !u!114 &5984214493203272506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400226052599954}
+  m_GameObject: {fileID: 5984214493203272502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c5c852844ca47a4aa6020f84b8fedde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114788210222327278
+  Targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Offset: {x: 0, y: 0, z: 0}
+  Distance: 10
+  MoveSmoothing: 0.05
+  MoveSensitivity: 1
+  RotationSmoothing: 0.05
+  RotationSensitivity: 1
+  PitchMinMax: {x: 10, y: 80}
+  LockAndHideCursor: 1
+--- !u!114 &5984214493203272505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400226052599954}
+  m_GameObject: {fileID: 5984214493203272502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a9dcfdc3f4ecf14bba52f31216b6ab9, type: 3}
+  m_Script: {fileID: 11500000, guid: cd011871b6d0ffe4e8e2799862c1f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SerializedData:
-    Move: {x: 0, y: 0}
-    Look: {x: 0, y: 0}
-    swapShoulder: 0
-    aim: 0
-    sprint: 0
-    reload: 0
-    fire: 0
-    interact: 0
-    jump: 0
-    lookSensitivity: 0
-    leftDeadZone: 0
-    rightDeadZone: 0
---- !u!114 &2754031262340079047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400226052599954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54cba8b9cfc5f6c49b37b0e85fc2e132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SerializedData:
-    LookPosition: {x: 0, y: 0, z: 0}
-    LookDirection: {x: 0, y: 0, z: 0}
-    Offset: {x: 0, y: 2, z: 0}
-    DistanceToTarget: 8
-    Rotation: {x: 0, y: 0, z: 0}
-    CurrentVelocity: {x: 0, y: 0, z: 0}
-    Obstacles:
-      serializedVersion: 2
-      m_Bits: 2871
-    Smoothing: 0
+  Keys: []
+  Directions:
+  - HorizontalName: Mouse X
+    VerticalName: Mouse Y
+    Sensitivity: 3
+    OnDirection:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5984214493203272506}
+          m_MethodName: Move
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEventVector2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
