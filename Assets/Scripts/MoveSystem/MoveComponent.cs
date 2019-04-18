@@ -59,7 +59,6 @@ public class MoveComponent : MonoBehaviour
 
         // Move
         Vector3 velocity = moveDirection * currentSpeed + Vector3.up * velocityY;
-        Debug.Log(velocity);
         characterController.Move(velocity * Time.deltaTime);
 
         // Reset gravity
@@ -76,6 +75,7 @@ public class MoveComponent : MonoBehaviour
             animator.SetFloat("VelocityX", localVelocity.x, AnimationSmoothing, Time.deltaTime);
             animator.SetFloat("VelocityY", localVelocity.y, AnimationSmoothing, Time.deltaTime);
             animator.SetFloat("VelocityZ", localVelocity.z, AnimationSmoothing, Time.deltaTime);
+            animator.SetBool("Grounded", IsGrounded());
         }
     }
 
@@ -104,12 +104,13 @@ public class MoveComponent : MonoBehaviour
 
     public void Jump()
     {
-        Debug.Log("Trying to jump");
         if (IsGrounded())
         {
-            Debug.Log("Jumping");
             float jumpVelocity = Mathf.Sqrt(-2 * Gravity * JumpHeight);
             velocityY = jumpVelocity;
+
+            if (animator)
+                animator.SetTrigger("Jump");
         }
     }
 
