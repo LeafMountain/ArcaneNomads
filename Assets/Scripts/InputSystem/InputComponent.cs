@@ -5,17 +5,17 @@ using UnityEngine.Events;
 
 public class InputComponent : MonoBehaviour
 {
-    public InputKey[] Keys;
+    public InputButton[] Buttons;
     public InputDirection[] Directions;
 
     void Update()
     {
-        for (int i = 0; i < Keys.Length; i++)
+        for (int i = 0; i < Buttons.Length; i++)
         {
-            InputKey key = Keys[i];
-            if (Input.GetKeyDown(key.Name)) key.OnPressed.Invoke();
-            else if (Input.GetKeyUp(key.Name)) key.OnReleased.Invoke();
-            if (Input.GetKey(key.Name)) key.OnHold.Invoke();
+            InputButton button = Buttons[i];
+            if (Input.GetButtonDown(button.Name)) button.OnPressed.Invoke();
+            else if (Input.GetButtonUp(button.Name)) button.OnReleased.Invoke();
+            if (Input.GetButton(button.Name)) button.OnHold.Invoke();
         }
 
         for (int i = 0; i < Directions.Length; i++)
@@ -26,7 +26,7 @@ public class InputComponent : MonoBehaviour
 }
 
 [System.Serializable]
-public struct InputKey
+public struct InputButton
 {
     public string Name;
     public UnityEvent OnPressed;

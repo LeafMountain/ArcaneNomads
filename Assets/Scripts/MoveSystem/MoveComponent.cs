@@ -5,16 +5,22 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class MoveComponent : MonoBehaviour
 {
-    [Range(0, 20)]
+    [Tooltip("Normal speed in m/s")]
     public float MoveSpeed = 1;
+    [Tooltip("Sprint speed in m/s")]
+    public float SprintSpeed = 2;
     [Range(0, 1)]
     public float Smoothing = .05f;
     public float RotationSpeed = 3;
-    [Range(0, 1)]
-    public float AnimationSmoothing = 0;
     public bool RelativeToCamera;
     public bool IgnoreY;
+    public float GroundDistance = .1f;
 
+    [Header("Animation")]
+    [Range(0, 1)]
+    public float AnimationSmoothing = 0;
+
+    float currentSpeed;
     CharacterController characterController;
     Animator animator;
     Vector3 moveVector;
@@ -24,6 +30,7 @@ public class MoveComponent : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        currentSpeed = MoveSpeed;
     }
 
     void Update()
@@ -31,8 +38,8 @@ public class MoveComponent : MonoBehaviour
         Vector3 moveDirection = moveVector;
         if (RelativeToCamera) moveDirection = Camera.main.transform.TransformVector(moveDirection);
         if (IgnoreY) moveDirection.y = 0;
-        Vector3 smoothMove = Vector3.SmoothDamp(transform.position, transform.position + moveDirection, ref currentVelocity, Smoothing, MoveSpeed, Time.deltaTime);
-        smoothMove += Physics.gravity;
+        Vector3 smoothMove = Vector3.SmoothDamp(transform.position, transform.position + moveDirection, ref currentVelocity, Smoothing, currentSpeed, Time.deltaTime);
+        if (IsGrounded()) smoothMove += Physics.gravity;
         characterController.Move(smoothMove - transform.position);
 
         RotateTowardsMoveDir(moveDirection);
@@ -66,11 +73,37 @@ public class MoveComponent : MonoBehaviour
     public void Move(Vector3 direction)
     {
         direction.Normalize();
-        moveVector = direction * MoveSpeed;
+        moveVector = direction * currentSpeed;
     }
 
     public void Jump(float height)
     {
         // Look up the algorithm
+    }
+
+    public void SetSprint(bool value)
+    {
+        currentSpeed = value ? SprintSpeed : MoveSpeed;
+    }
+
+    public bool IsGrounded()
+    {
+        return characterController.isGrounded;
+        float radius = characterController.radius;
+        Vector3 feetPosition = characterController.bounds.center - (Vector3.up * (characterController.height / 2 - radius + GroundDistance));
+        Ray groundedRay = new Ray(feetPosition, Vector3.down);
+        return (Physics.SphereCast(groundedRay, characterController.radius));
+    }
+
+    void OnDrawGizmos()
+    {
+        if (characterController)
+        {
+            float radius = characterController.radius;
+            Vector3 feetPosition = characterController.bounds.center - (Vector3.up * (characterController.height / 2 - radius + GroundDistance));
+            Gizmos.DrawWireSphere(feetPosition, characterController.radius);
+
+            Debug.Log(IsGrounded());
+        }
     }
 }
