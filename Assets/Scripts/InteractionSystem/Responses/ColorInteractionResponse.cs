@@ -8,21 +8,21 @@ public class ColorInteractionResponse : MonoBehaviour, IInteractable
     public Color focusColor = Color.blue;
     public Color interactionColor = Color.red;
 
-    Renderer renderer;
+    Renderer rend;
 
     void Start()
     {
-        renderer = GetComponent<Renderer>();
+        rend = GetComponent<Renderer>();
     }
 
     public void OnFocus()
     {
-        renderer.material.color = focusColor;
+        rend.material.color = focusColor;
     }
 
     public void OnInteract(InteractorComponent interactor)
     {
-        renderer.material.color = interactionColor;
+        rend.material.color = interactionColor;
         Debug.Log("Interacted with color interactor");
     }
 

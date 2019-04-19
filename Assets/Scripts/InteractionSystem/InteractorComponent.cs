@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class InteractorComponent : MonoBehaviour
@@ -6,42 +7,50 @@ public class InteractorComponent : MonoBehaviour
     public float Range = 1;
     public UnityEvent OnInteracted;
 
-    Collider collider;
+    Collider col;
     IInteractable focusedTarget;
+    GameObject focusedObject;
+
+    IInteractable[] focusedInteractables;
+    IInteractable[] newInteractables;
 
     void Start()
     {
-        collider = GetComponent<Collider>();
+        col = GetComponent<Collider>();
     }
 
     void Update()
     {
-        IInteractable visibleTarget = GetInteractableVisible();
-        if(visibleTarget != focusedTarget)
+        (GameObject, IInteractable) visibleTarget = GetInteractableVisible();
+        if(visibleTarget.Item2 != focusedTarget)
         {
-            focusedTarget?.OnUnfocus();
-            focusedTarget = visibleTarget;
             if(focusedTarget != null)
-                focusedTarget.OnFocus();
+                foreach (var interactable in focusedObject.GetComponents<IInteractable>())
+                    interactable.OnUnfocus();
+            focusedObject = visibleTarget.Item1;
+            focusedTarget = visibleTarget.Item2;
+            if(focusedTarget != null)
+                foreach (var interactable in focusedObject.GetComponents<IInteractable>())
+                    interactable.OnFocus();
         }
     }
 
-    IInteractable GetInteractableVisible()
+    (GameObject, IInteractable) GetInteractableVisible()
     {
-        // Maybe check in a cone instead
         RaycastHit hit;
-        if (Physics.SphereCast(collider.bounds.center, .1f, transform.forward, out hit, Range))
+        if (Physics.SphereCast(col.bounds.center, .1f, transform.forward, out hit, Range))
         {
-            return hit.transform.GetComponent<IInteractable>();
+            return (hit.transform.gameObject, hit.transform.GetComponent<IInteractable>());
         }
 
-        return null;
+        return (null, null);
     }
 
     public void Interact()
     {
         if(focusedTarget != null)
-            focusedTarget.OnInteract(this);
+            foreach (var interactable in focusedObject.GetComponents<IInteractable>())
+                interactable.OnInteract(this);
     }
 
     void OnDrawGizmosSelected()

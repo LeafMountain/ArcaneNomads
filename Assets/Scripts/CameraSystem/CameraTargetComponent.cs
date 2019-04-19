@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class CameraTargetComponent : MonoBehaviour
 {
-    ThirdPersonCameraComponent camera;
+    ThirdPersonCameraComponent cam;
     ThirdPersonCameraComponent Camera
     {
         get
         {
-            if (!camera)
-                camera = GameObject.FindObjectOfType<ThirdPersonCameraComponent>();
-            if (!camera)
+            if (!cam)
+                cam = GameObject.FindObjectOfType<ThirdPersonCameraComponent>();
+            if (!cam)
             {
                 Debug.LogError("Third person camera missing.");
                 return null;
             }
             else
-                return camera;
+                return cam;
         }
     }
 
