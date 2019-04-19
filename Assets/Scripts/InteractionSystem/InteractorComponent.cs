@@ -38,7 +38,7 @@ public class InteractorComponent : MonoBehaviour
     (GameObject, IInteractable) GetInteractableVisible()
     {
         RaycastHit hit;
-        if (Physics.SphereCast(col.bounds.center, .1f, transform.forward, out hit, Range))
+        if (Physics.SphereCast(col.bounds.center - transform.forward * .1f, .5f, transform.forward, out hit, Range))
         {
             return (hit.transform.gameObject, hit.transform.GetComponent<IInteractable>());
         }
@@ -55,6 +55,7 @@ public class InteractorComponent : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
+        Gizmos.DrawWireSphere(GetComponent<Collider>().bounds.center, .5f);
         Gizmos.DrawRay(GetComponent<Collider>().bounds.center, transform.forward * Range);
     }
 }
