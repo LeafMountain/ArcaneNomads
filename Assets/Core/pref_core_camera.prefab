@@ -108,8 +108,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  Offset: {x: 0, y: 0, z: 0}
-  Distance: 10
+  Offset: {x: 0, y: 2, z: 0}
+  Distance: 7
   MoveSmoothing: 0.05
   MoveSensitivity: 1
   RotationSmoothing: 0.05
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd011871b6d0ffe4e8e2799862c1f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Keys: []
+  Buttons: []
   Directions:
   - HorizontalName: Mouse X
     VerticalName: Mouse Y

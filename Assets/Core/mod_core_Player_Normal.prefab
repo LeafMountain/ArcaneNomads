@@ -18,6 +18,24 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &992195224197818090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910241953129262295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6a0ad28a7393e49bfe8d84f2d13c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 2
+  OnInteracted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1846975219461242026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +149,7 @@ MonoBehaviour:
   MoveSpeed: 2.5
   SprintSpeed: 5
   Smoothing: 0.2
-  RotationSpeed: 3
+  RotationSpeed: 7
   RelativeToCamera: 1
   IgnoreY: 1
   GroundDistance: 0.1
