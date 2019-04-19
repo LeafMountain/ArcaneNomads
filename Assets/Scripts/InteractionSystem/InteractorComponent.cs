@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractorComponent : MonoBehaviour
 {
     public float Range = 1;
-    public UnityEventInteractable OnInteracted;
+    public UnityEvent OnInteracted;
 
     Collider collider;
+    IInteractable focusedTarget;
 
     void Start()
     {
@@ -14,23 +16,23 @@ public class InteractorComponent : MonoBehaviour
 
     void Update()
     {
-
+        IInteractable visibleTarget = GetInteractableVisible();
+        if(visibleTarget != focusedTarget)
+        {
+            focusedTarget?.OnUnfocus();
+            focusedTarget = visibleTarget;
+            if(focusedTarget != null)
+                focusedTarget.OnFocus();
+        }
     }
 
-    InteractableComponent GetInteractableVisible()
+    IInteractable GetInteractableVisible()
     {
         // Maybe check in a cone instead
         RaycastHit hit;
-        if (Physics.SphereCast(collider.bounds.center, .1f, transform.forward * Range, out hit))
+        if (Physics.SphereCast(collider.bounds.center, .1f, transform.forward, out hit, Range))
         {
-            return hit.transform.GetComponent<InteractableComponent>();
-            // if (interactable)
-            // {
-            //     return interactable;
-            //     // if (OnInteracted != null)
-            //     //     OnInteracted.Invoke(interactable);
-            //     // interactable.Interact(this);
-            // }
+            return hit.transform.GetComponent<IInteractable>();
         }
 
         return null;
@@ -38,9 +40,8 @@ public class InteractorComponent : MonoBehaviour
 
     public void Interact()
     {
-        var interactable = GetInteractableVisible();
-        interactable.Interact(this);
-        OnInteracted.Invoke(interactable);
+        if(focusedTarget != null)
+            focusedTarget.OnInteract(this);
     }
 
     void OnDrawGizmosSelected()
@@ -48,6 +49,3 @@ public class InteractorComponent : MonoBehaviour
         Gizmos.DrawRay(GetComponent<Collider>().bounds.center, transform.forward * Range);
     }
 }
-
-[System.Serializable]
-public class UnityEventInteractor : UnityEngine.Events.UnityEvent<InteractorComponent> { }

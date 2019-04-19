@@ -72,10 +72,10 @@ public class MoveComponent : MonoBehaviour
         if (animator)
         {
             Vector3 localVelocity = GetLocalVelocity(GetCurrentVelocity());
-            animator.SetFloat("VelocityX", localVelocity.x, AnimationSmoothing, Time.deltaTime);
-            animator.SetFloat("VelocityY", localVelocity.y, AnimationSmoothing, Time.deltaTime);
-            animator.SetFloat("VelocityZ", localVelocity.z, AnimationSmoothing, Time.deltaTime);
-            animator.SetBool("Grounded", IsGrounded());
+            animator.SetFloatChecked("VelocityX", localVelocity.x, AnimationSmoothing, Time.deltaTime);
+            animator.SetFloatChecked("VelocityY", localVelocity.y, AnimationSmoothing, Time.deltaTime);
+            animator.SetFloatChecked("VelocityZ", localVelocity.z, AnimationSmoothing, Time.deltaTime);
+            animator.SetBoolChecked("Grounded", IsGrounded());
         }
     }
 
