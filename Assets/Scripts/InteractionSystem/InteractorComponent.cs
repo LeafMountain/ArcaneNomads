@@ -4,6 +4,8 @@ using UnityEngine.Events;
 
 public class InteractorComponent : MonoBehaviour
 {
+    public InputController InputController;
+
     public float Range = 1;
     public UnityEvent OnInteracted;
 
@@ -21,6 +23,9 @@ public class InteractorComponent : MonoBehaviour
 
     void Update()
     {
+        if(InputController.GetInteractButton())
+            Interact();
+
         (GameObject, IInteractable) visibleTarget = GetInteractableVisible();
         if(visibleTarget.Item2 != focusedTarget)
         {

@@ -20,7 +20,7 @@ public class StorableInteractionResponse : MonoBehaviour, IInteractable
     {
         StorageComponent storage = interactor.GetComponent<StorageComponent>();
         if(storage)
-            storage.Deposit(storeable);
+            storage.inventory.Deposit(storeable);
         else
             Debug.Log("No storage on interactor");
     }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3544480846699537489}
   - component: {fileID: 2306405174723982580}
   m_Layer: 0
-  m_Name: mod_prop_bush05_B
+  m_Name: pref_env_nature_bush05_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

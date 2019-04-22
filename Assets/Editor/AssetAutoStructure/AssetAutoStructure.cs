@@ -39,7 +39,16 @@ public class AssetAutoStructure
         new AssetLabel("Terrain", "terrain"),
         new AssetLabel("Core", "core")
     };
-    public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/_Sandbox", "Assets/Scripts", "Assets/Maps" };
+    public static string[] UnsortedFolders = { 
+        "Packages", 
+        "Assets/Editor", 
+        "Assets/Plugins", 
+        "Assets/3rd-Party", 
+        "Assets/_Sandbox", 
+        "Assets/Scripts", 
+        "Assets/Maps",
+        "Assets/Settings"
+    };
 
     public static bool AllowOnlyLabeled = true;
 

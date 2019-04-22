@@ -999,6 +999,11 @@ PrefabInstance:
       value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
+    - target: {fileID: 1961104549443411190, guid: e3e7c5e7b55e0b448addc39ea3f50e52,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1103949613224937142, guid: e3e7c5e7b55e0b448addc39ea3f50e52,
         type: 3}
       propertyPath: OnInteracted.m_PersistentCalls.m_Calls.Array.size
@@ -1044,11 +1049,29 @@ PrefabInstance:
       propertyPath: Range
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1103949613224937142, guid: e3e7c5e7b55e0b448addc39ea3f50e52,
+        type: 3}
+      propertyPath: InputController
+      value: 
+      objectReference: {fileID: 11400000, guid: 63ae40f892835374da4f4932c7222db1,
+        type: 2}
     - target: {fileID: 1735138135173811339, guid: e3e7c5e7b55e0b448addc39ea3f50e52,
         type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5442312759485586517, guid: e3e7c5e7b55e0b448addc39ea3f50e52,
+        type: 3}
+      propertyPath: testtest
+      value: 
+      objectReference: {fileID: 11400000, guid: 63ae40f892835374da4f4932c7222db1,
+        type: 2}
+    - target: {fileID: 5442312759485586517, guid: e3e7c5e7b55e0b448addc39ea3f50e52,
+        type: 3}
+      propertyPath: InputController
+      value: 
+      objectReference: {fileID: 11400000, guid: 63ae40f892835374da4f4932c7222db1,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3e7c5e7b55e0b448addc39ea3f50e52, type: 3}
 --- !u!4 &1456314104 stripped
@@ -1075,8 +1098,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ba10b03886c9942aa301eaae4de4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 10
-  storables: []
+  inventory: {fileID: 11400000, guid: 1ed9dda160d659d44abc4b0cc03f80aa, type: 2}
+--- !u!114 &1571373343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571373336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee8db3657b244e4187dea7d9a7ab93b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationSmoothing: 0.1
 --- !u!114 &1618325304 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1103949613224937142, guid: e3e7c5e7b55e0b448addc39ea3f50e52,
@@ -1220,6 +1255,7 @@ GameObject:
   - component: {fileID: 1747314744}
   - component: {fileID: 1747314743}
   - component: {fileID: 1747314748}
+  - component: {fileID: 1747314749}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1322,10 +1358,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1747314742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28e9b28e225867142b48234c8c32f226, type: 3}
+  m_Script: {fileID: 11500000, guid: 63ba10b03886c9942aa301eaae4de4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: e9f459baaaf7ea14c8a6805269d1559f, type: 3}
+  inventory: {fileID: 0}
+--- !u!114 &1747314749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747314742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7e0d9b70afb544497abe76815ef6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiOffset: {x: 0, y: 1, z: 0}
 --- !u!4 &1752079170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8878459776663686606, guid: 10e8a30ea34be2f45bb4a6993ce31b9f,

@@ -30,13 +30,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb6a0ad28a7393e49bfe8d84f2d13c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 2
+  InputController: {fileID: 11400000, guid: 63ae40f892835374da4f4932c7222db1, type: 2}
+  Range: 1
   OnInteracted:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1846975219461242026
+--- !u!114 &1454925777800702092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,95 +46,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1910241953129262295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd011871b6d0ffe4e8e2799862c1f8d5, type: 3}
+  m_Script: {fileID: 11500000, guid: cee8db3657b244e4187dea7d9a7ab93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Buttons:
-  - Name: Fire3
-    OnPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5264710719309577225}
-          m_MethodName: SetSprint
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    OnReleased:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5264710719309577225}
-          m_MethodName: SetSprint
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    OnHold:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  - Name: Jump
-    OnPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5264710719309577225}
-          m_MethodName: Jump
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    OnReleased:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    OnHold:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  Directions:
-  - HorizontalName: Horizontal
-    VerticalName: Vertical
-    Sensitivity: 1
-    OnDirection:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5264710719309577225}
-          m_MethodName: Move
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEventVector2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+  AnimationSmoothing: 0.1
+--- !u!114 &3648515335090174002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910241953129262295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ba10b03886c9942aa301eaae4de4d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 1ed9dda160d659d44abc4b0cc03f80aa, type: 2}
 --- !u!114 &5264710719309577225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,16 +75,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b28a1fea2c9ef41a1c57701f937772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InputController: {fileID: 11400000, guid: 63ae40f892835374da4f4932c7222db1, type: 2}
   MoveSpeed: 2.5
   SprintSpeed: 5
   Smoothing: 0.2
   RotationSpeed: 7
   RelativeToCamera: 1
   IgnoreY: 1
-  GroundDistance: 0.1
+  GroundedTolerance: 0.1
   Gravity: -0.9
   JumpHeight: 1
-  AnimationSmoothing: 0.1
 --- !u!114 &9195320134504267960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +107,7 @@ PrefabInstance:
     - target: {fileID: 4217342803834208478, guid: 45620a1068584c64b946addd527c961f,
         type: 3}
       propertyPath: m_Name
-      value: mod_core_Player_Normal
+      value: pref_core_Player_Normal
       objectReference: {fileID: 0}
     - target: {fileID: 4217342803833855294, guid: 45620a1068584c64b946addd527c961f,
         type: 3}

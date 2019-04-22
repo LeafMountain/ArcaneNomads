@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class MoveComponent : MonoBehaviour
 {
+    public InputController InputController;
+
     [Tooltip("Normal speed in m/s")]
     public float MoveSpeed = 1;
     [Tooltip("Sprint speed in m/s")]
@@ -14,35 +16,38 @@ public class MoveComponent : MonoBehaviour
     public float RotationSpeed = 3;
     public bool RelativeToCamera;
     public bool IgnoreY;
-    public float GroundDistance = .1f;
+    public float GroundedTolerance = .1f;
     public float Gravity = -.9f;
 
     [Header("Jumping")]
     public float JumpHeight;
 
-    [Header("Animation")]
-    [Range(0, 1)]
-    public float AnimationSmoothing = 0;
+    public delegate void MoveEvent();
+    public MoveEvent OnJump;
 
     float targetSpeed;
     float currentSpeed;
     CharacterController characterController;
-    Animator animator;
     Vector3 moveVector;
-    // Vector3 currentSmoothVelocity;
     float currentSmoothVelocity;
     float velocityY;
 
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
         targetSpeed = MoveSpeed;
         Gravity = Physics.gravity.y;
     }
 
     void Update()
     {
+        if(InputController)
+        {
+            Move(InputController.GetMoveIntup());
+            SetSprint(InputController.GetSprintInput());
+            if(InputController.GetJumpInput()) Jump();
+        }
+
         // Calculate new position
         Vector3 moveDirection = moveVector;
         if (RelativeToCamera) moveDirection = MakeRelativeToCamera(moveDirection, IgnoreY);
@@ -52,7 +57,6 @@ public class MoveComponent : MonoBehaviour
         currentVelocity.y = 0;
         currentSpeed = currentVelocity.magnitude;
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref currentSmoothVelocity, Smoothing);
-        // Debug.Log(currentSpeed + " " + targetSpeed);
 
         // Apply gravity
         velocityY += Time.deltaTime * Gravity;
@@ -67,16 +71,6 @@ public class MoveComponent : MonoBehaviour
 
         // Rotation
         RotateTowardsMoveDir(moveDirection);
-
-        // Animation
-        if (animator)
-        {
-            Vector3 localVelocity = GetLocalVelocity(GetCurrentVelocity());
-            animator.SetFloatChecked("VelocityX", localVelocity.x, AnimationSmoothing, Time.deltaTime);
-            animator.SetFloatChecked("VelocityY", localVelocity.y, AnimationSmoothing, Time.deltaTime);
-            animator.SetFloatChecked("VelocityZ", localVelocity.z, AnimationSmoothing, Time.deltaTime);
-            animator.SetBoolChecked("Grounded", IsGrounded());
-        }
     }
 
     Vector3 MakeRelativeToCamera(Vector3 vector, bool ignoreY = false)
@@ -84,7 +78,6 @@ public class MoveComponent : MonoBehaviour
         Vector3 moveDirectionRelativeToCamera = Camera.main.transform.TransformDirection(vector);
         if (ignoreY) moveDirectionRelativeToCamera.y = 0;
         moveDirectionRelativeToCamera.Normalize();
-        // Debug.Log(moveDirectionRelativeToCamera);
         return moveDirectionRelativeToCamera;
     }
 
@@ -108,9 +101,7 @@ public class MoveComponent : MonoBehaviour
         {
             float jumpVelocity = Mathf.Sqrt(-2 * Gravity * JumpHeight);
             velocityY = jumpVelocity;
-
-            if (animator)
-                animator.SetTrigger("Jump");
+            OnJump?.Invoke();
         }
     }
 
