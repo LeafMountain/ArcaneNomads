@@ -31,12 +31,12 @@ public class InteractorComponent : MonoBehaviour
         {
             if(focusedTarget != null)
                 foreach (var interactable in focusedObject.GetComponents<IInteractable>())
-                    interactable.OnUnfocus();
+                    interactable.OnUnfocus(this);
             focusedObject = visibleTarget.Item1;
             focusedTarget = visibleTarget.Item2;
             if(focusedTarget != null)
                 foreach (var interactable in focusedObject.GetComponents<IInteractable>())
-                    interactable.OnFocus();
+                    interactable.OnFocus(this);
         }
     }
 

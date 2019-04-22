@@ -34,21 +34,16 @@ public class StorageUIComponent : MonoBehaviour, IInteractable
 
     public void OnInteract(InteractorComponent interactor)
     {
-        // For testing
-        var otherInventory = interactor.GetComponent<StorageComponent>().inventory;
-        for (int i = 0; i < otherInventory.size; i++)
-        {
-            if(otherInventory.storables[i])
-                storage.inventory.Deposit(otherInventory.Withdraw(i));
-        }
+
     }
 
-    public void OnFocus()
+    public void OnFocus(InteractorComponent interactor)
     {
         ui.SetActive(true);
+        ui.transform.forward = Camera.main.transform.position - transform.position;
     }
 
-    public void OnUnfocus()
+    public void OnUnfocus(InteractorComponent interactor)
     {
         ui.SetActive(false);
     }

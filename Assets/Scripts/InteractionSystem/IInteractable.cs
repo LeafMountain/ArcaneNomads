@@ -1,6 +1,6 @@
 ﻿public interface IInteractable
 {
     void OnInteract(InteractorComponent interactor);
-    void OnFocus();
-    void OnUnfocus();
+    void OnFocus(InteractorComponent interactor);
+    void OnUnfocus(InteractorComponent interactor);
 }

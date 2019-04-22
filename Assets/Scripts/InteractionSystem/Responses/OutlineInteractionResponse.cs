@@ -14,7 +14,7 @@ public class OutlineInteractionResponse : MonoBehaviour, IInteractable
         rend = GetComponent<Renderer>();
     }
 
-    public void OnFocus()
+    public void OnFocus(InteractorComponent interactor)
     {
         if(!outlineMaterial)
             return;
@@ -34,7 +34,7 @@ public class OutlineInteractionResponse : MonoBehaviour, IInteractable
 
     }
 
-    public void OnUnfocus()
+    public void OnUnfocus(InteractorComponent interactor)
     {
         if(!outlineMaterial)
             return;

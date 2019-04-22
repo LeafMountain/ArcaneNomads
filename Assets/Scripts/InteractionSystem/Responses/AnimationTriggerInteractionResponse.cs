@@ -14,7 +14,7 @@ public class AnimationTriggerInteractionResponse : MonoBehaviour, IInteractable
         animator = GetComponent<Animator>();
     }
 
-    public void OnFocus()
+    public void OnFocus(InteractorComponent interactor)
     {
     }
 
@@ -23,7 +23,7 @@ public class AnimationTriggerInteractionResponse : MonoBehaviour, IInteractable
         animator.SetTrigger(TriggerName);
     }
 
-    public void OnUnfocus()
+    public void OnUnfocus(InteractorComponent interactor)
     {
     }
 }

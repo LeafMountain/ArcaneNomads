@@ -12,7 +12,7 @@ public class StorableInteractionResponse : MonoBehaviour, IInteractable
         storeable = GetComponent<StorableComponent>();
     }
 
-    public void OnFocus()
+    public void OnFocus(InteractorComponent interactor)
     {
     }
 
@@ -25,7 +25,7 @@ public class StorableInteractionResponse : MonoBehaviour, IInteractable
             Debug.Log("No storage on interactor");
     }
 
-    public void OnUnfocus()
+    public void OnUnfocus(InteractorComponent interactor)
     {
     }
 }

@@ -25,11 +25,11 @@ public class StorableComponent : MonoBehaviour, IInteractable
             Debug.Log("No storage on interactor");
     }
 
-    public void OnFocus()
+    public void OnFocus(InteractorComponent interactor)
     {
     }
 
-    public void OnUnfocus()
+    public void OnUnfocus(InteractorComponent interactor)
     {
     }
 }

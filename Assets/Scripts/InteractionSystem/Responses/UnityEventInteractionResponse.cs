@@ -12,12 +12,12 @@ public class UnityEventInteractionResponse : MonoBehaviour, IInteractable
         OnInteracted.Invoke();
     }
 
-    void IInteractable.OnFocus()
+    void IInteractable.OnFocus(InteractorComponent interactor)
     {
         OnFocus.Invoke();
     }
 
-    void IInteractable.OnUnfocus()
+    void IInteractable.OnUnfocus(InteractorComponent interactor)
     {
         OnUnfocus.Invoke();
     }

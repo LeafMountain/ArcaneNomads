@@ -15,7 +15,7 @@ public class ColorInteractionResponse : MonoBehaviour, IInteractable
         rend = GetComponent<Renderer>();
     }
 
-    public void OnFocus()
+    public void OnFocus(InteractorComponent interactor)
     {
         rend.material.color = focusColor;
     }
@@ -26,7 +26,7 @@ public class ColorInteractionResponse : MonoBehaviour, IInteractable
         Debug.Log("Interacted with color interactor");
     }
 
-    public void OnUnfocus()
+    public void OnUnfocus(InteractorComponent interactor)
     {
     }
 }
