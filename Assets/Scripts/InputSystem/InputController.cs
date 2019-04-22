@@ -5,26 +5,26 @@ public abstract class InputController : ScriptableObject, IInputController
 {
     public virtual bool GetInteractButton()
     {
-        throw new NotImplementedException();
+        return false;
     }
 
     public virtual bool GetJumpInput()
     {
-        throw new System.NotImplementedException();
+        return false;
     }
 
-    public virtual Vector2 GetMoveIntup()
+    public virtual Vector2 GetMoveIntup(Transform transform)
     {
-        throw new System.NotImplementedException();
+        return Vector3.zero;
     }
 
     public virtual bool GetSprintInput()
     {
-        throw new System.NotImplementedException();
+        return false;
     }
 
     public virtual bool GetUseButton()
     {
-        throw new NotImplementedException();
+        return false;
     }
 }

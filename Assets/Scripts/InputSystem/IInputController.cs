@@ -2,7 +2,7 @@
 
 public interface IInputController
 {
-    Vector2 GetMoveIntup();
+    Vector2 GetMoveIntup(Transform transform);
     bool GetSprintInput();
     bool GetJumpInput();
     bool GetInteractButton();

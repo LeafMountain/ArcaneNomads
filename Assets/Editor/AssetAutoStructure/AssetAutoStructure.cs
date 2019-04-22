@@ -52,7 +52,7 @@ public class AssetAutoStructure
 
     public static bool AllowOnlyLabeled = true;
 
-    [MenuItem("Tools/Auto Structure/Sort Project")]
+    // [MenuItem("Tools/Auto Structure/Sort Project")]
     public static void SortAssets()
     {
         string[] assets = FindAssetsNoFolders("");
@@ -210,7 +210,7 @@ public class AssetAutoStructure
         }
     }
 
-    [MenuItem("Tools/Auto Structure/Remove Empty Folders")]
+    // [MenuItem("Tools/Auto Structure/Remove Empty Folders")]
     private static void RemoveEmptyFoldersEditorShortcut()
     {
         RemoveEmptyFolders("Assets");

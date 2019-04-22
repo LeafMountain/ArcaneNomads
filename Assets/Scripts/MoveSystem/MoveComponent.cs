@@ -43,7 +43,7 @@ public class MoveComponent : MonoBehaviour
     {
         if(InputController)
         {
-            Move(InputController.GetMoveIntup());
+            Move(InputController.GetMoveIntup(transform));
             SetSprint(InputController.GetSprintInput());
             if(InputController.GetJumpInput()) Jump();
         }

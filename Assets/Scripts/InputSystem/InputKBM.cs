@@ -15,7 +15,7 @@ public class InputKBM : InputController, IInputController
         return Input.GetButtonDown(Jump);
     }
 
-    public override Vector2 GetMoveIntup()
+    public override Vector2 GetMoveIntup(Transform transform)
     {
         float h = Input.GetAxisRaw(Horizontal);
         float v = Input.GetAxisRaw(Vertical);
