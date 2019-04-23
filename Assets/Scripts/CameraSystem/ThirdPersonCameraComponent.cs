@@ -34,11 +34,11 @@ public class ThirdPersonCameraComponent : MonoBehaviour
 
     void Start()
     {
-        if (LockAndHideCursor)
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+        // if (LockAndHideCursor)
+        // {
+        //     Cursor.visible = false;
+        //     Cursor.lockState = CursorLockMode.Locked;
+        // }
     }
 
     void LateUpdate()

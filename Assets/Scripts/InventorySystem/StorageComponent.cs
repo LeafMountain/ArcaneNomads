@@ -14,7 +14,7 @@ public class StorageComponent : MonoBehaviour
         if(!inventory)
         {
             inventory = ScriptableObject.CreateInstance<InventoryAsset>();
-            inventory.SetSize(10);
+            inventory.SetSize(4);
         }
     }
 

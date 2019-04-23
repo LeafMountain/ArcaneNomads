@@ -4,10 +4,26 @@ using UnityEngine.UI;
 public class InventoryUIComponent : MonoBehaviour
 {
     public InventoryAsset inventory;
-    Image[] currentTiles = new Image[0];
+    public Transform buttonParent;
+    public GameObject buttonPrefab;
+
+    InventoryUIButton[] currentTiles = new InventoryUIButton[0];
+
+    void Awake()
+    {
+        if(!buttonPrefab)
+            Destroy(this);
+        if(!buttonParent)
+            buttonParent = transform;
+    }
 
     void Start()
     {
+        for (int i = 0; i < buttonParent.childCount; i++)
+        {
+            Destroy(buttonParent.GetChild(i).gameObject);
+        }
+
         if(!inventory)
             return;
         else
@@ -20,33 +36,21 @@ public class InventoryUIComponent : MonoBehaviour
             Destroy(currentTiles[i].gameObject);
 
         this.inventory = inventory;
-        // Create tiles
-        currentTiles = new Image[inventory.size];
+        currentTiles = new InventoryUIButton[inventory.size];
         for (int i = 0; i < currentTiles.Length; i++)
-        {
-            GameObject go = new GameObject();
-            go.name = i + " inventory tile";
-            go.transform.SetParent(transform, false);
-            currentTiles[i] = go.AddComponent<Image>();
-        }
+            currentTiles[i] = Instantiate(buttonPrefab, buttonParent).GetComponent<InventoryUIButton>();
+
+        inventory.OnInventoryUpdated += UpdateUI;
+        UpdateUI();
     }
 
-    void Update()
+    void UpdateUI()
     {
         if(!inventory)
             return;
 
         StorableComponent[] storables = inventory.GetStorables();
-        for (int i = 0; i < currentTiles.Length; i++)
-        {
-            if(i < storables.Length && storables[i] != null)
-            {
-                currentTiles[i].sprite = storables[i].icon;
-            }
-            else
-            {
-                currentTiles[i].sprite = null;
-            }
-        }
+        for (int i = 0; i < currentTiles.Length && i < storables.Length; i++)   
+            currentTiles[i].SetStorable(storables[i]);
     }
 }

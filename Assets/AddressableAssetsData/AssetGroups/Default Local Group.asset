@@ -17,6 +17,10 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 4497ba758b72797469a2eb9d45e96321
   m_SerializeEntries:
+  - m_GUID: 45037e093ef3adf498e48d0d3667478d
+    m_Address: Assets/Scripts/InventorySystem/UI/pref_core_ui_inventory.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   - m_GUID: 79e65f4870951b9478d2e9c71fd297ca
     m_Address: Assets/Core/pref_core_worldUI.prefab
     m_ReadOnly: 0
