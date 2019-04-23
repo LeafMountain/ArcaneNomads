@@ -6,14 +6,22 @@ public class StorableComponent : MonoBehaviour, IInteractable
 {
     public Sprite icon;
 
-    public void OnStore()
+    InventoryAsset currentInventory;
+
+    public void OnStore(InventoryAsset inventory)
     {
+        currentInventory = inventory;
         gameObject.SetActive(false);
     }
 
-    public void OnUnstore()
+    public void OnDrop()
     {
         gameObject.SetActive(true);
+    }
+
+    public void DropFromInventory()
+    {
+        currentInventory?.Withdraw(this);
     }
 
     public void OnInteract(InteractorComponent interactor)

@@ -4,8 +4,11 @@
 public class InventoryAsset : ScriptableObject
 {
     public int size;
-    [HideInInspector]
+    // [HideInInspector]
     public StorableComponent[] storables;
+
+    public delegate void InventoryEvent();
+    public InventoryEvent OnInventoryUpdated;
 
     void OnEnable()
     {
@@ -19,6 +22,8 @@ public class InventoryAsset : ScriptableObject
             size = value;
             storables = new StorableComponent[size];
             // Maybe transfer the old items to the new array first?
+
+            OnInventoryUpdated?.Invoke();
         }
     }
 
@@ -29,7 +34,8 @@ public class InventoryAsset : ScriptableObject
             if(storables[i] == null)
             {
                 storables[i] = storeable;
-                storeable.OnStore();
+                storeable.OnStore(this);
+                OnInventoryUpdated?.Invoke();
                 return true;
             }
         }
@@ -45,11 +51,12 @@ public class InventoryAsset : ScriptableObject
             if(storables[i] == storeable)
             {
                 storables[i] = null;
-                storeable.OnUnstore();
+                storeable.OnDrop();
+                OnInventoryUpdated?.Invoke();
                 return storeable;
             }
         }
-        Debug.Log("Storable not fond in this storage");
+        Debug.Log("Storable not found in this storage");
         return null;
     }
 
@@ -60,7 +67,8 @@ public class InventoryAsset : ScriptableObject
             {
                 StorableComponent storable = storables[index];
                 storables[index] = null;
-                storable.OnUnstore();
+                storable.OnDrop();
+                OnInventoryUpdated?.Invoke();
                 return storable;
             }
         }

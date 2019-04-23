@@ -13,7 +13,7 @@ public class StorageUIComponent : MonoBehaviour, IInteractable
     {
         storage = GetComponent<StorageComponent>();
         if(storage)
-            Addressables.Instantiate("Assets/Core/pref_core_worldUI.prefab", transform.position + uiOffset, Quaternion.identity, transform).Completed += OnUICreated;
+            Addressables.Instantiate("Assets/Scripts/InventorySystem/UI/pref_core_ui_inventory.prefab", transform.position + uiOffset, Quaternion.identity, transform).Completed += OnUICreated;
         else
             Destroy(gameObject);
     }
@@ -34,13 +34,12 @@ public class StorageUIComponent : MonoBehaviour, IInteractable
 
     public void OnInteract(InteractorComponent interactor)
     {
-
+        ui.transform.forward = Camera.main.transform.position - transform.position;
+        ui.SetActive(true);
     }
 
     public void OnFocus(InteractorComponent interactor)
     {
-        ui.SetActive(true);
-        ui.transform.forward = Camera.main.transform.position - transform.position;
     }
 
     public void OnUnfocus(InteractorComponent interactor)
