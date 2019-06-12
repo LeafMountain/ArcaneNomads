@@ -39,11 +39,20 @@ public class AssetAutoStructure
         new AssetLabel("Terrain", "terrain"),
         new AssetLabel("Core", "core")
     };
-    public static string[] UnsortedFolders = { "Packages", "Assets/Editor", "Assets/Plugins", "Assets/3rd-Party", "Assets/_Sandbox", "Assets/Scripts", "Assets/Maps" };
+    public static string[] UnsortedFolders = { 
+        "Packages", 
+        "Assets/Editor", 
+        "Assets/Plugins", 
+        "Assets/3rd-Party", 
+        "Assets/_Sandbox", 
+        "Assets/Scripts", 
+        "Assets/Maps",
+        "Assets/Settings"
+    };
 
     public static bool AllowOnlyLabeled = true;
 
-    [MenuItem("Tools/Auto Structure/Sort Project")]
+    // [MenuItem("Tools/Auto Structure/Sort Project")]
     public static void SortAssets()
     {
         string[] assets = FindAssetsNoFolders("");
@@ -201,7 +210,7 @@ public class AssetAutoStructure
         }
     }
 
-    [MenuItem("Tools/Auto Structure/Remove Empty Folders")]
+    // [MenuItem("Tools/Auto Structure/Remove Empty Folders")]
     private static void RemoveEmptyFoldersEditorShortcut()
     {
         RemoveEmptyFolders("Assets");

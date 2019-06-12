@@ -1,53 +1,66 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractorComponent : MonoBehaviour
 {
-    public float Range = 1;
-    public UnityEventInteractable OnInteracted;
+    public InputController InputController;
 
-    Collider collider;
+    public float Range = 1;
+    public UnityEvent OnInteracted;
+
+    Collider col;
+    IInteractable focusedTarget;
+    GameObject focusedObject;
+
+    IInteractable[] focusedInteractables;
+    IInteractable[] newInteractables;
 
     void Start()
     {
-        collider = GetComponent<Collider>();
+        col = GetComponent<Collider>();
     }
 
     void Update()
     {
+        if(InputController.GetInteractButton())
+            Interact();
 
+        (GameObject, IInteractable) visibleTarget = GetInteractableVisible();
+        if(visibleTarget.Item2 != focusedTarget)
+        {
+            if(focusedTarget != null)
+                foreach (var interactable in focusedObject.GetComponents<IInteractable>())
+                    interactable.OnUnfocus(this);
+            focusedObject = visibleTarget.Item1;
+            focusedTarget = visibleTarget.Item2;
+            if(focusedTarget != null)
+                foreach (var interactable in focusedObject.GetComponents<IInteractable>())
+                    interactable.OnFocus(this);
+        }
     }
 
-    InteractableComponent GetInteractableVisible()
+    (GameObject, IInteractable) GetInteractableVisible()
     {
-        // Maybe check in a cone instead
         RaycastHit hit;
-        if (Physics.SphereCast(collider.bounds.center, .1f, transform.forward * Range, out hit))
+        if (Physics.SphereCast(col.bounds.center - transform.forward * .1f, .5f, transform.forward, out hit, Range))
         {
-            return hit.transform.GetComponent<InteractableComponent>();
-            // if (interactable)
-            // {
-            //     return interactable;
-            //     // if (OnInteracted != null)
-            //     //     OnInteracted.Invoke(interactable);
-            //     // interactable.Interact(this);
-            // }
+            return (hit.transform.gameObject, hit.transform.GetComponent<IInteractable>());
         }
 
-        return null;
+        return (null, null);
     }
 
     public void Interact()
     {
-        var interactable = GetInteractableVisible();
-        interactable.Interact(this);
-        OnInteracted.Invoke(interactable);
+        if(focusedTarget != null)
+            foreach (var interactable in focusedObject.GetComponents<IInteractable>())
+                interactable.OnInteract(this);
     }
 
     void OnDrawGizmosSelected()
     {
+        Gizmos.DrawWireSphere(GetComponent<Collider>().bounds.center, .5f);
         Gizmos.DrawRay(GetComponent<Collider>().bounds.center, transform.forward * Range);
     }
 }
-
-[System.Serializable]
-public class UnityEventInteractor : UnityEngine.Events.UnityEvent<InteractorComponent> { }

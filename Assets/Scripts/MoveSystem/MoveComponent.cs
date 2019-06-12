@@ -11,12 +11,12 @@ public class MoveComponent : MonoBehaviour
     public bool RelativeToCamera;
     public float Gravity = -1.2f;
 
+
     [Header("Jumping")]
     public float JumpHeight;
 
-    [Header("Animation")]
-    [Range(0, 1)]
-    public float AnimationSmoothing = 0;
+    public delegate void MoveEvent();
+    public MoveEvent OnJump;
 
     float targetSpeed;
     CharacterController characterController;
@@ -26,14 +26,12 @@ public class MoveComponent : MonoBehaviour
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
         targetSpeed = MoveSpeed;
         Gravity = Physics.gravity.y;
     }
 
     void Update()
     {
-
         // Apply gravity
         velocity.y += Time.deltaTime * Gravity;
 
