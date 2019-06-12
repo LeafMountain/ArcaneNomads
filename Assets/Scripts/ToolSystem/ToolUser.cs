@@ -30,11 +30,14 @@ public class ToolUser : MonoBehaviour
             currentTool.transform.parent = attachPoint;
         }
         else Debug.LogError("Attach point missing.");
+
+        GetComponent<Animator>().SetBool("MediumStockEquipped", currentTool);
     }
 
     public void Aim(bool value)
     {
         aiming = value;
+        GetComponent<Animator>()?.SetBool("Aiming", value);
     }
 
     void Start()

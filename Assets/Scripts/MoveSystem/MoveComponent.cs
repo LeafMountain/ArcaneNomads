@@ -9,11 +9,12 @@ public class MoveComponent : MonoBehaviour
     [Tooltip("Sprint speed in m/s")] public float SprintSpeed = 2;
     public float RotationSpeed = 3;
     public bool RelativeToCamera;
-    public float Gravity = -1.2f;
-
+    public float Gravity = -12f;
 
     [Header("Jumping")]
     public float JumpHeight;
+
+    public float animationSmoothing = .1f;
 
     public delegate void MoveEvent();
     public MoveEvent OnJump;
@@ -26,8 +27,9 @@ public class MoveComponent : MonoBehaviour
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
+
         targetSpeed = MoveSpeed;
-        Gravity = Physics.gravity.y;
     }
 
     void Update()
@@ -59,9 +61,9 @@ public class MoveComponent : MonoBehaviour
         if (animator)
         {
             Vector3 localVelocity = GetLocalVelocity(GetCurrentVelocity());
-            animator.SetFloat("VelocityX", localVelocity.x, AnimationSmoothing, Time.deltaTime);
-            animator.SetFloat("VelocityY", localVelocity.y, AnimationSmoothing, Time.deltaTime);
-            animator.SetFloat("VelocityZ", localVelocity.z, AnimationSmoothing, Time.deltaTime);
+            animator.SetFloat("VelocityX", localVelocity.x, animationSmoothing, Time.deltaTime);
+            animator.SetFloat("VelocityY", localVelocity.y, animationSmoothing, Time.deltaTime);
+            animator.SetFloat("VelocityZ", localVelocity.z, animationSmoothing, Time.deltaTime);
             animator.SetBool("Grounded", IsGrounded());
         }
     }
