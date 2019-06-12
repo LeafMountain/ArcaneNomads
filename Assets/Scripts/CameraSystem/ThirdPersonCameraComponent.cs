@@ -2,6 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct CameraState
+{
+    public string name;
+    public int id;
+
+    public Vector3 offset;
+    public float distance;
+
+    [Header("Moving")]
+    [Range(0, 1)] public float moveSmoothing;
+    [Range(0, 1)] public float moveSensitivity;
+
+    [Header("Rotation")]
+    [Range(0, 1)] public float rotationSmoothing;
+    [Range(0, 1)] public float rotationSensitivity;
+    public Vector2 pitchMinMax;
+}
+
 public class ThirdPersonCameraComponent : MonoBehaviour
 {
     [Header("Position")]
@@ -25,6 +44,8 @@ public class ThirdPersonCameraComponent : MonoBehaviour
     [Header("Other")]
     public bool LockAndHideCursor = false;
 
+    public CameraState[] states;
+
     Vector3 currentRotationVelocity;
     Vector3 currentrotation;
     Vector3 currentVelocity;
@@ -32,13 +53,29 @@ public class ThirdPersonCameraComponent : MonoBehaviour
     float yaw;
     float pitch;
 
+    CameraState defaultState;
+    CameraState currentState;
+
     void Start()
     {
-        // if (LockAndHideCursor)
-        // {
-        //     Cursor.visible = false;
-        //     Cursor.lockState = CursorLockMode.Locked;
-        // }
+        defaultState = new CameraState
+        {
+            name = "default",
+            id = 0,
+            offset = Offset,
+            distance = Distance,
+            moveSmoothing = MoveSmoothing,
+            moveSensitivity = MoveSensitivity,
+            rotationSmoothing = RotationSmoothing,
+            rotationSensitivity = RotationSensitivity,
+            pitchMinMax = PitchMinMax
+        };
+
+        if (LockAndHideCursor)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     void LateUpdate()
@@ -47,19 +84,43 @@ public class ThirdPersonCameraComponent : MonoBehaviour
             return;
 
         transform.eulerAngles = currentrotation;
-        Vector3 targetPosition = Targets[0].position + Offset + (-transform.forward * Distance);// Make a bounding box instead to include all targets
+        Vector3 targetPosition = Targets[0].position + Targets[0].TransformDirection(Offset) + (-transform.forward * Distance);// Make a bounding box instead to include all targets
         targetPosition *= MoveSensitivity;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, MoveSmoothing);
+    }
+
+    public void SetState(string stateName)
+    {
+        CameraState newState = defaultState;
+
+        if (stateName != defaultState.name)
+        {
+            for (int i = 0; i < states.Length; i++)
+            {
+                if (states[i].name == stateName)
+                {
+                    newState = states[i];
+                    break;
+                }
+            }
+        }
+
+        currentState = newState;
+        Offset = currentState.offset;
+        Distance = currentState.distance;
+        MoveSmoothing = currentState.moveSmoothing;
+        MoveSensitivity = currentState.moveSensitivity;
+        RotationSmoothing = currentState.rotationSmoothing;
+        RotationSensitivity = currentState.rotationSensitivity;
+        PitchMinMax = currentState.pitchMinMax;
     }
 
     public void Move(Vector2 direction)
     {
         direction *= RotationSensitivity;
         yaw += direction.x;
-        // yaw = yaw % 360;
         pitch -= direction.y;
         pitch = Mathf.Clamp(pitch, PitchMinMax.x, PitchMinMax.y);
-        // pitch = pitch % 360;
 
         currentrotation = Vector3.SmoothDamp(currentrotation, new Vector3(pitch, yaw), ref currentRotationVelocity, RotationSmoothing);
     }
