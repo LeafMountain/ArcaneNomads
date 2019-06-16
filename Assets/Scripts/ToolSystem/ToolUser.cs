@@ -25,9 +25,9 @@ public class ToolUser : MonoBehaviour
 
         if (attachPoint)
         {
-            currentTool.transform.position = attachPoint.position;
-            currentTool.transform.rotation = attachPoint.rotation;
             currentTool.transform.parent = attachPoint;
+            currentTool.transform.localPosition = Vector3.zero;
+            currentTool.transform.localEulerAngles = Vector3.zero;
         }
         else Debug.LogError("Attach point missing.");
 

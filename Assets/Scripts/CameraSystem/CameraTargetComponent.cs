@@ -23,12 +23,12 @@ public class CameraTargetComponent : MonoBehaviour
 
     void OnEnable()
     {
-        Camera.AddTarget(transform);
+        Camera?.AddTarget(transform);
     }
 
     void OnDisable()
     {
-        Camera.RemoveTarget(transform);
+        Camera?.RemoveTarget(transform);
     }
 
     void Update()

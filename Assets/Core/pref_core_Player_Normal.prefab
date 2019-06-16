@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tool: {fileID: 3171829626726635775, guid: 1d652ad5f3e11184da6878ae208dbf17, type: 3}
-  attachPoint: {fileID: 1910241953129623749}
+  attachPoint: {fileID: 1910241953129623835}
 --- !u!114 &1603060183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,9 +323,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2307399921936362505}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1910241953129623749 stripped
+--- !u!4 &1910241953129623835 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4217342803833855180, guid: 45620a1068584c64b946addd527c961f,
+  m_CorrespondingSourceObject: {fileID: 4217342803833855250, guid: 45620a1068584c64b946addd527c961f,
     type: 3}
   m_PrefabInstance: {fileID: 2307399921936362505}
   m_PrefabAsset: {fileID: 0}
