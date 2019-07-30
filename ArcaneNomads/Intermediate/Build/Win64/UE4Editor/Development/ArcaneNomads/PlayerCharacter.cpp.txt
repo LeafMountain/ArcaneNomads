@@ -1,0 +1,13 @@
+C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\Definitions.ArcaneNomads.h
+C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\PlayerCharacter.h
+C:\Program Files\UnrealEngine\UE_4.22\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+C:\Program Files\UnrealEngine\UE_4.22\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+C:\Program Files\UnrealEngine\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+C:\Program Files\UnrealEngine\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Inc\ArcaneNomads\PlayerCharacter.generated.h
+C:\Program Files\UnrealEngine\UE_4.22\Engine\Source\Runtime\Engine\Classes/Components/CapsuleComponent.h
+C:\Program Files\UnrealEngine\UE_4.22\Engine\Source\Runtime\Engine\Classes\Components/ShapeComponent.h
+C:\Program Files\UnrealEngine\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ShapeComponent.generated.h
+C:\Program Files\UnrealEngine\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CapsuleComponent.generated.h
+C:\Program Files\UnrealEngine\UE_4.22\Engine\Source\Runtime\Engine\Classes/Camera/CameraComponent.h
+C:\Program Files\UnrealEngine\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CameraComponent.generated.h

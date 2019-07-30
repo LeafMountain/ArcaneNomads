@@ -1,0 +1,128 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "ArcaneNomads (Debug)",
+			"request": "launch",
+			"preLaunchTask": "ArcaneNomads Win64 Debug Build",
+			"program": "C:\\Users\\LovbergWin\\Projects\\TreeBranch\\ArcaneNomads\\ArcaneNomads\\Binaries\\Win64\\ArcaneNomads-Win64-Debug.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files\\UnrealEngine\\UE_4.22",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\UnrealEngine\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ArcaneNomads (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "ArcaneNomads Win64 DebugGame Build",
+			"program": "C:\\Users\\LovbergWin\\Projects\\TreeBranch\\ArcaneNomads\\ArcaneNomads\\Binaries\\Win64\\ArcaneNomads-Win64-DebugGame.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files\\UnrealEngine\\UE_4.22",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\UnrealEngine\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ArcaneNomads (Development)",
+			"request": "launch",
+			"preLaunchTask": "ArcaneNomads Win64 Development Build",
+			"program": "C:\\Users\\LovbergWin\\Projects\\TreeBranch\\ArcaneNomads\\ArcaneNomads\\Binaries\\Win64\\ArcaneNomads.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files\\UnrealEngine\\UE_4.22",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\UnrealEngine\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ArcaneNomads (Shipping)",
+			"request": "launch",
+			"preLaunchTask": "ArcaneNomads Win64 Shipping Build",
+			"program": "C:\\Users\\LovbergWin\\Projects\\TreeBranch\\ArcaneNomads\\ArcaneNomads\\Binaries\\Win64\\ArcaneNomads-Win64-Shipping.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files\\UnrealEngine\\UE_4.22",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\UnrealEngine\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ArcaneNomads (Test)",
+			"request": "launch",
+			"preLaunchTask": "ArcaneNomads Win64 Test Build",
+			"program": "C:\\Users\\LovbergWin\\Projects\\TreeBranch\\ArcaneNomads\\ArcaneNomads\\Binaries\\Win64\\ArcaneNomads-Win64-Test.exe",
+			"args": [
+			],
+			"cwd": "C:\\Program Files\\UnrealEngine\\UE_4.22",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\UnrealEngine\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ArcaneNomadsEditor (Debug)",
+			"request": "launch",
+			"preLaunchTask": "ArcaneNomadsEditor Win64 Debug Build",
+			"program": "C:\\Program Files\\UnrealEngine\\UE_4.22\\Engine\\Binaries\\Win64\\UE4Editor-Win64-Debug.exe",
+			"args": [
+				"C:\\Users\\LovbergWin\\Projects\\TreeBranch\\ArcaneNomads\\ArcaneNomads\\ArcaneNomads.uproject"
+			],
+			"cwd": "C:\\Program Files\\UnrealEngine\\UE_4.22",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\UnrealEngine\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ArcaneNomadsEditor (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "ArcaneNomadsEditor Win64 DebugGame Build",
+			"program": "C:\\Program Files\\UnrealEngine\\UE_4.22\\Engine\\Binaries\\Win64\\UE4Editor.exe",
+			"args": [
+				"C:\\Users\\LovbergWin\\Projects\\TreeBranch\\ArcaneNomads\\ArcaneNomads\\ArcaneNomads.uproject"
+			],
+			"cwd": "C:\\Program Files\\UnrealEngine\\UE_4.22",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\UnrealEngine\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ArcaneNomadsEditor (Development)",
+			"request": "launch",
+			"preLaunchTask": "ArcaneNomadsEditor Win64 Development Build",
+			"program": "C:\\Program Files\\UnrealEngine\\UE_4.22\\Engine\\Binaries\\Win64\\UE4Editor.exe",
+			"args": [
+				"C:\\Users\\LovbergWin\\Projects\\TreeBranch\\ArcaneNomads\\ArcaneNomads\\ArcaneNomads.uproject"
+			],
+			"cwd": "C:\\Program Files\\UnrealEngine\\UE_4.22",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\Program Files\\UnrealEngine\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "Generate Project Files",
+			"type": "clr",
+			"request": "launch",
+			"program": "C:\\Program Files\\UnrealEngine\\UE_4.22\\Engine\\Binaries\\DotNET\\UnrealBuildTool.exe",
+			"console": "externalTerminal",
+			"args": [
+				"-projectfiles",
+				"-vscode",
+				"-project=\"C:\\Users\\LovbergWin\\Projects\\TreeBranch\\ArcaneNomads\\ArcaneNomads\\ArcaneNomads.uproject\"",
+				"-game",
+				"-engine"
+			],
+			"internalConsoleOptions": "openOnSessionStart",
+			"cwd": "C:\\Program Files\\UnrealEngine\\UE_4.22"
+		}
+	]
+}

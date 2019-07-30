@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\ArcaneNomads.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{220048FA-F438-402B-ABA5-0F6F2EC92ACB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ArcaneNomads.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\ArcaneNomadsEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{0CEF1F83-5CE7-4212-AB5F-EB82F9BE20A0}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\ArcaneNomads">
+      <UniqueIdentifier>{21F671BA-661B-4FB2-8A81-5BF65406F940}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ArcaneNomads\ArcaneNomads.Build.cs">
+      <Filter>Source\ArcaneNomads</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\ArcaneNomads\ArcaneNomads.cpp">
+      <Filter>Source\ArcaneNomads</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\ArcaneNomads.h">
+      <Filter>Source\ArcaneNomads</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArcaneNomads\ArcaneNomadsCharacter.cpp">
+      <Filter>Source\ArcaneNomads</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\ArcaneNomadsCharacter.h">
+      <Filter>Source\ArcaneNomads</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArcaneNomads\ArcaneNomadsGameMode.cpp">
+      <Filter>Source\ArcaneNomads</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\ArcaneNomadsGameMode.h">
+      <Filter>Source\ArcaneNomads</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArcaneNomads\PlayerCharacter.cpp">
+      <Filter>Source\ArcaneNomads</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\PlayerCharacter.h">
+      <Filter>Source\ArcaneNomads</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArcaneNomads\HealthSystem">
+      <UniqueIdentifier>{A97EE01F-709F-46D5-9204-C5133B4E4E2B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArcaneNomads\HealthSystem\DamagerComponent.cpp">
+      <Filter>Source\ArcaneNomads\HealthSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\HealthSystem\DamagerComponent.h">
+      <Filter>Source\ArcaneNomads\HealthSystem</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArcaneNomads\HealthSystem\HealthComponent.cpp">
+      <Filter>Source\ArcaneNomads\HealthSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\HealthSystem\HealthComponent.h">
+      <Filter>Source\ArcaneNomads\HealthSystem</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArcaneNomads\InteractionSystem">
+      <UniqueIdentifier>{CDB5C018-1E48-4ED5-A3F8-F4DA40842D4A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArcaneNomads\InteractionSystem\Interactable.cpp">
+      <Filter>Source\ArcaneNomads\InteractionSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\InteractionSystem\Interactable.h">
+      <Filter>Source\ArcaneNomads\InteractionSystem</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArcaneNomads\InteractionSystem\InteractableComponent.cpp">
+      <Filter>Source\ArcaneNomads\InteractionSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\InteractionSystem\InteractableComponent.h">
+      <Filter>Source\ArcaneNomads\InteractionSystem</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArcaneNomads\InteractionSystem\InteractorComponent.cpp">
+      <Filter>Source\ArcaneNomads\InteractionSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\InteractionSystem\InteractorComponent.h">
+      <Filter>Source\ArcaneNomads\InteractionSystem</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArcaneNomads\WeaponSystem">
+      <UniqueIdentifier>{F04B8252-5EF7-436F-857D-FD61DC9C3B28}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\ArcaneNomads\WeaponSystem\Hittable.h">
+      <Filter>Source\ArcaneNomads\WeaponSystem</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArcaneNomads\WeaponSystem\ToolUser.cpp">
+      <Filter>Source\ArcaneNomads\WeaponSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\WeaponSystem\ToolUser.h">
+      <Filter>Source\ArcaneNomads\WeaponSystem</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArcaneNomads\WeaponSystem\Weapon.cpp">
+      <Filter>Source\ArcaneNomads\WeaponSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\WeaponSystem\Weapon.h">
+      <Filter>Source\ArcaneNomads\WeaponSystem</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\ArcaneNomads\InventorySystem\InventoryComponent.cpp">
+      <Filter>Source\ArcaneNomads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ArcaneNomads\InventorySystem\StoreableComponent.cpp">
+      <Filter>Source\ArcaneNomads</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\ArcaneNomads\InventorySystem\InventoryComponent.h">
+      <Filter>Source\ArcaneNomads</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ArcaneNomads\InventorySystem\StoreableComponent.h">
+      <Filter>Source\ArcaneNomads</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

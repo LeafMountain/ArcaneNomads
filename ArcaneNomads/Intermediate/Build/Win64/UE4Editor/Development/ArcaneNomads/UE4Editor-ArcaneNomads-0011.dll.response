@@ -1,0 +1,95 @@
+/MANIFEST:NO
+/NOLOGO
+/DEBUG
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/FIXED:No
+/NXCOMPAT
+/STACK:5000000
+/DELAY:UNLOAD
+/DLL
+/PDBALTPATH:%_PDB%
+/OPT:NOREF
+/OPT:NOICF
+/INCREMENTAL:NO
+/ignore:4199
+/ignore:4099
+/DELAYLOAD:"d3d12.dll"
+/DELAYLOAD:"DBGHELP.DLL"
+/LIBPATH:"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\lib\x64"
+/LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\ucrt\x64"
+/LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.17763.0\um\x64"
+/NODEFAULTLIB:"LIBCMT"
+/NODEFAULTLIB:"LIBCPMT"
+/NODEFAULTLIB:"LIBCMTD"
+/NODEFAULTLIB:"LIBCPMTD"
+/NODEFAULTLIB:"MSVCRTD"
+/NODEFAULTLIB:"MSVCPRTD"
+/NODEFAULTLIB:"LIBC"
+/NODEFAULTLIB:"LIBCP"
+/NODEFAULTLIB:"LIBCD"
+/NODEFAULTLIB:"LIBCPD"
+/FUNCTIONPADMIN
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\ArcaneNomadsEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\DamagerComponent.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\HealthComponent.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\Interactable.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\InteractableComponent.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\InteractorComponent.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\InventoryComponent.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\StoreableComponent.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\ToolUser.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\Weapon.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\ArcaneNomads.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\ArcaneNomadsCharacter.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\ArcaneNomadsGameMode.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\PlayerCharacter.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\ArcaneNomads.init.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\ArcaneNomadsCharacter.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\ArcaneNomadsGameMode.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\DamagerComponent.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\HealthComponent.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\Hittable.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\InteractableComponent.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\InteractorComponent.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\InventoryComponent.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\PlayerCharacter.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\StoreableComponent.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\ToolUser.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\Weapon.gen.cpp.obj"
+"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\Default.rc2.res"
+"delayimp.lib"
+"wininet.lib"
+"rpcrt4.lib"
+"ws2_32.lib"
+"dbghelp.lib"
+"comctl32.lib"
+"Winmm.lib"
+"kernel32.lib"
+"user32.lib"
+"gdi32.lib"
+"winspool.lib"
+"comdlg32.lib"
+"advapi32.lib"
+"shell32.lib"
+"ole32.lib"
+"oleaut32.lib"
+"uuid.lib"
+"odbc32.lib"
+"odbccp32.lib"
+"netapi32.lib"
+"iphlpapi.lib"
+"setupapi.lib"
+"dwmapi.lib"
+"imm32.lib"
+"C:\Program Files\UnrealEngine\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"
+"C:\Program Files\UnrealEngine\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
+"C:\Program Files\UnrealEngine\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
+"C:\Program Files\UnrealEngine\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\InputCore\UE4Editor-InputCore.lib"
+"C:\Program Files\UnrealEngine\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Development\HeadMountedDisplay\UE4Editor-HeadMountedDisplay.lib"
+/OUT:"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Binaries\Win64\UE4Editor-ArcaneNomads-0011.dll"
+/IMPLIB:"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-0011.suppressed.lib"
+/PDB:"C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Binaries\Win64\UE4Editor-ArcaneNomads-0011.pdb"
+/ignore:4078
+/INCLUDE:IMPLEMENT_MODULE_ArcaneNomads

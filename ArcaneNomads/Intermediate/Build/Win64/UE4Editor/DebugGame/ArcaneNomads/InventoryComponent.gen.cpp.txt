@@ -1,0 +1,5 @@
+C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\DebugGame\ArcaneNomads\Definitions.ArcaneNomads.h
+C:\Program Files\UnrealEngine\UE_4.22\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\UnrealEngine\UE_4.22\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads/InventorySystem/InventoryComponent.h
+C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Inc\ArcaneNomads\InventoryComponent.generated.h

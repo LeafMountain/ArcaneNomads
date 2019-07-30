@@ -1,0 +1,1062 @@
+﻿Log file open, 07/09/19 20:58:56
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogInit: Display: Running engine for game: ArcaneNomads
+LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+LogPlatformFile: Not using cached read wrapper
+LogTaskGraph: Started task graph with 5 named threads and 47 total threads with 3 sets of task threads.
+LogStats: Stats thread started at 0.534625
+LogD3D11RHI: Loaded GFSDK_Aftermath_Lib.x64.dll
+LogICUInternationalization: ICU TimeZone Detection - Raw Offset: +1:00, Platform Override: ''
+LogPluginManager: Mounting plugin Paper2D
+LogPluginManager: Mounting plugin AISupport
+LogPluginManager: Mounting plugin LightPropagationVolume
+LogPluginManager: Mounting plugin ActorLayerUtilities
+LogPluginManager: Mounting plugin AnimationSharing
+LogPluginManager: Mounting plugin CLionSourceCodeAccess
+LogPluginManager: Mounting plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting plugin GitSourceControl
+LogPluginManager: Mounting plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting plugin NullSourceCodeAccess
+LogPluginManager: Mounting plugin PerforceSourceControl
+LogPluginManager: Mounting plugin SubversionSourceControl
+LogPluginManager: Mounting plugin UObjectPlugin
+LogPluginManager: Mounting plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting plugin AssetManagerEditor
+LogPluginManager: Mounting plugin CryptoKeys
+LogPluginManager: Mounting plugin DataValidation
+LogPluginManager: Mounting plugin FacialAnimation
+LogPluginManager: Mounting plugin GameplayTagsEditor
+LogPluginManager: Mounting plugin MacGraphicsSwitching
+LogPluginManager: Mounting plugin MaterialAnalyzer
+LogPluginManager: Mounting plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting plugin PluginBrowser
+LogPluginManager: Mounting plugin SpeedTreeImporter
+LogPluginManager: Mounting plugin DatasmithContent
+LogPluginManager: Mounting plugin VariantManagerContent
+LogPluginManager: Mounting plugin AlembicImporter
+LogPluginManager: Mounting plugin AppleImageUtils
+LogPluginManager: Mounting plugin AppleVision
+LogPluginManager: Mounting plugin BackChannel
+LogPluginManager: Mounting plugin CharacterAI
+LogPluginManager: Mounting plugin GeometryCache
+LogPluginManager: Mounting plugin HTML5Networking
+LogPluginManager: Mounting plugin ProxyLODPlugin
+LogPluginManager: Mounting plugin SkeletalReduction
+LogPluginManager: Mounting plugin MagicLeap
+LogPluginManager: Mounting plugin MagicLeapMedia
+LogPluginManager: Mounting plugin AndroidMedia
+LogPluginManager: Mounting plugin AvfMedia
+LogPluginManager: Mounting plugin ImgMedia
+LogPluginManager: Mounting plugin LinearTimecode
+LogPluginManager: Mounting plugin MediaCompositing
+LogPluginManager: Mounting plugin MediaPlayerEditor
+LogPluginManager: Mounting plugin WebMMedia
+LogPluginManager: Mounting plugin WmfMedia
+LogPluginManager: Mounting plugin TcpMessaging
+LogPluginManager: Mounting plugin UdpMessaging
+LogPluginManager: Mounting plugin ActorSequence
+LogPluginManager: Mounting plugin LevelSequenceEditor
+LogPluginManager: Mounting plugin MatineeToLevelSequence
+LogPluginManager: Mounting plugin NetcodeUnitTest
+LogPluginManager: Mounting plugin NUTUnrealEngine4
+LogPluginManager: Mounting plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting plugin OnlineSubsystemIOS
+LogPluginManager: Mounting plugin OnlineSubsystem
+LogPluginManager: Mounting plugin OnlineSubsystemNull
+LogPluginManager: Mounting plugin OnlineSubsystemUtils
+LogPluginManager: Mounting plugin LauncherChunkInstaller
+LogPluginManager: Mounting plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting plugin AndroidMoviePlayer
+LogPluginManager: Mounting plugin AndroidPermission
+LogPluginManager: Mounting plugin AppleMoviePlayer
+LogPluginManager: Mounting plugin ArchVisCharacter
+LogPluginManager: Mounting plugin AudioCapture
+LogPluginManager: Mounting plugin CableComponent
+LogPluginManager: Mounting plugin CustomMeshComponent
+LogPluginManager: Mounting plugin EditableMesh
+LogPluginManager: Mounting plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting plugin Firebase
+LogPluginManager: Mounting plugin GoogleCloudMessaging
+LogPluginManager: Mounting plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting plugin LocationServicesBPLibrary
+LogPluginManager: Mounting plugin MobilePatchingUtils
+LogPluginManager: Mounting plugin OculusVR
+LogPluginManager: Mounting plugin PhysXVehicles
+LogPluginManager: Mounting plugin ProceduralMeshComponent
+LogPluginManager: Mounting plugin RuntimePhysXCooking
+LogPluginManager: Mounting plugin SignificanceManager
+LogPluginManager: Mounting plugin SteamVR
+LogPluginManager: Mounting plugin WebMMoviePlayer
+LogPluginManager: Mounting plugin WindowsMoviePlayer
+LogInit: Using libcurl 7.55.1-DEV
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.1.1
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit:  - BufferSize = 65536
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogInit: Build: ++UE4+Release-4.22-CL-7053642
+LogInit: Engine Version: 4.22.3-7053642+++UE4+Release-4.22
+LogInit: Compatible Engine Version: 4.22.0-5660361+++UE4+Release-4.22
+LogInit: Net CL: 5660361
+LogInit: OS: Windows 10 (Release 1803) (), CPU: AMD Ryzen 7 2700X Eight-Core Processor         , GPU: NVIDIA GeForce GTX 1060 6GB
+LogInit: Compiled (64-bit): Jun 18 2019 03:09:11
+LogInit: Compiled with Visual C++: 19.16.27025.01
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.22
+LogInit: Command Line: 
+LogInit: Base Directory: C:/Program Files/UnrealEngine/UE_4.22/Engine/Binaries/Win64/
+LogInit: Installed Engine Build: 1
+LogDevObjectVersion: Number of dev versions registered: 23
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 3
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 30
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 35
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 2
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 0
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 28
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 11
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 2
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 3
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 17
+LogDevObjectVersion:   Dev-Anim (AF43A65D-7FD3-4947-9873-3E8ED9C1BB05): 2
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogDevObjectVersion:   FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 25
+LogDevObjectVersion:   Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 6
+LogDevObjectVersion:   Dev-Niagara (F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC): 1
+LogDevObjectVersion:   Dev-Destruction (174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D): 2
+LogInit: Presizing for max 16777216 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+LogConfig: Setting CVar [[con.DebugEarlyDefault:1]]
+LogConfig: Setting CVar [[r.setres:1280x720]]
+[2019.07.09-18.58.56:608][  0]LogConfig: Setting CVar [[r.VSync:0]]
+[2019.07.09-18.58.56:608][  0]LogConfig: Setting CVar [[r.RHICmdBypass:0]]
+[2019.07.09-18.58.56:608][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererSettings] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Engine.ini]
+[2019.07.09-18.58.56:608][  0]LogConfig: Setting CVar [[r.GPUCrashDebugging:0]]
+[2019.07.09-18.58.56:608][  0]LogConfig: Setting CVar [[r.CustomDepth:3]]
+[2019.07.09-18.58.56:608][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Engine.ini]
+[2019.07.09-18.58.56:608][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Engine.ini]
+[2019.07.09-18.58.56:608][  0]LogConfig: Setting CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
+[2019.07.09-18.58.56:608][  0]LogConfig: Setting CVar [[s.AsyncLoadingThreadEnabled:0]]
+[2019.07.09-18.58.56:608][  0]LogConfig: Setting CVar [[s.EventDrivenLoaderEnabled:1]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[s.WarnIfTimeLimitExceeded:0]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMultiplier:1.5]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMinTime:0.005]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[s.UseBackgroundLevelStreaming:1]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[s.UnregisterComponentsTimeLimit:1.0]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Engine.ini]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.MaxObjectsNotConsideredByGC:1]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.SizeOfPermanentObjectPool:0]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.FlushStreamingOnGC:0]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.NumRetriesBeforeForcingGC:10]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.AllowParallelGC:1]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.TimeBetweenPurgingPendingKillObjects:61.1]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.MaxObjectsInEditor:16777216]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.IncrementalBeginDestroyEnabled:1]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.CreateGCClusters:1]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.MinGCClusterSize:5]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.ActorClusteringEnabled:0]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.BlueprintClusteringEnabled:0]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Setting CVar [[gc.UseDisregardForGCOnDedicatedServers:0]]
+[2019.07.09-18.58.56:609][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Engine.ini]
+[2019.07.09-18.58.56:609][  0]LogConfig: Applying CVar settings from Section [/Script/UnrealEd.CookerSettings] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Engine.ini]
+[2019.07.09-18.58.56:615][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2019.07.09-18.58.56:615][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:1]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
+[2019.07.09-18.58.56:616][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
+[2019.07.09-18.58.56:616][  0]LogInit: Selected Device Profile: [Windows]
+[2019.07.09-18.58.56:616][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2019.07.09-18.58.56:629][  0]LogHAL: Display: Platform has ~ 16 GB [17107722240 / 17179869184 / 16], which maps to Larger [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.Vulkan.UseRealUBs:0		; Required until we fix HLR fall-out]]
+[2019.07.09-18.58.56:629][  0]LogInit: Going up to parent DeviceProfile []
+[2019.07.09-18.58.56:629][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2019.07.09-18.58.56:629][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:1]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Scalability.ini]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[net.UseAdaptiveNetUpdateFrequency:0]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Setting CVar [[p.chaos.AllowCreatePhysxBodies:1]]
+[2019.07.09-18.58.56:630][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Config/Windows/Engine.ini]
+[2019.07.09-18.58.56:630][  0]LogInit: Computer: ALEXPCWINDOWS
+[2019.07.09-18.58.56:630][  0]LogInit: User: LovbergWin
+[2019.07.09-18.58.56:630][  0]LogInit: CPU Page size=4096, Cores=8
+[2019.07.09-18.58.56:630][  0]LogInit: High frequency timer resolution =3.898922 MHz
+[2019.07.09-18.58.56:630][  0]LogMemory: Memory total: Physical=15.9GB (16GB approx)
+[2019.07.09-18.58.56:630][  0]LogMemory: Platform Memory Stats for Windows
+[2019.07.09-18.58.56:630][  0]LogMemory: Process Physical Memory: 99.70 MB used, 99.70 MB peak
+[2019.07.09-18.58.56:630][  0]LogMemory: Process Virtual Memory: 98.07 MB used, 98.07 MB peak
+[2019.07.09-18.58.56:630][  0]LogMemory: Physical Memory: 8267.05 MB used,  8048.14 MB free, 16315.20 MB total
+[2019.07.09-18.58.56:630][  0]LogMemory: Virtual Memory: 4696.13 MB used,  134213032.00 MB free, 134217728.00 MB total
+[2019.07.09-18.58.56:649][  0]LogInit: Using OS detected language (en-US).
+[2019.07.09-18.58.56:649][  0]LogInit: Using OS detected locale (sv-SE).
+[2019.07.09-18.58.56:649][  0]LogTextLocalizationManager: No specific localization for 'en-US' exists, so the 'en' localization will be used.
+[2019.07.09-18.58.56:779][  0]LogInit: Setting process to per monitor DPI aware
+[2019.07.09-18.58.56:812][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2019.07.09-18.58.56:812][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2019.07.09-18.58.56:976][  0]LogHMD: Failed to initialize OpenVR with code 110
+[2019.07.09-18.58.56:976][  0]LogD3D11RHI: D3D11 adapters:
+[2019.07.09-18.58.57:030][  0]LogD3D11RHI:    0. 'NVIDIA GeForce GTX 1060 6GB' (Feature Level 11_0)
+[2019.07.09-18.58.57:030][  0]LogD3D11RHI:       6052/0/8157 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:2, VendorId:0x10de
+[2019.07.09-18.58.57:031][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2019.07.09-18.58.57:031][  0]LogD3D11RHI:       0/0/8157 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2019.07.09-18.58.57:031][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
+[2019.07.09-18.58.57:040][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2019.07.09-18.58.57:040][  0]LogD3D11RHI:     GPU DeviceId: 0x1c03 (for the marketing name, search the web for "GPU Device Id")
+[2019.07.09-18.58.57:040][  0]LogWindows: EnumDisplayDevices:
+[2019.07.09-18.58.57:040][  0]LogWindows:    0. 'NVIDIA GeForce GTX 1060 6GB' (P:1 D:1)
+[2019.07.09-18.58.57:040][  0]LogWindows:    1. 'NVIDIA GeForce GTX 1060 6GB' (P:0 D:1)
+[2019.07.09-18.58.57:040][  0]LogWindows:    2. 'NVIDIA GeForce GTX 1060 6GB' (P:0 D:0)
+[2019.07.09-18.58.57:040][  0]LogWindows:    3. 'NVIDIA GeForce GTX 1060 6GB' (P:0 D:0)
+[2019.07.09-18.58.57:040][  0]LogWindows: DebugString: FoundDriverCount:4 
+[2019.07.09-18.58.57:040][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce GTX 1060 6GB
+[2019.07.09-18.58.57:040][  0]LogD3D11RHI:   Driver Version: 430.86 (internal:26.21.14.3086, unified:430.86)
+[2019.07.09-18.58.57:040][  0]LogD3D11RHI:      Driver Date: 5-22-2019
+[2019.07.09-18.58.57:040][  0]LogRHI: Texture pool is 4236 MB (70% of 6052 MB)
+[2019.07.09-18.58.57:082][  0]LogD3D11RHI: Async texture creation enabled
+[2019.07.09-18.58.57:088][  0]LogRendererCore: FGlobalReadBuffer::InitRHI
+[2019.07.09-18.58.57:088][  0]LogRendererCore: FGlobalReadBuffer::InitRHI
+[2019.07.09-18.58.57:088][  0]LogRendererCore: FGlobalReadBuffer::InitRHI
+[2019.07.09-18.58.57:096][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 1)
+[2019.07.09-18.58.57:408][  0]LogTemp: Display: Module 'AllDesktopTargetPlatform' loaded TargetPlatform 'AllDesktop'
+[2019.07.09-18.58.57:422][  0]LogTemp: Display: Module 'MacClientTargetPlatform' loaded TargetPlatform 'MacClient'
+[2019.07.09-18.58.57:436][  0]LogTemp: Display: Module 'MacNoEditorTargetPlatform' loaded TargetPlatform 'MacNoEditor'
+[2019.07.09-18.58.57:450][  0]LogTemp: Display: Module 'MacServerTargetPlatform' loaded TargetPlatform 'MacServer'
+[2019.07.09-18.58.57:465][  0]LogTemp: Display: Module 'MacTargetPlatform' loaded TargetPlatform 'Mac'
+[2019.07.09-18.58.57:479][  0]LogTemp: Display: Module 'WindowsClientTargetPlatform' loaded TargetPlatform 'WindowsClient'
+[2019.07.09-18.58.57:496][  0]LogTemp: Display: Module 'WindowsNoEditorTargetPlatform' loaded TargetPlatform 'WindowsNoEditor'
+[2019.07.09-18.58.57:510][  0]LogTemp: Display: Module 'WindowsServerTargetPlatform' loaded TargetPlatform 'WindowsServer'
+[2019.07.09-18.58.57:517][  0]LogTemp: Display: Module 'WindowsTargetPlatform' loaded TargetPlatform 'Windows'
+[2019.07.09-18.58.57:603][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android'
+[2019.07.09-18.58.57:603][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_ASTC'
+[2019.07.09-18.58.57:603][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_ATC'
+[2019.07.09-18.58.57:603][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_DXT'
+[2019.07.09-18.58.57:603][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_ETC1'
+[2019.07.09-18.58.57:603][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_ETC1a'
+[2019.07.09-18.58.57:603][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_ETC2'
+[2019.07.09-18.58.57:603][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_PVRTC'
+[2019.07.09-18.58.57:603][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'AndroidClient'
+[2019.07.09-18.58.57:603][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_ASTCClient'
+[2019.07.09-18.58.57:603][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_ATCClient'
+[2019.07.09-18.58.57:603][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_DXTClient'
+[2019.07.09-18.58.57:604][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_ETC1Client'
+[2019.07.09-18.58.57:604][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_ETC1aClient'
+[2019.07.09-18.58.57:604][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_ETC2Client'
+[2019.07.09-18.58.57:604][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_PVRTCClient'
+[2019.07.09-18.58.57:604][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_Multi'
+[2019.07.09-18.58.57:604][  0]LogTemp: Display: Module 'AndroidTargetPlatform' loaded TargetPlatform 'Android_MultiClient'
+[2019.07.09-18.58.57:605][  0]LogTemp: Display: Module 'HTML5TargetPlatform' loaded TargetPlatform 'HTML5'
+[2019.07.09-18.58.57:657][  0]LogTemp: Display: Module 'IOSTargetPlatform' loaded TargetPlatform 'IOSClient'
+[2019.07.09-18.58.57:657][  0]LogTemp: Display: Module 'IOSTargetPlatform' loaded TargetPlatform 'IOS'
+[2019.07.09-18.58.57:683][  0]LogTemp: Display: Module 'TVOSTargetPlatform' loaded TargetPlatform 'TVOSClient'
+[2019.07.09-18.58.57:683][  0]LogTemp: Display: Module 'TVOSTargetPlatform' loaded TargetPlatform 'TVOS'
+[2019.07.09-18.58.57:696][  0]LogTemp: Display: Module 'LinuxClientTargetPlatform' loaded TargetPlatform 'LinuxClient'
+[2019.07.09-18.58.57:709][  0]LogTemp: Display: Module 'LinuxNoEditorTargetPlatform' loaded TargetPlatform 'LinuxNoEditor'
+[2019.07.09-18.58.57:722][  0]LogTemp: Display: Module 'LinuxServerTargetPlatform' loaded TargetPlatform 'LinuxServer'
+[2019.07.09-18.58.57:736][  0]LogTemp: Display: Module 'LinuxTargetPlatform' loaded TargetPlatform 'Linux'
+[2019.07.09-18.58.57:786][  0]LogTemp: Display: Module 'LuminTargetPlatform' loaded TargetPlatform 'Lumin'
+[2019.07.09-18.58.57:787][  0]LogTemp: Display: Module 'LuminTargetPlatform' loaded TargetPlatform 'LuminClient'
+[2019.07.09-18.58.57:787][  0]LogTargetPlatformManager: Display: Building Assets For Windows
+[2019.07.09-18.58.57:795][  0]LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+[2019.07.09-18.58.57:837][  0]LogShaderCompilers: Guid format shader working directory is -29 characters bigger than the processId version (../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Intermediate/Shaders/WorkingDirectory/2208/).
+[2019.07.09-18.58.57:838][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/LovbergWin/AppData/Local/Temp/UnrealShaderWorkingDir/67250FE9496249ADF1CBB6AD9E7E3193/'.
+[2019.07.09-18.58.57:839][  0]LogXGEController: Cleaning working directory: C:/Users/LovbergWin/AppData/Local/Temp/UnrealXGEWorkingDir/
+[2019.07.09-18.58.57:840][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2019.07.09-18.58.57:840][  0]LogShaderCompilers: Cannot use XGE Shader Compiler as Incredibuild is not installed on this machine.
+[2019.07.09-18.58.57:840][  0]LogShaderCompilers: Display: Using Local Shader Compiler.
+[2019.07.09-18.58.58:339][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2019.07.09-18.58.58:378][  0]LogDerivedDataCache: Loaded boot cache 0.04s 71MB C:/Users/LovbergWin/AppData/Local/UnrealEngine/4.22/DerivedDataCache/Boot.ddc.
+[2019.07.09-18.58.58:378][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/LovbergWin/AppData/Local/UnrealEngine/4.22/DerivedDataCache/Boot.ddc
+[2019.07.09-18.58.58:378][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2019.07.09-18.58.58:378][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2019.07.09-18.58.58:378][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2019.07.09-18.58.58:378][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2019.07.09-18.58.58:390][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2019.07.09-18.58.58:390][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  EnterprisePak pak cache file ../../../Enterprise/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2019.07.09-18.58.58:390][  0]LogDerivedDataCache: Unable to find inner node EnterprisePak for hierarchical cache Hierarchy.
+[2019.07.09-18.58.58:402][  0]LogDerivedDataCache: Using Local data cache path C:/Users/LovbergWin/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2019.07.09-18.58.58:402][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+[2019.07.09-18.58.58:402][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchical cache Hierarchy.
+[2019.07.09-18.58.58:423][  0]LogMaterial: Verifying Global Shaders for PCD3D_SM5
+[2019.07.09-18.58.58:424][  0]LogSlate: Using FreeType 2.6.0
+[2019.07.09-18.58.58:425][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2019.07.09-18.58.58:510][  0]LogAssetRegistry: FAssetRegistry took 0.0338 seconds to start up
+[2019.07.09-18.58.58:836][  0]LogInit: Selected Device Profile: [Windows]
+[2019.07.09-18.58.58:963][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2019.07.09-18.58.58:963][  0]LogMeshReduction: Using SimplygonMeshReduction for automatic skeletal mesh reduction
+[2019.07.09-18.58.58:963][  0]LogMeshReduction: Using ProxyLODMeshReduction for automatic mesh merging
+[2019.07.09-18.58.58:963][  0]LogMeshReduction: No distributed automatic mesh merging module available
+[2019.07.09-18.58.58:963][  0]LogMeshMerging: No distributed automatic mesh merging module available
+[2019.07.09-18.58.58:973][  0]LogNetVersion: ArcaneNomads 1.0.0, NetCL: 5660361, EngineNetVer: 10, GameNetVer: 0 (Checksum: 2992460452)
+[2019.07.09-18.58.59:382][  0]LogPackageLocalizationCache: Processed 10 localized package path(s) for 1 prioritized culture(s) in 0.063874 seconds
+[2019.07.09-18.58.59:389][  0]LogUObjectArray: 42205 objects as part of root set at end of initial load.
+[2019.07.09-18.58.59:389][  0]LogUObjectAllocator: 7325032 out of 0 bytes used by permanent object pool.
+[2019.07.09-18.58.59:389][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2019.07.09-18.59.00:116][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2019.07.09-18.59.00:131][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2019.07.09-18.59.00:242][  0]SourceControl: Source control is disabled
+[2019.07.09-18.59.00:242][  0]SourceControl: Source control is disabled
+[2019.07.09-18.59.00:243][  0]SourceControl: Source control is disabled
+[2019.07.09-18.59.00:244][  0]SourceControl: Source control is disabled
+[2019.07.09-18.59.00:312][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2019.07.09-18.59.00:469][  0]LogOcInput: OculusInput pre-init called
+[2019.07.09-18.59.01:050][  0]LogEngine: Initializing Engine...
+[2019.07.09-18.59.01:051][  0]LogHMD: Failed to initialize OpenVR with code 110
+[2019.07.09-18.59.01:052][  0]LogStats: UGameplayTagsManager::InitializeManager -  0.000 s
+[2019.07.09-18.59.01:231][  0]LogInit: Initializing FReadOnlyCVARCache
+[2019.07.09-18.59.01:242][  0]LogAIModule: Creating AISystem for world Untitled
+[2019.07.09-18.59.01:336][  0]LogInit: XAudio2 using 'Speakers (High Definition Audio Device)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2019.07.09-18.59.01:348][  0]LogInit: FAudioDevice initialized.
+[2019.07.09-18.59.01:348][  0]LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
+[2019.07.09-18.59.01:476][  0]LogDerivedDataCache: Saved boot cache 0.13s 71MB C:/Users/LovbergWin/AppData/Local/UnrealEngine/4.22/DerivedDataCache/Boot.ddc.
+[2019.07.09-18.59.01:480][  0]LogInit: Texture streaming: Enabled
+[2019.07.09-18.59.01:496][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2019.07.09-18.59.01:519][  0]LogInit: Transaction tracking system initialized
+[2019.07.09-18.59.01:542][  0]BlueprintLog: New page: Editor Load
+[2019.07.09-18.59.01:612][  0]LocalizationService: Localization service is disabled
+[2019.07.09-18.59.01:879][  0]LogFileCache: Scanning file cache for directory 'C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Content/' took 0.02s
+[2019.07.09-18.59.01:879][  0]LogCook: Display: Max memory allowance for cook 16384mb min free memory 0mb
+[2019.07.09-18.59.01:879][  0]LogCook: Display: Mobile HDR setting 1
+[2019.07.09-18.59.02:028][  0]SourceControl: Source control is disabled
+[2019.07.09-18.59.02:028][  0]LightingResults: New page: Lighting Build
+[2019.07.09-18.59.02:030][  0]MapCheck: New page: Map Check
+[2019.07.09-18.59.02:030][  0]LightingResults: New page: Lighting Build
+[2019.07.09-18.59.02:062][  0]LogUObjectHash: Compacting FUObjectHashTables data took   1.48ms
+[2019.07.09-18.59.02:427][  0]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2019.07.09-18.59.02:449][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2019.07.09-18.59.02:484][  0]LogUObjectHash: Compacting FUObjectHashTables data took   2.06ms
+[2019.07.09-18.59.02:484][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2019.07.09-18.59.02:484][  0]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 0,152ms to complete.
+[2019.07.09-18.59.02:484][  0]LogFileHelpers: Loading map 'ThirdPersonExampleMap' took 0.457
+[2019.07.09-18.59.02:582][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2019.07.09-18.59.02:589][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2019.07.09-18.59.02:596][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2019.07.09-18.59.02:602][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2019.07.09-18.59.02:608][  0]LogCollectionManager: Loaded 0 collections in 0.001393 seconds
+[2019.07.09-18.59.02:634][  0]LogFileCache: Scanning file cache for directory 'C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Collections/' took 0.01s
+[2019.07.09-18.59.02:634][  0]LogFileCache: Scanning file cache for directory 'C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Content/Developers/LovbergWin/Collections/' took 0.00s
+[2019.07.09-18.59.02:634][  0]LogFileCache: Scanning file cache for directory 'C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Content/Collections/' took 0.01s
+[2019.07.09-18.59.02:634][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000000 seconds
+[2019.07.09-18.59.02:643][  0]LogContentBrowser: Native class hierarchy populated in 0.0090 seconds. Added 2744 classes and 665 folders.
+[2019.07.09-18.59.02:649][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0003 seconds. Added 0 classes and 0 folders.
+[2019.07.09-18.59.02:650][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:651][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:651][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:651][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:652][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:652][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:652][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:653][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:653][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:653][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:654][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:654][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:654][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:655][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:655][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:655][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:656][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:656][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:657][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:657][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:657][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:658][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:658][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:658][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:659][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:659][  0]LogPakFile: Registered encryption key '00000000000000000000000000000000': 0 pak files mounted, 0 remain pending
+[2019.07.09-18.59.02:682][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0003 seconds. Added 0 classes and 0 folders.
+[2019.07.09-18.59.02:689][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0003 seconds. Added 1 classes and 2 folders.
+[2019.07.09-18.59.02:700][  0]LogSlate: Took 0.000165 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2019.07.09-18.59.02:702][  0]LogSlate: Took 0.000137 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2019.07.09-18.59.02:707][  0]LogSlate: Took 0.000153 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2019.07.09-18.59.02:759][  0]LogRenderer: Reallocating scene render targets to support 1616x808 Format 10 NumSamples 1 (Frame:1).
+[2019.07.09-18.59.02:908][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0003 seconds. Added 0 classes and 0 folders.
+[2019.07.09-18.59.02:908][  0]LogLoad: (Engine Initialization) Total time: 8.31 seconds
+[2019.07.09-18.59.02:908][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2019.07.09-18.59.02:918][  0]LogWindowsTextInputMethodSystem: Display: IME system now deactivated.
+[2019.07.09-18.59.02:943][  0]LogAssetRegistry: Asset discovery search completed in 4.4550 seconds
+[2019.07.09-18.59.02:945][  0]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000000 seconds (found 0 objects)
+[2019.07.09-18.59.02:946][  0]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000046 seconds (updated 0 objects)
+[2019.07.09-18.59.02:947][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2019.07.09-18.59.03:939][106]LogSlate: Took 0.000184 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2019.07.09-18.59.35:255][860]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.07.09-18.59.40:950][524]LogAssetEditorManager: Opening Asset editor for Blueprint /Game/ArcaneNomads/Core/Characters/BP_Player.BP_Player
+[2019.07.09-18.59.41:180][524]LogContentBrowser: Native class hierarchy updated for 'BlueprintGraph' in 0.0007 seconds. Added 121 classes and 0 folders.
+[2019.07.09-18.59.41:932][524]LogSlate: Took 0.000195 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2019.07.09-18.59.41:988][525]LogSlate: Took 0.000167 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf' (157K)
+[2019.07.09-18.59.49:224][330]Candidate modules for hot reload:
+[2019.07.09-18.59.49:224][330]  ArcaneNomads
+[2019.07.09-18.59.49:224][330]Launching UnrealBuildTool... [C:/Program Files/UnrealEngine/UE_4.22/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=ArcaneNomads,5685 Win64 Development -TargetType=Editor -Project="C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject" "C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject"  -IgnoreJunk]
+[2019.07.09-18.59.49:226][330]Warning: Starting HotReload took  0.0s.
+[2019.07.09-18.59.59:355][378]CompilerResultsLog: New page: Compilation - 9 jul 2019 22:59:59
+[2019.07.09-18.59.59:355][378]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads).
+[2019.07.09-18.59.59:355][378]CompilerResultsLog: Creating makefile for ArcaneNomadsEditor (ini files are newer than makefile)
+[2019.07.09-18.59.59:355][378]CompilerResultsLog: Parsing headers for ArcaneNomadsEditor
+[2019.07.09-18.59.59:355][378]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\ArcaneNomads.uproject" "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\ArcaneNomadsEditor\Development\ArcaneNomadsEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2019.07.09-18.59.59:355][378]CompilerResultsLog: Reflection code generated for ArcaneNomadsEditor in 6,0741628 seconds
+[2019.07.09-18.59.59:355][378]CompilerResultsLog: Using Visual Studio 2019 14.21.27702 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2019.07.09-18.59.59:355][378]CompilerResultsLog: Building 8 actions with 16 processes...
+[2019.07.09-18.59.59:355][378]CompilerResultsLog:   [1/8] ArcaneNomads.init.gen.cpp
+[2019.07.09-18.59.59:355][378]CompilerResultsLog:   [2/8] InventoryComponent.cpp
+[2019.07.09-18.59.59:355][378]CompilerResultsLog:   [3/8] StoreableComponent.cpp
+[2019.07.09-18.59.59:355][378]CompilerResultsLog:   [4/8] InventoryComponent.gen.cpp
+[2019.07.09-18.59.59:355][378]CompilerResultsLog:   [5/8] StoreableComponent.gen.cpp
+[2019.07.09-18.59.59:355][378]CompilerResultsLog:   [6/8] UE4Editor-ArcaneNomads-5685.lib
+[2019.07.09-18.59.59:355][378]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-5685.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-5685.exp
+[2019.07.09-18.59.59:355][378]CompilerResultsLog:   [7/8] UE4Editor-ArcaneNomads-5685.dll
+[2019.07.09-18.59.59:355][378]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-5685.suppressed.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-5685.suppressed.exp
+[2019.07.09-18.59.59:355][378]CompilerResultsLog:   [8/8] ArcaneNomadsEditor.target
+[2019.07.09-18.59.59:355][378]CompilerResultsLog: Total time in Parallel executor: 2,16 seconds
+[2019.07.09-18.59.59:355][378]CompilerResultsLog: Total execution time: 10,07 seconds
+[2019.07.09-18.59.59:355][378]LogMainFrame: MainFrame: Module compiling took 10.133 seconds
+[2019.07.09-18.59.59:396][378]LogUObjectHash: Compacting FUObjectHashTables data took   3.22ms
+[2019.07.09-18.59.59:397][378]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-18.59.59:438][378]LogClass: Could not find existing class InventoryComponent in package /Script/ArcaneNomads for HotReload, assuming new class
+[2019.07.09-18.59.59:441][378]LogClass: Could not find existing class StoreableCompenent in package /Script/ArcaneNomads for HotReload, assuming new class
+[2019.07.09-18.59.59:458][378]LogHotReload: Re-instancing InventoryComponent after hot-reload.
+[2019.07.09-18.59.59:621][378]LogHotReload: Re-instancing StoreableCompenent after hot-reload.
+[2019.07.09-18.59.59:767][378]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-18.59.59:768][378]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 12 classes and 6 folders.
+[2019.07.09-18.59.59:773][378]Display: HotReload successful (23 functions remapped  0 scriptstructs remapped)
+[2019.07.09-18.59.59:991][378]LogUObjectHash: Compacting FUObjectHashTables data took   1.63ms
+[2019.07.09-18.59.59:991][378]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-19.00.00:007][378]LogContentBrowser: Native class hierarchy populated in 0.0094 seconds. Added 2745 classes and 667 folders.
+[2019.07.09-19.00.00:007][378]Display: HotReload took 10.8s.
+[2019.07.09-19.00.21:627][628]LogAssetEditorManager: Opening Asset editor for Blueprint /Game/ArcaneNomads/Core/Characters/BP_Character.BP_Character
+[2019.07.09-19.00.27:484][265]BlueprintLog: New page: Compile BP_Character
+[2019.07.09-19.00.27:797][265]LogUObjectHash: Compacting FUObjectHashTables data took   5.47ms
+[2019.07.09-19.00.27:951][265]LogSavePackage: Moving '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/BP_Character72691C5B4DAC2434619426AEBD2CEA8E.tmp' to '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Content/ArcaneNomads/Core/Characters/BP_Character.uasset'
+[2019.07.09-19.00.28:029][265]LogSavePackage: Moving '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/BP_PlayerC68351B54E08E1DD1529939D20A7AED8.tmp' to '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Content/ArcaneNomads/Core/Characters/BP_Player.uasset'
+[2019.07.09-19.09.03:013][338]LogUObjectHash: Compacting FUObjectHashTables data took   4.14ms
+[2019.07.09-19.09.03:258][338]LogSavePackage: Moving '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/ThirdPersonExampleMap_Auto17A7B46B844D09BA9274BBD8A3DEA47FD.tmp' to '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Autosaves/Game/_UnrealAssets/ThirdPersonCPP/Maps/ThirdPersonExampleMap_Auto1.umap'
+[2019.07.09-19.09.03:267][338]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/_UnrealAssets/ThirdPersonCPP/Maps/ThirdPersonExampleMap' took 0.309
+[2019.07.09-19.09.03:267][338]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.309
+[2019.07.09-19.20.31:785][586]Candidate modules for hot reload:
+[2019.07.09-19.20.31:785][586]  ArcaneNomads
+[2019.07.09-19.20.31:785][586]Launching UnrealBuildTool... [C:/Program Files/UnrealEngine/UE_4.22/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=ArcaneNomads,7108 Win64 Development -TargetType=Editor -Project="C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject" "C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject"  -IgnoreJunk]
+[2019.07.09-19.20.31:787][586]Warning: Starting HotReload took  0.0s.
+[2019.07.09-19.20.39:228][473]CompilerResultsLog: New page: Compilation - 9 jul 2019 23:20:39
+[2019.07.09-19.20.39:229][473]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads).
+[2019.07.09-19.20.39:229][473]CompilerResultsLog: Creating makefile for ArcaneNomadsEditor (ini files are newer than makefile)
+[2019.07.09-19.20.39:229][473]CompilerResultsLog: Parsing headers for ArcaneNomadsEditor
+[2019.07.09-19.20.39:229][473]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\ArcaneNomads.uproject" "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\ArcaneNomadsEditor\Development\ArcaneNomadsEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2019.07.09-19.20.39:229][473]CompilerResultsLog: Error: C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Source/ArcaneNomads/InventorySystem/InventoryComponent.h(23)  : Error: Unrecognized type 'UStoreableComponent' - type must be a UCLASS, USTRUCT or UENUM
+[2019.07.09-19.20.39:229][473]LogMainFrame: MainFrame: Module compiling took 7.446 seconds
+[2019.07.09-19.20.39:229][473]Warning: HotReload failed, recompile failed
+[2019.07.09-19.20.42:036][799]LogSlate: Took 0.000161 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansMono.ttf' (77K)
+[2019.07.09-19.25.41:029][286]Candidate modules for hot reload:
+[2019.07.09-19.25.41:029][286]  ArcaneNomads
+[2019.07.09-19.25.41:029][286]Launching UnrealBuildTool... [C:/Program Files/UnrealEngine/UE_4.22/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=ArcaneNomads,4003 Win64 Development -TargetType=Editor -Project="C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject" "C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject"  -IgnoreJunk]
+[2019.07.09-19.25.41:031][286]Warning: Starting HotReload took  0.0s.
+[2019.07.09-19.25.48:322][154]CompilerResultsLog: New page: Compilation - 9 jul 2019 23:25:48
+[2019.07.09-19.25.48:322][154]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads).
+[2019.07.09-19.25.48:322][154]CompilerResultsLog: Creating makefile for ArcaneNomadsEditor (ini files are newer than makefile)
+[2019.07.09-19.25.48:322][154]CompilerResultsLog: Parsing headers for ArcaneNomadsEditor
+[2019.07.09-19.25.48:322][154]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\ArcaneNomads.uproject" "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\ArcaneNomadsEditor\Development\ArcaneNomadsEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2019.07.09-19.25.48:323][154]CompilerResultsLog: Error: C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Source/ArcaneNomads/InventorySystem/InventoryComponent.h(23)  : Error: Unrecognized type 'UStoreableComponent' - type must be a UCLASS, USTRUCT or UENUM
+[2019.07.09-19.25.48:323][154]LogMainFrame: MainFrame: Module compiling took 7.296 seconds
+[2019.07.09-19.25.48:323][154]Warning: HotReload failed, recompile failed
+[2019.07.09-19.36.01:365][774]Candidate modules for hot reload:
+[2019.07.09-19.36.01:365][774]  ArcaneNomads
+[2019.07.09-19.36.01:365][774]Launching UnrealBuildTool... [C:/Program Files/UnrealEngine/UE_4.22/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=ArcaneNomads,4854 Win64 Development -TargetType=Editor -Project="C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject" "C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject"  -IgnoreJunk]
+[2019.07.09-19.36.01:367][774]Warning: Starting HotReload took  0.0s.
+[2019.07.09-19.36.11:270][743]CompilerResultsLog: New page: Compilation - 9 jul 2019 23:36:11
+[2019.07.09-19.36.11:270][743]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads).
+[2019.07.09-19.36.11:271][743]CompilerResultsLog: Creating makefile for ArcaneNomadsEditor (no existing makefile)
+[2019.07.09-19.36.11:271][743]CompilerResultsLog: Parsing headers for ArcaneNomadsEditor
+[2019.07.09-19.36.11:271][743]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\ArcaneNomads.uproject" "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\ArcaneNomadsEditor\Development\ArcaneNomadsEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2019.07.09-19.36.11:271][743]CompilerResultsLog: Reflection code generated for ArcaneNomadsEditor in 6,0822914 seconds
+[2019.07.09-19.36.11:271][743]CompilerResultsLog: Using Visual Studio 2019 14.21.27702 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2019.07.09-19.36.11:271][743]CompilerResultsLog: Building 10 actions with 16 processes...
+[2019.07.09-19.36.11:272][743]CompilerResultsLog:   [1/10] InventoryComponent.cpp
+[2019.07.09-19.36.11:272][743]CompilerResultsLog:   [2/10] StoreableComponent.cpp
+[2019.07.09-19.36.11:272][743]CompilerResultsLog:   [3/10] DamagerComponent.cpp
+[2019.07.09-19.36.11:272][743]CompilerResultsLog:   C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\HealthSystem\DamagerComponent.cpp(21): warning C4458: declaration of 'Owner' hides class member
+[2019.07.09-19.36.11:272][743]CompilerResultsLog:   C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\HealthSystem\DamagerComponent.h(20): note: see declaration of 'UDamagerComponent::Owner'
+[2019.07.09-19.36.11:272][743]CompilerResultsLog:   [4/10] InventoryComponent.gen.cpp
+[2019.07.09-19.36.11:272][743]CompilerResultsLog:   [5/10] HealthComponent.cpp
+[2019.07.09-19.36.11:272][743]CompilerResultsLog:   [6/10] StoreableComponent.gen.cpp
+[2019.07.09-19.36.11:273][743]CompilerResultsLog:   [7/10] HealthComponent.gen.cpp
+[2019.07.09-19.36.11:273][743]CompilerResultsLog:   [8/10] UE4Editor-ArcaneNomads-4854.lib
+[2019.07.09-19.36.11:273][743]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-4854.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-4854.exp
+[2019.07.09-19.36.11:273][743]CompilerResultsLog:   [9/10] UE4Editor-ArcaneNomads-4854.dll
+[2019.07.09-19.36.11:273][743]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-4854.suppressed.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-4854.suppressed.exp
+[2019.07.09-19.36.11:274][743]CompilerResultsLog: Error:   InventoryComponent.cpp.obj : error LNK2019: unresolved external symbol "public: __cdecl UInventoryComponent::UInventoryComponent(void)" (??0UInventoryComponent@@QEAA@XZ) referenced in function "public: static void __cdecl UInventoryComponent::__DefaultConstructor(class FObjectInitializer const &)" (?__DefaultConstructor@UInventoryComponent@@SAXAEBVFObjectInitializer@@@Z)
+[2019.07.09-19.36.11:274][743]CompilerResultsLog: Error:   InventoryComponent.gen.cpp.obj : error LNK2001: unresolved external symbol "public: __cdecl UInventoryComponent::UInventoryComponent(void)" (??0UInventoryComponent@@QEAA@XZ)
+[2019.07.09-19.36.11:274][743]CompilerResultsLog: Error:   C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Binaries\Win64\UE4Editor-ArcaneNomads-4854.dll : fatal error LNK1120: 1 unresolved externals
+[2019.07.09-19.36.11:275][743]LogMainFrame: MainFrame: Module compiling took 9.912 seconds
+[2019.07.09-19.36.11:275][743]Warning: HotReload failed, recompile failed
+[2019.07.09-19.40.09:998][175]Candidate modules for hot reload:
+[2019.07.09-19.40.09:999][175]  ArcaneNomads
+[2019.07.09-19.40.09:999][175]Launching UnrealBuildTool... [C:/Program Files/UnrealEngine/UE_4.22/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=ArcaneNomads,1326 Win64 Development -TargetType=Editor -Project="C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject" "C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject"  -IgnoreJunk]
+[2019.07.09-19.40.10:001][175]Warning: Starting HotReload took  0.0s.
+[2019.07.09-19.40.18:940][ 67]CompilerResultsLog: New page: Compilation - 9 jul 2019 23:40:18
+[2019.07.09-19.40.18:940][ 67]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads).
+[2019.07.09-19.40.18:941][ 67]CompilerResultsLog: Parsing headers for ArcaneNomadsEditor
+[2019.07.09-19.40.18:941][ 67]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\ArcaneNomads.uproject" "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\ArcaneNomadsEditor\Development\ArcaneNomadsEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2019.07.09-19.40.18:941][ 67]CompilerResultsLog: Reflection code generated for ArcaneNomadsEditor in 5,9819093 seconds
+[2019.07.09-19.40.18:941][ 67]CompilerResultsLog: Using Visual Studio 2019 14.21.27702 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2019.07.09-19.40.18:941][ 67]CompilerResultsLog: Building 6 actions with 16 processes...
+[2019.07.09-19.40.18:942][ 67]CompilerResultsLog:   [1/6] InventoryComponent.cpp
+[2019.07.09-19.40.18:942][ 67]CompilerResultsLog:   [2/6] ArcaneNomads.init.gen.cpp
+[2019.07.09-19.40.18:942][ 67]CompilerResultsLog:   [3/6] InventoryComponent.gen.cpp
+[2019.07.09-19.40.18:942][ 67]CompilerResultsLog:   [4/6] UE4Editor-ArcaneNomads-1326.lib
+[2019.07.09-19.40.18:942][ 67]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-1326.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-1326.exp
+[2019.07.09-19.40.18:942][ 67]CompilerResultsLog:   [5/6] UE4Editor-ArcaneNomads-1326.dll
+[2019.07.09-19.40.18:942][ 67]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-1326.suppressed.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-1326.suppressed.exp
+[2019.07.09-19.40.18:943][ 67]CompilerResultsLog:   [6/6] ArcaneNomadsEditor.target
+[2019.07.09-19.40.18:943][ 67]CompilerResultsLog: Total time in Parallel executor: 2,00 seconds
+[2019.07.09-19.40.18:943][ 67]CompilerResultsLog: Total execution time: 8,87 seconds
+[2019.07.09-19.40.18:943][ 67]LogMainFrame: MainFrame: Module compiling took 8.947 seconds
+[2019.07.09-19.40.18:987][ 67]LogUObjectHash: Compacting FUObjectHashTables data took   4.40ms
+[2019.07.09-19.40.18:987][ 67]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-19.40.19:021][ 67]LogClass: Could not find existing class InventoryComponent in package /Script/ArcaneNomads for HotReload, assuming new class
+[2019.07.09-19.40.19:043][ 67]LogHotReload: Re-instancing InventoryComponent after hot-reload.
+[2019.07.09-19.40.19:217][ 67]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-19.40.19:217][ 67]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 12 classes and 6 folders.
+[2019.07.09-19.40.19:224][ 67]Display: HotReload successful (23 functions remapped  0 scriptstructs remapped)
+[2019.07.09-19.40.19:291][ 67]LogUObjectHash: Compacting FUObjectHashTables data took   3.04ms
+[2019.07.09-19.40.19:292][ 67]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-19.40.19:310][ 67]LogContentBrowser: Native class hierarchy populated in 0.0105 seconds. Added 2745 classes and 667 folders.
+[2019.07.09-19.40.19:310][ 67]Display: HotReload took  9.3s.
+[2019.07.09-19.42.02:528][574]Candidate modules for hot reload:
+[2019.07.09-19.42.02:528][574]  ArcaneNomads
+[2019.07.09-19.42.02:529][574]Launching UnrealBuildTool... [C:/Program Files/UnrealEngine/UE_4.22/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=ArcaneNomads,9875 Win64 Development -TargetType=Editor -Project="C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject" "C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject"  -IgnoreJunk]
+[2019.07.09-19.42.02:531][574]Warning: Starting HotReload took  0.0s.
+[2019.07.09-19.42.10:855][568]CompilerResultsLog: New page: Compilation - 9 jul 2019 23:42:10
+[2019.07.09-19.42.10:855][568]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads).
+[2019.07.09-19.42.10:855][568]CompilerResultsLog: Parsing headers for ArcaneNomadsEditor
+[2019.07.09-19.42.10:855][568]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\ArcaneNomads.uproject" "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\ArcaneNomadsEditor\Development\ArcaneNomadsEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2019.07.09-19.42.10:856][568]CompilerResultsLog: Reflection code generated for ArcaneNomadsEditor in 5,8844921 seconds
+[2019.07.09-19.42.10:856][568]CompilerResultsLog: Using Visual Studio 2019 14.21.27702 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2019.07.09-19.42.10:856][568]CompilerResultsLog: Building 6 actions with 16 processes...
+[2019.07.09-19.42.10:856][568]CompilerResultsLog:   [1/6] ArcaneNomads.init.gen.cpp
+[2019.07.09-19.42.10:856][568]CompilerResultsLog:   [2/6] InventoryComponent.cpp
+[2019.07.09-19.42.10:856][568]CompilerResultsLog:   [3/6] InventoryComponent.gen.cpp
+[2019.07.09-19.42.10:856][568]CompilerResultsLog:   [4/6] UE4Editor-ArcaneNomads-9875.lib
+[2019.07.09-19.42.10:856][568]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-9875.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-9875.exp
+[2019.07.09-19.42.10:857][568]CompilerResultsLog:   [5/6] UE4Editor-ArcaneNomads-9875.dll
+[2019.07.09-19.42.10:857][568]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-9875.suppressed.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-9875.suppressed.exp
+[2019.07.09-19.42.10:857][568]CompilerResultsLog: Error:   InventoryComponent.cpp.obj : error LNK2019: unresolved external symbol "public: void __cdecl UInventoryComponent::Deposit(class UStoreableCompenent *)" (?Deposit@UInventoryComponent@@QEAAXPEAVUStoreableCompenent@@@Z) referenced in function "public: static void __cdecl UInventoryComponent::execDeposit(class UObject *,struct FFrame &,void * const)" (?execDeposit@UInventoryComponent@@SAXPEAVUObject@@AEAUFFrame@@QEAX@Z)
+[2019.07.09-19.42.10:858][568]CompilerResultsLog: Error:   InventoryComponent.gen.cpp.obj : error LNK2001: unresolved external symbol "public: void __cdecl UInventoryComponent::Deposit(class UStoreableCompenent *)" (?Deposit@UInventoryComponent@@QEAAXPEAVUStoreableCompenent@@@Z)
+[2019.07.09-19.42.10:858][568]CompilerResultsLog: Error:   C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Binaries\Win64\UE4Editor-ArcaneNomads-9875.dll : fatal error LNK1120: 1 unresolved externals
+[2019.07.09-19.42.10:858][568]LogMainFrame: MainFrame: Module compiling took 8.332 seconds
+[2019.07.09-19.42.10:858][568]Warning: HotReload failed, recompile failed
+[2019.07.09-20.02.56:625][324]Candidate modules for hot reload:
+[2019.07.09-20.02.56:625][324]  ArcaneNomads
+[2019.07.09-20.02.56:625][324]Launching UnrealBuildTool... [C:/Program Files/UnrealEngine/UE_4.22/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=ArcaneNomads,7134 Win64 Development -TargetType=Editor -Project="C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject" "C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject"  -IgnoreJunk]
+[2019.07.09-20.02.56:627][324]Warning: Starting HotReload took  0.0s.
+[2019.07.09-20.03.07:638][404]CompilerResultsLog: New page: Compilation - 10 jul 2019 00:03:07
+[2019.07.09-20.03.07:639][404]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads).
+[2019.07.09-20.03.07:639][404]CompilerResultsLog: Parsing headers for ArcaneNomadsEditor
+[2019.07.09-20.03.07:639][404]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\ArcaneNomads.uproject" "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\ArcaneNomadsEditor\Development\ArcaneNomadsEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2019.07.09-20.03.07:639][404]CompilerResultsLog: Reflection code generated for ArcaneNomadsEditor in 5,9391318 seconds
+[2019.07.09-20.03.07:639][404]CompilerResultsLog: Using Visual Studio 2019 14.21.27702 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2019.07.09-20.03.07:640][404]CompilerResultsLog: Building 27 actions with 16 processes...
+[2019.07.09-20.03.07:640][404]CompilerResultsLog:   [1/27] StoreableComponent.cpp
+[2019.07.09-20.03.07:640][404]CompilerResultsLog:   [2/27] InventoryComponent.cpp
+[2019.07.09-20.03.07:640][404]CompilerResultsLog:   [3/27] ToolUser.cpp
+[2019.07.09-20.03.07:640][404]CompilerResultsLog:   [4/27] InteractorComponent.cpp
+[2019.07.09-20.03.07:640][404]CompilerResultsLog:   [5/27] HealthComponent.cpp
+[2019.07.09-20.03.07:640][404]CompilerResultsLog:   [6/27] DamagerComponent.cpp
+[2019.07.09-20.03.07:640][404]CompilerResultsLog:   C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\HealthSystem\DamagerComponent.cpp(21): warning C4458: declaration of 'Owner' hides class member
+[2019.07.09-20.03.07:641][404]CompilerResultsLog:   C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\HealthSystem\DamagerComponent.h(20): note: see declaration of 'UDamagerComponent::Owner'
+[2019.07.09-20.03.07:641][404]CompilerResultsLog:   [7/27] InteractableComponent.cpp
+[2019.07.09-20.03.07:641][404]CompilerResultsLog:   [8/27] Weapon.gen.cpp
+[2019.07.09-20.03.07:641][404]CompilerResultsLog:   [9/27] Weapon.cpp
+[2019.07.09-20.03.07:641][404]CompilerResultsLog:   [10/27] HealthComponent.gen.cpp
+[2019.07.09-20.03.07:641][404]CompilerResultsLog:   [11/27] DamagerComponent.gen.cpp
+[2019.07.09-20.03.07:641][404]CompilerResultsLog:   [12/27] ArcaneNomadsGameMode.gen.cpp
+[2019.07.09-20.03.07:641][404]CompilerResultsLog:   [13/27] PlayerCharacter.cpp
+[2019.07.09-20.03.07:641][404]CompilerResultsLog:   [14/27] ArcaneNomadsCharacter.gen.cpp
+[2019.07.09-20.03.07:641][404]CompilerResultsLog:   [15/27] ArcaneNomadsGameMode.cpp
+[2019.07.09-20.03.07:642][404]CompilerResultsLog:   [16/27] ArcaneNomads.init.gen.cpp
+[2019.07.09-20.03.07:642][404]CompilerResultsLog:   [17/27] InventoryComponent.gen.cpp
+[2019.07.09-20.03.07:642][404]CompilerResultsLog:   [18/27] InteractorComponent.gen.cpp
+[2019.07.09-20.03.07:642][404]CompilerResultsLog:   [19/27] StoreableComponent.gen.cpp
+[2019.07.09-20.03.07:642][404]CompilerResultsLog:   [20/27] Hittable.gen.cpp
+[2019.07.09-20.03.07:642][404]CompilerResultsLog:   [21/27] InteractableComponent.gen.cpp
+[2019.07.09-20.03.07:642][404]CompilerResultsLog:   [22/27] ToolUser.gen.cpp
+[2019.07.09-20.03.07:642][404]CompilerResultsLog:   [23/27] PlayerCharacter.gen.cpp
+[2019.07.09-20.03.07:642][404]CompilerResultsLog:   [24/27] ArcaneNomadsCharacter.cpp
+[2019.07.09-20.03.07:642][404]CompilerResultsLog:   [25/27] UE4Editor-ArcaneNomads-7134.lib
+[2019.07.09-20.03.07:642][404]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-7134.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-7134.exp
+[2019.07.09-20.03.07:643][404]CompilerResultsLog:   [26/27] UE4Editor-ArcaneNomads-7134.dll
+[2019.07.09-20.03.07:643][404]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-7134.suppressed.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-7134.suppressed.exp
+[2019.07.09-20.03.07:643][404]CompilerResultsLog:   [27/27] ArcaneNomadsEditor.target
+[2019.07.09-20.03.07:644][404]CompilerResultsLog: Total time in Parallel executor: 4,08 seconds
+[2019.07.09-20.03.07:644][404]CompilerResultsLog: Total execution time: 10,95 seconds
+[2019.07.09-20.03.07:644][404]LogMainFrame: MainFrame: Module compiling took 11.021 seconds
+[2019.07.09-20.03.07:741][404]LogUObjectHash: Compacting FUObjectHashTables data took   5.23ms
+[2019.07.09-20.03.07:741][404]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-20.03.07:772][404]LogClass: Could not find existing class InventoryComponent in package /Script/ArcaneNomads for HotReload, assuming new class
+[2019.07.09-20.03.07:773][404]LogClass: Function GetInventoryAmount is new.
+[2019.07.09-20.03.07:793][404]LogHotReload: Re-instancing InventoryComponent after hot-reload.
+[2019.07.09-20.03.07:990][404]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-20.03.07:991][404]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 12 classes and 6 folders.
+[2019.07.09-20.03.07:996][404]Display: HotReload successful (23 functions remapped  0 scriptstructs remapped)
+[2019.07.09-20.03.08:069][404]LogUObjectHash: Compacting FUObjectHashTables data took   2.39ms
+[2019.07.09-20.03.08:069][404]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-20.03.08:086][404]LogContentBrowser: Native class hierarchy populated in 0.0090 seconds. Added 2745 classes and 667 folders.
+[2019.07.09-20.03.08:086][404]Display: HotReload took 11.5s.
+[2019.07.09-20.03.23:418][906]LogHotReload: New module detected: UE4Editor-ArcaneNomads-0011.dll
+[2019.07.09-20.03.25:259][994]LogHotReload: Starting Hot-Reload from IDE
+[2019.07.09-20.03.25:351][994]LogUObjectHash: Compacting FUObjectHashTables data took   5.02ms
+[2019.07.09-20.03.25:352][994]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-20.03.25:406][994]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-20.03.25:407][994]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 12 classes and 6 folders.
+[2019.07.09-20.03.25:412][994]Display: HotReload successful (24 functions remapped  0 scriptstructs remapped)
+[2019.07.09-20.03.25:502][994]LogUObjectHash: Compacting FUObjectHashTables data took   2.87ms
+[2019.07.09-20.03.25:502][994]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-20.03.25:518][994]LogContentBrowser: Native class hierarchy populated in 0.0091 seconds. Added 2745 classes and 667 folders.
+[2019.07.09-20.03.25:520][994]Display: HotReload took  0.3s.
+[2019.07.09-20.03.55:462][184]LogAssetEditorManager: Opening Asset editor for Blueprint /Game/ArcaneNomads/Core/Characters/BP_Character.BP_Character
+[2019.07.09-20.04.24:183][ 20]LogUObjectHash: Compacting FUObjectHashTables data took   5.15ms
+[2019.07.09-20.04.24:504][ 20]LogSavePackage: Moving '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/ThirdPersonExampleMap_Auto2727FB1174005DBD4DDBAD8A4B9E5B313.tmp' to '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Autosaves/Game/_UnrealAssets/ThirdPersonCPP/Maps/ThirdPersonExampleMap_Auto2.umap'
+[2019.07.09-20.04.24:512][ 20]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/_UnrealAssets/ThirdPersonCPP/Maps/ThirdPersonExampleMap' took 0.423
+[2019.07.09-20.04.24:512][ 20]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.423
+[2019.07.09-20.05.04:881][980]LogHotReload: New module detected: UE4Editor-ArcaneNomads-0013.dll
+[2019.07.09-20.05.06:085][ 34]LogHotReload: Starting Hot-Reload from IDE
+[2019.07.09-20.05.06:166][ 34]LogUObjectHash: Compacting FUObjectHashTables data took   3.39ms
+[2019.07.09-20.05.06:166][ 34]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-20.05.06:193][ 34]LogClass: Could not find existing class InventoryComponent in package /Script/ArcaneNomads for HotReload, assuming new class
+[2019.07.09-20.05.06:193][ 34]LogClass: Function Deposit is new.
+[2019.07.09-20.05.06:194][ 34]LogClass: Function GetInventoryAmount is new.
+[2019.07.09-20.05.06:213][ 34]LogHotReload: Re-instancing InventoryComponent after hot-reload.
+[2019.07.09-20.05.06:370][ 34]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-20.05.06:371][ 34]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 12 classes and 6 folders.
+[2019.07.09-20.05.06:376][ 34]Display: HotReload successful (23 functions remapped  0 scriptstructs remapped)
+[2019.07.09-20.05.06:440][ 34]LogUObjectHash: Compacting FUObjectHashTables data took   2.55ms
+[2019.07.09-20.05.06:440][ 34]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-20.05.06:457][ 34]LogContentBrowser: Native class hierarchy populated in 0.0104 seconds. Added 2745 classes and 667 folders.
+[2019.07.09-20.05.06:459][ 34]Display: HotReload took  0.4s.
+[2019.07.09-20.16.28:945][636]LogHotReload: New module detected: UE4Editor-ArcaneNomads-0014.dll
+[2019.07.09-20.16.30:250][694]LogHotReload: Starting Hot-Reload from IDE
+[2019.07.09-20.16.30:313][694]LogUObjectHash: Compacting FUObjectHashTables data took   3.79ms
+[2019.07.09-20.16.30:313][694]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-20.16.30:344][694]LogClass: Could not find existing class InventoryComponent in package /Script/ArcaneNomads for HotReload, assuming new class
+[2019.07.09-20.16.30:344][694]LogClass: Function Deposit is new.
+[2019.07.09-20.16.30:344][694]LogClass: Function GetInventory is new.
+[2019.07.09-20.16.30:344][694]LogClass: Function GetInventoryAmount is new.
+[2019.07.09-20.16.30:344][694]LogClass: Function Withdraw is new.
+[2019.07.09-20.16.30:349][694]LogClass: Could not find existing class StoreableComponent in package /Script/ArcaneNomads for HotReload, assuming new class
+[2019.07.09-20.16.30:368][694]LogHotReload: Re-instancing InventoryComponent after hot-reload.
+[2019.07.09-20.16.30:563][694]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-20.16.30:563][694]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 13 classes and 6 folders.
+[2019.07.09-20.16.30:568][694]Display: HotReload successful (23 functions remapped  0 scriptstructs remapped)
+[2019.07.09-20.16.30:639][694]LogUObjectHash: Compacting FUObjectHashTables data took   2.39ms
+[2019.07.09-20.16.30:640][694]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-20.16.30:655][694]LogContentBrowser: Native class hierarchy populated in 0.0089 seconds. Added 2746 classes and 667 folders.
+[2019.07.09-20.16.30:657][694]Display: HotReload took  0.4s.
+[2019.07.09-20.17.21:551][941]LogHotReload: New module detected: UE4Editor-ArcaneNomads-0015.dll
+[2019.07.09-20.17.23:007][  8]LogHotReload: Starting Hot-Reload from IDE
+[2019.07.09-20.17.23:084][  8]LogUObjectHash: Compacting FUObjectHashTables data took   4.05ms
+[2019.07.09-20.17.23:084][  8]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-20.17.23:135][  8]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-20.17.23:136][  8]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 13 classes and 6 folders.
+[2019.07.09-20.17.23:142][  8]Display: HotReload successful (27 functions remapped  0 scriptstructs remapped)
+[2019.07.09-20.17.23:232][  8]LogUObjectHash: Compacting FUObjectHashTables data took   3.32ms
+[2019.07.09-20.17.23:232][  8]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-20.17.23:248][  8]LogContentBrowser: Native class hierarchy populated in 0.0096 seconds. Added 2746 classes and 667 folders.
+[2019.07.09-20.17.23:250][  8]Display: HotReload took  0.2s.
+[2019.07.09-20.18.54:510][217]LogHotReload: New module detected: UE4Editor-ArcaneNomads-0016.dll
+[2019.07.09-20.18.55:951][283]LogHotReload: Starting Hot-Reload from IDE
+[2019.07.09-20.18.56:032][283]LogUObjectHash: Compacting FUObjectHashTables data took   4.60ms
+[2019.07.09-20.18.56:032][283]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-20.18.56:063][283]LogClass: Could not find existing class InventoryComponent in package /Script/ArcaneNomads for HotReload, assuming new class
+[2019.07.09-20.18.56:063][283]LogClass: Function Deposit is new.
+[2019.07.09-20.18.56:063][283]LogClass: Function GetInventory is new.
+[2019.07.09-20.18.56:063][283]LogClass: Function GetInventoryAmount is new.
+[2019.07.09-20.18.56:063][283]LogClass: Function GetItemAt is new.
+[2019.07.09-20.18.56:063][283]LogClass: Function Withdraw is new.
+[2019.07.09-20.18.56:086][283]LogHotReload: Re-instancing InventoryComponent after hot-reload.
+[2019.07.09-20.18.56:305][283]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-20.18.56:306][283]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 13 classes and 6 folders.
+[2019.07.09-20.18.56:311][283]Display: HotReload successful (23 functions remapped  0 scriptstructs remapped)
+[2019.07.09-20.18.56:396][283]LogUObjectHash: Compacting FUObjectHashTables data took   3.25ms
+[2019.07.09-20.18.56:397][283]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-20.18.56:413][283]LogContentBrowser: Native class hierarchy populated in 0.0093 seconds. Added 2746 classes and 667 folders.
+[2019.07.09-20.18.56:414][283]Display: HotReload took  0.5s.
+[2019.07.09-20.27.31:713][169]LogHotReload: New module detected: UE4Editor-ArcaneNomads-0018.dll
+[2019.07.09-20.27.34:055][278]LogHotReload: Starting Hot-Reload from IDE
+[2019.07.09-20.27.34:134][278]LogUObjectHash: Compacting FUObjectHashTables data took   4.69ms
+[2019.07.09-20.27.34:134][278]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-20.27.34:167][278]LogClass: Could not find existing class InventoryComponent in package /Script/ArcaneNomads for HotReload, assuming new class
+[2019.07.09-20.27.34:167][278]LogClass: Function Deposit is new.
+[2019.07.09-20.27.34:167][278]LogClass: Function GetInventory is new.
+[2019.07.09-20.27.34:167][278]LogClass: Function GetItemAt is new.
+[2019.07.09-20.27.34:167][278]LogClass: Function GetNumberOfItemsInInventory is new.
+[2019.07.09-20.27.34:167][278]LogClass: Function Withdraw is new.
+[2019.07.09-20.27.34:189][278]LogHotReload: Re-instancing InventoryComponent after hot-reload.
+[2019.07.09-20.27.34:402][278]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-20.27.34:402][278]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 13 classes and 6 folders.
+[2019.07.09-20.27.34:408][278]Display: HotReload successful (23 functions remapped  0 scriptstructs remapped)
+[2019.07.09-20.27.34:498][278]LogUObjectHash: Compacting FUObjectHashTables data took   3.99ms
+[2019.07.09-20.27.34:498][278]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-20.27.34:514][278]LogContentBrowser: Native class hierarchy populated in 0.0093 seconds. Added 2746 classes and 667 folders.
+[2019.07.09-20.27.34:516][278]Display: HotReload took  0.5s.
+[2019.07.09-20.32.09:273][713]LogHotReload: New module detected: UE4Editor-ArcaneNomads-0019.dll
+[2019.07.09-20.32.11:018][792]LogHotReload: Starting Hot-Reload from IDE
+[2019.07.09-20.32.11:105][792]LogUObjectHash: Compacting FUObjectHashTables data took   4.71ms
+[2019.07.09-20.32.11:106][792]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-20.32.11:145][792]LogClass: Could not find existing class StoreableComponent in package /Script/ArcaneNomads for HotReload, assuming new class
+[2019.07.09-20.32.11:145][792]LogClass: Function Drop is new.
+[2019.07.09-20.32.11:145][792]LogClass: Function Store is new.
+[2019.07.09-20.32.11:165][792]LogHotReload: Re-instancing StoreableComponent after hot-reload.
+[2019.07.09-20.32.11:368][792]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-20.32.11:369][792]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 13 classes and 6 folders.
+[2019.07.09-20.32.11:374][792]Display: HotReload successful (28 functions remapped  0 scriptstructs remapped)
+[2019.07.09-20.32.11:463][792]LogUObjectHash: Compacting FUObjectHashTables data took   3.30ms
+[2019.07.09-20.32.11:464][792]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-20.32.11:481][792]LogContentBrowser: Native class hierarchy populated in 0.0102 seconds. Added 2746 classes and 667 folders.
+[2019.07.09-20.32.11:483][792]Display: HotReload took  0.5s.
+[2019.07.09-20.34.02:845][210]Candidate modules for hot reload:
+[2019.07.09-20.34.02:845][210]  ArcaneNomads
+[2019.07.09-20.34.02:845][210]Launching UnrealBuildTool... [C:/Program Files/UnrealEngine/UE_4.22/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=ArcaneNomads,4765 Win64 Development -TargetType=Editor -Project="C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject" "C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject"  -IgnoreJunk]
+[2019.07.09-20.34.02:848][210]Warning: Starting HotReload took  0.0s.
+[2019.07.09-20.34.12:396][344]CompilerResultsLog: New page: Compilation - 10 jul 2019 00:34:12
+[2019.07.09-20.34.12:396][344]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads).
+[2019.07.09-20.34.12:396][344]CompilerResultsLog: Parsing headers for ArcaneNomadsEditor
+[2019.07.09-20.34.12:396][344]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\ArcaneNomads.uproject" "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\ArcaneNomadsEditor\Development\ArcaneNomadsEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2019.07.09-20.34.12:397][344]CompilerResultsLog: Reflection code generated for ArcaneNomadsEditor in 6,0364413 seconds
+[2019.07.09-20.34.12:397][344]CompilerResultsLog: Using Visual Studio 2019 14.21.27702 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2019.07.09-20.34.12:397][344]CompilerResultsLog: Building 6 actions with 16 processes...
+[2019.07.09-20.34.12:397][344]CompilerResultsLog:   [1/6] InventoryComponent.cpp
+[2019.07.09-20.34.12:397][344]CompilerResultsLog:   [2/6] StoreableComponent.cpp
+[2019.07.09-20.34.12:397][344]CompilerResultsLog:   C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\InventorySystem\StoreableComponent.cpp(9): warning C4458: declaration of 'Inventory' hides class member
+[2019.07.09-20.34.12:398][344]CompilerResultsLog:   C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\InventorySystem\StoreableComponent.h(19): note: see declaration of 'UStoreableComponent::Inventory'
+[2019.07.09-20.34.12:398][344]CompilerResultsLog:   [3/6] StoreableComponent.gen.cpp
+[2019.07.09-20.34.12:398][344]CompilerResultsLog:   [4/6] UE4Editor-ArcaneNomads-4765.lib
+[2019.07.09-20.34.12:398][344]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-4765.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-4765.exp
+[2019.07.09-20.34.12:398][344]CompilerResultsLog:   [5/6] UE4Editor-ArcaneNomads-4765.dll
+[2019.07.09-20.34.12:398][344]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-4765.suppressed.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-4765.suppressed.exp
+[2019.07.09-20.34.12:399][344]CompilerResultsLog:   [6/6] ArcaneNomadsEditor.target
+[2019.07.09-20.34.12:399][344]CompilerResultsLog: Total time in Parallel executor: 2,50 seconds
+[2019.07.09-20.34.12:399][344]CompilerResultsLog: Total execution time: 9,48 seconds
+[2019.07.09-20.34.12:399][344]LogMainFrame: MainFrame: Module compiling took 9.556 seconds
+[2019.07.09-20.34.12:466][344]LogUObjectHash: Compacting FUObjectHashTables data took   4.12ms
+[2019.07.09-20.34.12:466][344]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-20.34.12:519][344]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-20.34.12:519][344]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 13 classes and 6 folders.
+[2019.07.09-20.34.12:525][344]Display: HotReload successful (30 functions remapped  0 scriptstructs remapped)
+[2019.07.09-20.34.12:615][344]LogUObjectHash: Compacting FUObjectHashTables data took   2.93ms
+[2019.07.09-20.34.12:615][344]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-20.34.12:630][344]LogContentBrowser: Native class hierarchy populated in 0.0091 seconds. Added 2746 classes and 667 folders.
+[2019.07.09-20.34.12:630][344]Display: HotReload took  9.8s.
+[2019.07.09-20.34.25:444][831]LogAssetEditorManager: Opening Asset editor for Blueprint /Game/ArcaneNomads/Core/Characters/BP_Character.BP_Character
+[2019.07.09-20.34.58:505][161]LogUObjectHash: Compacting FUObjectHashTables data took   6.10ms
+[2019.07.09-20.34.58:826][161]LogSavePackage: Moving '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/ThirdPersonExampleMap_Auto32F8D0E1346A62D6C5A4006992578D6F4.tmp' to '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/Autosaves/Game/_UnrealAssets/ThirdPersonCPP/Maps/ThirdPersonExampleMap_Auto3.umap'
+[2019.07.09-20.34.58:834][161]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/_UnrealAssets/ThirdPersonCPP/Maps/ThirdPersonExampleMap' took 0.431
+[2019.07.09-20.34.58:835][161]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.431
+[2019.07.09-20.38.01:029][ 77]LogHotReload: New module detected: UE4Editor-ArcaneNomads-0021.dll
+[2019.07.09-20.38.02:706][151]LogHotReload: Starting Hot-Reload from IDE
+[2019.07.09-20.38.02:791][151]LogUObjectHash: Compacting FUObjectHashTables data took   3.42ms
+[2019.07.09-20.38.02:791][151]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-20.38.02:821][151]LogClass: Could not find existing class InventoryComponent in package /Script/ArcaneNomads for HotReload, assuming new class
+[2019.07.09-20.38.02:821][151]LogClass: Function Deposit is new.
+[2019.07.09-20.38.02:821][151]LogClass: Function GetInventory is new.
+[2019.07.09-20.38.02:821][151]LogClass: Function GetItemAt is new.
+[2019.07.09-20.38.02:821][151]LogClass: Function GetNumberOfItemsInInventory is new.
+[2019.07.09-20.38.02:821][151]LogClass: Function Withdraw is new.
+[2019.07.09-20.38.02:842][151]LogHotReload: Re-instancing InventoryComponent after hot-reload.
+[2019.07.09-20.38.03:001][151]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-20.38.03:002][151]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0006 seconds. Added 13 classes and 6 folders.
+[2019.07.09-20.38.03:007][151]Display: HotReload successful (25 functions remapped  0 scriptstructs remapped)
+[2019.07.09-20.38.03:070][151]LogUObjectHash: Compacting FUObjectHashTables data took   2.24ms
+[2019.07.09-20.38.03:070][151]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-20.38.03:086][151]LogContentBrowser: Native class hierarchy populated in 0.0094 seconds. Added 2746 classes and 667 folders.
+[2019.07.09-20.38.03:088][151]Display: HotReload took  0.4s.
+[2019.07.09-20.38.59:094][593]LogHotReload: New module detected: UE4Editor-ArcaneNomads-0022.dll
+[2019.07.09-20.39.00:558][657]LogHotReload: Starting Hot-Reload from IDE
+[2019.07.09-20.39.00:620][657]LogUObjectHash: Compacting FUObjectHashTables data took   3.56ms
+[2019.07.09-20.39.00:621][657]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-20.39.00:673][657]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-20.39.00:674][657]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 13 classes and 6 folders.
+[2019.07.09-20.39.00:679][657]Display: HotReload successful (30 functions remapped  0 scriptstructs remapped)
+[2019.07.09-20.39.00:754][657]LogUObjectHash: Compacting FUObjectHashTables data took   2.76ms
+[2019.07.09-20.39.00:754][657]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-20.39.00:770][657]LogContentBrowser: Native class hierarchy populated in 0.0093 seconds. Added 2746 classes and 667 folders.
+[2019.07.09-20.39.00:772][657]Display: HotReload took  0.2s.
+[2019.07.09-20.39.08:725][425]LogEditorViewport: Clicking on Actor (LMB): BP_Interactable_C (BP_Interactable3)
+[2019.07.09-20.39.12:100][800]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2019.07.09-20.39.13:110][921]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2019.07.09-20.39.13:111][921]LogAssetEditorManager: Opening Asset editor for Blueprint /Game/ArcaneNomads/Core/Interactables/BP_Interactable.BP_Interactable
+[2019.07.09-20.39.50:571][946]Candidate modules for hot reload:
+[2019.07.09-20.39.50:571][946]  ArcaneNomads
+[2019.07.09-20.39.50:571][946]Launching UnrealBuildTool... [C:/Program Files/UnrealEngine/UE_4.22/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=ArcaneNomads,8414 Win64 Development -TargetType=Editor -Project="C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject" "C:/Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/ArcaneNomads.uproject"  -IgnoreJunk]
+[2019.07.09-20.39.50:574][946]Warning: Starting HotReload took  0.0s.
+[2019.07.09-20.40.00:746][152]CompilerResultsLog: New page: Compilation - 10 jul 2019 00:40:00
+[2019.07.09-20.40.00:746][152]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads).
+[2019.07.09-20.40.00:747][152]CompilerResultsLog: Creating makefile for ArcaneNomadsEditor (ini files are newer than makefile)
+[2019.07.09-20.40.00:747][152]CompilerResultsLog: Parsing headers for ArcaneNomadsEditor
+[2019.07.09-20.40.00:747][152]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\ArcaneNomads.uproject" "C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\ArcaneNomadsEditor\Development\ArcaneNomadsEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2019.07.09-20.40.00:747][152]CompilerResultsLog: Reflection code generated for ArcaneNomadsEditor in 6,0832799 seconds
+[2019.07.09-20.40.00:747][152]CompilerResultsLog: Using Visual Studio 2019 14.21.27702 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702) and Windows 10.0.17763.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2019.07.09-20.40.00:748][152]CompilerResultsLog: Building 3 actions with 16 processes...
+[2019.07.09-20.40.00:748][152]CompilerResultsLog:   [1/3] UE4Editor-ArcaneNomads-8414.lib
+[2019.07.09-20.40.00:748][152]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-8414.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-8414.exp
+[2019.07.09-20.40.00:748][152]CompilerResultsLog:   [2/3] UE4Editor-ArcaneNomads-8414.dll
+[2019.07.09-20.40.00:748][152]CompilerResultsLog:      Creating library C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-8414.suppressed.lib and object C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\UE4Editor-ArcaneNomads-8414.suppressed.exp
+[2019.07.09-20.40.00:749][152]CompilerResultsLog:   [3/3] ArcaneNomadsEditor.target
+[2019.07.09-20.40.00:749][152]CompilerResultsLog: Total time in Parallel executor: 2,18 seconds
+[2019.07.09-20.40.00:749][152]CompilerResultsLog: Total execution time: 10,10 seconds
+[2019.07.09-20.40.00:749][152]LogMainFrame: MainFrame: Module compiling took 10.180 seconds
+[2019.07.09-20.40.00:827][152]LogUObjectHash: Compacting FUObjectHashTables data took   4.80ms
+[2019.07.09-20.40.00:828][152]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (unloaded)
+[2019.07.09-20.40.00:881][152]LogBlueprintActionDatabase: Requesting refresh due to module change: ArcaneNomads (loaded)
+[2019.07.09-20.40.00:882][152]LogContentBrowser: Native class hierarchy updated for 'ArcaneNomads' in 0.0004 seconds. Added 13 classes and 6 folders.
+[2019.07.09-20.40.00:888][152]Display: HotReload successful (30 functions remapped  0 scriptstructs remapped)
+[2019.07.09-20.40.00:981][152]LogUObjectHash: Compacting FUObjectHashTables data took   3.92ms
+[2019.07.09-20.40.00:981][152]LogBlueprintActionDatabase: Requesting refresh due to hot reload
+[2019.07.09-20.40.00:998][152]LogContentBrowser: Native class hierarchy populated in 0.0096 seconds. Added 2746 classes and 667 folders.
+[2019.07.09-20.40.00:998][152]Display: HotReload took 10.4s.
+[2019.07.09-20.40.11:782][398]BlueprintLog: New page: Compile BP_Character
+[2019.07.09-20.40.12:140][398]LogUObjectHash: Compacting FUObjectHashTables data took   5.31ms
+[2019.07.09-20.40.12:316][398]LogSavePackage: Moving '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/BP_Character79C93E9C4BA6E068B286CE839584F3F3.tmp' to '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Content/ArcaneNomads/Core/Characters/BP_Character.uasset'
+[2019.07.09-20.40.43:033][ 55]BlueprintLog: New page: Compile BP_Interactable
+[2019.07.09-20.40.43:307][ 55]LogUObjectHash: Compacting FUObjectHashTables data took   5.01ms
+[2019.07.09-20.40.43:387][ 55]LogSavePackage: Moving '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/BP_InteractableB7CA81D4490CB7AE5BAA26BD67093DAE.tmp' to '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Content/ArcaneNomads/Core/Interactables/BP_Interactable.uasset'
+[2019.07.09-20.42.11:392][522]BlueprintLog: New page: Compile BP_Interactable
+[2019.07.09-20.42.11:668][522]LogUObjectHash: Compacting FUObjectHashTables data took   4.45ms
+[2019.07.09-20.42.11:733][522]LogSavePackage: Moving '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/BP_InteractableCB3AED2943AE79C6C03C7FB577DE4ABD.tmp' to '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Content/ArcaneNomads/Core/Interactables/BP_Interactable.uasset'
+[2019.07.09-20.42.35:520][346]BlueprintLog: New page: Compile BP_Interactable
+[2019.07.09-20.42.35:802][346]LogUObjectHash: Compacting FUObjectHashTables data took   4.90ms
+[2019.07.09-20.42.35:868][346]LogSavePackage: Moving '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/BP_InteractableCF7583644C694D7A78C6B4A780C9DE44.tmp' to '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Content/ArcaneNomads/Core/Interactables/BP_Interactable.uasset'
+[2019.07.09-20.42.41:470][ 13]BlueprintLog: New page: Compile BP_Character
+[2019.07.09-20.42.41:777][ 13]LogUObjectHash: Compacting FUObjectHashTables data took   4.56ms
+[2019.07.09-20.42.41:893][ 13]LogSavePackage: Moving '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Saved/BP_Character1AB684C84106BF551F09DA82AF121742.tmp' to '../../../../../../Users/LovbergWin/Projects/TreeBranch/ArcaneNomads/ArcaneNomads/Content/ArcaneNomads/Core/Characters/BP_Character.uasset'
+[2019.07.09-20.42.46:335][538]LogTemp: Repeating last play command: Selected Viewport
+[2019.07.09-20.42.46:369][538]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/_UnrealAssets/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/_UnrealAssets/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/_UnrealAssets/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/_UnrealAssets/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2019.07.09-20.42.46:403][538]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2019.07.09-20.42.46:404][538]PIE: New page: PIE session: ThirdPersonExampleMap (10 jul 2019 00:42:46)
+[2019.07.09-20.42.46:528][538]LogPlayLevel: Creating play world package: /Game/_UnrealAssets/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2019.07.09-20.42.46:606][538]LogPlayLevel: PIE: StaticDuplicateObject took: (0.077193s)
+[2019.07.09-20.42.46:607][538]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2019.07.09-20.42.46:632][538]LogPlayLevel: PIE: World Init took: (0.026471s)
+[2019.07.09-20.42.46:633][538]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/_UnrealAssets/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/_UnrealAssets/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.104793s)
+[2019.07.09-20.42.46:688][538]LogUObjectHash: Compacting FUObjectHashTables data took   6.10ms
+[2019.07.09-20.42.46:724][538]LogInit: XAudio2 using 'Speakers (High Definition Audio Device)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2019.07.09-20.42.46:776][538]LogInit: FAudioDevice initialized.
+[2019.07.09-20.42.46:889][538]LogLoad: Game class is 'BP_GameMode_Default_C'
+[2019.07.09-20.42.47:003][538]LogWorld: Bringing World /Game/_UnrealAssets/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2019.07.09-22.42.47
+[2019.07.09-20.42.47:099][538]LogWorld: Bringing up level for play took: 0.117734
+[2019.07.09-20.42.47:146][538]LogBlueprintActionDatabase: Requesting refresh due to module change: Voice (loaded)
+[2019.07.09-20.42.47:172][538]LogBlueprintActionDatabase: Requesting refresh due to module change: MovieSceneCapture (loaded)
+[2019.07.09-20.42.47:173][538]LogContentBrowser: Native class hierarchy updated for 'MovieSceneCapture' in 0.0004 seconds. Added 20 classes and 0 folders.
+[2019.07.09-20.42.47:175][538]LogOutputDevice: Warning: 
+
+Script Stack (0 frames):
+
+[2019.07.09-20.42.48:150][538]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.975 s
+[2019.07.09-20.42.48:150][538]LogOutputDevice: Error: === Handled ensure: ===
+[2019.07.09-20.42.48:150][538]LogOutputDevice: Error: 
+[2019.07.09-20.42.48:150][538]LogOutputDevice: Error: Ensure condition failed: Component->HasBegunPlay() [File:D:\Build\++UE4\Sync\Engine\Source\Runtime\Engine\Private\Actor.cpp] [Line: 3372]
+[2019.07.09-20.42.48:151][538]LogOutputDevice: Error: Failed to route BeginPlay (HealthComponent /Game/_UnrealAssets/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.BP_HitTarget2_5.Health)
+[2019.07.09-20.42.48:151][538]LogOutputDevice: Error: Stack: 
+[2019.07.09-20.42.48:151][538]LogOutputDevice: Error: [Callstack] 0x00007ffe77b08887 UE4Editor-Engine.dll!UnknownFunction []
+[2019.07.09-20.42.48:151][538]LogOutputDevice: Error: [Callstack] 0x00007ffe76537344 UE4Editor-Engine.dll!UnknownFunction []
+[2019.07.09-20.42.48:151][538]LogOutputDevice: Error: [Callstack] 0x00007ffe76541af6 UE4Editor-Engine.dll!UnknownFunction []
+[2019.07.09-20.42.48:151][538]LogOutputDevice: Error: [Callstack] 0x00007ffe7765cb99 UE4Editor-Engine.dll!UnknownFunction []
+[2019.07.09-20.42.48:151][538]LogOutputDevice: Error: [Callstack] 0x00007ffe76bc2911 UE4Editor-Engine.dll!UnknownFunction []
+[2019.07.09-20.42.48:152][538]LogOutputDevice: Error: [Callstack] 0x00007ffe7761754e UE4Editor-Engine.dll!UnknownFunction []
+[2019.07.09-20.42.48:152][538]LogOutputDevice: Error: [Callstack] 0x00007ffe76b899af UE4Editor-Engine.dll!UnknownFunction []
+[2019.07.09-20.42.48:152][538]LogOutputDevice: Error: [Callstack] 0x00007ffe750abe44 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2019.07.09-20.42.48:152][538]LogOutputDevice: Error: [Callstack] 0x00007ffe750cb044 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2019.07.09-20.42.48:152][538]LogOutputDevice: Error: [Callstack] 0x00007ffe750e319f UE4Editor-UnrealEd.dll!UnknownFunction []
+[2019.07.09-20.42.48:152][538]LogOutputDevice: Error: [Callstack] 0x00007ffe74bbfc4a UE4Editor-UnrealEd.dll!UnknownFunction []
+[2019.07.09-20.42.48:152][538]LogOutputDevice: Error: [Callstack] 0x00007ffe753dd396 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2019.07.09-20.42.48:152][538]LogOutputDevice: Error: [Callstack] 0x00007ff6ca2f6bb1 UE4Editor.exe!UnknownFunction []
+[2019.07.09-20.42.48:152][538]LogOutputDevice: Error: [Callstack] 0x00007ff6ca30554c UE4Editor.exe!UnknownFunction []
+[2019.07.09-20.42.48:153][538]LogOutputDevice: Error: [Callstack] 0x00007ff6ca3055ca UE4Editor.exe!UnknownFunction []
+[2019.07.09-20.42.48:153][538]LogOutputDevice: Error: [Callstack] 0x00007ff6ca31316c UE4Editor.exe!UnknownFunction []
+[2019.07.09-20.42.48:153][538]LogOutputDevice: Error: [Callstack] 0x00007ff6ca315b8e UE4Editor.exe!UnknownFunction []
+[2019.07.09-20.42.48:153][538]LogOutputDevice: Error: [Callstack] 0x00007ffee4c74034 KERNEL32.DLL!UnknownFunction []
+[2019.07.09-20.42.48:153][538]LogOutputDevice: Error: [Callstack] 0x00007ffee5203691 ntdll.dll!UnknownFunction []
+[2019.07.09-20.42.48:153][538]LogOutputDevice: Error: 
+[2019.07.09-20.42.48:157][538]LogStats:                SubmitErrorReport -  0.000 s

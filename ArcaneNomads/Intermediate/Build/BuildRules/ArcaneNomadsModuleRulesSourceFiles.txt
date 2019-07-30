@@ -1,0 +1,3 @@
+C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\ArcaneNomads.Build.cs
+C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads.Target.cs
+C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomadsEditor.Target.cs
