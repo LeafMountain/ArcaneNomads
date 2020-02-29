@@ -1,5 +1,5 @@
-C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\DebugGame\ArcaneNomads\Definitions.ArcaneNomads.h
-C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\HealthSystem\HealthComponent.h
-C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Inc\ArcaneNomads\HealthComponent.generated.h
-C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\HealthSystem\DamagerComponent.h
-C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Inc\ArcaneNomads\DamagerComponent.generated.h
+C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\DebugGame\ArcaneNomads\Definitions.ArcaneNomads.h
+C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\HealthSystem\HealthComponent.h
+C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Inc\ArcaneNomads\HealthComponent.generated.h
+C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\HealthSystem\DamagerComponent.h
+C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Inc\ArcaneNomads\DamagerComponent.generated.h

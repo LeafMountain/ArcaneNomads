@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "ArcaneNomads",
+			"Path": "C:\\Users\\lovbe\\Desktop\\ArcaneNomads\\ArcaneNomads\\Source\\ArcaneNomads.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "ArcaneNomadsEditor",
+			"Path": "C:\\Users\\lovbe\\Desktop\\ArcaneNomads\\ArcaneNomads\\Source\\ArcaneNomadsEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

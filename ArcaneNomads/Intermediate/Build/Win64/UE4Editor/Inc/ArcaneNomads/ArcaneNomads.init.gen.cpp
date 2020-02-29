@@ -35,10 +35,10 @@ void EmptyLinkFunctionForGeneratedCodeArcaneNomads_init() {}
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/ArcaneNomads",
 				SingletonFuncArray,
-				ARRAY_COUNT(SingletonFuncArray),
+				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xC7C01E91,
-				0x3401D21B,
+				0x118A41B1,
+				0x2777A10C,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

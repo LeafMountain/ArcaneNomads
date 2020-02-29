@@ -13,6 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ARCANENOMADS_ArcaneNomadsGameMode_generated_h
 
+#define ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_SPARSE_DATA
 #define ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_RPC_WRAPPERS
 #define ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_RPC_WRAPPERS_NO_PURE_DECLS
 #define ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_INCLASS_NO_PURE_DECLS \
@@ -20,7 +21,7 @@ private: \
 	static void StaticRegisterNativesAArcaneNomadsGameMode(); \
 	friend struct Z_Construct_UClass_AArcaneNomadsGameMode_Statics; \
 public: \
-	DECLARE_CLASS(AArcaneNomadsGameMode, AGameModeBase, COMPILED_IN_FLAGS(0 | CLASS_Transient), CASTCLASS_None, TEXT("/Script/ArcaneNomads"), ARCANENOMADS_API) \
+	DECLARE_CLASS(AArcaneNomadsGameMode, AGameModeBase, COMPILED_IN_FLAGS(0 | CLASS_Transient | CLASS_Config), CASTCLASS_None, TEXT("/Script/ArcaneNomads"), ARCANENOMADS_API) \
 	DECLARE_SERIALIZER(AArcaneNomadsGameMode)
 
 
@@ -29,7 +30,7 @@ private: \
 	static void StaticRegisterNativesAArcaneNomadsGameMode(); \
 	friend struct Z_Construct_UClass_AArcaneNomadsGameMode_Statics; \
 public: \
-	DECLARE_CLASS(AArcaneNomadsGameMode, AGameModeBase, COMPILED_IN_FLAGS(0 | CLASS_Transient), CASTCLASS_None, TEXT("/Script/ArcaneNomads"), ARCANENOMADS_API) \
+	DECLARE_CLASS(AArcaneNomadsGameMode, AGameModeBase, COMPILED_IN_FLAGS(0 | CLASS_Transient | CLASS_Config), CASTCLASS_None, TEXT("/Script/ArcaneNomads"), ARCANENOMADS_API) \
 	DECLARE_SERIALIZER(AArcaneNomadsGameMode)
 
 
@@ -63,6 +64,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AArcaneNomadsGameMode); \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_PRIVATE_PROPERTY_OFFSET \
+	ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_SPARSE_DATA \
 	ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_RPC_WRAPPERS \
 	ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_INCLASS \
 	ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_STANDARD_CONSTRUCTORS \
@@ -74,6 +76,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_PRIVATE_PROPERTY_OFFSET \
+	ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_SPARSE_DATA \
 	ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_INCLASS_NO_PURE_DECLS \
 	ArcaneNomads_Source_ArcaneNomads_ArcaneNomadsGameMode_h_12_ENHANCED_CONSTRUCTORS \

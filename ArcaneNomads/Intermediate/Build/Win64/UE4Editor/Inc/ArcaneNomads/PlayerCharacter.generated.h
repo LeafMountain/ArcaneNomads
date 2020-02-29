@@ -13,6 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ARCANENOMADS_PlayerCharacter_generated_h
 
+#define ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_SPARSE_DATA
 #define ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_RPC_WRAPPERS
 #define ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_RPC_WRAPPERS_NO_PURE_DECLS
 #define ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_INCLASS_NO_PURE_DECLS \
@@ -20,7 +21,7 @@ private: \
 	static void StaticRegisterNativesAPlayerCharacter(); \
 	friend struct Z_Construct_UClass_APlayerCharacter_Statics; \
 public: \
-	DECLARE_CLASS(APlayerCharacter, ACharacter, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/ArcaneNomads"), NO_API) \
+	DECLARE_CLASS(APlayerCharacter, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/ArcaneNomads"), NO_API) \
 	DECLARE_SERIALIZER(APlayerCharacter)
 
 
@@ -29,7 +30,7 @@ private: \
 	static void StaticRegisterNativesAPlayerCharacter(); \
 	friend struct Z_Construct_UClass_APlayerCharacter_Statics; \
 public: \
-	DECLARE_CLASS(APlayerCharacter, ACharacter, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/ArcaneNomads"), NO_API) \
+	DECLARE_CLASS(APlayerCharacter, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/ArcaneNomads"), NO_API) \
 	DECLARE_SERIALIZER(APlayerCharacter)
 
 
@@ -63,6 +64,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APlayerCharacter); \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_PRIVATE_PROPERTY_OFFSET \
+	ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_SPARSE_DATA \
 	ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_RPC_WRAPPERS \
 	ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_INCLASS \
 	ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_STANDARD_CONSTRUCTORS \
@@ -74,6 +76,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_PRIVATE_PROPERTY_OFFSET \
+	ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_SPARSE_DATA \
 	ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_INCLASS_NO_PURE_DECLS \
 	ArcaneNomads_Source_ArcaneNomads_PlayerCharacter_h_13_ENHANCED_CONSTRUCTORS \

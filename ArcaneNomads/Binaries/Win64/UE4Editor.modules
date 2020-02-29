@@ -1,7 +1,7 @@
 {
-	"BuildId": "5660361",
+	"BuildId": "10570792",
 	"Modules": 
 	{
-		"ArcaneNomads": "UE4Editor-ArcaneNomads-4698.dll"
+		"ArcaneNomads": "UE4Editor-ArcaneNomads.dll"
 	}
 }

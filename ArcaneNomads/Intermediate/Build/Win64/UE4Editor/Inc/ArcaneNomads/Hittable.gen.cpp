@@ -30,7 +30,7 @@ void EmptyLinkFunctionForGeneratedCodeHittable() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "OnHit", &IHittable::execOnHit },
 		};
-		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
 	struct Z_Construct_UFunction_UHittable_OnHit_Statics
 	{
@@ -54,7 +54,7 @@ void EmptyLinkFunctionForGeneratedCodeHittable() {}
 		{ "ModuleRelativePath", "WeaponSystem/Hittable.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UHittable_OnHit_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHittable, nullptr, "OnHit", sizeof(Hittable_eventOnHit_Parms), Z_Construct_UFunction_UHittable_OnHit_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_UHittable_OnHit_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHittable_OnHit_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UHittable_OnHit_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UHittable_OnHit_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHittable, nullptr, "OnHit", nullptr, nullptr, sizeof(Hittable_eventOnHit_Parms), Z_Construct_UFunction_UHittable_OnHit_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHittable_OnHit_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHittable_OnHit_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHittable_OnHit_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_UHittable_OnHit()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -83,7 +83,7 @@ void EmptyLinkFunctionForGeneratedCodeHittable() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_ArcaneNomads,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UHittable_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UHittable_OnHit, "OnHit" }, // 3904894290
+		{ &Z_Construct_UFunction_UHittable_OnHit, "OnHit" }, // 2009139918
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHittable_Statics::Class_MetaDataParams[] = {
@@ -103,12 +103,12 @@ void EmptyLinkFunctionForGeneratedCodeHittable() {}
 		FuncInfo,
 		nullptr,
 		nullptr,
-		ARRAY_COUNT(DependentSingletons),
-		ARRAY_COUNT(FuncInfo),
+		UE_ARRAY_COUNT(DependentSingletons),
+		UE_ARRAY_COUNT(FuncInfo),
 		0,
 		0,
 		0x001040A1u,
-		METADATA_PARAMS(Z_Construct_UClass_UHittable_Statics::Class_MetaDataParams, ARRAY_COUNT(Z_Construct_UClass_UHittable_Statics::Class_MetaDataParams))
+		METADATA_PARAMS(Z_Construct_UClass_UHittable_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_UHittable_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_UHittable()
 	{
@@ -119,7 +119,7 @@ void EmptyLinkFunctionForGeneratedCodeHittable() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHittable, 3299701786);
+	IMPLEMENT_CLASS(UHittable, 4228351566);
 	template<> ARCANENOMADS_API UClass* StaticClass<UHittable>()
 	{
 		return UHittable::StaticClass();

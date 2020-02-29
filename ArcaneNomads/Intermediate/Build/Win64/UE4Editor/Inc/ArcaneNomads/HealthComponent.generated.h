@@ -42,6 +42,7 @@ static inline void FHitEventTwo_DelegateWrapper(const FMulticastScriptDelegate& 
 }
 
 
+#define ArcaneNomads_Source_ArcaneNomads_HealthSystem_HealthComponent_h_14_SPARSE_DATA
 #define ArcaneNomads_Source_ArcaneNomads_HealthSystem_HealthComponent_h_14_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execAdjustHealth) \
@@ -207,6 +208,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UHealthComponent); \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	ArcaneNomads_Source_ArcaneNomads_HealthSystem_HealthComponent_h_14_PRIVATE_PROPERTY_OFFSET \
+	ArcaneNomads_Source_ArcaneNomads_HealthSystem_HealthComponent_h_14_SPARSE_DATA \
 	ArcaneNomads_Source_ArcaneNomads_HealthSystem_HealthComponent_h_14_RPC_WRAPPERS \
 	ArcaneNomads_Source_ArcaneNomads_HealthSystem_HealthComponent_h_14_INCLASS \
 	ArcaneNomads_Source_ArcaneNomads_HealthSystem_HealthComponent_h_14_STANDARD_CONSTRUCTORS \
@@ -218,6 +220,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	ArcaneNomads_Source_ArcaneNomads_HealthSystem_HealthComponent_h_14_PRIVATE_PROPERTY_OFFSET \
+	ArcaneNomads_Source_ArcaneNomads_HealthSystem_HealthComponent_h_14_SPARSE_DATA \
 	ArcaneNomads_Source_ArcaneNomads_HealthSystem_HealthComponent_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
 	ArcaneNomads_Source_ArcaneNomads_HealthSystem_HealthComponent_h_14_INCLASS_NO_PURE_DECLS \
 	ArcaneNomads_Source_ArcaneNomads_HealthSystem_HealthComponent_h_14_ENHANCED_CONSTRUCTORS \

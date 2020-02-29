@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Components/ActorComponent.h"
+#include "InteractionSystem/Interactable.h"
 #include "InteractorComponent.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInteractionEventOne, class AActor*, Interactable);
@@ -17,7 +18,7 @@ protected:
 
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	class UInteractableComponent* CurrentFocusedInteractable;
+	class AActor* CurrentFocusedInteractable;
 
 public:
 	UPROPERTY(EditAnywhere)
@@ -27,11 +28,14 @@ public:
 	bool LookingAtInteractable();
 
 	UFUNCTION(BlueprintCallable)
-	class UInteractableComponent* GetInteractable();
+	class AActor* GetInteractable();
 
 	UFUNCTION(BlueprintCallable)
 	bool Interact();
 
 	UPROPERTY(BlueprintAssignable)
 	FInteractionEventOne OnInteracted;
+
+	void StartFocus(AActor* anActor);
+	void EndFocus();
 };

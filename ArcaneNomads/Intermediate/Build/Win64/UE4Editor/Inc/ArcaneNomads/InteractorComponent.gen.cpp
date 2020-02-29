@@ -20,7 +20,6 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 	ARCANENOMADS_API UClass* Z_Construct_UClass_UInteractorComponent();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInteractorComponent_GetInteractable();
-	ARCANENOMADS_API UClass* Z_Construct_UClass_UInteractableComponent_NoRegister();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInteractorComponent_Interact();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable();
 // End Cross Module References
@@ -46,7 +45,7 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 		{ "ModuleRelativePath", "InteractionSystem/InteractorComponent.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_ArcaneNomads, nullptr, "InteractionEventOne__DelegateSignature", sizeof(_Script_ArcaneNomads_eventInteractionEventOne_Parms), Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_ArcaneNomads, nullptr, "InteractionEventOne__DelegateSignature", nullptr, nullptr, sizeof(_Script_ArcaneNomads_eventInteractionEventOne_Parms), Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -64,17 +63,14 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 			{ "Interact", &UInteractorComponent::execInteract },
 			{ "LookingAtInteractable", &UInteractorComponent::execLookingAtInteractable },
 		};
-		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
 	struct Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics
 	{
 		struct InteractorComponent_eventGetInteractable_Parms
 		{
-			UInteractableComponent* ReturnValue;
+			AActor* ReturnValue;
 		};
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[];
-#endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -82,12 +78,7 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::NewProp_ReturnValue_MetaData[] = {
-		{ "EditInline", "true" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InteractorComponent_eventGetInteractable_Parms, ReturnValue), Z_Construct_UClass_UInteractableComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::NewProp_ReturnValue_MetaData, ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::NewProp_ReturnValue_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InteractorComponent_eventGetInteractable_Parms, ReturnValue), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::NewProp_ReturnValue,
 	};
@@ -96,7 +87,7 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 		{ "ModuleRelativePath", "InteractionSystem/InteractorComponent.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInteractorComponent, nullptr, "GetInteractable", sizeof(InteractorComponent_eventGetInteractable_Parms), Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInteractorComponent, nullptr, "GetInteractable", nullptr, nullptr, sizeof(InteractorComponent_eventGetInteractable_Parms), Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_UInteractorComponent_GetInteractable()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -133,7 +124,7 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 		{ "ModuleRelativePath", "InteractionSystem/InteractorComponent.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UInteractorComponent_Interact_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInteractorComponent, nullptr, "Interact", sizeof(InteractorComponent_eventInteract_Parms), Z_Construct_UFunction_UInteractorComponent_Interact_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_Interact_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInteractorComponent_Interact_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_Interact_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UInteractorComponent_Interact_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInteractorComponent, nullptr, "Interact", nullptr, nullptr, sizeof(InteractorComponent_eventInteract_Parms), Z_Construct_UFunction_UInteractorComponent_Interact_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_Interact_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInteractorComponent_Interact_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_Interact_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_UInteractorComponent_Interact()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -170,7 +161,7 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 		{ "ModuleRelativePath", "InteractionSystem/InteractorComponent.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInteractorComponent, nullptr, "LookingAtInteractable", sizeof(InteractorComponent_eventLookingAtInteractable_Parms), Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInteractorComponent, nullptr, "LookingAtInteractable", nullptr, nullptr, sizeof(InteractorComponent_eventLookingAtInteractable_Parms), Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -208,9 +199,9 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_ArcaneNomads,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UInteractorComponent_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UInteractorComponent_GetInteractable, "GetInteractable" }, // 329608721
-		{ &Z_Construct_UFunction_UInteractorComponent_Interact, "Interact" }, // 396309446
-		{ &Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable, "LookingAtInteractable" }, // 923417469
+		{ &Z_Construct_UFunction_UInteractorComponent_GetInteractable, "GetInteractable" }, // 3547676239
+		{ &Z_Construct_UFunction_UInteractorComponent_Interact, "Interact" }, // 2693310111
+		{ &Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable, "LookingAtInteractable" }, // 3467349165
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UInteractorComponent_Statics::Class_MetaDataParams[] = {
@@ -225,14 +216,14 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 		{ "ModuleRelativePath", "InteractionSystem/InteractorComponent.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UInteractorComponent_Statics::NewProp_OnInteracted = { "OnInteracted", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::MulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UInteractorComponent, OnInteracted), Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UInteractorComponent_Statics::NewProp_OnInteracted_MetaData, ARRAY_COUNT(Z_Construct_UClass_UInteractorComponent_Statics::NewProp_OnInteracted_MetaData)) };
+	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UInteractorComponent_Statics::NewProp_OnInteracted = { "OnInteracted", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UInteractorComponent, OnInteracted), Z_Construct_UDelegateFunction_ArcaneNomads_InteractionEventOne__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UInteractorComponent_Statics::NewProp_OnInteracted_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UInteractorComponent_Statics::NewProp_OnInteracted_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UInteractorComponent_Statics::NewProp_Range_MetaData[] = {
 		{ "Category", "InteractorComponent" },
 		{ "ModuleRelativePath", "InteractionSystem/InteractorComponent.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UInteractorComponent_Statics::NewProp_Range = { "Range", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UInteractorComponent, Range), METADATA_PARAMS(Z_Construct_UClass_UInteractorComponent_Statics::NewProp_Range_MetaData, ARRAY_COUNT(Z_Construct_UClass_UInteractorComponent_Statics::NewProp_Range_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UInteractorComponent_Statics::NewProp_Range = { "Range", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UInteractorComponent, Range), METADATA_PARAMS(Z_Construct_UClass_UInteractorComponent_Statics::NewProp_Range_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UInteractorComponent_Statics::NewProp_Range_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UInteractorComponent_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInteractorComponent_Statics::NewProp_OnInteracted,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInteractorComponent_Statics::NewProp_Range,
@@ -248,12 +239,12 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 		FuncInfo,
 		Z_Construct_UClass_UInteractorComponent_Statics::PropPointers,
 		nullptr,
-		ARRAY_COUNT(DependentSingletons),
-		ARRAY_COUNT(FuncInfo),
-		ARRAY_COUNT(Z_Construct_UClass_UInteractorComponent_Statics::PropPointers),
+		UE_ARRAY_COUNT(DependentSingletons),
+		UE_ARRAY_COUNT(FuncInfo),
+		UE_ARRAY_COUNT(Z_Construct_UClass_UInteractorComponent_Statics::PropPointers),
 		0,
 		0x00B000A4u,
-		METADATA_PARAMS(Z_Construct_UClass_UInteractorComponent_Statics::Class_MetaDataParams, ARRAY_COUNT(Z_Construct_UClass_UInteractorComponent_Statics::Class_MetaDataParams))
+		METADATA_PARAMS(Z_Construct_UClass_UInteractorComponent_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_UInteractorComponent_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_UInteractorComponent()
 	{
@@ -264,7 +255,7 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UInteractorComponent, 2997476971);
+	IMPLEMENT_CLASS(UInteractorComponent, 3193227689);
 	template<> ARCANENOMADS_API UClass* StaticClass<UInteractorComponent>()
 	{
 		return UInteractorComponent::StaticClass();

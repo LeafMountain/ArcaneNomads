@@ -1,4 +1,6 @@
-//#include "Interactable.h"
+#include "Interactable.h"
+
+
 //
 ////void UInteractable::UInteractable(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 ////{

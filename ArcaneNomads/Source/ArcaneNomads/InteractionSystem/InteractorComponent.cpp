@@ -24,25 +24,23 @@ void UInteractorComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 	FHitResult HitResult;
 	FVector StartLocation = GetOwner()->GetActorLocation();	
 	FVector EndLocation = StartLocation + CameraForward * Range;
-	//GetWorld()->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation, ECC_WorldDynamic, CollisionParameters);
 
 	if (GetWorld()->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation, ECC_WorldDynamic, CollisionParameters))
 	{
-		UInteractableComponent* LookInteractable = (UInteractableComponent*)HitResult.Actor->GetComponentByClass(UInteractableComponent::StaticClass());
+		TArray<UActorComponent*> LookInteractables = HitResult.Actor->GetComponentsByInterface(UInteractable::StaticClass());
+		AActor* hitActor = HitResult.Actor.Get();
 
-		if (LookInteractable != nullptr && CurrentFocusedInteractable != LookInteractable)
+		if (LookInteractables.Num() > 0 && HitResult.Actor.Get() != CurrentFocusedInteractable)
 		{
-			if(CurrentFocusedInteractable != nullptr)
-				CurrentFocusedInteractable->Unfocus(this);
+			if (CurrentFocusedInteractable != nullptr)
+				EndFocus();
 
-			CurrentFocusedInteractable = LookInteractable;
-			CurrentFocusedInteractable->Focus(this);
+			StartFocus(HitResult.Actor.Get());
 		}
 	}
-	else if(CurrentFocusedInteractable != nullptr)
+	else
 	{
-		CurrentFocusedInteractable->Unfocus(this);
-		CurrentFocusedInteractable = nullptr;
+		EndFocus();
 	}
 }
 
@@ -51,16 +49,53 @@ bool UInteractorComponent::LookingAtInteractable()
 	return CurrentFocusedInteractable != nullptr;
 }
 
-UInteractableComponent* UInteractorComponent::GetInteractable()
+AActor* UInteractorComponent::GetInteractable()
 {
 	return CurrentFocusedInteractable;
 }
 
 bool UInteractorComponent::Interact()
 {
-	if(CurrentFocusedInteractable != nullptr)
-		CurrentFocusedInteractable->Interact(this);
+	if (CurrentFocusedInteractable == nullptr)
+		return false;
 
-	return CurrentFocusedInteractable != nullptr;
+	TArray<UActorComponent*> interactable = CurrentFocusedInteractable->GetComponentsByInterface(UInteractable::StaticClass());
+
+	for (auto it = interactable.CreateIterator(); it; ++it)
+	{
+		IInteractable::Execute_Interact(*it, this);
+	}
+
+	return true;
+}
+
+void UInteractorComponent::StartFocus(AActor* anActor)
+{
+	if (anActor == nullptr)
+		return;
+
+	CurrentFocusedInteractable = anActor;
+
+	TArray<UActorComponent*> interactables = anActor->GetComponentsByInterface(UInteractable::StaticClass());
+
+	for (auto it = interactables.CreateIterator(); it; ++it)
+	{
+		IInteractable::Execute_StartFocus(*it);
+	}
+}
+
+void UInteractorComponent::EndFocus()
+{
+	if (CurrentFocusedInteractable == nullptr)
+		return;
+
+	TArray<UActorComponent*> interactables = CurrentFocusedInteractable->GetComponentsByInterface(UInteractable::StaticClass());
+
+	for (auto it = interactables.CreateIterator(); it; ++it)
+	{
+		IInteractable::Execute_StopFocus(*it);
+	}
+
+	CurrentFocusedInteractable = nullptr;
 }
 

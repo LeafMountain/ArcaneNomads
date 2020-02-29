@@ -1,2 +1,2 @@
-C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\Definitions.ArcaneNomads.h
-C:\Users\LovbergWin\Projects\TreeBranch\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\ArcaneNomads.h
+C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\Definitions.ArcaneNomads.h
+C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\ArcaneNomads.h

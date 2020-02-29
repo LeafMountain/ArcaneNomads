@@ -35,7 +35,7 @@ void EmptyLinkFunctionForGeneratedCodeToolUser() {}
 			{ "UseActivate", &UToolUser::execUseActivate },
 			{ "UseInactivate", &UToolUser::execUseInactivate },
 		};
-		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
 	struct Z_Construct_UFunction_UToolUser_Equip_Statics
 	{
@@ -63,7 +63,7 @@ void EmptyLinkFunctionForGeneratedCodeToolUser() {}
 		{ "EditInline", "true" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UToolUser_Equip_Statics::NewProp_Parent = { "Parent", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ToolUser_eventEquip_Parms, Parent), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UToolUser_Equip_Statics::NewProp_Parent_MetaData, ARRAY_COUNT(Z_Construct_UFunction_UToolUser_Equip_Statics::NewProp_Parent_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UToolUser_Equip_Statics::NewProp_Parent = { "Parent", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ToolUser_eventEquip_Parms, Parent), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UToolUser_Equip_Statics::NewProp_Parent_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UToolUser_Equip_Statics::NewProp_Parent_MetaData)) };
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UToolUser_Equip_Statics::NewProp_Tool = { "Tool", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ToolUser_eventEquip_Parms, Tool), Z_Construct_UClass_AWeapon_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UToolUser_Equip_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UToolUser_Equip_Statics::NewProp_SocketName,
@@ -72,12 +72,13 @@ void EmptyLinkFunctionForGeneratedCodeToolUser() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UToolUser_Equip_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Equip a new tool\n" },
 		{ "CPP_Default_SocketName", "RightHandSocket" },
 		{ "ModuleRelativePath", "WeaponSystem/ToolUser.h" },
 		{ "ToolTip", "Equip a new tool" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UToolUser_Equip_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UToolUser, nullptr, "Equip", sizeof(ToolUser_eventEquip_Parms), Z_Construct_UFunction_UToolUser_Equip_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_UToolUser_Equip_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UToolUser_Equip_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UToolUser_Equip_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UToolUser_Equip_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UToolUser, nullptr, "Equip", nullptr, nullptr, sizeof(ToolUser_eventEquip_Parms), Z_Construct_UFunction_UToolUser_Equip_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UToolUser_Equip_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UToolUser_Equip_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UToolUser_Equip_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_UToolUser_Equip()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -106,11 +107,12 @@ void EmptyLinkFunctionForGeneratedCodeToolUser() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UToolUser_Unequip_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Unequip the current tool\n" },
 		{ "ModuleRelativePath", "WeaponSystem/ToolUser.h" },
 		{ "ToolTip", "Unequip the current tool" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UToolUser_Unequip_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UToolUser, nullptr, "Unequip", sizeof(ToolUser_eventUnequip_Parms), Z_Construct_UFunction_UToolUser_Unequip_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_UToolUser_Unequip_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UToolUser_Unequip_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UToolUser_Unequip_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UToolUser_Unequip_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UToolUser, nullptr, "Unequip", nullptr, nullptr, sizeof(ToolUser_eventUnequip_Parms), Z_Construct_UFunction_UToolUser_Unequip_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UToolUser_Unequip_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UToolUser_Unequip_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UToolUser_Unequip_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_UToolUser_Unequip()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -129,11 +131,12 @@ void EmptyLinkFunctionForGeneratedCodeToolUser() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UToolUser_Use_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Use the current tool\n" },
 		{ "ModuleRelativePath", "WeaponSystem/ToolUser.h" },
 		{ "ToolTip", "Use the current tool" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UToolUser_Use_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UToolUser, nullptr, "Use", 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UToolUser_Use_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UToolUser_Use_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UToolUser_Use_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UToolUser, nullptr, "Use", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UToolUser_Use_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UToolUser_Use_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_UToolUser_Use()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -155,7 +158,7 @@ void EmptyLinkFunctionForGeneratedCodeToolUser() {}
 		{ "ModuleRelativePath", "WeaponSystem/ToolUser.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UToolUser_UseActivate_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UToolUser, nullptr, "UseActivate", 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UToolUser_UseActivate_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UToolUser_UseActivate_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UToolUser_UseActivate_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UToolUser, nullptr, "UseActivate", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UToolUser_UseActivate_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UToolUser_UseActivate_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_UToolUser_UseActivate()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -177,7 +180,7 @@ void EmptyLinkFunctionForGeneratedCodeToolUser() {}
 		{ "ModuleRelativePath", "WeaponSystem/ToolUser.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UToolUser_UseInactivate_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UToolUser, nullptr, "UseInactivate", 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UToolUser_UseInactivate_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UToolUser_UseInactivate_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UToolUser_UseInactivate_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UToolUser, nullptr, "UseInactivate", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UToolUser_UseInactivate_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UToolUser_UseInactivate_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_UToolUser_UseInactivate()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -212,11 +215,11 @@ void EmptyLinkFunctionForGeneratedCodeToolUser() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_ArcaneNomads,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UToolUser_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UToolUser_Equip, "Equip" }, // 3874836221
-		{ &Z_Construct_UFunction_UToolUser_Unequip, "Unequip" }, // 2539939277
-		{ &Z_Construct_UFunction_UToolUser_Use, "Use" }, // 3259956450
-		{ &Z_Construct_UFunction_UToolUser_UseActivate, "UseActivate" }, // 4079776794
-		{ &Z_Construct_UFunction_UToolUser_UseInactivate, "UseInactivate" }, // 1245150725
+		{ &Z_Construct_UFunction_UToolUser_Equip, "Equip" }, // 1498577183
+		{ &Z_Construct_UFunction_UToolUser_Unequip, "Unequip" }, // 3436078542
+		{ &Z_Construct_UFunction_UToolUser_Use, "Use" }, // 1681053236
+		{ &Z_Construct_UFunction_UToolUser_UseActivate, "UseActivate" }, // 4146694286
+		{ &Z_Construct_UFunction_UToolUser_UseInactivate, "UseInactivate" }, // 3739701846
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UToolUser_Statics::Class_MetaDataParams[] = {
@@ -236,7 +239,7 @@ void EmptyLinkFunctionForGeneratedCodeToolUser() {}
 	{
 		((UToolUser*)Obj)->IsEquipped = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UToolUser_Statics::NewProp_IsEquipped = { "IsEquipped", nullptr, (EPropertyFlags)0x0010000000000014, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UToolUser), &Z_Construct_UClass_UToolUser_Statics::NewProp_IsEquipped_SetBit, METADATA_PARAMS(Z_Construct_UClass_UToolUser_Statics::NewProp_IsEquipped_MetaData, ARRAY_COUNT(Z_Construct_UClass_UToolUser_Statics::NewProp_IsEquipped_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UToolUser_Statics::NewProp_IsEquipped = { "IsEquipped", nullptr, (EPropertyFlags)0x0010000000000014, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UToolUser), &Z_Construct_UClass_UToolUser_Statics::NewProp_IsEquipped_SetBit, METADATA_PARAMS(Z_Construct_UClass_UToolUser_Statics::NewProp_IsEquipped_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UToolUser_Statics::NewProp_IsEquipped_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UToolUser_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UToolUser_Statics::NewProp_IsEquipped,
 	};
@@ -251,12 +254,12 @@ void EmptyLinkFunctionForGeneratedCodeToolUser() {}
 		FuncInfo,
 		Z_Construct_UClass_UToolUser_Statics::PropPointers,
 		nullptr,
-		ARRAY_COUNT(DependentSingletons),
-		ARRAY_COUNT(FuncInfo),
-		ARRAY_COUNT(Z_Construct_UClass_UToolUser_Statics::PropPointers),
+		UE_ARRAY_COUNT(DependentSingletons),
+		UE_ARRAY_COUNT(FuncInfo),
+		UE_ARRAY_COUNT(Z_Construct_UClass_UToolUser_Statics::PropPointers),
 		0,
 		0x00B000A4u,
-		METADATA_PARAMS(Z_Construct_UClass_UToolUser_Statics::Class_MetaDataParams, ARRAY_COUNT(Z_Construct_UClass_UToolUser_Statics::Class_MetaDataParams))
+		METADATA_PARAMS(Z_Construct_UClass_UToolUser_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_UToolUser_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_UToolUser()
 	{
@@ -267,7 +270,7 @@ void EmptyLinkFunctionForGeneratedCodeToolUser() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UToolUser, 2162240324);
+	IMPLEMENT_CLASS(UToolUser, 362960784);
 	template<> ARCANENOMADS_API UClass* StaticClass<UToolUser>()
 	{
 		return UToolUser::StaticClass();

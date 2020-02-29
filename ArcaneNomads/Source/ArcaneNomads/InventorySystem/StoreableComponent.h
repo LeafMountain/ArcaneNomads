@@ -2,12 +2,13 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "InteractionSystem/Interactable.h"
 #include "StoreableComponent.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStoreEvent, class UInventoryComponent*, Inventory);
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
-class ARCANENOMADS_API UStoreableComponent : public UActorComponent
+class ARCANENOMADS_API UStoreableComponent : public UActorComponent, public IInteractable
 {
     GENERATED_BODY()
 
@@ -32,4 +33,8 @@ public:
 
     UPROPERTY(BlueprintAssignable)
     FStoreEvent OnDropped;
+
+    void Interact_Implementation(class UInteractorComponent* aInteractor) override;
+    void StartFocus_Implementation() override;
+    void StopFocus_Implementation() override;
 };

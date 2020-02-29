@@ -51,18 +51,18 @@ void EmptyLinkFunctionForGeneratedCodeArcaneNomadsGameMode() {}
 	};
 	const UE4CodeGen_Private::FClassParams Z_Construct_UClass_AArcaneNomadsGameMode_Statics::ClassParams = {
 		&AArcaneNomadsGameMode::StaticClass,
-		nullptr,
+		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
 		nullptr,
 		nullptr,
-		ARRAY_COUNT(DependentSingletons),
+		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		0,
 		0,
-		0x008802A8u,
-		METADATA_PARAMS(Z_Construct_UClass_AArcaneNomadsGameMode_Statics::Class_MetaDataParams, ARRAY_COUNT(Z_Construct_UClass_AArcaneNomadsGameMode_Statics::Class_MetaDataParams))
+		0x008802ACu,
+		METADATA_PARAMS(Z_Construct_UClass_AArcaneNomadsGameMode_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AArcaneNomadsGameMode_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_AArcaneNomadsGameMode()
 	{
@@ -73,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeArcaneNomadsGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AArcaneNomadsGameMode, 2144958998);
+	IMPLEMENT_CLASS(AArcaneNomadsGameMode, 962608846);
 	template<> ARCANENOMADS_API UClass* StaticClass<AArcaneNomadsGameMode>()
 	{
 		return AArcaneNomadsGameMode::StaticClass();

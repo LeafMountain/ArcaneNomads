@@ -14,6 +14,7 @@ class AWeapon;
 #endif
 #define ARCANENOMADS_Hittable_generated_h
 
+#define ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Hittable_h_8_SPARSE_DATA
 #define ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Hittable_h_8_RPC_WRAPPERS \
 	virtual void OnHit_Implementation(int32 Damage, AWeapon* Instagator) {}; \
  \
@@ -128,6 +129,7 @@ public: \
 #define ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Hittable_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Hittable_h_8_SPARSE_DATA \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Hittable_h_8_RPC_WRAPPERS \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Hittable_h_8_CALLBACK_WRAPPERS \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Hittable_h_8_INCLASS_IINTERFACE \
@@ -138,6 +140,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #define ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Hittable_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Hittable_h_8_SPARSE_DATA \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Hittable_h_8_RPC_WRAPPERS_NO_PURE_DECLS \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Hittable_h_8_CALLBACK_WRAPPERS \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Hittable_h_8_INCLASS_IINTERFACE_NO_PURE_DECLS \

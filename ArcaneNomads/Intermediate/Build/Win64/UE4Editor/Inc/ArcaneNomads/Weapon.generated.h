@@ -13,6 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ARCANENOMADS_Weapon_generated_h
 
+#define ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Weapon_h_12_SPARSE_DATA
 #define ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Weapon_h_12_RPC_WRAPPERS \
 	virtual void OnUse_Implementation(); \
  \
@@ -76,7 +77,7 @@ private: \
 	static void StaticRegisterNativesAWeapon(); \
 	friend struct Z_Construct_UClass_AWeapon_Statics; \
 public: \
-	DECLARE_CLASS(AWeapon, AActor, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/ArcaneNomads"), NO_API) \
+	DECLARE_CLASS(AWeapon, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/ArcaneNomads"), NO_API) \
 	DECLARE_SERIALIZER(AWeapon)
 
 
@@ -85,7 +86,7 @@ private: \
 	static void StaticRegisterNativesAWeapon(); \
 	friend struct Z_Construct_UClass_AWeapon_Statics; \
 public: \
-	DECLARE_CLASS(AWeapon, AActor, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/ArcaneNomads"), NO_API) \
+	DECLARE_CLASS(AWeapon, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/ArcaneNomads"), NO_API) \
 	DECLARE_SERIALIZER(AWeapon)
 
 
@@ -125,6 +126,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWeapon); \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Weapon_h_12_PRIVATE_PROPERTY_OFFSET \
+	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Weapon_h_12_SPARSE_DATA \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Weapon_h_12_RPC_WRAPPERS \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Weapon_h_12_CALLBACK_WRAPPERS \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Weapon_h_12_INCLASS \
@@ -137,6 +139,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Weapon_h_12_PRIVATE_PROPERTY_OFFSET \
+	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Weapon_h_12_SPARSE_DATA \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Weapon_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Weapon_h_12_CALLBACK_WRAPPERS \
 	ArcaneNomads_Source_ArcaneNomads_WeaponSystem_Weapon_h_12_INCLASS_NO_PURE_DECLS \
