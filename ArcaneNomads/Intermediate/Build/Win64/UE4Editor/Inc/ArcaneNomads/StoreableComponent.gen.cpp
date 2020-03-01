@@ -20,6 +20,9 @@ void EmptyLinkFunctionForGeneratedCodeStoreableComponent() {}
 	ARCANENOMADS_API UClass* Z_Construct_UClass_UStoreableComponent();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UStoreableComponent_Drop();
+	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UStoreableComponent_GetIcon();
+	ENGINE_API UClass* Z_Construct_UClass_UTexture2D_NoRegister();
+	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UStoreableComponent_GetName();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UStoreableComponent_Store();
 	ARCANENOMADS_API UClass* Z_Construct_UClass_UInteractable_NoRegister();
 // End Cross Module References
@@ -68,6 +71,8 @@ void EmptyLinkFunctionForGeneratedCodeStoreableComponent() {}
 		UClass* Class = UStoreableComponent::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "Drop", &UStoreableComponent::execDrop },
+			{ "GetIcon", &UStoreableComponent::execGetIcon },
+			{ "GetName", &UStoreableComponent::execGetName },
 			{ "Store", &UStoreableComponent::execStore },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -81,9 +86,7 @@ void EmptyLinkFunctionForGeneratedCodeStoreableComponent() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UStoreableComponent_Drop_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "// Trigger when dropped from inventory\n" },
 		{ "ModuleRelativePath", "InventorySystem/StoreableComponent.h" },
-		{ "ToolTip", "Trigger when dropped from inventory" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UStoreableComponent_Drop_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UStoreableComponent, nullptr, "Drop", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UStoreableComponent_Drop_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UStoreableComponent_Drop_Statics::Function_MetaDataParams)) };
@@ -93,6 +96,72 @@ void EmptyLinkFunctionForGeneratedCodeStoreableComponent() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UStoreableComponent_Drop_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UStoreableComponent_GetIcon_Statics
+	{
+		struct StoreableComponent_eventGetIcon_Parms
+		{
+			UTexture2D* ReturnValue;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UStoreableComponent_GetIcon_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(StoreableComponent_eventGetIcon_Parms, ReturnValue), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UStoreableComponent_GetIcon_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UStoreableComponent_GetIcon_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UStoreableComponent_GetIcon_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Storeable" },
+		{ "ModuleRelativePath", "InventorySystem/StoreableComponent.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UStoreableComponent_GetIcon_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UStoreableComponent, nullptr, "GetIcon", nullptr, nullptr, sizeof(StoreableComponent_eventGetIcon_Parms), Z_Construct_UFunction_UStoreableComponent_GetIcon_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UStoreableComponent_GetIcon_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UStoreableComponent_GetIcon_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UStoreableComponent_GetIcon_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UStoreableComponent_GetIcon()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UStoreableComponent_GetIcon_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UStoreableComponent_GetName_Statics
+	{
+		struct StoreableComponent_eventGetName_Parms
+		{
+			FString ReturnValue;
+		};
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UStoreableComponent_GetName_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(StoreableComponent_eventGetName_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UStoreableComponent_GetName_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UStoreableComponent_GetName_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UStoreableComponent_GetName_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Storeable" },
+		{ "ModuleRelativePath", "InventorySystem/StoreableComponent.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UStoreableComponent_GetName_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UStoreableComponent, nullptr, "GetName", nullptr, nullptr, sizeof(StoreableComponent_eventGetName_Parms), Z_Construct_UFunction_UStoreableComponent_GetName_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UStoreableComponent_GetName_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UStoreableComponent_GetName_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UStoreableComponent_GetName_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UStoreableComponent_GetName()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UStoreableComponent_GetName_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -123,9 +192,7 @@ void EmptyLinkFunctionForGeneratedCodeStoreableComponent() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UStoreableComponent_Store_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "// Trigger when being stored\n" },
 		{ "ModuleRelativePath", "InventorySystem/StoreableComponent.h" },
-		{ "ToolTip", "Trigger when being stored" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UStoreableComponent_Store_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UStoreableComponent, nullptr, "Store", nullptr, nullptr, sizeof(StoreableComponent_eventStore_Parms), Z_Construct_UFunction_UStoreableComponent_Store_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UStoreableComponent_Store_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UStoreableComponent_Store_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UStoreableComponent_Store_Statics::Function_MetaDataParams)) };
@@ -157,6 +224,14 @@ void EmptyLinkFunctionForGeneratedCodeStoreableComponent() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnStored_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnStored;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_myIcon_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_myIcon;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_myName_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_myName;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
@@ -167,8 +242,10 @@ void EmptyLinkFunctionForGeneratedCodeStoreableComponent() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_ArcaneNomads,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UStoreableComponent_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UStoreableComponent_Drop, "Drop" }, // 3070225117
-		{ &Z_Construct_UFunction_UStoreableComponent_Store, "Store" }, // 4244681524
+		{ &Z_Construct_UFunction_UStoreableComponent_Drop, "Drop" }, // 2257251888
+		{ &Z_Construct_UFunction_UStoreableComponent_GetIcon, "GetIcon" }, // 2578390629
+		{ &Z_Construct_UFunction_UStoreableComponent_GetName, "GetName" }, // 1156184927
+		{ &Z_Construct_UFunction_UStoreableComponent_Store, "Store" }, // 836764975
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UStoreableComponent_Statics::Class_MetaDataParams[] = {
@@ -190,9 +267,25 @@ void EmptyLinkFunctionForGeneratedCodeStoreableComponent() {}
 	};
 #endif
 	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UStoreableComponent_Statics::NewProp_OnStored = { "OnStored", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UStoreableComponent, OnStored), Z_Construct_UDelegateFunction_ArcaneNomads_StoreEvent__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UStoreableComponent_Statics::NewProp_OnStored_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UStoreableComponent_Statics::NewProp_OnStored_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UStoreableComponent_Statics::NewProp_myIcon_MetaData[] = {
+		{ "Category", "StoreableComponent" },
+		{ "ModuleRelativePath", "InventorySystem/StoreableComponent.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UStoreableComponent_Statics::NewProp_myIcon = { "myIcon", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UStoreableComponent, myIcon), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UStoreableComponent_Statics::NewProp_myIcon_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UStoreableComponent_Statics::NewProp_myIcon_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UStoreableComponent_Statics::NewProp_myName_MetaData[] = {
+		{ "Category", "StoreableComponent" },
+		{ "ModuleRelativePath", "InventorySystem/StoreableComponent.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_UStoreableComponent_Statics::NewProp_myName = { "myName", nullptr, (EPropertyFlags)0x0040000000010001, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UStoreableComponent, myName), METADATA_PARAMS(Z_Construct_UClass_UStoreableComponent_Statics::NewProp_myName_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UStoreableComponent_Statics::NewProp_myName_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UStoreableComponent_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UStoreableComponent_Statics::NewProp_OnDropped,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UStoreableComponent_Statics::NewProp_OnStored,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UStoreableComponent_Statics::NewProp_myIcon,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UStoreableComponent_Statics::NewProp_myName,
 	};
 		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_UStoreableComponent_Statics::InterfaceParams[] = {
 			{ Z_Construct_UClass_UInteractable_NoRegister, (int32)VTABLE_OFFSET(UStoreableComponent, IInteractable), false },
@@ -224,7 +317,7 @@ void EmptyLinkFunctionForGeneratedCodeStoreableComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UStoreableComponent, 273149367);
+	IMPLEMENT_CLASS(UStoreableComponent, 308630664);
 	template<> ARCANENOMADS_API UClass* StaticClass<UStoreableComponent>()
 	{
 		return UStoreableComponent::StaticClass();

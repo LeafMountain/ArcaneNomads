@@ -9,12 +9,13 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
+class UInteractableComponent;
 #ifdef ARCANENOMADS_InteractorComponent_generated_h
 #error "InteractorComponent.generated.h already included, missing '#pragma once' in InteractorComponent.h"
 #endif
 #define ARCANENOMADS_InteractorComponent_generated_h
 
-#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_7_DELEGATE \
+#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_6_DELEGATE \
 struct _Script_ArcaneNomads_eventInteractionEventOne_Parms \
 { \
 	AActor* Interactable; \
@@ -27,8 +28,8 @@ static inline void FInteractionEventOne_DelegateWrapper(const FMulticastScriptDe
 }
 
 
-#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_SPARSE_DATA
-#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_RPC_WRAPPERS \
+#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_SPARSE_DATA
+#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execInteract) \
 	{ \
@@ -42,7 +43,7 @@ static inline void FInteractionEventOne_DelegateWrapper(const FMulticastScriptDe
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(AActor**)Z_Param__Result=P_THIS->GetInteractable(); \
+		*(UInteractableComponent**)Z_Param__Result=P_THIS->GetInteractable(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -55,7 +56,7 @@ static inline void FInteractionEventOne_DelegateWrapper(const FMulticastScriptDe
 	}
 
 
-#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execInteract) \
 	{ \
@@ -69,7 +70,7 @@ static inline void FInteractionEventOne_DelegateWrapper(const FMulticastScriptDe
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(AActor**)Z_Param__Result=P_THIS->GetInteractable(); \
+		*(UInteractableComponent**)Z_Param__Result=P_THIS->GetInteractable(); \
 		P_NATIVE_END; \
 	} \
  \
@@ -82,7 +83,7 @@ static inline void FInteractionEventOne_DelegateWrapper(const FMulticastScriptDe
 	}
 
 
-#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_INCLASS_NO_PURE_DECLS \
+#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUInteractorComponent(); \
 	friend struct Z_Construct_UClass_UInteractorComponent_Statics; \
@@ -91,7 +92,7 @@ public: \
 	DECLARE_SERIALIZER(UInteractorComponent)
 
 
-#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_INCLASS \
+#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_INCLASS \
 private: \
 	static void StaticRegisterNativesUInteractorComponent(); \
 	friend struct Z_Construct_UClass_UInteractorComponent_Statics; \
@@ -100,7 +101,7 @@ public: \
 	DECLARE_SERIALIZER(UInteractorComponent)
 
 
-#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_STANDARD_CONSTRUCTORS \
+#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UInteractorComponent(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UInteractorComponent) \
@@ -113,7 +114,7 @@ private: \
 public:
 
 
-#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_ENHANCED_CONSTRUCTORS \
+#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UInteractorComponent(UInteractorComponent&&); \
@@ -124,28 +125,28 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UInteractorComponent); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UInteractorComponent)
 
 
-#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_PRIVATE_PROPERTY_OFFSET
-#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_9_PROLOG
-#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_GENERATED_BODY_LEGACY \
+#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_PRIVATE_PROPERTY_OFFSET
+#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_8_PROLOG
+#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_PRIVATE_PROPERTY_OFFSET \
-	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_SPARSE_DATA \
-	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_RPC_WRAPPERS \
-	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_INCLASS \
-	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_STANDARD_CONSTRUCTORS \
+	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_PRIVATE_PROPERTY_OFFSET \
+	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_SPARSE_DATA \
+	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_RPC_WRAPPERS \
+	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_INCLASS \
+	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_GENERATED_BODY \
+#define ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_PRIVATE_PROPERTY_OFFSET \
-	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_SPARSE_DATA \
-	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_INCLASS_NO_PURE_DECLS \
-	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_12_ENHANCED_CONSTRUCTORS \
+	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_PRIVATE_PROPERTY_OFFSET \
+	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_SPARSE_DATA \
+	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_INCLASS_NO_PURE_DECLS \
+	ArcaneNomads_Source_ArcaneNomads_InteractionSystem_InteractorComponent_h_11_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

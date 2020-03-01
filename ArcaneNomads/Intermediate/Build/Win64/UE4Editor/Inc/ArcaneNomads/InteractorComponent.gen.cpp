@@ -20,6 +20,7 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 	ARCANENOMADS_API UClass* Z_Construct_UClass_UInteractorComponent();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInteractorComponent_GetInteractable();
+	ARCANENOMADS_API UClass* Z_Construct_UClass_UInteractableComponent_NoRegister();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInteractorComponent_Interact();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable();
 // End Cross Module References
@@ -69,8 +70,11 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 	{
 		struct InteractorComponent_eventGetInteractable_Parms
 		{
-			AActor* ReturnValue;
+			UInteractableComponent* ReturnValue;
 		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[];
+#endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -78,7 +82,12 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InteractorComponent_eventGetInteractable_Parms, ReturnValue), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::NewProp_ReturnValue_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InteractorComponent_eventGetInteractable_Parms, ReturnValue), Z_Construct_UClass_UInteractableComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::NewProp_ReturnValue_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::NewProp_ReturnValue_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInteractorComponent_GetInteractable_Statics::NewProp_ReturnValue,
 	};
@@ -199,7 +208,7 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_ArcaneNomads,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UInteractorComponent_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UInteractorComponent_GetInteractable, "GetInteractable" }, // 3547676239
+		{ &Z_Construct_UFunction_UInteractorComponent_GetInteractable, "GetInteractable" }, // 1671904590
 		{ &Z_Construct_UFunction_UInteractorComponent_Interact, "Interact" }, // 2693310111
 		{ &Z_Construct_UFunction_UInteractorComponent_LookingAtInteractable, "LookingAtInteractable" }, // 3467349165
 	};
@@ -255,7 +264,7 @@ void EmptyLinkFunctionForGeneratedCodeInteractorComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UInteractorComponent, 3193227689);
+	IMPLEMENT_CLASS(UInteractorComponent, 1738629002);
 	template<> ARCANENOMADS_API UClass* StaticClass<UInteractorComponent>()
 	{
 		return UInteractorComponent::StaticClass();

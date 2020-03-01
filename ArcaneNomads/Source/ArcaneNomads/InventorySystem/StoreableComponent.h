@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "InteractionSystem/Interactable.h"
+#include <Engine/Texture2D.h>
 #include "StoreableComponent.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStoreEvent, class UInventoryComponent*, Inventory);
@@ -15,16 +16,28 @@ class ARCANENOMADS_API UStoreableComponent : public UActorComponent, public IInt
 public:
     UStoreableComponent();
 
+
+private:
+    UPROPERTY(EditDefaultsOnly)
+    FString myName = "NameMissing";
+
+	UPROPERTY(EditAnywhere)
+    UTexture2D* myIcon;
+
 protected:
 
     class UInventoryComponent* Inventory;
     
 public:
-    // Trigger when being stored
+    UFUNCTION(BlueprintPure, Category = "Storeable")
+    FString GetName() { return myName; };
+
+    UFUNCTION(BlueprintPure, Category = "Storeable")
+    UTexture2D* GetIcon() { return myIcon; };
+
     UFUNCTION(BlueprintCallable)
     void Store(class UInventoryComponent* Inventory);
 
-    // Trigger when dropped from inventory
     UFUNCTION(BlueprintCallable)
     void Drop();
 

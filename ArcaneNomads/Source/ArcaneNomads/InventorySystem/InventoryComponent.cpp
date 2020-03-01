@@ -28,8 +28,14 @@ void UInventoryComponent::Deposit(UStoreableComponent *Item)
 
 UStoreableComponent* UInventoryComponent::Withdraw(int Index)
 {
-    OnInventoryUpdated.Broadcast();
-    return Inventory[Index];
+    UStoreableComponent* storeable = Inventory[Index];
+    if (storeable)
+    {
+        Inventory[Index] = nullptr;
+        storeable->Drop();
+        OnInventoryUpdated.Broadcast();
+    }
+    return storeable;
 }
 
 UStoreableComponent* UInventoryComponent::GetInventory()
@@ -51,7 +57,7 @@ int UInventoryComponent::GetNumberOfItemsInInventory()
 
 UStoreableComponent* UInventoryComponent::GetItemAt(int Index)
 {
-    if(Size <= Index)
+    if(Size >= Index)
     {
         return Inventory[Index];
     }

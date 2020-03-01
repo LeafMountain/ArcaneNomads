@@ -2,6 +2,4 @@ C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Edi
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.24\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads/InteractionSystem/InteractorComponent.h
-C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\InteractionSystem/Interactable.h
-C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Inc\ArcaneNomads\Interactable.generated.h
 C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Inc\ArcaneNomads\InteractorComponent.generated.h

@@ -10,6 +10,10 @@ UStoreableComponent::UStoreableComponent()
 void UStoreableComponent::Store(UInventoryComponent* Inventory)
 {
     AActor* Owner = GetOwner();
+    if (Inventory == nullptr || Owner == nullptr)
+    {
+        return;
+    }
 
     Owner->SetActorEnableCollision(false);
     Owner->SetActorHiddenInGame(true);
@@ -42,10 +46,10 @@ void UStoreableComponent::Interact_Implementation(UInteractorComponent* aInterac
 
 void UStoreableComponent::StartFocus_Implementation()
 {
-    //GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Start Focusing"));
+    GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Start Focusing"));
 }
 
 void UStoreableComponent::StopFocus_Implementation()
 {
-	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Stop Focusing"));
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Stop Focusing"));
 }
