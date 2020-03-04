@@ -20,9 +20,9 @@ protected:
 
     // Size of the inventory
     UPROPERTY(EditAnywhere)
-    int Size = 10;
+    int Size = 4;
 
-    class UStoreableComponent* Inventory[100];
+    TArray<class UStoreableComponent*> myStoreables;
 
 public:
     // Put storeable in inventory
@@ -31,11 +31,14 @@ public:
 
     // Withdraw item wit index
     UFUNCTION(BlueprintCallable)
-    class UStoreableComponent* Withdraw(int Index);
+    class UStoreableComponent* WithdrawAt(int Index);
+
+    UFUNCTION(BlueprintCallable)
+    class UStoreableComponent* Withdraw(class UStoreableComponent* aStoreable);
 
     // Get inventory items
     UFUNCTION(BlueprintCallable)
-    class UStoreableComponent* GetInventory();
+    TArray<class UStoreableComponent*> GetInventory();
 
     // Get UInventoryComponent::the number of items currently in the inventory
     UFUNCTION(BlueprintPure)
@@ -46,4 +49,10 @@ public:
 
     UPROPERTY(BlueprintAssignable)
     FInventoryEvent OnInventoryUpdated;
+
+    UFUNCTION(BlueprintCallable)
+	bool Contains(class UStoreableComponent* aStoreable);
+
+    UFUNCTION(BlueprintPure)
+    bool IsFull();
 };

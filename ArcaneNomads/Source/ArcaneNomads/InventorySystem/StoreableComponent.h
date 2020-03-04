@@ -26,6 +26,8 @@ private:
 
 protected:
 
+    virtual void EndPlay(EEndPlayReason::Type Reason) override;
+
     class UInventoryComponent* Inventory;
     
 public:

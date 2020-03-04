@@ -8,12 +8,16 @@
   [Upgrade]     PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs   => Set in build.cs files to enables IWYU-style PCH model. See https://docs.unrealengine.com/en-US/Programming/BuildTools/UnrealBuildTool/IWYU/index.html. (Previously: PCHUsageMode.UseSharedPCHs).
   [Upgrade] Suppress this message by setting 'DefaultBuildSettings = BuildSettingsVersion.V2;' in ArcaneNomadsEditor.Target.cs, and explicitly overriding settings that differ from the new defaults.
   [Upgrade]
-  Building 4 actions with 12 processes...
-    [1/4] InventoryComponent.cpp
-    [2/4] UE4Editor-ArcaneNomads-Win64-DebugGame.lib
+  Building 6 actions with 12 processes...
+    [1/6] InventoryComponent.cpp
+    [2/6] InventoryComponent.gen.cpp
+    [3/6] StoreableComponent.cpp
+C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\InventorySystem\StoreableComponent.cpp(16): warning C4458: declaration of 'Inventory' hides class member
+    C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\InventorySystem\StoreableComponent.h(31): note: see declaration of 'UStoreableComponent::Inventory'
+    [4/6] UE4Editor-ArcaneNomads-Win64-DebugGame.lib
        Creating library C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\DebugGame\ArcaneNomads\UE4Editor-ArcaneNomads-Win64-DebugGame.lib and object C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\DebugGame\ArcaneNomads\UE4Editor-ArcaneNomads-Win64-DebugGame.exp
-    [3/4] UE4Editor-ArcaneNomads-Win64-DebugGame.dll
+    [5/6] UE4Editor-ArcaneNomads-Win64-DebugGame.dll
        Creating library C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\DebugGame\ArcaneNomads\UE4Editor-ArcaneNomads-Win64-DebugGame.suppressed.lib and object C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\DebugGame\ArcaneNomads\UE4Editor-ArcaneNomads-Win64-DebugGame.suppressed.exp
-    [4/4] ArcaneNomadsEditor-Win64-DebugGame.target
-  Total time in Parallel executor: 1,29 seconds
-  Total execution time: 15,10 seconds
+    [6/6] ArcaneNomadsEditor-Win64-DebugGame.target
+  Total time in Parallel executor: 1,94 seconds
+  Total execution time: 2,78 seconds

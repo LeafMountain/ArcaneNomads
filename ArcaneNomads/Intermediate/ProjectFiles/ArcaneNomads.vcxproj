@@ -293,10 +293,16 @@
     <ClInclude Include="..\..\Source\ArcaneNomads\InteractionSystem\InteractableComponent.h"/>
     <ClCompile Include="..\..\Source\ArcaneNomads\InteractionSystem\InteractorComponent.cpp"/>
     <ClInclude Include="..\..\Source\ArcaneNomads\InteractionSystem\InteractorComponent.h"/>
+    <ClCompile Include="..\..\Source\ArcaneNomads\InteractionSystem\Useable.cpp"/>
+    <ClInclude Include="..\..\Source\ArcaneNomads\InteractionSystem\Useable.h"/>
     <ClCompile Include="..\..\Source\ArcaneNomads\InventorySystem\InventoryComponent.cpp"/>
     <ClInclude Include="..\..\Source\ArcaneNomads\InventorySystem\InventoryComponent.h"/>
     <ClCompile Include="..\..\Source\ArcaneNomads\InventorySystem\StoreableComponent.cpp"/>
     <ClInclude Include="..\..\Source\ArcaneNomads\InventorySystem\StoreableComponent.h"/>
+    <ClCompile Include="..\..\Source\ArcaneNomads\NeedsSystem\EdibleComponent.cpp"/>
+    <ClInclude Include="..\..\Source\ArcaneNomads\NeedsSystem\EdibleComponent.h"/>
+    <ClCompile Include="..\..\Source\ArcaneNomads\NeedsSystem\HungerComponent.cpp"/>
+    <ClInclude Include="..\..\Source\ArcaneNomads\NeedsSystem\HungerComponent.h"/>
     <ClInclude Include="..\..\Source\ArcaneNomads\WeaponSystem\Hittable.h"/>
     <ClCompile Include="..\..\Source\ArcaneNomads\WeaponSystem\ToolUser.cpp"/>
     <ClInclude Include="..\..\Source\ArcaneNomads\WeaponSystem\ToolUser.h"/>

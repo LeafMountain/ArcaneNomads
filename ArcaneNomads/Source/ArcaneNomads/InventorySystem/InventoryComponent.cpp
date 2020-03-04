@@ -3,6 +3,7 @@
 
 UInventoryComponent::UInventoryComponent()
 {
+    myStoreables.SetNumZeroed(Size);
 }
 
 void UInventoryComponent::BeginPlay()
@@ -12,35 +13,49 @@ void UInventoryComponent::BeginPlay()
 
 void UInventoryComponent::Deposit(UStoreableComponent *Item)
 {
-    for (int i = 0; i < Size; i++)
-    {        
-        if(Inventory[i] == nullptr)
-        {
-            Inventory[i] = Item;
-            Item->Store(this);
-            OnInventoryUpdated.Broadcast();
-            return;
-        }
+    if (IsFull())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("[InventoryComponent] No space in inventory for item %s"), *Item->GetName());
+        return;
     }
-    
-    UE_LOG(LogTemp, Warning, TEXT("[InventoryComponent] No space in inventory for item %s"), *Item->GetName());
+
+    myStoreables[myStoreables.Find(nullptr)] = Item;
+	Item->Store(this);
+	OnInventoryUpdated.Broadcast();
+
+
+    //for (int i = 0; i < Size; i++)
+    //{        
+    //    if(myStoreables[i] == nullptr)
+    //    {
+    //        myStoreables[i] = Item;
+    //        Item->Store(this);
+    //        OnInventoryUpdated.Broadcast();
+    //        return;
+    //    }
+    //}
 }
 
-UStoreableComponent* UInventoryComponent::Withdraw(int Index)
+UStoreableComponent* UInventoryComponent::WithdrawAt(int Index)
 {
-    UStoreableComponent* storeable = Inventory[Index];
+    UStoreableComponent* storeable = myStoreables[Index];
     if (storeable)
     {
-        Inventory[Index] = nullptr;
+        myStoreables[Index] = nullptr;
         storeable->Drop();
         OnInventoryUpdated.Broadcast();
     }
     return storeable;
 }
 
-UStoreableComponent* UInventoryComponent::GetInventory()
+UStoreableComponent* UInventoryComponent::Withdraw(UStoreableComponent* aStoreable)
 {
-    return *Inventory;
+    return WithdrawAt(myStoreables.Find(aStoreable));
+}
+
+TArray<UStoreableComponent*> UInventoryComponent::GetInventory()
+{
+    return myStoreables;
 }
 
 int UInventoryComponent::GetNumberOfItemsInInventory()
@@ -49,7 +64,7 @@ int UInventoryComponent::GetNumberOfItemsInInventory()
 
     for (int i = 0; i < Size; i++)
     {
-        if(Inventory[i] != nullptr) NumberOfItems++;
+        if(myStoreables[i] != nullptr) NumberOfItems++;
     }
     
     return NumberOfItems;
@@ -59,8 +74,26 @@ UStoreableComponent* UInventoryComponent::GetItemAt(int Index)
 {
     if(Size >= Index)
     {
-        return Inventory[Index];
+        return myStoreables[Index];
     }
 
     return nullptr;
+}
+
+bool UInventoryComponent::Contains(UStoreableComponent* aStoreable)
+{
+    return myStoreables.Contains(aStoreable);
+}
+
+bool UInventoryComponent::IsFull()
+{
+	//UE_LOG(LogTemp, Warning, TEXT("%i"), myStoreables.Num());
+    for (auto it = myStoreables.CreateIterator(); it; ++it)
+    {
+        if (*it == nullptr)
+        {
+            return false;
+        }
+    }
+    return true;
 }

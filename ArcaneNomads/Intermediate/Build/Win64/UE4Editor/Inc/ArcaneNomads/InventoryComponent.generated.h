@@ -37,6 +37,23 @@ static inline void FInventoryEvent_DelegateWrapper(const FMulticastScriptDelegat
 #define ArcaneNomads_Source_ArcaneNomads_InventorySystem_InventoryComponent_h_13_SPARSE_DATA
 #define ArcaneNomads_Source_ArcaneNomads_InventorySystem_InventoryComponent_h_13_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execIsFull) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=P_THIS->IsFull(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execContains) \
+	{ \
+		P_GET_OBJECT(UStoreableComponent,Z_Param_aStoreable); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=P_THIS->Contains(Z_Param_aStoreable); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execGetItemAt) \
 	{ \
 		P_GET_PROPERTY(UIntProperty,Z_Param_Index); \
@@ -58,16 +75,25 @@ static inline void FInventoryEvent_DelegateWrapper(const FMulticastScriptDelegat
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(UStoreableComponent**)Z_Param__Result=P_THIS->GetInventory(); \
+		*(TArray<UStoreableComponent*>*)Z_Param__Result=P_THIS->GetInventory(); \
 		P_NATIVE_END; \
 	} \
  \
 	DECLARE_FUNCTION(execWithdraw) \
 	{ \
+		P_GET_OBJECT(UStoreableComponent,Z_Param_aStoreable); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(UStoreableComponent**)Z_Param__Result=P_THIS->Withdraw(Z_Param_aStoreable); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execWithdrawAt) \
+	{ \
 		P_GET_PROPERTY(UIntProperty,Z_Param_Index); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(UStoreableComponent**)Z_Param__Result=P_THIS->Withdraw(Z_Param_Index); \
+		*(UStoreableComponent**)Z_Param__Result=P_THIS->WithdrawAt(Z_Param_Index); \
 		P_NATIVE_END; \
 	} \
  \
@@ -83,6 +109,23 @@ static inline void FInventoryEvent_DelegateWrapper(const FMulticastScriptDelegat
 
 #define ArcaneNomads_Source_ArcaneNomads_InventorySystem_InventoryComponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execIsFull) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=P_THIS->IsFull(); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execContains) \
+	{ \
+		P_GET_OBJECT(UStoreableComponent,Z_Param_aStoreable); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=P_THIS->Contains(Z_Param_aStoreable); \
+		P_NATIVE_END; \
+	} \
+ \
 	DECLARE_FUNCTION(execGetItemAt) \
 	{ \
 		P_GET_PROPERTY(UIntProperty,Z_Param_Index); \
@@ -104,16 +147,25 @@ static inline void FInventoryEvent_DelegateWrapper(const FMulticastScriptDelegat
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(UStoreableComponent**)Z_Param__Result=P_THIS->GetInventory(); \
+		*(TArray<UStoreableComponent*>*)Z_Param__Result=P_THIS->GetInventory(); \
 		P_NATIVE_END; \
 	} \
  \
 	DECLARE_FUNCTION(execWithdraw) \
 	{ \
+		P_GET_OBJECT(UStoreableComponent,Z_Param_aStoreable); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(UStoreableComponent**)Z_Param__Result=P_THIS->Withdraw(Z_Param_aStoreable); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execWithdrawAt) \
+	{ \
 		P_GET_PROPERTY(UIntProperty,Z_Param_Index); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		*(UStoreableComponent**)Z_Param__Result=P_THIS->Withdraw(Z_Param_Index); \
+		*(UStoreableComponent**)Z_Param__Result=P_THIS->WithdrawAt(Z_Param_Index); \
 		P_NATIVE_END; \
 	} \
  \

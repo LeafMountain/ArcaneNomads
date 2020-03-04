@@ -20,11 +20,14 @@ void EmptyLinkFunctionForGeneratedCodeInventoryComponent() {}
 	ARCANENOMADS_API UClass* Z_Construct_UClass_UInventoryComponent_NoRegister();
 	ARCANENOMADS_API UClass* Z_Construct_UClass_UInventoryComponent();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
+	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInventoryComponent_Contains();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInventoryComponent_Deposit();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInventoryComponent_GetInventory();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInventoryComponent_GetItemAt();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInventoryComponent_GetNumberOfItemsInInventory();
+	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInventoryComponent_IsFull();
 	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInventoryComponent_Withdraw();
+	ARCANENOMADS_API UFunction* Z_Construct_UFunction_UInventoryComponent_WithdrawAt();
 // End Cross Module References
 	struct Z_Construct_UDelegateFunction_ArcaneNomads_InventoryEventOne__DelegateSignature_Statics
 	{
@@ -92,13 +95,65 @@ void EmptyLinkFunctionForGeneratedCodeInventoryComponent() {}
 	{
 		UClass* Class = UInventoryComponent::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "Contains", &UInventoryComponent::execContains },
 			{ "Deposit", &UInventoryComponent::execDeposit },
 			{ "GetInventory", &UInventoryComponent::execGetInventory },
 			{ "GetItemAt", &UInventoryComponent::execGetItemAt },
 			{ "GetNumberOfItemsInInventory", &UInventoryComponent::execGetNumberOfItemsInInventory },
+			{ "IsFull", &UInventoryComponent::execIsFull },
 			{ "Withdraw", &UInventoryComponent::execWithdraw },
+			{ "WithdrawAt", &UInventoryComponent::execWithdrawAt },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UInventoryComponent_Contains_Statics
+	{
+		struct InventoryComponent_eventContains_Parms
+		{
+			UStoreableComponent* aStoreable;
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_aStoreable_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_aStoreable;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_UInventoryComponent_Contains_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((InventoryComponent_eventContains_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UInventoryComponent_Contains_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(InventoryComponent_eventContains_Parms), &Z_Construct_UFunction_UInventoryComponent_Contains_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventoryComponent_Contains_Statics::NewProp_aStoreable_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInventoryComponent_Contains_Statics::NewProp_aStoreable = { "aStoreable", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InventoryComponent_eventContains_Parms, aStoreable), Z_Construct_UClass_UStoreableComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UInventoryComponent_Contains_Statics::NewProp_aStoreable_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_Contains_Statics::NewProp_aStoreable_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInventoryComponent_Contains_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventoryComponent_Contains_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventoryComponent_Contains_Statics::NewProp_aStoreable,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventoryComponent_Contains_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "InventorySystem/InventoryComponent.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UInventoryComponent_Contains_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInventoryComponent, nullptr, "Contains", nullptr, nullptr, sizeof(InventoryComponent_eventContains_Parms), Z_Construct_UFunction_UInventoryComponent_Contains_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_Contains_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInventoryComponent_Contains_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_Contains_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UInventoryComponent_Contains()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UInventoryComponent_Contains_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_UInventoryComponent_Deposit_Statics
 	{
@@ -146,12 +201,13 @@ void EmptyLinkFunctionForGeneratedCodeInventoryComponent() {}
 	{
 		struct InventoryComponent_eventGetInventory_Parms
 		{
-			UStoreableComponent* ReturnValue;
+			TArray<UStoreableComponent*> ReturnValue;
 		};
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue_Inner;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -163,9 +219,11 @@ void EmptyLinkFunctionForGeneratedCodeInventoryComponent() {}
 		{ "EditInline", "true" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInventoryComponent_GetInventory_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InventoryComponent_eventGetInventory_Parms, ReturnValue), Z_Construct_UClass_UStoreableComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UInventoryComponent_GetInventory_Statics::NewProp_ReturnValue_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_GetInventory_Statics::NewProp_ReturnValue_MetaData)) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UInventoryComponent_GetInventory_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010008000000588, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InventoryComponent_eventGetInventory_Parms, ReturnValue), METADATA_PARAMS(Z_Construct_UFunction_UInventoryComponent_GetInventory_Statics::NewProp_ReturnValue_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_GetInventory_Statics::NewProp_ReturnValue_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInventoryComponent_GetInventory_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_UStoreableComponent_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInventoryComponent_GetInventory_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventoryComponent_GetInventory_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventoryComponent_GetInventory_Statics::NewProp_ReturnValue_Inner,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventoryComponent_GetInventory_Statics::Function_MetaDataParams[] = {
@@ -262,9 +320,98 @@ void EmptyLinkFunctionForGeneratedCodeInventoryComponent() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UInventoryComponent_IsFull_Statics
+	{
+		struct InventoryComponent_eventIsFull_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_UInventoryComponent_IsFull_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((InventoryComponent_eventIsFull_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UInventoryComponent_IsFull_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(InventoryComponent_eventIsFull_Parms), &Z_Construct_UFunction_UInventoryComponent_IsFull_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInventoryComponent_IsFull_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventoryComponent_IsFull_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventoryComponent_IsFull_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "InventorySystem/InventoryComponent.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UInventoryComponent_IsFull_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInventoryComponent, nullptr, "IsFull", nullptr, nullptr, sizeof(InventoryComponent_eventIsFull_Parms), Z_Construct_UFunction_UInventoryComponent_IsFull_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_IsFull_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInventoryComponent_IsFull_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_IsFull_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UInventoryComponent_IsFull()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UInventoryComponent_IsFull_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics
 	{
 		struct InventoryComponent_eventWithdraw_Parms
+		{
+			UStoreableComponent* aStoreable;
+			UStoreableComponent* ReturnValue;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_aStoreable_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_aStoreable;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_ReturnValue_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InventoryComponent_eventWithdraw_Parms, ReturnValue), Z_Construct_UClass_UStoreableComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_ReturnValue_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_ReturnValue_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_aStoreable_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_aStoreable = { "aStoreable", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InventoryComponent_eventWithdraw_Parms, aStoreable), Z_Construct_UClass_UStoreableComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_aStoreable_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_aStoreable_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_aStoreable,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "InventorySystem/InventoryComponent.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInventoryComponent, nullptr, "Withdraw", nullptr, nullptr, sizeof(InventoryComponent_eventWithdraw_Parms), Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UInventoryComponent_Withdraw()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics
+	{
+		struct InventoryComponent_eventWithdrawAt_Parms
 		{
 			int32 Index;
 			UStoreableComponent* ReturnValue;
@@ -281,30 +428,30 @@ void EmptyLinkFunctionForGeneratedCodeInventoryComponent() {}
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_ReturnValue_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::NewProp_ReturnValue_MetaData[] = {
 		{ "EditInline", "true" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InventoryComponent_eventWithdraw_Parms, ReturnValue), Z_Construct_UClass_UStoreableComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_ReturnValue_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_ReturnValue_MetaData)) };
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_Index = { "Index", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InventoryComponent_eventWithdraw_Parms, Index), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_ReturnValue,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::NewProp_Index,
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InventoryComponent_eventWithdrawAt_Parms, ReturnValue), Z_Construct_UClass_UStoreableComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::NewProp_ReturnValue_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::NewProp_ReturnValue_MetaData)) };
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::NewProp_Index = { "Index", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(InventoryComponent_eventWithdrawAt_Parms, Index), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::NewProp_Index,
 	};
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::Function_MetaDataParams[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::Function_MetaDataParams[] = {
 		{ "Comment", "// Withdraw item wit index\n" },
 		{ "ModuleRelativePath", "InventorySystem/InventoryComponent.h" },
 		{ "ToolTip", "Withdraw item wit index" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInventoryComponent, nullptr, "Withdraw", nullptr, nullptr, sizeof(InventoryComponent_eventWithdraw_Parms), Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_UInventoryComponent_Withdraw()
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInventoryComponent, nullptr, "WithdrawAt", nullptr, nullptr, sizeof(InventoryComponent_eventWithdrawAt_Parms), Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UInventoryComponent_WithdrawAt()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UInventoryComponent_Withdraw_Statics::FuncParams);
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UInventoryComponent_WithdrawAt_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -336,11 +483,14 @@ void EmptyLinkFunctionForGeneratedCodeInventoryComponent() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_ArcaneNomads,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UInventoryComponent_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UInventoryComponent_Contains, "Contains" }, // 4179796114
 		{ &Z_Construct_UFunction_UInventoryComponent_Deposit, "Deposit" }, // 253258059
-		{ &Z_Construct_UFunction_UInventoryComponent_GetInventory, "GetInventory" }, // 1923833136
+		{ &Z_Construct_UFunction_UInventoryComponent_GetInventory, "GetInventory" }, // 1645057182
 		{ &Z_Construct_UFunction_UInventoryComponent_GetItemAt, "GetItemAt" }, // 944399893
 		{ &Z_Construct_UFunction_UInventoryComponent_GetNumberOfItemsInInventory, "GetNumberOfItemsInInventory" }, // 2906884788
-		{ &Z_Construct_UFunction_UInventoryComponent_Withdraw, "Withdraw" }, // 1721272409
+		{ &Z_Construct_UFunction_UInventoryComponent_IsFull, "IsFull" }, // 1150338850
+		{ &Z_Construct_UFunction_UInventoryComponent_Withdraw, "Withdraw" }, // 400450013
+		{ &Z_Construct_UFunction_UInventoryComponent_WithdrawAt, "WithdrawAt" }, // 3101007684
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UInventoryComponent_Statics::Class_MetaDataParams[] = {
@@ -396,7 +546,7 @@ void EmptyLinkFunctionForGeneratedCodeInventoryComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UInventoryComponent, 2015848306);
+	IMPLEMENT_CLASS(UInventoryComponent, 859686626);
 	template<> ARCANENOMADS_API UClass* StaticClass<UInventoryComponent>()
 	{
 		return UInventoryComponent::StaticClass();

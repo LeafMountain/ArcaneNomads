@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\ArcaneNomads.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{B65B78E2-35B3-4791-A664-60D4B94D90D8}</UniqueIdentifier>
+      <UniqueIdentifier>{A0E4D150-7A19-4191-A8B5-20131413F133}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\ArcaneNomads.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\ArcaneNomads.code-workspace" />
     <Filter Include="Config">
-      <UniqueIdentifier>{466FF6C2-F842-48D6-B817-DF9548FF7987}</UniqueIdentifier>
+      <UniqueIdentifier>{0AD54F86-889F-48E1-97DE-C49DE445D9EB}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,7 +31,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\ArcaneNomads">
-      <UniqueIdentifier>{E5EF9E76-AA18-46AE-92A1-4E802BCCA667}</UniqueIdentifier>
+      <UniqueIdentifier>{93DC268E-54FE-44F8-99FD-48EF0551F4C9}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\ArcaneNomads\ArcaneNomads.Build.cs">
       <Filter>Source\ArcaneNomads</Filter>
@@ -61,7 +61,7 @@
       <Filter>Source\ArcaneNomads</Filter>
     </ClInclude>
     <Filter Include="Source\ArcaneNomads\HealthSystem">
-      <UniqueIdentifier>{670C20AE-8C95-4CDC-A0F6-3D955E9DF3CC}</UniqueIdentifier>
+      <UniqueIdentifier>{FD1DA70A-613C-4C5F-9521-62AA7AA1B07D}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\ArcaneNomads\HealthSystem\DamagerComponent.cpp">
       <Filter>Source\ArcaneNomads\HealthSystem</Filter>
@@ -76,7 +76,7 @@
       <Filter>Source\ArcaneNomads\HealthSystem</Filter>
     </ClInclude>
     <Filter Include="Source\ArcaneNomads\InteractionSystem">
-      <UniqueIdentifier>{0B3E848E-4F78-4687-BEA6-8F8DAD9AEE01}</UniqueIdentifier>
+      <UniqueIdentifier>{79DA88C2-C7F0-4C04-AB56-63F833E25F1D}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\ArcaneNomads\InteractionSystem\Interactable.cpp">
       <Filter>Source\ArcaneNomads\InteractionSystem</Filter>
@@ -96,8 +96,14 @@
     <ClInclude Include="..\..\Source\ArcaneNomads\InteractionSystem\InteractorComponent.h">
       <Filter>Source\ArcaneNomads\InteractionSystem</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\ArcaneNomads\InteractionSystem\Useable.cpp">
+      <Filter>Source\ArcaneNomads\InteractionSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\InteractionSystem\Useable.h">
+      <Filter>Source\ArcaneNomads\InteractionSystem</Filter>
+    </ClInclude>
     <Filter Include="Source\ArcaneNomads\InventorySystem">
-      <UniqueIdentifier>{7E476D7D-4880-45C1-9A1D-9502FDD88181}</UniqueIdentifier>
+      <UniqueIdentifier>{32710BBE-B162-4034-B8CF-800FB6B835D4}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\ArcaneNomads\InventorySystem\InventoryComponent.cpp">
       <Filter>Source\ArcaneNomads\InventorySystem</Filter>
@@ -111,8 +117,23 @@
     <ClInclude Include="..\..\Source\ArcaneNomads\InventorySystem\StoreableComponent.h">
       <Filter>Source\ArcaneNomads\InventorySystem</Filter>
     </ClInclude>
+    <Filter Include="Source\ArcaneNomads\NeedsSystem">
+      <UniqueIdentifier>{FBF5537B-152F-43E4-A133-52F202B5992C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArcaneNomads\NeedsSystem\EdibleComponent.cpp">
+      <Filter>Source\ArcaneNomads\NeedsSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\NeedsSystem\EdibleComponent.h">
+      <Filter>Source\ArcaneNomads\NeedsSystem</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArcaneNomads\NeedsSystem\HungerComponent.cpp">
+      <Filter>Source\ArcaneNomads\NeedsSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArcaneNomads\NeedsSystem\HungerComponent.h">
+      <Filter>Source\ArcaneNomads\NeedsSystem</Filter>
+    </ClInclude>
     <Filter Include="Source\ArcaneNomads\WeaponSystem">
-      <UniqueIdentifier>{43485159-53D4-4FA6-AC18-66F33CC893C5}</UniqueIdentifier>
+      <UniqueIdentifier>{042B06B3-AD5B-4AF4-8769-E3024F4A4ED0}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\ArcaneNomads\WeaponSystem\Hittable.h">
       <Filter>Source\ArcaneNomads\WeaponSystem</Filter>
