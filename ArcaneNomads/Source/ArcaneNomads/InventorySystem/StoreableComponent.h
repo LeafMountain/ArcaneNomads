@@ -50,6 +50,4 @@ public:
     FStoreEvent OnDropped;
 
     void Interact_Implementation(class UInteractorComponent* aInteractor) override;
-    void StartFocus_Implementation() override;
-    void StopFocus_Implementation() override;
 };

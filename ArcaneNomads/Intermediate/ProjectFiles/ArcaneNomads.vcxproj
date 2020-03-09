@@ -51,7 +51,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E83C5BDF-181F-4722-9216-7B048E3AE2F9}</ProjectGuid>
+    <ProjectGuid>{1F94CC9C-CEB4-488A-9AA8-F1A530D61EC9}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>ArcaneNomads</RootNamespace>
     <PlatformToolset>v142</PlatformToolset>
@@ -268,7 +268,6 @@
     <None Include="..\..\ArcaneNomads.uproject"/>
     <None Include="..\..\Source\ArcaneNomads.Target.cs"/>
     <None Include="..\..\Source\ArcaneNomadsEditor.Target.cs"/>
-    <None Include="..\..\ArcaneNomads.code-workspace"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
@@ -297,12 +296,16 @@
     <ClInclude Include="..\..\Source\ArcaneNomads\InteractionSystem\Useable.h"/>
     <ClCompile Include="..\..\Source\ArcaneNomads\InventorySystem\InventoryComponent.cpp"/>
     <ClInclude Include="..\..\Source\ArcaneNomads\InventorySystem\InventoryComponent.h"/>
+    <ClCompile Include="..\..\Source\ArcaneNomads\InventorySystem\InventoryWidget.cpp"/>
+    <ClInclude Include="..\..\Source\ArcaneNomads\InventorySystem\InventoryWidget.h"/>
     <ClCompile Include="..\..\Source\ArcaneNomads\InventorySystem\StoreableComponent.cpp"/>
     <ClInclude Include="..\..\Source\ArcaneNomads\InventorySystem\StoreableComponent.h"/>
     <ClCompile Include="..\..\Source\ArcaneNomads\NeedsSystem\EdibleComponent.cpp"/>
     <ClInclude Include="..\..\Source\ArcaneNomads\NeedsSystem\EdibleComponent.h"/>
     <ClCompile Include="..\..\Source\ArcaneNomads\NeedsSystem\HungerComponent.cpp"/>
     <ClInclude Include="..\..\Source\ArcaneNomads\NeedsSystem\HungerComponent.h"/>
+    <ClCompile Include="..\..\Source\ArcaneNomads\UISubsystem\UISubsystem.cpp"/>
+    <ClInclude Include="..\..\Source\ArcaneNomads\UISubsystem\UISubsystem.h"/>
     <ClInclude Include="..\..\Source\ArcaneNomads\WeaponSystem\Hittable.h"/>
     <ClCompile Include="..\..\Source\ArcaneNomads\WeaponSystem\ToolUser.cpp"/>
     <ClInclude Include="..\..\Source\ArcaneNomads\WeaponSystem\ToolUser.h"/>

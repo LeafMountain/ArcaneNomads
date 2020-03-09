@@ -1,5 +1,0 @@
-C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Development\ArcaneNomads\Definitions.ArcaneNomads.h
-C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\WeaponSystem\ToolUser.h
-C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Inc\ArcaneNomads\ToolUser.generated.h
-C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Source\ArcaneNomads\WeaponSystem\Weapon.h
-C:\Users\lovbe\Desktop\ArcaneNomads\ArcaneNomads\Intermediate\Build\Win64\UE4Editor\Inc\ArcaneNomads\Weapon.generated.h

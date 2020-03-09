@@ -2,18 +2,22 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "InteractionSystem/Interactable.h"
 #include "InventoryComponent.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FInventoryEvent);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryEventOne, class UStoreableComponent*, Storeable);
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
-class ARCANENOMADS_API UInventoryComponent : public UActorComponent
+class ARCANENOMADS_API UInventoryComponent : public UActorComponent, public IInteractable
 {
     GENERATED_BODY()
 
 public:
     UInventoryComponent();
+
+    void Interact_Implementation(class UInteractorComponent* Interactor) override;
+    void StopFocus_Implementation() override;
 
 protected:
 	virtual void BeginPlay() override;
@@ -23,6 +27,14 @@ protected:
     int Size = 4;
 
     TArray<class UStoreableComponent*> myStoreables;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<class UInventoryWidget> anInventoryWidget;
+
+    class UUISubsystem* myUISubsystem;
+
+    bool isOpen = false;
+    class UInventoryWidget* myOpenInventoryWidget;
 
 public:
     // Put storeable in inventory
@@ -55,4 +67,19 @@ public:
 
     UFUNCTION(BlueprintPure)
     bool IsFull();
+
+    UFUNCTION(BlueprintCallable)
+    void Open();
+
+    UFUNCTION(BlueprintCallable)
+    void Close();
+
+    UFUNCTION(BlueprintCallable)
+    void Toggle();
+
+    UFUNCTION(BlueprintCallable)
+    void Transfer(UInventoryComponent* anInventory, int anIndex);
+
+    UFUNCTION(BlueprintCallable)
+    void TransferAll(UInventoryComponent* anInventory);
 };

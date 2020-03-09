@@ -37,8 +37,8 @@ void EmptyLinkFunctionForGeneratedCodeArcaneNomads_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xD95DF873,
-				0xA556675B,
+				0x3F8D4079,
+				0x416D41F3,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

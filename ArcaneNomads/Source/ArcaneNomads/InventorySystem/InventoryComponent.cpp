@@ -1,14 +1,40 @@
 #include "InventoryComponent.h"
 #include "StoreableComponent.h"
+#include <Engine/Engine.h>
+#include "UISubsystem/UISubsystem.h"
+#include "InventorySystem/InventoryWidget.h"
+#include "InteractionSystem/InteractorComponent.h"
 
 UInventoryComponent::UInventoryComponent()
 {
     myStoreables.SetNumZeroed(Size);
 }
 
+void UInventoryComponent::Interact_Implementation(class UInteractorComponent* Interactor)
+{
+    if (myUISubsystem != nullptr)
+    {
+        Toggle();
+
+        if (Interactor)
+        {
+            UInventoryComponent* interactorInventory = Cast<UInventoryComponent>(Interactor->GetOwner()->GetComponentByClass(UInventoryComponent::StaticClass()));
+            if (interactorInventory)
+            {
+                interactorInventory->Toggle();
+            }
+        }
+    }
+}
+
+void UInventoryComponent::StopFocus_Implementation()
+{
+    //Close();
+}
+
 void UInventoryComponent::BeginPlay()
 {
-    // Inventory = new Inventory[Size];
+    myUISubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UUISubsystem>();
 }
 
 void UInventoryComponent::Deposit(UStoreableComponent *Item)
@@ -22,18 +48,6 @@ void UInventoryComponent::Deposit(UStoreableComponent *Item)
     myStoreables[myStoreables.Find(nullptr)] = Item;
 	Item->Store(this);
 	OnInventoryUpdated.Broadcast();
-
-
-    //for (int i = 0; i < Size; i++)
-    //{        
-    //    if(myStoreables[i] == nullptr)
-    //    {
-    //        myStoreables[i] = Item;
-    //        Item->Store(this);
-    //        OnInventoryUpdated.Broadcast();
-    //        return;
-    //    }
-    //}
 }
 
 UStoreableComponent* UInventoryComponent::WithdrawAt(int Index)
@@ -97,3 +111,58 @@ bool UInventoryComponent::IsFull()
     }
     return true;
 }
+
+void UInventoryComponent::Open()
+{
+    if (isOpen == true || anInventoryWidget == nullptr)
+        return;
+
+	myOpenInventoryWidget = CastChecked<UInventoryWidget>(myUISubsystem->OpenWidget(anInventoryWidget.Get(), true));
+    myOpenInventoryWidget->SetupInventory(this);
+    isOpen = true;
+
+    OnInventoryUpdated.AddDynamic(this, &UInventoryComponent::Open);
+}
+
+void UInventoryComponent::Close()
+{
+    // Implement this in UI system first
+
+    if (isOpen == false)
+        return;
+
+    myUISubsystem->CloseTop();
+    isOpen = false;
+    OnInventoryUpdated.RemoveDynamic(this, &UInventoryComponent::Open);
+}
+
+void UInventoryComponent::Toggle()
+{
+    if (isOpen)
+    {
+        Close();
+    }
+    else
+    {
+        Open();
+    }
+}
+
+void UInventoryComponent::Transfer(UInventoryComponent* anInventory, int anIndex)
+{
+    if (anInventory->IsFull())
+    {
+		return;
+    }
+
+    anInventory->Deposit(WithdrawAt(anIndex));
+}
+
+void UInventoryComponent::TransferAll(UInventoryComponent* anInventory)
+{
+    for (int i = 0; i < Size; ++i)
+    {
+        Transfer(anInventory, i);
+    }
+}
+
